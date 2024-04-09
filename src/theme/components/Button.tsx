@@ -7,6 +7,7 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
     },
     styleOverrides: {
         root: ({ theme }) => ({
+            color: '#fff',
             padding: '0px 8px',
             width: '186px',
             height: '35px',

@@ -55,7 +55,7 @@ const typography: TypographyOptions = {
     caption: {
         fontSize: '0.75rem',
         lineHeight: '1.125rem',
-        fontWeight: 400
+        fontWeight: 700
     },
     button: {
         fontSize: '0.625rem',

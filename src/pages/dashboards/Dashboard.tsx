@@ -1,10 +1,11 @@
-import { Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import Sidebar from "components/Sidebar";
 
 const Dashboard = () => {
     return (
-        <div>
-            <Typography variant="h1">Dashboard</Typography>
-        </div>
+        <Box sx={{padding: '1rem'}}>
+            <Sidebar/>
+        </Box>
     );
 }
 
