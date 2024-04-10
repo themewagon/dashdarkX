@@ -6,17 +6,12 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
         disableElevation: true,
     },
     styleOverrides: {
-        root: ({ theme }) => ({
+        root: {
             color: '#fff',
             padding: '0px 8px',
-            width: '186px',
             height: '35px',
-            borderRadius: '8px',
-            backgroundColor: theme.palette.secondary.main,
-            '&:hover': {
-                backgroundColor: theme.palette.secondary.main
-            }
-        }),
+            borderRadius: '8px'
+        },
     },
 }
 
