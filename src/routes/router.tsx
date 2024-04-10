@@ -16,20 +16,17 @@ const router = createBrowserRouter([
                         <Dashboard/>
                     </MainLayout>
                 )
-            }
-        ]
-    },
-    {
-        path: "/tables",
-        element: <Tables/>,
-        children: [
+            },
             {
                 path: "/tables",
-                element: <Dashboard/>
+                element: (
+                    <MainLayout>
+                        <Tables/>
+                    </MainLayout>
+                )
             }
         ]
-    },
-    
+    }
 ]);
 
 export default router;

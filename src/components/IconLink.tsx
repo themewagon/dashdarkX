@@ -12,7 +12,7 @@ const IconLink = (props: pathType) => {
     const {name, path, icon} = props;
     const theme = useTheme();
     // If (given path == current path) then the path is active, otherwise not
-    const isActivePath = useLocation().pathname.split('/').shift() === path;
+    const isActivePath = useLocation().pathname.split('/')[1] === path;
 
     return (
         <Link to={`/${path}`} style={{textDecoration: 'none'}}>

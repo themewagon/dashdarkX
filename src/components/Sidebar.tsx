@@ -4,6 +4,7 @@ import LogoImg from "assets/images/logo.svg";
 import LineImg from "assets/images/line.svg";
 import docImg from "assets/images/document.svg";
 import IconLink from "./IconLink";
+import { Link } from "react-router-dom";
 
 const navLinks = [
     {
@@ -50,13 +51,15 @@ const Sidebar = () => {
     const theme = useTheme();
 
     return (
-        <Box component="section" sx={{padding: '30px 22px 40px', width: '265px', borderRadius: '0.625rem', boxShadow: theme.customShadows[0]}}>
-            <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem'}}>
-                <img src={LogoImg} alt="logo" style={{height: '24px', width: '24px'}}/>
-                <Hidden mdDown>
-                    <Typography variant="h5">argon</Typography>
-                </Hidden>
-            </Box>
+        <Box component="section" sx={{padding: '30px 22px 40px', width: '265px', backgroundColor: '#fff', borderRadius: '0.625rem', boxShadow: theme.customShadows[0]}}>
+            <Link to='/' style={{textDecoration: 'none'}}>
+                <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem'}}>
+                    <img src={LogoImg} alt="logo" style={{height: '24px', width: '24px'}}/>
+                    <Hidden mdDown>
+                        <Typography variant="h5" sx={{color: theme.palette.neutral.main}}>argon</Typography>
+                    </Hidden>
+                </Box>
+            </Link>
 
             <Box sx={{marginTop: '10px'}}>
                 <img src={LineImg} alt="divider" style={{width: '100%', height: '1px'}}/>
