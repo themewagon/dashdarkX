@@ -13,7 +13,7 @@ const MainLayout = ({children}: LayoutProps) => {
     return (
         <Box sx={{margin: '0 auto', padding: '30px 20px', display: 'flex', gap: '20px', width: '100%', maxWidth: '1920px', height: 'auto', minHeight: '100vh', backgroundColor: theme.palette.action.hover}}>
             <Sidebar/>
-            <Box sx={{width: 'calc(100%-265px)'}}>
+            <Box sx={{width: '100%'}}>
                 <Topbar/>
                 {children}
             </Box>
