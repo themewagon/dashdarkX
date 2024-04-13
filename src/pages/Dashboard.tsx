@@ -1,5 +1,6 @@
-import { Box, Grid } from "@mui/material";
+import { Typography, Box, Grid, useTheme } from "@mui/material";
 import FirstCard from "components/FirstCard";
+import LineChart from "components/LineChart";
 
 const firstCardData = [
     {
@@ -29,6 +30,8 @@ const firstCardData = [
 ];
 
 const Dashboard = () => {
+    const theme = useTheme();
+
     return (
         <Box sx={{width: '100%', height: '500px'}}>
             <Grid container spacing={2}>
@@ -37,6 +40,17 @@ const Dashboard = () => {
                         <FirstCard title={item.title} value={item.value} rate={item.rate} icon={item.icon}/>
                     </Grid>
                 })}
+            </Grid>
+
+            <Grid container spacing={2} sx={{marginTop: '5px'}}>
+                <Grid item lg={8}>
+                    <LineChart/>
+                </Grid>
+                <Grid item lg={4}>
+                    <Box sx={{backgroundColor: '#fff', borderRadius: '20px', boxShadow: theme.customShadows[0]}}>
+                        <Typography variant="h1">Box2</Typography>
+                    </Box>
+                </Grid>
             </Grid>
         </Box>
     );
