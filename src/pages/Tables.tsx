@@ -1,8 +1,8 @@
+import { Typography } from '@mui/material';
+
 const Tables = () => {
     return (
-        <div>
-            <h1>Tables</h1>
-        </div>
+        <Typography variant="h1">Tables</Typography>
     );
 }
 

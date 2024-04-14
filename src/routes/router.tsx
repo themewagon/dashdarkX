@@ -3,6 +3,8 @@ import Dashboard from "pages/Dashboard";
 import App from "App";
 import Tables from "pages/Tables";
 import MainLayout from "layouts/MainLayout";
+import Billing from "pages/Billing";
+import Rtl from "pages/Rtl";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +24,22 @@ const router = createBrowserRouter([
                 element: (
                     <MainLayout>
                         <Tables/>
+                    </MainLayout>
+                )
+            },
+            {
+                path: "/billing",
+                element: (
+                    <MainLayout>
+                        <Billing/>
+                    </MainLayout>
+                )
+            },
+            {
+                path: "/rtl",
+                element: (
+                    <MainLayout>
+                        <Rtl/>
                     </MainLayout>
                 )
             }
