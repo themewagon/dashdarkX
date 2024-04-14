@@ -1,9 +1,12 @@
-import { Box, useTheme } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import ReactECharts from 'echarts-for-react';
+import { graphic } from 'echarts';
+
 
 const LineChart = () => {
     const theme = useTheme();
-    const colors = ['#5470C6', '#EE6666'];
+    const colors = ['#3182CE', '#151928'];
+
     const option = {
         color: colors,
         tooltip: {
@@ -13,8 +16,10 @@ const LineChart = () => {
             }
         },
         grid: {
-            top: 70,
-            bottom: 50
+            top: 40,
+            bottom: 50,
+            left: 30,
+            right: 5
         },
         xAxis: [
             {
@@ -29,53 +34,69 @@ const LineChart = () => {
                     }
                 },
                 // prettier-ignore
-                data: ['2016-1', '2016-2', '2016-3', '2016-4', '2016-5', '2016-6', '2016-7', '2016-8', '2016-9', '2016-10', '2016-11', '2016-12']
+                data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
             },
             {
-            type: 'category',
-            show: false,
+                type: 'category',
+                show: false,
             }
         ],
         yAxis: [
             {
-            type: 'value'
+                type: 'value',
+                interval: 100,
+                max: 500
             }
         ],
         series: [
             {
-            name: 'Precipitation(2015)',
-            type: 'line',
-            xAxisIndex: 1,
-            smooth: true,
-            emphasis: {
-                focus: 'series'
-            },
-            data: [
-                2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3
-            ]
+                name: 'Precipitation(2015)',
+                type: 'line',
+                xAxisIndex: 1,
+                smooth: true,
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [
+                    500, 170, 200, 280, 230, 220, 240, 210, 120, 130, 170, 130
+                ],
+                areaStyle: {
+                    // Define gradient for the area shadow
+                    color: new graphic.LinearGradient(0, 0, 0, 1, [
+                        {
+                          offset: 0,
+                          color: 'rgba(2, 213, 202, 0.4)'
+                        },
+                        {
+                          offset: 1,
+                          color: 'rgba(43, 168, 162, 0)'
+                        }])
+                },
             },
             {
-            name: 'Precipitation(2016)',
-            type: 'line',
-            smooth: true,
-            emphasis: {
-                focus: 'series'
-            },
-            data: [
-                3.9, 5.9, 11.1, 18.7, 48.3, 69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7
-            ]
+                name: 'Precipitation(2016)',
+                type: 'line',
+                smooth: true,
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [
+                    190, 230, 220, 350, 345, 440, 430, 300, 330, 270, 250, 430
+                ]
             }
         ]
     };
 
     
     return (
-        <Box sx={{height: '490px', backgroundColor: '#fff', borderRadius: '20px', boxShadow: theme.customShadows[0]}}>
+        <Box sx={{padding: '28px 20px 20px', height: '490px', backgroundColor: '#fff', borderRadius: '20px', boxShadow: theme.customShadows[0]}}>
+            <Typography variant="h6" sx={{display: 'inline-block', background: "linear-gradient(81.62deg, #313860 2.25%, #151928 79.87%)", WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Sales overview</Typography>
+            <Typography variant="subtitle2" component="p" sx={{marginTop: '6px', color: theme.palette.neutral.light}}><Typography variant="subtitle2" component="span" sx={{color: theme.palette.success.light}}>(+5) more</Typography> in 2021</Typography>
             <ReactECharts
                 option={option}
                 notMerge={true}
                 lazyUpdate={true}
-                style={{height: '100%', width: '100%'}}
+                style={{height: '94%', width: '100%'}}
             />
         </Box>
     );
