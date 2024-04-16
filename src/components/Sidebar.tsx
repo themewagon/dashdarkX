@@ -87,8 +87,8 @@ const Sidebar = () => {
                 <Typography variant="body2" sx={{color: theme.palette.neutral.light, fontWeight: 700, textAlign: 'center'}}>Need Help?</Typography>
                 <Typography variant="subtitle1" sx={{color: theme.palette.action.active, fontSize: '0.75rem', textAlign: 'center'}}>Please check our docs</Typography>
                 <Box sx={{marginTop: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px'}}>
-                    <Button sx={{width: '186px', backgroundColor: theme.palette.secondary.main, '&:hover': {backgroundColor: theme.palette.secondary.main}}}>Documentation</Button>
-                    <Button sx={{width: '186px', backgroundColor: theme.palette.neutral.light, '&:hover': {backgroundColor: theme.palette.neutral.light}}}>Upgrade to pro</Button>
+                    <Button color="primary" size="medium">Documentation</Button>
+                    <Button color="secondary" size="medium">Upgrade to pro</Button>
                 </Box>
             </Box>
         </Box>

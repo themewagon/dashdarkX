@@ -6,12 +6,26 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
         disableElevation: true,
     },
     styleOverrides: {
-        root: {
-            color: '#fff',
-            padding: '0px 8px',
+        root: ({ theme, ownerState }) => ({
+            color: theme.palette.neutral.contrastText,
+            fontSize: '10px',
+            fontWeight: 700,
+            borderRadius: '8px',
+            backgroundColor: ownerState.color === 'primary' ? 
+                            theme.palette.primary.main : theme.palette.neutral.light,
+            '&:hover': {
+                backgroundColor: ownerState.color === 'primary' ? 
+                            theme.palette.primary.main : theme.palette.neutral.light,
+            }
+        }),
+        sizeMedium: {
             height: '35px',
-            borderRadius: '8px'
+            width: '186px'
         },
+        sizeSmall: {
+            height: '28px',
+            width: '70px'
+        }
     },
 }
 

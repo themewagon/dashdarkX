@@ -33,21 +33,21 @@ const palette: PaletteOptions = {
         main: grey[800],
         dark: grey[900],
         darker: grey[900],
-        contrastText: '#ffffff',
+        contrastText: '#fff',
     },
     primary: {
-        lighter: teal[50],
-        light: teal[400],
-        main: teal[500],
-        dark: teal[600],
-        darker: teal[900],
-    },
-    secondary: {
         lighter: blue[50],
         light: blue[300],
         main: blue[500],
         dark: blue[700],
         darker: blue[900],
+    },
+    secondary: {
+        lighter: teal[50],
+        light: teal[400],
+        main: teal[500],
+        dark: teal[600],
+        darker: teal[900],
     },
     error: { 
         lighter: red[50],
@@ -62,7 +62,7 @@ const palette: PaletteOptions = {
         main: orange[500],
         dark: orange[700],
         darker: orange[900],
-        contrastText: '#ffffff',
+        contrastText: '#fff',
     },
     success: {
         lighter: green[50],
@@ -77,7 +77,7 @@ const palette: PaletteOptions = {
         main: cyan[500],
         dark: cyan[700],
         darker: cyan[900],
-        contrastText: '#ffffff',
+        contrastText: '#fff',
     },
     grey,
     text: {
