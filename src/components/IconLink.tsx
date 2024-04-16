@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { ListItemButton, useTheme, ListItemIcon, ListItemText } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import { Icon } from '@iconify/react';
 
@@ -16,12 +16,12 @@ const IconLink = (props: pathType) => {
 
     return (
         <Link to={`/${path}`} style={{textDecoration: 'none'}}>
-            <Box sx={{padding: '0 1rem', width: '100%', height: '54px', borderRadius: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', boxShadow: `${isActivePath ? theme.customShadows[0] : null}`}}>
-                <Box sx={{width: '30px', height: '30px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: `${isActivePath ? theme.palette.secondary.main : null}`}}>
-                    <Icon icon={`ion:${icon}`} style={{color: `${isActivePath ? '#fff' : theme.palette.secondary.main}`, fontSize: '1rem'}}/>
-                </Box>
-                <Typography variant="caption" sx={{color: `${isActivePath ? theme.palette.neutral.light : theme.palette.action.disabled}`}}>{name}</Typography>
-            </Box>
+            <ListItemButton sx={{boxShadow: `${isActivePath ? theme.customShadows[0] : null}`}}>
+                <ListItemIcon sx={{backgroundColor: `${isActivePath ? theme.palette.primary.main : null}`}}>
+                    <Icon icon={`ion:${icon}`} style={{color: `${isActivePath ? '#fff' : theme.palette.primary.main}`, fontSize: '1rem'}}/>
+                </ListItemIcon>
+                <ListItemText>{name}</ListItemText>
+            </ListItemButton>
         </Link>
     );
 }
