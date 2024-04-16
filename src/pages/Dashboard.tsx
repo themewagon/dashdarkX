@@ -34,7 +34,7 @@ const firstCardData = [
 
 const Dashboard = () => {
     return (
-        <Box sx={{width: '100%', height: '500px'}}>
+        <Box sx={{width: '100%', height: 'auto'}}>
             <Grid container spacing={2}>
                 {firstCardData.map((item) => {
                     return <Grid item lg={3}>
