@@ -8,7 +8,8 @@ interface firstCardProps {
     icon: string
 }
 
-const FirstCard = ({title, value, rate, icon}: firstCardProps) => {
+const FirstCard = (props: firstCardProps) => {
+    const {title, value, rate, icon} = props;
     const theme = useTheme();
 
     return (
