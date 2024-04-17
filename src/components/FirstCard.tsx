@@ -1,4 +1,4 @@
-import { Box, useTheme, Typography, Paper } from "@mui/material";
+import { Box, Paper, Typography, useTheme } from "@mui/material";
 import { Icon } from '@iconify/react';
 
 interface firstCardProps {
