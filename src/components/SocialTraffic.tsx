@@ -7,7 +7,7 @@ const SocialTraffic = () => {
         <TableContainer component={Paper} sx={{borderRadius: '20px', boxShadow: theme.customShadows[0]}}>
             <Box sx={{padding: '24px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
                 <Typography variant="h6">Page visits</Typography>
-                <Button variant="contained" sx={{height: '28px', width: '70px', background: theme.palette.secondary.main}}>SEE ALL</Button>
+                <Button variant="contained" size="small" color="primary">SEE ALL</Button>
             </Box>
             
             <Table>
