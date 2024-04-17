@@ -1,6 +1,6 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Box, Typography, Button, useTheme } from '@mui/material';
 
-const PageVisits = () => {
+const SocialTrafficTable = () => {
     const theme = useTheme();
 
     return (
@@ -19,12 +19,7 @@ const PageVisits = () => {
                         <TableCell>
                             <Typography variant="button" sx={{color: '#A0AEC0'}}>VISITORS</Typography>
                         </TableCell>
-                        <TableCell>
-                            <Typography variant="button" sx={{color: '#A0AEC0'}}>UNIQUE USERS</Typography>
-                        </TableCell>
-                        <TableCell>
-                            <Typography variant="button" sx={{color: '#A0AEC0'}}>BOUNCE RATE</Typography>
-                        </TableCell>
+                        <TableCell></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -32,31 +27,26 @@ const PageVisits = () => {
                         <TableCell>Row 1, Cell 1</TableCell>
                         <TableCell>Row 1, Cell 2</TableCell>
                         <TableCell>Row 1, Cell 3</TableCell>
-                        <TableCell>Row 1, Cell 4</TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell>Row 2, Cell 1</TableCell>
                         <TableCell>Row 2, Cell 2</TableCell>
                         <TableCell>Row 2, Cell 3</TableCell>
-                        <TableCell>Row 2, Cell 4</TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell>Row 2, Cell 1</TableCell>
                         <TableCell>Row 2, Cell 2</TableCell>
                         <TableCell>Row 2, Cell 3</TableCell>
-                        <TableCell>Row 2, Cell 4</TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell>Row 2, Cell 1</TableCell>
                         <TableCell>Row 2, Cell 2</TableCell>
                         <TableCell>Row 2, Cell 3</TableCell>
-                        <TableCell>Row 2, Cell 4</TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell>Row 2, Cell 1</TableCell>
                         <TableCell>Row 2, Cell 2</TableCell>
                         <TableCell>Row 2, Cell 3</TableCell>
-                        <TableCell>Row 2, Cell 4</TableCell>
                     </TableRow>
                 </TableBody>
             </Table>
@@ -64,4 +54,4 @@ const PageVisits = () => {
     );
 }
 
-export default PageVisits;
+export default SocialTrafficTable;

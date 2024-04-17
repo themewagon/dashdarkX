@@ -2,7 +2,6 @@ import { Box, Typography, useTheme } from '@mui/material';
 import ReactECharts from 'echarts-for-react';
 import { graphic } from 'echarts';
 
-
 const LineChart = () => {
     const theme = useTheme();
     const colors = ['#3182CE', '#151928'];

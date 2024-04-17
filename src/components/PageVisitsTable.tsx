@@ -1,6 +1,6 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Box, Typography, Button, useTheme } from '@mui/material';
 
-const SocialTraffic = () => {
+const PageVisitsTable = () => {
     const theme = useTheme();
 
     return (
@@ -19,7 +19,12 @@ const SocialTraffic = () => {
                         <TableCell>
                             <Typography variant="button" sx={{color: '#A0AEC0'}}>VISITORS</Typography>
                         </TableCell>
-                        <TableCell></TableCell>
+                        <TableCell>
+                            <Typography variant="button" sx={{color: '#A0AEC0'}}>UNIQUE USERS</Typography>
+                        </TableCell>
+                        <TableCell>
+                            <Typography variant="button" sx={{color: '#A0AEC0'}}>BOUNCE RATE</Typography>
+                        </TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -27,26 +32,31 @@ const SocialTraffic = () => {
                         <TableCell>Row 1, Cell 1</TableCell>
                         <TableCell>Row 1, Cell 2</TableCell>
                         <TableCell>Row 1, Cell 3</TableCell>
+                        <TableCell>Row 1, Cell 4</TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell>Row 2, Cell 1</TableCell>
                         <TableCell>Row 2, Cell 2</TableCell>
                         <TableCell>Row 2, Cell 3</TableCell>
+                        <TableCell>Row 2, Cell 4</TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell>Row 2, Cell 1</TableCell>
                         <TableCell>Row 2, Cell 2</TableCell>
                         <TableCell>Row 2, Cell 3</TableCell>
+                        <TableCell>Row 2, Cell 4</TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell>Row 2, Cell 1</TableCell>
                         <TableCell>Row 2, Cell 2</TableCell>
                         <TableCell>Row 2, Cell 3</TableCell>
+                        <TableCell>Row 2, Cell 4</TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell>Row 2, Cell 1</TableCell>
                         <TableCell>Row 2, Cell 2</TableCell>
                         <TableCell>Row 2, Cell 3</TableCell>
+                        <TableCell>Row 2, Cell 4</TableCell>
                     </TableRow>
                 </TableBody>
             </Table>
@@ -54,4 +64,4 @@ const SocialTraffic = () => {
     );
 }
 
-export default SocialTraffic;
+export default PageVisitsTable;

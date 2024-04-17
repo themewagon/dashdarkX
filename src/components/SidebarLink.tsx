@@ -8,7 +8,7 @@ interface pathType {
     icon: string
 }
 
-const IconLink = (props: pathType) => {
+const SidebarLink = (props: pathType) => {
     const {name, path, icon} = props;
     const theme = useTheme();
     // If (given path == current path) then the path is active, otherwise not
@@ -26,4 +26,4 @@ const IconLink = (props: pathType) => {
     );
 }
 
-export default IconLink;
+export default SidebarLink;

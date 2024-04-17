@@ -1,6 +1,6 @@
 import { Box, useTheme } from "@mui/material";
-import Sidebar from "components/Sidebar";
-import Topbar from "components/Topbar";
+import Sidebar from "sections/Sidebar";
+import Topbar from "sections/Topbar";
 import { ReactNode } from "react";
 
 interface LayoutProps {

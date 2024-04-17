@@ -1,10 +1,10 @@
 import { Box, Stack, Hidden, Typography, useTheme, Button, Paper, ListItemButton } from "@mui/material";
+import SidebarLink from "components/SidebarLink";
+import { Link } from "react-router-dom";
 
 import LogoImg from "assets/images/logo.svg";
 import LineImg from "assets/images/line.svg";
 import docImg from "assets/images/document.svg";
-import IconLink from "./IconLink";
-import { Link } from "react-router-dom";
 
 const navLinks = [
     {
@@ -69,7 +69,7 @@ const Sidebar = () => {
                 <Stack direction="column" sx={{marginTop: '22px'}}>
                     {
                         navLinks.map((item, index) => {
-                            return <IconLink key={index} path={item.path} name={item.name} icon={item.icon}/>
+                            return <SidebarLink key={index} path={item.path} name={item.name} icon={item.icon}/>
                         })
                     }
                 </Stack>
@@ -78,7 +78,7 @@ const Sidebar = () => {
                     <Typography variant="caption" sx={{margin: '0 0 1rem 1rem', color: theme.palette.neutral.light, textTransform: 'uppercase'}}>Account Pages</Typography>
                     {
                         accountLinks.map((item, index) => {
-                            return <IconLink key={index} path={item.path} name={item.name} icon={item.icon}/>
+                            return <SidebarLink key={index} path={item.path} name={item.name} icon={item.icon}/>
                         })
                     }
                 </Stack>
