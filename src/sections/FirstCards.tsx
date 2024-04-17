@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import FirstCard from "components/FirstCard";
 
-const firstCardData = [
+const firstCardsData = [
     {
         title: 'TODAY’S MONEY',
         value: '$53,897',
@@ -31,7 +31,7 @@ const firstCardData = [
 const FirstCards = () => {
     return (
         <Grid container spacing={2}>
-            {firstCardData.map((item) => {
+            {firstCardsData.map((item) => {
                 return <Grid item lg={3}>
                     <FirstCard title={item.title} value={item.value} rate={item.rate} icon={item.icon}/>
                 </Grid>
