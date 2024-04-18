@@ -1,6 +1,6 @@
 import { Box, Stack, Typography, Button, ListItemButton, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
-import SidebarLink from "components/SidebarLink";
+import SidebarLink from "layouts/sidebar/SidebarLink";
 
 import LogoImg from "assets/images/logo.svg";
 import LineImg from "assets/images/line.svg";
