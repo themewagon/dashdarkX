@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Paper, Typography, useTheme } from '@mui/material';
 import ReactECharts from 'echarts-for-react';
 import { graphic } from 'echarts';
 
@@ -16,40 +16,64 @@ const LineChart = () => {
         },
         grid: {
             top: 40,
-            bottom: 50,
-            left: 30,
-            right: 5
+            bottom: 100,
+            left: 44,
+            right: 4
         },
         xAxis: [
             {
                 type: 'category',
                 axisTick: {
-                    alignWithLabel: true,
+                    show: false
                 },
                 axisLine: {
                     onZero: false,
+                    show: false,
                     lineStyle: {
-                        color: colors[1]
+                        color: colors[1],
                     }
                 },
                 // prettier-ignore
-                data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                axisLabel: {
+                    color: '#151928',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    margin: 28,
+                    padding: [0, 16, 0, 0],
+                },
+                boundaryGap: false,
             },
             {
                 type: 'category',
-                show: false,
+                boundaryGap: false,
+                show: false
             }
         ],
         yAxis: [
             {
                 type: 'value',
                 interval: 100,
-                max: 500
-            }
+                max: 500,
+                axisLabel: {
+                    color: '#151928',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    margin: 20
+                },
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        type: 'dashed',
+                        width: 1,
+                        color: '#E2E8F0'
+                    }
+                }
+            },
         ],
         series: [
             {
-                name: 'Precipitation(2015)',
+                name: 'Precipitation(2020)',
                 type: 'line',
                 xAxisIndex: 1,
                 smooth: true,
@@ -57,8 +81,9 @@ const LineChart = () => {
                     focus: 'series'
                 },
                 data: [
-                    500, 170, 200, 280, 230, 220, 240, 210, 120, 130, 170, 130
+                    500, 170, 200, 280, 230, 220, 240, 210, 100, 140, 180, 130
                 ],
+                showSymbol: false,
                 areaStyle: {
                     // Define gradient for the area shadow
                     color: new graphic.LinearGradient(0, 0, 0, 1, [
@@ -69,34 +94,33 @@ const LineChart = () => {
                         {
                           offset: 1,
                           color: 'rgba(43, 168, 162, 0)'
-                        }])
+                        }
+                    ])
                 },
             },
             {
-                name: 'Precipitation(2016)',
+                name: 'Precipitation(2021)',
                 type: 'line',
                 smooth: true,
                 emphasis: {
                     focus: 'series'
                 },
                 data: [
-                    190, 230, 220, 350, 345, 440, 430, 300, 330, 270, 250, 430
-                ]
+                    190, 280, 250, 370, 380, 470, 400, 300, 360, 220, 390, 430
+                ],
+                showSymbol: false,
             }
         ]
     };
 
     
     return (
-        <Box sx={{padding: '28px 20px 20px', height: '490px', backgroundColor: '#fff', borderRadius: '20px', boxShadow: theme.customShadows[0]}}>
-            <Typography variant="h6" sx={{display: 'inline-block', background: "linear-gradient(81.62deg, #313860 2.25%, #151928 79.87%)", WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Sales overview</Typography>
-            <Typography variant="subtitle2" component="p" sx={{marginTop: '6px', color: theme.palette.neutral.light}}><Typography variant="subtitle2" component="span" sx={{color: theme.palette.success.light}}>(+5) more</Typography> in 2021</Typography>
-            <ReactECharts
-                option={option}
-                notMerge={true}
-                lazyUpdate={true}
-                style={{height: '94%', width: '100%'}}
-            />
+        <Box component={Paper} sx={{height: '490px'}}>
+            <Typography variant="h6" sx={{background: "linear-gradient(81.62deg, #313860 2.25%, #151928 79.87%)", WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}} gutterBottom>Sales overview</Typography>
+            <Typography variant="subtitle2" component="p" sx={{color: theme.palette.neutral.light}}>
+                <Typography variant="subtitle2" component="span" sx={{color: theme.palette.success.light, fontWeight: 700}}>(+5) more</Typography> in 2021
+            </Typography>
+            <ReactECharts option={option} notMerge={true} lazyUpdate={true} style={{height: '100%', width: '100%'}}/>
         </Box>
     );
 }
