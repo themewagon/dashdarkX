@@ -41,7 +41,7 @@ const BarChart = () => {
                 barWidth: '14%',
                 itemStyle: {
                     color: '#ED8936',
-                    barBorderRadius: [50, 50, 50, 50]
+                    borderRadius: [50, 50, 50, 50]
                 },
                 data: [24, 20, 30, 22, 18, 29]
             }
