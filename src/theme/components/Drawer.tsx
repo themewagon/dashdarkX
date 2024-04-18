@@ -10,7 +10,7 @@ const Drawer: Components<Omit<Theme, 'components'>>['MuiDrawer'] = {
                 height: 'calc(100vh - 60px)',
                 boxSizing: 'border-box',
                 borderRight: 'none',
-                maxHeight: '920px',
+                maxHeight: '910px',
             },
 
             '& .css-4kho5a-MuiPaper-root-MuiDrawer-paper': {
@@ -20,7 +20,7 @@ const Drawer: Components<Omit<Theme, 'components'>>['MuiDrawer'] = {
                 height: 'calc(100vh - 60px)',
                 boxSizing: 'border-box',
                 borderRight: 'none',
-                maxHeight: '920px',
+                maxHeight: '910px',
             }
         }
     },

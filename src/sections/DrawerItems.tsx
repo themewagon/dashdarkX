@@ -54,14 +54,12 @@ const DrawerItems = () => {
         <>
         <Link to='/' style={{textDecoration: 'none'}}>
             <ListItemButton sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                <img src={LogoImg} alt="logo" style={{marginRight: '0.5rem', height: '1.5rem', width: '1.5rem'}}/>
+                <Box component="img" src={LogoImg} alt="logo" style={{marginRight: '0.5rem', height: '1.5rem', width: '1.5rem'}}/>
                 <Typography variant="h5" color={theme.palette.neutral.main}>argon</Typography>
             </ListItemButton>
         </Link>
 
-        <Box>
-            <img src={LineImg} alt="divider" style={{width: '100%', height: '1px'}}/>
-        </Box>
+        <Box component="img" src={LineImg} alt="divider" sx={{marginTop: '0.6rem', width: '100%', height: '1px'}}/>
 
         <Stack direction="column" sx={{marginTop: '1.375rem'}}>
             {navLinks.map((item, index) => {
@@ -77,9 +75,9 @@ const DrawerItems = () => {
         </Stack>
 
         <Box sx={{marginTop: '3rem', paddingBottom: '1.25rem'}}>
-            <img src={DocImg} alt="document" style={{height: '7.313rem', width: '100%'}}/>
-            <Typography variant="body2" sx={{color: theme.palette.neutral.light, fontWeight: 700, textAlign: 'center'}}>Need Help?</Typography>
-            <Typography variant="subtitle1" sx={{color: theme.palette.action.active, fontSize: '0.75rem', textAlign: 'center'}}>Please check our docs</Typography>
+            <Box component="img" src={DocImg} alt="document" style={{height: '7.313rem', width: '100%'}}/>
+            <Typography variant="body2" align="center" sx={{color: theme.palette.neutral.light, fontWeight: 700}}>Need Help?</Typography>
+            <Typography variant="subtitle1" align="center" sx={{color: theme.palette.action.active, fontSize: '0.75rem'}}>Please check our docs</Typography>
             <Box sx={{marginTop: '1.25rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.25rem'}}>
                 <Button color="primary" size="medium">Documentation</Button>
                 <Button color="secondary" size="medium">Upgrade to pro</Button>
