@@ -7,6 +7,7 @@ import customShadows from './shadows';
 import ListItemButton from './components/ListItemButton';
 import ListItemIcon from './components/ListItemIcon';
 import ListItemText from './components/ListItemText';
+import Drawer from './components/Drawer';
 
 export const theme = createTheme({
     typography,
@@ -16,7 +17,8 @@ export const theme = createTheme({
         MuiPaper: Paper,
         MuiListItemButton: ListItemButton,
         MuiListItemIcon: ListItemIcon,
-        MuiListItemText: ListItemText
+        MuiListItemText: ListItemText,
+        MuiDrawer: Drawer
     },
     customShadows
 });
