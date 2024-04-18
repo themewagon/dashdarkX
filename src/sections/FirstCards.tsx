@@ -31,8 +31,8 @@ const firstCardsData = [
 const FirstCards = () => {
     return (
         <Grid container spacing={2}>
-            {firstCardsData.map((item) => {
-                return <Grid item lg={3}>
+            {firstCardsData.map((item, index) => {
+                return <Grid item lg={3} key={index}>
                     <FirstCard title={item.title} value={item.value} rate={item.rate} icon={item.icon}/>
                 </Grid>
             })}
