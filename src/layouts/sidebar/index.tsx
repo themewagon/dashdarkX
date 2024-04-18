@@ -1,4 +1,4 @@
-import { Box, Drawer, Toolbar, IconButton } from "@mui/material";
+import { Drawer, Toolbar, IconButton } from "@mui/material";
 import { Icon } from '@iconify/react';
 import { useState } from "react";
 import DrawerItems from "./DrawerItems";
@@ -30,15 +30,13 @@ const Sidebar = () => {
                 </IconButton>
             </Toolbar>
             
-            <Box component="nav" sx={{ width: { sm: '265px' }, flexShrink: { sm: 0 } }} aria-label="sidebar content">
-                <Drawer variant="temporary" open={mobileOpen} onTransitionEnd={handleDrawerTransitionEnd} onClose={handleDrawerClose} ModalProps={{keepMounted: true}} sx={{display: {xs: 'block', sm: 'none'}}}>
-                    <DrawerItems/>
-                </Drawer>
+            <Drawer variant="temporary" open={mobileOpen} onTransitionEnd={handleDrawerTransitionEnd} onClose={handleDrawerClose} ModalProps={{keepMounted: true}} sx={{display: {xs: 'block', sm: 'none'}}}>
+                <DrawerItems/>
+            </Drawer>
 
-                <Drawer variant="permanent" sx={{display: { xs: 'none', sm: 'block' }, '& .MuiDrawer-paper': {position: 'sticky'}}} open>
-                    <DrawerItems/>
-                </Drawer>
-            </Box>
+            <Drawer variant="permanent" sx={{display: { xs: 'none', sm: 'block' }}} open>
+                <DrawerItems/>
+            </Drawer>
         </>
     );
 }
