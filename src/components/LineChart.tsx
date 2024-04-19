@@ -84,6 +84,9 @@ const LineChart = () => {
                     500, 170, 200, 280, 230, 220, 240, 210, 100, 140, 180, 130
                 ],
                 showSymbol: false,
+                lineStyle: {
+                    width: 3 // Change the width as needed
+                },
                 areaStyle: {
                     // Define gradient for the area shadow
                     color: new graphic.LinearGradient(0, 0, 0, 1, [
@@ -109,6 +112,9 @@ const LineChart = () => {
                     190, 280, 250, 370, 380, 470, 400, 300, 360, 220, 390, 430
                 ],
                 showSymbol: false,
+                lineStyle: {
+                    width: 3 // Change the width as needed
+                },
             }
         ]
     };
