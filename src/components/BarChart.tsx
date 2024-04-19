@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Paper, Typography, useTheme } from "@mui/material";
 import ReactECharts from 'echarts-for-react';
 
 const BarChart = () => {
@@ -12,10 +12,10 @@ const BarChart = () => {
             }
         },
         grid: {
-            top: '10%',
-            left: '3%',
+            top: '8%',
+            left: '1%',
             right: '4%',
-            bottom: '6%',
+            bottom: '13%',
             containLabel: true
         },
         xAxis: [
@@ -23,20 +23,44 @@ const BarChart = () => {
                 type: 'category',
                 data: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 axisTick: {
+                    show: false,
                     alignWithLabel: true
-                }
+                },
+                axisLine: {
+                    show: false
+                },
+                axisLabel: {
+                    color: '#A0AEC0',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    margin: 28,
+                },
             }
         ],
         yAxis: [
             {
                 type: 'value',
                 interval: 10,
-                max: 30
+                max: 30,
+                axisLabel: {
+                    color: '#A0AEC0',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    margin: 16
+                },
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        type: 'dashed',
+                        width: 1,
+                        color: '#E2E8F0'
+                    }
+                }
             }
         ],
         series: [
             {
-                name: 'Direct',
+                name: 'Sales',
                 type: 'bar',
                 barWidth: '14%',
                 itemStyle: {
@@ -49,14 +73,14 @@ const BarChart = () => {
     };
 
     return (
-        <Box sx={{padding: '28px 20px 20px', height: '490px', backgroundColor: '#fff', borderRadius: '20px', boxShadow: theme.customShadows[0]}}>
+        <Box component={Paper} sx={{height: '490px'}}>
             <Typography variant="caption" sx={{color: theme.palette.action.disabled}}>PERFORMANCE</Typography>
-            <Typography variant="h6" sx={{marginTop: '5px', color: theme.palette.neutral.light}}>Total orders</Typography>
+            <Typography variant="h6" sx={{marginTop: '2px', color: theme.palette.neutral.light}}>Total orders</Typography>
             <ReactECharts
                 option={option}
                 notMerge={true}
                 lazyUpdate={true}
-                style={{height: '94%', width: '100%'}}
+                style={{height: '100%', width: '100%'}}
             />
         </Box>
     );
