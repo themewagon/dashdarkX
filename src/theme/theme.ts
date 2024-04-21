@@ -8,6 +8,8 @@ import ListItemButton from './components/ListItemButton';
 import ListItemIcon from './components/ListItemIcon';
 import ListItemText from './components/ListItemText';
 import Drawer from './components/Drawer';
+import DataGrid from './components/DataGrid';
+import type {} from '@mui/x-data-grid/themeAugmentation';
 
 export const theme = createTheme({
     typography,
@@ -18,7 +20,8 @@ export const theme = createTheme({
         MuiListItemButton: ListItemButton,
         MuiListItemIcon: ListItemIcon,
         MuiListItemText: ListItemText,
-        MuiDrawer: Drawer
+        MuiDrawer: Drawer,
+        MuiDataGrid: DataGrid
     },
     customShadows
 });
