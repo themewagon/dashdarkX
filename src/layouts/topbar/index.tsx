@@ -1,9 +1,12 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import TopbarLeft from "./TopbarLeft";
+import TopbarRight from "./TopbarRight";
 
 const Topbar = () => {
     return (
-        <Box>
-            <Typography variant="subtitle1">Topbar</Typography>
+        <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+            <TopbarLeft/>
+            <TopbarRight/>
         </Box>
     );
 }

@@ -14,7 +14,7 @@ const MainLayout = ({children}: LayoutProps) => {
         <Box sx={{width: '100%', backgroundColor: theme.palette.action.hover}}>
             <Box sx={{margin: '0 auto', padding: '1.875rem 1.25rem', display: 'flex', gap: '1.25rem', width: '100%', maxWidth: '1920px', height: 'auto', minHeight: '100vh'}}>
                 <Sidebar/>
-                <Box component="main" sx={{flexGrow: 1, width: '100%'}}>
+                <Box component="main" sx={{display: 'flex', flexDirection: 'column', gap: '1.25rem', width: '100%'}}>
                     <Topbar/>
                     {children}
                 </Box>
