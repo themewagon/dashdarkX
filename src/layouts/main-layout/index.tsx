@@ -2,6 +2,7 @@ import { Box, useTheme } from "@mui/material";
 import { ReactNode } from "react";
 import Sidebar from "layouts/sidebar";
 import Topbar from "layouts/topbar";
+import Footer from "layouts/footer";
 
 interface LayoutProps {
     children: ReactNode
@@ -17,6 +18,7 @@ const MainLayout = ({children}: LayoutProps) => {
                 <Box component="main" sx={{display: 'flex', flexDirection: 'column', gap: '1.25rem', width: '100%'}}>
                     <Topbar/>
                     {children}
+                    <Footer/>
                 </Box>
             </Box>
         </Box>

@@ -1,16 +1,9 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
+import { Box, Avatar, Menu, MenuItem, Divider, IconButton, Tooltip, Typography, useTheme } from '@mui/material';
+import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
-import { Typography, useTheme } from '@mui/material';
 
 const TopbarRight = () => {
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const theme = useTheme();
     
@@ -48,7 +41,7 @@ const TopbarRight = () => {
                     elevation: 0,
                     sx: {
                         overflow: 'visible',
-                        mt: 1.5,
+                        // mt: 1.5,
                         '& .MuiAvatar-root': {
                             width: 32,
                             height: 32,
