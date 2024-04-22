@@ -1,47 +1,40 @@
-import { createBrowserRouter  } from "react-router-dom";
-import Dashboard from "pages/Dashboard";
-import App from "App";
+import { Outlet, createBrowserRouter  } from "react-router-dom";
 import MainLayout from "layouts/main-layout/index";
-import Tables from "pages/Tables";
+import Dashboard from "pages/Dashboard";
 import Billing from "pages/Billing";
+import Tables from "pages/Tables";
 import Rtl from "pages/Rtl";
+import App from "App";
 
 const router = createBrowserRouter([
     {
-        path: "/",
         element: <App/>,
         children: [
             {
                 path: "/",
                 element: (
                     <MainLayout>
-                        <Dashboard/>
+                        <Outlet/>
                     </MainLayout>
-                )
-            },
-            {
-                path: "/tables",
-                element: (
-                    <MainLayout>
-                        <Tables/>
-                    </MainLayout>
-                )
-            },
-            {
-                path: "/billing",
-                element: (
-                    <MainLayout>
-                        <Billing/>
-                    </MainLayout>
-                )
-            },
-            {
-                path: "/rtl",
-                element: (
-                    <MainLayout>
-                        <Rtl/>
-                    </MainLayout>
-                )
+                ),
+                children: [
+                    {
+                        index: true,
+                        element: <Dashboard/>
+                    },
+                    {
+                        path: '/tables',
+                        element: <Tables/>
+                    },
+                    {
+                        path: '/billing',
+                        element: <Billing/>
+                    },
+                    {
+                        path: '/rtl',
+                        element: <Rtl/>
+                    }
+                ]
             }
         ]
     }
