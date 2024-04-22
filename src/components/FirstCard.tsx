@@ -1,4 +1,7 @@
-import { Box, Paper, Typography, useTheme } from "@mui/material";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import { useTheme } from "@mui/material";
 import { Icon } from '@iconify/react';
 
 interface firstCardProps {
@@ -13,18 +16,18 @@ const FirstCard = (props: firstCardProps) => {
     const theme = useTheme();
 
     return (
-        <Box component={Paper} sx={{position: 'relative', height: '8.25rem', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+        <Box component={Paper} sx={{position: 'relative', height: 132, width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
             <Box>
-                <Typography variant="caption" sx={{color: theme.palette.action.disabled, textTransform: 'uppercase'}}>{title}</Typography><br/>
-                <Typography variant="h6" sx={{color: theme.palette.neutral.light}}>{value}</Typography>
+                <Typography variant="caption" color="grey.400" sx={{textTransform: 'uppercase'}}>{title}</Typography><br/>
+                <Typography variant="h6" color="grey.700">{value}</Typography>
             </Box>
         
-            <Box sx={{display: 'flex', alignItems: 'center', gap: '0.375rem'}}>
-                <Typography variant="subtitle2" sx={{color: (rate[0] === '-') ? theme.palette.error.main : theme.palette.success.light, fontWeight: 700}}>{rate}</Typography>
-                <Typography variant="body2" sx={{color: theme.palette.action.disabled}}>Since last month</Typography>
+            <Box sx={(theme) => ({display: 'flex', alignItems: 'center', gap: theme.spacing(0.75)})}>
+                <Typography variant="subtitle2" sx={(theme) => ({color: (rate[0] === '-') ? theme.palette.error.main : theme.palette.success.light, fontWeight: 700})}>{rate}</Typography>
+                <Typography variant="body2" color="grey.400">Since last month</Typography>
             </Box>
 
-            <Box sx={{position: 'absolute', top: '1.25rem', right: '1.25rem', height: '3rem', width: '3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: theme.palette.primary.main, borderRadius: '0.5rem'}}>
+            <Box sx={{position: 'absolute', top: 20, right: 20, height: 48, width: 48, display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: theme.palette.primary.main, borderRadius: 2}}>
                 <Icon icon={`ion:${icon}`} style={{color: '#fff', fontSize: '1.4rem'}}/>
             </Box>
         </Box>

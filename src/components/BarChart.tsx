@@ -1,9 +1,9 @@
-import { Box, Paper, Typography, useTheme } from "@mui/material";
 import ReactECharts from 'echarts-for-react';
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
 
 const BarChart = () => {
-    const theme = useTheme();
-
     const option = {
         tooltip: {
             trigger: 'axis',
@@ -73,9 +73,9 @@ const BarChart = () => {
     };
 
     return (
-        <Box component={Paper} sx={{height: '490px'}}>
-            <Typography variant="caption" sx={{color: theme.palette.action.disabled}}>PERFORMANCE</Typography>
-            <Typography variant="h6" sx={{marginTop: '2px', color: theme.palette.neutral.light}}>Total orders</Typography>
+        <Box component={Paper} sx={{height: 490}}>
+            <Typography variant="caption" color="grey.400" gutterBottom>PERFORMANCE</Typography>
+            <Typography variant="h6" color="grey.700">Total orders</Typography>
             <ReactECharts
                 option={option}
                 notMerge={true}

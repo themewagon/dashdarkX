@@ -1,9 +1,10 @@
-import { Box, Paper, Typography, useTheme } from '@mui/material';
 import ReactECharts from 'echarts-for-react';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 import { graphic } from 'echarts';
 
 const LineChart = () => {
-    const theme = useTheme();
     const colors = ['#3182CE', '#151928'];
 
     const option = {
@@ -23,6 +24,7 @@ const LineChart = () => {
         xAxis: [
             {
                 type: 'category',
+                data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 axisTick: {
                     show: false
                 },
@@ -33,8 +35,6 @@ const LineChart = () => {
                         color: colors[1],
                     }
                 },
-                // prettier-ignore
-                data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 axisLabel: {
                     color: '#151928',
                     fontSize: '12px',
@@ -121,10 +121,10 @@ const LineChart = () => {
 
     
     return (
-        <Box component={Paper} sx={{height: '490px'}}>
+        <Box component={Paper} sx={{height: 490}}>
             <Typography variant="h6" sx={{background: "linear-gradient(81.62deg, #313860 2.25%, #151928 79.87%)", WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}} gutterBottom>Sales overview</Typography>
-            <Typography variant="subtitle2" component="p" sx={{color: theme.palette.neutral.light}}>
-                <Typography variant="subtitle2" component="span" sx={{color: theme.palette.success.light, fontWeight: 700}}>(+5) more</Typography> in 2021
+            <Typography variant="subtitle2" component="p" color="grey.700">
+                <Typography variant="subtitle2" component="span" sx={(theme) => ({color: theme.palette.success.light, fontWeight: 700})}>(+5) more</Typography> in 2021
             </Typography>
             <ReactECharts option={option} notMerge={true} lazyUpdate={true} style={{height: '100%', width: '100%'}}/>
         </Box>
