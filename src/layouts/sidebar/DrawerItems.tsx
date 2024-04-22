@@ -1,12 +1,16 @@
-import { Box, Stack, Typography, Button, ListItemButton, useTheme } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import ListItemButton from "@mui/material/ListItemButton";
+
 import { Link } from "react-router-dom";
-import SidebarLink from "layouts/sidebar/SidebarLink";
+import SidebarLinks from "./SidebarLinks";
 
 import LogoImg from "assets/images/logo.svg";
 import LineImg from "assets/images/line.svg";
 import DocImg from "assets/images/document.svg";
 
-const navLinks = [
+const topNavLinks = [
     {
         name: 'Dahsboard',
         path: '',
@@ -29,7 +33,7 @@ const navLinks = [
     },
 ];
 
-const accountLinks = [
+const bottomNavLinks = [
     {
         name: 'Profile',
         path: 'profile',
@@ -48,37 +52,29 @@ const accountLinks = [
 ];
 
 const DrawerItems = () => {
-    const theme = useTheme();
-
     return (
         <>
+        {/* logo */}
         <Link to='/' style={{textDecoration: 'none'}}>
             <ListItemButton sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                <Box component="img" src={LogoImg} alt="logo" style={{marginRight: '0.5rem', height: '1.5rem', width: '1.5rem'}}/>
-                <Typography variant="h5" color={theme.palette.neutral.main}>argon</Typography>
+                <Box component="img" src={LogoImg} alt="logo" sx={(theme) => ({mr: theme.spacing(1), height: '1.5rem', width: '1.5rem'})}/>
+                <Typography variant="h5" color="grey.800">argon</Typography>
             </ListItemButton>
         </Link>
 
-        <Box component="img" src={LineImg} alt="divider" sx={{marginTop: '0.6rem', width: '100%', height: '1px'}}/>
+        {/* divider */}
+        <Box component="img" src={LineImg} alt="divider" sx={(theme) => ({mt: theme.spacing(1.2), width: '100%', height: '1px'})}/>
+        
+        {/* sidebar links */}
+        <SidebarLinks title="" navLinks={topNavLinks}/>
+        <SidebarLinks title="Account Pages" navLinks={bottomNavLinks}/>
 
-        <Stack direction="column" sx={{marginTop: '1.375rem'}}>
-            {navLinks.map((item, index) => {
-                return <SidebarLink key={index} path={item.path} name={item.name} icon={item.icon}/>
-            })}
-        </Stack>
-
-        <Stack direction="column" sx={{marginTop: '1.375rem'}}>
-            <Typography variant="caption" sx={{margin: '0 0 1rem 1rem', color: theme.palette.neutral.light, textTransform: 'uppercase'}}>Account Pages</Typography>
-            {accountLinks.map((item, index) => {
-                return <SidebarLink key={index} path={item.path} name={item.name} icon={item.icon}/>
-            })}
-        </Stack>
-
-        <Box sx={{marginTop: '3rem', paddingBottom: '1.25rem'}}>
+        {/* sidebar footer */}
+        <Box sx={(theme) => ({mt: theme.spacing(6), pb: theme.spacing(2.5)})}>
             <Box component="img" src={DocImg} alt="document" style={{height: '7.313rem', width: '100%'}}/>
-            <Typography variant="body2" align="center" sx={{color: theme.palette.neutral.light, fontWeight: 700}}>Need Help?</Typography>
-            <Typography variant="subtitle1" align="center" sx={{color: theme.palette.action.active, fontSize: '0.75rem'}}>Please check our docs</Typography>
-            <Box sx={{marginTop: '1.25rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.25rem'}}>
+            <Typography variant="body2" color="grey.700" align="center" sx={{fontWeight: 700}}>Need Help?</Typography>
+            <Typography variant="subtitle1" color="grey.500" align="center" sx={{fontSize: '0.75rem'}}>Please check our docs</Typography>
+            <Box sx={(theme) => ({mt: theme.spacing(2.5), display: 'flex', flexDirection: 'column', alignItems: 'center', gap: theme.spacing(2.5)})}>
                 <Button color="primary" size="medium">Documentation</Button>
                 <Button color="secondary" size="medium">Upgrade to pro</Button>
             </Box>

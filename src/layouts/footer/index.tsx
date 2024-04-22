@@ -1,12 +1,11 @@
-import { Typography, Link, useTheme } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
 
 const Footer = () => {
-    const theme = useTheme();
-
     return (
-        <Typography variant="caption" sx={{color: theme.palette.action.disabled, fontWeight: 500}}>@ 2021, Made with ❤️ by 
-            <Link href="#" sx={{color: theme.palette.primary.main, fontWeight: 700, textDecoration: 'none'}}> Creative Tim</Link> & 
-            <Link href="#" sx={{color: theme.palette.primary.main, fontWeight: 700, textDecoration: 'none'}}> Simmmple</Link> for a better web
+        <Typography variant="caption" sx={{color: 'grey.400', fontWeight: 500, textAlign: {xs: 'center', md: 'left'}}}>@ 2021, Made with ❤️ by 
+            <Link href="#" color="primary" sx={{fontWeight: 700, textDecoration: 'none'}}>&nbsp;Creative Tim</Link> & 
+            <Link href="#" color="primary" sx={{fontWeight: 700, textDecoration: 'none'}}>&nbsp;Simmmple</Link> for a better web
         </Typography>
     );
 }

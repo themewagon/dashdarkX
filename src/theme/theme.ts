@@ -10,6 +10,7 @@ import ListItemText from './components/ListItemText';
 import Drawer from './components/Drawer';
 import DataGrid from './components/DataGrid';
 import TextField from './components/TextField';
+import Toolbar from './components/Toolbar';
 import type {} from '@mui/x-data-grid/themeAugmentation';
 
 export const theme = createTheme({
@@ -23,7 +24,9 @@ export const theme = createTheme({
         MuiListItemText: ListItemText,
         MuiDrawer: Drawer,
         MuiDataGrid: DataGrid,
-        MuiTextField: TextField
+        MuiTextField: TextField,
+        MuiToolbar: Toolbar
     },
-    customShadows
+    customShadows,
+    spacing: 8,
 });

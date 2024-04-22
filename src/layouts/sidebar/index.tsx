@@ -1,12 +1,13 @@
-import { Drawer, Toolbar, IconButton } from "@mui/material";
-import { Icon } from '@iconify/react';
-import { useState } from "react";
+import Drawer from "@mui/material/Drawer";
 import DrawerItems from "./DrawerItems";
 
-const Sidebar = () => {
-    const [mobileOpen, setMobileOpen] = useState(false);
-    const [isClosing, setIsClosing] = useState(false);
+interface SidebarProps {
+    mobileOpen: boolean;
+    setMobileOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsClosing: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
+const Sidebar = ({ mobileOpen, setMobileOpen, setIsClosing}: SidebarProps) => {
     const handleDrawerClose = () => {
         setIsClosing(true);
         setMobileOpen(false);
@@ -16,25 +17,13 @@ const Sidebar = () => {
         setIsClosing(false);
     };
 
-    const handleDrawerToggle = () => {
-        if (!isClosing) {
-          setMobileOpen(!mobileOpen);
-        }
-    };
-
     return (
         <>
-            <Toolbar sx={{position: 'fixed', top: 0, left: 0}}>
-                <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleDrawerToggle} sx={{ mr: 2, display: { sm: 'none' }}}>
-                    <Icon icon={`ion:menu`}/>
-                </IconButton>
-            </Toolbar>
-            
-            <Drawer variant="temporary" open={mobileOpen} onTransitionEnd={handleDrawerTransitionEnd} onClose={handleDrawerClose} ModalProps={{keepMounted: true}} sx={{display: {xs: 'block', sm: 'none'}}}>
+            <Drawer variant="temporary" open={mobileOpen} onTransitionEnd={handleDrawerTransitionEnd} onClose={handleDrawerClose} ModalProps={{keepMounted: true}} sx={{display: {xs: 'block', lg: 'none'}}}>
                 <DrawerItems/>
             </Drawer>
 
-            <Drawer variant="permanent" sx={{display: { xs: 'none', sm: 'block' }}} open>
+            <Drawer variant="permanent" sx={{display: {lg: 'block', xs: 'none'}}} open>
                 <DrawerItems/>
             </Drawer>
         </>

@@ -1,5 +1,5 @@
-import { Box, useTheme } from "@mui/material";
-import { ReactNode } from "react";
+import { useState, ReactNode } from 'react';
+import Box from "@mui/material/Box";
 import Sidebar from "layouts/sidebar";
 import Topbar from "layouts/topbar";
 import Footer from "layouts/footer";
@@ -9,14 +9,15 @@ interface LayoutProps {
 }
 
 const MainLayout = ({children}: LayoutProps) => {
-    const theme = useTheme();
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const [isClosing, setIsClosing] = useState(false);
 
     return (
-        <Box sx={{width: '100%', backgroundColor: theme.palette.action.hover}}>
-            <Box sx={{margin: '0 auto', padding: '1.875rem 1.25rem', display: 'flex', gap: '1.25rem', width: '100%', maxWidth: '1920px', height: 'auto', minHeight: '100vh'}}>
-                <Sidebar/>
-                <Box component="main" sx={{display: 'flex', flexDirection: 'column', gap: '1.25rem', width: '100%'}}>
-                    <Topbar/>
+        <Box sx={{width: '100%', bgcolor: 'grey.50'}}>
+            <Box sx={(theme) => ({mx: 'auto', px: theme.spacing(2.5), py: theme.spacing(3.5), display: 'flex', gap: theme.spacing(2.5), width: '100%', maxWidth: '1920px', height: 'auto', minHeight: '100vh'})}>
+                <Sidebar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} setIsClosing={setIsClosing}/>
+                <Box component="main" sx={(theme) => ({display: 'flex', flexDirection: 'column', gap: theme.spacing(2.5), width: '100%'})}>
+                    <Topbar isClosing={isClosing} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen}/>
                     {children}
                     <Footer/>
                 </Box>
