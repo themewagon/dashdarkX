@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Icon } from '@iconify/react';
 
 const TopbarRight = () => {
@@ -39,11 +39,11 @@ const TopbarRight = () => {
                 <Tooltip title="Profile">
                     <IconButton 
                         onClick={handleClick} 
-                        size="large" 
+                        size="small"
                         aria-controls={open ? 'account-menu' : undefined} 
                         aria-expanded={open ? 'true' : undefined}
                         aria-haspopup="true">
-                        <Avatar sx={(theme) => ({ width: 36, height: 36, bgcolor: theme.palette.primary.main })}>M</Avatar>
+                        <Avatar sx={(theme) => ({ width: 32, height: 32, bgcolor: theme.palette.primary.main })}>M</Avatar>
                     </IconButton>
                 </Tooltip>
             </Box>
@@ -56,7 +56,7 @@ const TopbarRight = () => {
                 PaperProps={{
                     elevation: 0,
                     sx: {
-                        overflow: 'visible',
+                        // overflow: 'hidden',
                         mt: 1.5,
                         '& .MuiAvatar-root': {
                             width: 32,
@@ -69,7 +69,7 @@ const TopbarRight = () => {
                             display: 'block',
                             position: 'absolute',
                             top: 0,
-                            right: 14,
+                            right: 0,
                             width: 10,
                             height: 10,
                             bgcolor: '#fff',

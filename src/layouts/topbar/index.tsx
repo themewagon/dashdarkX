@@ -10,7 +10,7 @@ interface TopbarProps {
 
 const Topbar = ({isClosing, mobileOpen, setMobileOpen}: TopbarProps) => {
     return (
-        <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+        <Box sx={{p: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
             <TopbarLeft isClosing={isClosing} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen}/>
             <TopbarRight/>
         </Box>

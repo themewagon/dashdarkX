@@ -19,7 +19,7 @@ const TopbarLeft = ({isClosing, mobileOpen, setMobileOpen}: TopbarLeftProps) => 
     };
 
     return (
-        <Box sx={{display: 'flex', alignItems: 'center', gap: '0.6rem'}}>
+        <Box sx={(theme) => ({display: 'flex', alignItems: 'center', gap: theme.spacing(1.2)})}>
             
             {/* sidbar toggle btn */}
             <Toolbar sx={{display: { lg: 'none' }}}>

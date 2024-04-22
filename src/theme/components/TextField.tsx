@@ -4,7 +4,7 @@ import { Components } from "@mui/material/styles/components";
 const TextField: Components<Omit<Theme, 'components'>>['MuiTextField'] = {
     styleOverrides: {
         root: ({ theme }) => ({
-            padding: '0.8rem 0.6rem',
+            padding: '0.625rem 0.6rem',
             background: '#fff !important',
             border: '1px solid #E2E8F0',
             borderRadius: '1rem',
@@ -29,7 +29,7 @@ const TextField: Components<Omit<Theme, 'components'>>['MuiTextField'] = {
                 marginRight: 0,
             },
         }),
-      },
+    },
 }
 
 export default TextField;

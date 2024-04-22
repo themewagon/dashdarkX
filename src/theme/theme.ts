@@ -11,6 +11,7 @@ import Drawer from './components/Drawer';
 import DataGrid from './components/DataGrid';
 import TextField from './components/TextField';
 import Toolbar from './components/Toolbar';
+import CssBaseline from './components/CssBaseline';
 import type {} from '@mui/x-data-grid/themeAugmentation';
 
 export const theme = createTheme({
@@ -25,7 +26,8 @@ export const theme = createTheme({
         MuiDrawer: Drawer,
         MuiDataGrid: DataGrid,
         MuiTextField: TextField,
-        MuiToolbar: Toolbar
+        MuiToolbar: Toolbar,
+        MuiCssBaseline: CssBaseline,
     },
     customShadows,
     spacing: 8,
