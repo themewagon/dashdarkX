@@ -1,4 +1,4 @@
-// import Charts from "sections/Charts";
+import Charts from "sections/Charts";
 // import DashboardTables from "sections/DashboardTables";
 import FirstCards from "sections/FirstCards";
 
@@ -6,7 +6,7 @@ const Dashboard = () => {
     return (
         <>
             <FirstCards/>
-            {/* <Charts/> */}
+            <Charts/>
             {/* <DashboardTables/> */}
         </>
     );

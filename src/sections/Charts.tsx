@@ -5,10 +5,10 @@ import LineChart from "components/LineChart";
 const Charts = () => {
     return (
         <Grid container spacing={2}>
-            <Grid item lg={8}>
+            <Grid item xs={12} xl={8}>
                 <LineChart/>
             </Grid>
-            <Grid item lg={4}>
+            <Grid item xs={12} xl={4}>
                 <BarChart/>
             </Grid>
         </Grid>
