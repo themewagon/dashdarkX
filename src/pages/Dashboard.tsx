@@ -1,11 +1,11 @@
 // import Charts from "sections/Charts";
 // import DashboardTables from "sections/DashboardTables";
-// import FirstCards from "sections/FirstCards";
+import FirstCards from "sections/FirstCards";
 
 const Dashboard = () => {
     return (
         <>
-            {/* <FirstCards/> */}
+            <FirstCards/>
             {/* <Charts/> */}
             {/* <DashboardTables/> */}
         </>

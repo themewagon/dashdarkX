@@ -32,7 +32,7 @@ const FirstCards = () => {
     return (
         <Grid container spacing={2}>
             {firstCardsData.map((item, index) => {
-                return <Grid item lg={3} key={index}>
+                return <Grid item xs={12} sm={6} xl={3} key={index}>
                     <FirstCard title={item.title} value={item.value} rate={item.rate} icon={item.icon}/>
                 </Grid>
             })}
