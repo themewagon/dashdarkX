@@ -1,9 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import IconifyIcon from "components/base/IconifyIcon";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { useTheme } from "@mui/material";
+import Link from "@mui/material/Link";
 
 interface navLinkProps {
     path: string, 
@@ -18,7 +19,7 @@ const NavLink = (props: navLinkProps) => {
     const isActivePath = useLocation().pathname.split('/')[1] === path;
 
     return (
-        <Link to={`/${path}`} style={{textDecoration: 'none'}}>
+        <Link href={`/${path}`}>
             <ListItemButton sx={{boxShadow: isActivePath ? theme.customShadows[0] : null}}>
                 <ListItemIcon sx={(theme) => ({bgcolor: isActivePath ? theme.palette.primary.main : 'transparent'})}>
                     <IconifyIcon icon={`ion:${icon}`} sx={(theme) => ({color: isActivePath ? '#fff' : theme.palette.primary.main, fontSize: '1rem'})}/>

@@ -2,8 +2,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import ListItemButton from "@mui/material/ListItemButton";
-
-import { Link } from "react-router-dom";
+import Link from "@mui/material/Link";
 import SidebarLinks from "./SidebarLinks";
 
 import LogoImg from "assets/images/logo.svg";
@@ -55,7 +54,7 @@ const DrawerItems = () => {
     return (
         <>
         {/* logo */}
-        <Link to='/' style={{textDecoration: 'none'}}>
+        <Link href='/'>
             <ListItemButton sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                 <Box component="img" src={LogoImg} alt="logo" sx={(theme) => ({mr: theme.spacing(1), height: '1.5rem', width: '1.5rem'})}/>
                 <Typography variant="h5" color="grey.800">argon</Typography>
