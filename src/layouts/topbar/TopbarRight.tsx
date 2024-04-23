@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
@@ -6,8 +7,7 @@ import Divider from '@mui/material/Divider';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import { useState } from 'react';
-import { Icon } from '@iconify/react';
+import IconifyIcon from 'components/base/IconifyIcon';
 
 const TopbarRight = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -23,16 +23,16 @@ const TopbarRight = () => {
 
     return (
         <>
-            <Box sx={(theme) => ({ display: 'flex', alignItems: 'center', gap: theme.spacing(0.8)})}>
+            <Box sx={(theme) => ({ display: 'flex', alignItems: 'center', gap: theme.spacing(2)})}>
                 <Tooltip title="Settings">
-                    <IconButton size="medium" sx={{color: 'grey.800'}}>
-                        <Icon icon={'ion:settings-sharp'}/>
+                    <IconButton size="small" sx={{color: 'grey.800'}}>
+                        <IconifyIcon icon={'ion:settings-sharp'}/>
                     </IconButton>
                 </Tooltip>
                 
                 <Tooltip title="Notifications">
-                    <IconButton size="medium" sx={{ color: 'grey.800' }}>
-                        <Icon icon={'ion:notifications'}/>
+                    <IconButton size="small" sx={{ color: 'grey.800' }}>
+                        <IconifyIcon icon={'ion:notifications'}/>
                     </IconButton>
                 </Tooltip>
 
@@ -90,19 +90,19 @@ const TopbarRight = () => {
                 <Divider />
                 <MenuItem onClick={handleClose} sx={{borderRadius: 4}}>
                     <ListItemIcon>
-                        <Icon icon={'ion:person-add'}/>
+                        <IconifyIcon icon={'ion:person-add'}/>
                     </ListItemIcon>
                     Add another account
                 </MenuItem>
                 <MenuItem onClick={handleClose} sx={{borderRadius: 4}}>
                     <ListItemIcon>
-                        <Icon icon={'ion:settings'}/>
+                        <IconifyIcon icon={'ion:settings'}/>
                     </ListItemIcon>
                     Settings
                 </MenuItem>
                 <MenuItem onClick={handleClose} sx={{borderRadius: 4}}>
                     <ListItemIcon>
-                        <Icon icon={'ion:log-out'}/>
+                        <IconifyIcon icon={'ion:log-out'}/>
                     </ListItemIcon>
                     Logout
                 </MenuItem>

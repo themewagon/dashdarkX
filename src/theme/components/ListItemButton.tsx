@@ -6,14 +6,14 @@ const ListItemButton: Components<Omit<Theme, 'components'>>['MuiListItemButton']
         disableRipple: true,
     },
     styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
             width: '100%', 
-            height: '54px',
-            borderRadius: '8px',
+            height: 54,
+            borderRadius: theme.shape.borderRadius * 2,
             '&:hover': {
                 backgroundColor: 'transparent'
             }
-        }
+        })
     },
 }
 

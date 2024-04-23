@@ -7,7 +7,7 @@ const ListItemText: Components<Omit<Theme, 'components'>>['MuiListItemText'] = {
             color: theme.palette.neutral.light,
         
             '.css-22b82w-MuiTypography-root': {
-                fontSize: '12px',
+                fontSize: '0.75rem',
                 fontWeight: 700
             }
         })

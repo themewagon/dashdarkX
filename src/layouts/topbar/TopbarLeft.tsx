@@ -3,7 +3,7 @@ import Toolbar from "@mui/material/Toolbar";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
-import { Icon } from '@iconify/react';
+import IconifyIcon from "components/base/IconifyIcon";
 
 interface TopbarLeftProps {
     isClosing: boolean;
@@ -19,18 +19,18 @@ const TopbarLeft = ({isClosing, mobileOpen, setMobileOpen}: TopbarLeftProps) => 
     };
 
     return (
-        <Box sx={(theme) => ({display: 'flex', alignItems: 'center', gap: theme.spacing(1.2)})}>
+        <Box sx={(theme) => ({display: 'flex', alignItems: 'center', gap: theme.spacing(2)})}>
             
             {/* sidbar toggle btn */}
             <Toolbar sx={{display: { lg: 'none' }}}>
                 <IconButton size="medium" edge="start" color="inherit" aria-label="menu" onClick={handleDrawerToggle} sx={{ m: 0 }}>
-                    <Icon icon={'ion:menu'}/>
+                    <IconifyIcon icon={'ion:menu'}/>
                 </IconButton>
             </Toolbar>
 
             {/* search button */}
             <IconButton size="medium" edge="start" color="inherit" sx={{display: { xs: 'flex', md: 'none' }}}>
-                <Icon icon={'ion:search'}/>
+                <IconifyIcon icon={'ion:search'}/>
             </IconButton>
 
             {/* search bar */}
@@ -41,8 +41,8 @@ const TopbarLeft = ({isClosing, mobileOpen, setMobileOpen}: TopbarLeftProps) => 
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">
-                            <IconButton>
-                                <Icon icon='ion:search'/>
+                            <IconButton size="small" sx={{color: 'grey.700'}}>
+                                <IconifyIcon icon={'ion:search'}/>
                             </IconButton>
                         </InputAdornment>
                     ),

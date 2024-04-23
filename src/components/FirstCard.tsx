@@ -1,8 +1,7 @@
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import { useTheme } from "@mui/material";
-import { Icon } from '@iconify/react';
+import IconifyIcon from "./base/IconifyIcon";
 
 interface firstCardProps {
     title: string,
@@ -13,7 +12,6 @@ interface firstCardProps {
 
 const FirstCard = (props: firstCardProps) => {
     const {title, value, rate, icon} = props;
-    const theme = useTheme();
 
     return (
         <Box component={Paper} sx={{position: 'relative', height: 132, width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
@@ -27,8 +25,8 @@ const FirstCard = (props: firstCardProps) => {
                 <Typography variant="body2" color="grey.400">Since last month</Typography>
             </Box>
 
-            <Box sx={{position: 'absolute', top: 20, right: 20, height: 48, width: 48, display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: theme.palette.primary.main, borderRadius: 2}}>
-                <Icon icon={`ion:${icon}`} style={{color: '#fff', fontSize: '1.4rem'}}/>
+            <Box sx={(theme) => ({position: 'absolute', top: 20, right: 20, height: 48, width: 48, display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: theme.palette.primary.main, borderRadius: 2})}>
+                <IconifyIcon icon={`ion:${icon}`} sx={{color: '#fff', fontSize: '1.4rem'}}/>
             </Box>
         </Box>
     );

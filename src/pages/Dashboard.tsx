@@ -1,6 +1,6 @@
 import Charts from "sections/Charts";
-// import DashboardTables from "sections/DashboardTables";
 import FirstCards from "sections/FirstCards";
+// import DashboardTables from "sections/DashboardTables";
 
 const Dashboard = () => {
     return (

@@ -8,9 +8,9 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
     styleOverrides: {
         root: ({ theme, ownerState }) => ({
             color: theme.palette.neutral.contrastText,
-            fontSize: '10px',
+            fontSize: '0.625rem',
             fontWeight: 700,
-            borderRadius: '8px',
+            borderRadius: theme.shape.borderRadius * 2,
             backgroundColor: ownerState.color === 'primary' ? 
                             theme.palette.primary.main : theme.palette.neutral.light,
             '&:hover': {
@@ -19,12 +19,12 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
             }
         }),
         sizeMedium: {
-            height: '35px',
-            width: '186px'
+            height: 35,
+            width: 186
         },
         sizeSmall: {
-            height: '28px',
-            width: '70px'
+            height: 28,
+            width: 70
         }
     },
 }

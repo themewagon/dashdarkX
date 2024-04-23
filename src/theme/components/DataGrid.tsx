@@ -3,18 +3,17 @@ import { Components } from "@mui/material/styles/components";
 
 const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
     styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
             border: 'none',
             borderRadius: 0,
-            background: 'blue',
             '& .MuiDataGrid-container--top [role=row]': {
-                background: 'red',
+                background: theme.palette.action.hover,
                 borderRadius: 0
             },
             '& .MuiDataGrid-main': {
                 borderRadius: 0
             }
-        }
+        })
     },
 }
 

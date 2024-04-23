@@ -4,14 +4,16 @@ import { Components } from "@mui/material/styles/components";
 const TextField: Components<Omit<Theme, 'components'>>['MuiTextField'] = {
     styleOverrides: {
         root: ({ theme }) => ({
-            padding: '0.625rem 0.6rem',
+            padding: theme.spacing(1.25, 1.2),
             background: '#fff !important',
-            border: '1px solid #E2E8F0',
-            borderRadius: '1rem',
+            border: 1,
+            borderStyle: 'solid',
+            borderColor: theme.palette.action.disabledBackground,
+            borderRadius: theme.shape.borderRadius * 3,
 
             '& .MuiInputBase-root': {
-                borderRadius: 0,
                 paddingLeft: 0,
+                borderRadius: 0,
                 background: '#fff !important',
 
                 '&:before, &:after': {
@@ -21,6 +23,7 @@ const TextField: Components<Omit<Theme, 'components'>>['MuiTextField'] = {
 
             '& .MuiInputBase-input': {
                 padding: 0,
+                paddingLeft: theme.spacing(0.6),
                 fontSize: theme.typography.caption
             },
 
