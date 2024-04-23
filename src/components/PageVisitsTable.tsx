@@ -1,30 +1,34 @@
-import { Box, Paper, Typography, Button, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 const columns: GridColDef<(typeof rows)[number]>[] = [
     {
-      field: 'pageName',
-      headerName: 'PAGE NAME',
-      editable: true,
-      align: 'left',
+        field: 'pageName',
+        headerName: 'PAGE NAME',
+        editable: true,
+        align: 'left',
     },
     {
-      field: 'visitors',
-      headerName: 'VISITORS',
-      editable: true,
-      align: 'left'
+        field: 'visitors',
+        headerName: 'VISITORS',
+        editable: true,
+        align: 'left'
     },
     {
-      field: 'uniqueUsers',
-      headerName: 'UNIQUE USERS',
-      editable: true,
-      align: 'left'
+        field: 'uniqueUsers',
+        headerName: 'UNIQUE USERS',
+        editable: true,
+        align: 'left'
     },
     {
-      field: 'bounceRate',
-      headerName: 'BOUNCE RATE',
-      sortable: true,
-      align: 'right'
+        field: 'bounceRate',
+        headerName: 'BOUNCE RATE',
+        sortable: true,
+        align: 'right'
     },
 ];
 

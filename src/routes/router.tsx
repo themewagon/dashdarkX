@@ -1,20 +1,31 @@
-import { Outlet, createBrowserRouter  } from "react-router-dom";
+/* eslint-disable react-refresh/only-export-components */
+import { Suspense, lazy } from "react";
+import { Outlet, createBrowserRouter } from "react-router-dom";
 import MainLayout from "layouts/main-layout/index";
-import Dashboard from "pages/Dashboard";
-import Billing from "pages/Billing";
-import Tables from "pages/Tables";
-import Rtl from "pages/Rtl";
-import App from "App";
+import Splash from "components/loading/Splash";
+import PageLoader from "components/loading/PageLoader";
+
+const App = lazy(() => import('App'));
+const Dashboard = lazy(() => import('pages/Dashboard'));
+const Billing = lazy(() => import('pages/Billing'));
+const Tables = lazy(() => import('pages/Tables'));
+const Rtl = lazy(() => import('pages/Rtl'));
 
 const router = createBrowserRouter([
     {
-        element: <App/>,
+        element: (
+            <Suspense fallback={<Splash/>}>
+                <App/>
+            </Suspense>
+        ),
         children: [
             {
                 path: "/",
                 element: (
                     <MainLayout>
-                        <Outlet/>
+                        <Suspense fallback={<PageLoader/>}>
+                            <Outlet/>
+                        </Suspense>
                     </MainLayout>
                 ),
                 children: [
