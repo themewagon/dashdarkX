@@ -29,7 +29,7 @@ const TopbarLeft = ({isClosing, mobileOpen, setMobileOpen}: TopbarLeftProps) => 
             </Toolbar>
 
             {/* search button */}
-            <IconButton size="medium" edge="start" color="inherit" sx={{display: { xs: 'flex', md: 'none' }}}>
+            <IconButton size="medium" edge="start" color="inherit" sx={{display: { xs: 'flex', sm: 'none' }}}>
                 <IconifyIcon icon={'ion:search'}/>
             </IconButton>
 
@@ -37,7 +37,7 @@ const TopbarLeft = ({isClosing, mobileOpen, setMobileOpen}: TopbarLeftProps) => 
             <TextField
                 variant="filled"
                 placeholder="Type here..."
-                sx={{display: {xs: 'none', md: 'block'}}}
+                sx={{display: {xs: 'none', sm: 'block'}}}
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">

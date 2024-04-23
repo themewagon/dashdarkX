@@ -5,6 +5,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
 import Tooltip from '@mui/material/Tooltip';
+import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import IconifyIcon from 'components/base/IconifyIcon';
@@ -31,20 +32,22 @@ const TopbarRight = () => {
                 </Tooltip>
                 
                 <Tooltip title="Notifications">
-                    <IconButton size="small" sx={{ color: 'grey.800' }}>
+                    <IconButton size="small" sx={{color: 'grey.800'}}>
                         <IconifyIcon icon={'ion:notifications'}/>
                     </IconButton>
                 </Tooltip>
 
                 <Tooltip title="Profile">
-                    <IconButton 
-                        onClick={handleClick} 
-                        size="small"
-                        aria-controls={open ? 'account-menu' : undefined} 
-                        aria-expanded={open ? 'true' : undefined}
-                        aria-haspopup="true">
-                        <Avatar sx={(theme) => ({ width: 32, height: 32, bgcolor: theme.palette.primary.main })}>M</Avatar>
-                    </IconButton>
+                    <Box onClick={handleClick} sx={(theme) => ({mr: theme.spacing(0.4), display: 'flex', alignItems: 'center', gap: theme.spacing(0.4), cursor: 'pointer'})}>
+                        <IconButton 
+                            size="small"
+                            aria-controls={open ? 'account-menu' : undefined} 
+                            aria-expanded={open ? 'true' : undefined}
+                            aria-haspopup="true">
+                            <Avatar sx={(theme) => ({ height: 30, width: 30, fontSize: '1rem', bgcolor: theme.palette.primary.main })}>M</Avatar>
+                        </IconButton>
+                        <Typography variant="caption">MR. JHON</Typography>
+                    </Box>
                 </Tooltip>
             </Box>
             <Menu
