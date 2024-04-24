@@ -1,6 +1,6 @@
-import Box from "@mui/material/Box";
 import TopbarLeft from "./TopbarLeft";
 import TopbarRight from "./TopbarRight";
+import Stack from "@mui/material/Stack";
 
 interface TopbarProps {
     isClosing: boolean;
@@ -10,10 +10,10 @@ interface TopbarProps {
 
 const Topbar = ({isClosing, mobileOpen, setMobileOpen}: TopbarProps) => {
     return (
-        <Box sx={{p: 0, mb: 3, display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+        <Stack alignItems="center" justifyContent="space-between" sx={{mb: 3}}>
             <TopbarLeft isClosing={isClosing} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen}/>
             <TopbarRight/>
-        </Box>
+        </Stack>
     );
 }
 

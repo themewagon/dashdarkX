@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -9,6 +8,8 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import IconifyIcon from 'components/base/IconifyIcon';
+import ButtonBase from '@mui/material/ButtonBase';
+import Stack from '@mui/material/Stack';
 
 const TopbarRight = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -24,7 +25,7 @@ const TopbarRight = () => {
 
     return (
         <>
-            <Box sx={(theme) => ({ display: 'flex', alignItems: 'center', gap: theme.spacing(2)})}>
+            <Stack spacing={2} alignItems="center">
                 <Tooltip title="Settings">
                     <IconButton size="small" sx={{color: 'grey.800'}}>
                         <IconifyIcon icon={'ion:settings-sharp'}/>
@@ -38,18 +39,20 @@ const TopbarRight = () => {
                 </Tooltip>
 
                 <Tooltip title="Profile">
-                    <Box onClick={handleClick} sx={(theme) => ({mr: theme.spacing(0.4), display: 'flex', alignItems: 'center', gap: theme.spacing(0.4), cursor: 'pointer'})}>
-                        <IconButton 
-                            size="small"
+                    <ButtonBase onClick={handleClick}>
+                        <Stack
+                            spacing={1}
+                            alignItems="center"
                             aria-controls={open ? 'account-menu' : undefined} 
                             aria-expanded={open ? 'true' : undefined}
-                            aria-haspopup="true">
+                            aria-haspopup="true"
+                        >
                             <Avatar sx={(theme) => ({ height: 30, width: 30, fontSize: '1rem', bgcolor: theme.palette.primary.main })}>M</Avatar>
-                        </IconButton>
-                        <Typography variant="caption">MR. JHON</Typography>
-                    </Box>
+                            <Typography variant="caption">MR. JHON</Typography>
+                        </Stack>
+                    </ButtonBase>
                 </Tooltip>
-            </Box>
+            </Stack>
             <Menu
                 anchorEl={anchorEl}
                 id="account-menu"
@@ -59,7 +62,7 @@ const TopbarRight = () => {
                 PaperProps={{
                     elevation: 0,
                     sx: {
-                        // overflow: 'hidden',
+                        overflow: 'hidden',
                         mt: 1.5,
                         '& .MuiAvatar-root': {
                             width: 32,
@@ -84,26 +87,26 @@ const TopbarRight = () => {
                 transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-                <MenuItem onClick={handleClose} sx={{borderRadius: 4}}>
+                <MenuItem onClick={handleClose} sx={{borderRadius: 3}}>
                     <Avatar/> Profile
                 </MenuItem>
-                <MenuItem onClick={handleClose} sx={{borderRadius: 4}}>
+                <MenuItem onClick={handleClose} sx={{borderRadius: 3}}>
                     <Avatar/> My account
                 </MenuItem>
                 <Divider />
-                <MenuItem onClick={handleClose} sx={{borderRadius: 4}}>
+                <MenuItem onClick={handleClose} sx={{borderRadius: 3}}>
                     <ListItemIcon>
                         <IconifyIcon icon={'ion:person-add'}/>
                     </ListItemIcon>
                     Add another account
                 </MenuItem>
-                <MenuItem onClick={handleClose} sx={{borderRadius: 4}}>
+                <MenuItem onClick={handleClose} sx={{borderRadius: 3}}>
                     <ListItemIcon>
                         <IconifyIcon icon={'ion:settings'}/>
                     </ListItemIcon>
                     Settings
                 </MenuItem>
-                <MenuItem onClick={handleClose} sx={{borderRadius: 4}}>
+                <MenuItem onClick={handleClose} sx={{borderRadius: 3}}>
                     <ListItemIcon>
                         <IconifyIcon icon={'ion:log-out'}/>
                     </ListItemIcon>

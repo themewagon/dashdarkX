@@ -1,8 +1,10 @@
 import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import ButtonBase from "@mui/material/ButtonBase";
 import Button from "@mui/material/Button";
-import ListItemButton from "@mui/material/ListItemButton";
 import Link from "@mui/material/Link";
+import Image from "components/base/Image";
 import SidebarLinks from "./SidebarLinks";
 
 import LogoImg from "assets/images/logo.svg";
@@ -54,29 +56,29 @@ const DrawerItems = () => {
     return (
         <>
         {/* logo */}
-        <Link href='/'>
-            <ListItemButton sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                <Box component="img" src={LogoImg} alt="logo" sx={(theme) => ({mr: theme.spacing(1), height: '1.5rem', width: '1.5rem'})}/>
+        <ButtonBase component={Link} href='/' sx={{py: 1.2, width: 1}}>
+            <Stack mx="auto" alignItems="center" justifyContent="center">
+                <Image src={LogoImg} alt="logo" sx={{mr: 1, height: 24, width: 24}}/>
                 <Typography variant="h5" color="grey.800">argon</Typography>
-            </ListItemButton>
-        </Link>
-
+            </Stack>
+        </ButtonBase>
+        
         {/* divider */}
-        <Box component="img" src={LineImg} alt="divider" sx={(theme) => ({mt: theme.spacing(1.2), width: '100%', height: '1px'})}/>
+        <Box component="img" src={LineImg} alt="divider" sx={{mt: 1.2, width: 1}}/>
         
         {/* sidebar links */}
         <SidebarLinks title="" navLinks={topNavLinks}/>
         <SidebarLinks title="Account Pages" navLinks={bottomNavLinks}/>
 
         {/* sidebar footer */}
-        <Box sx={(theme) => ({mt: theme.spacing(6), pb: theme.spacing(2.5)})}>
-            <Box component="img" src={DocImg} alt="document" sx={{height: 150, width: '100%'}}/>
-            <Typography variant="body2" color="grey.700" align="center" sx={(theme) => ({mt: theme.spacing(-2), fontWeight: 700})}>Need Help?</Typography>
+        <Box sx={{mt: 6, pb: 2.5}}>
+            <Image src={DocImg} alt="document" sx={{height: 150, width: 1}}/>
+            <Typography variant="body2" color="grey.700" align="center" sx={{mt: -2, fontWeight: 700}}>Need Help?</Typography>
             <Typography variant="subtitle1" color="grey.500" align="center" sx={{fontSize: '0.75rem'}}>Please check our docs</Typography>
-            <Box sx={(theme) => ({mt: theme.spacing(2.5), display: 'flex', flexDirection: 'column', alignItems: 'center', gap: theme.spacing(2.5)})}>
+            <Stack direction="column" spacing={2.4} alignItems="center" sx={{mt: 2.5}}>
                 <Button color="primary" size="medium">Documentation</Button>
                 <Button color="secondary" size="medium">Upgrade to pro</Button>
-            </Box>
+            </Stack>
         </Box>
         </>
     );

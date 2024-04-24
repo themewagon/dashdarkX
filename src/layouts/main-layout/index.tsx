@@ -1,8 +1,8 @@
 import { useState, ReactNode } from 'react';
-import Box from "@mui/material/Box";
-import Sidebar from "layouts/sidebar";
-import Topbar from "layouts/topbar";
-import Footer from "layouts/footer";
+import Stack from '@mui/material/Stack';
+import Sidebar from "layouts/main-layout/sidebar";
+import Topbar from "layouts/main-layout/topbar";
+import Footer from "layouts/main-layout/footer";
 
 interface LayoutProps {
     children: ReactNode
@@ -13,14 +13,14 @@ const MainLayout = ({children}: LayoutProps) => {
     const [isClosing, setIsClosing] = useState(false);
 
     return (
-        <Box sx={(theme) => ({mx: 'auto', px: theme.spacing(2.5), py: theme.spacing(3.75), display: 'flex', gap: theme.spacing(2.5), width: '100%', maxWidth: 1920, height: 'auto', minHeight: '100vh'})}>
+        <Stack mx="auto" px={2.5} py={3.75} spacing={2.5} sx={{width: 1, maxWidth: 1920, minHeight: '100vh'}}>
             <Sidebar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} setIsClosing={setIsClosing}/>
-            <Box component="main" sx={(theme) => ({display: 'flex', flexDirection: 'column', gap: theme.spacing(2.5), width: '100%'})}>
+            <Stack component="main" direction="column" spacing={2.5} sx={{width: 1}}>
                 <Topbar isClosing={isClosing} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen}/>
                 {children}
                 <Footer/>
-            </Box>
-        </Box>
+            </Stack>
+        </Stack>
     );
 }
 

@@ -1,9 +1,13 @@
-import Box from "@mui/material/Box";
+import ButtonBase from "@mui/material/ButtonBase";
+import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
+import Link from "@mui/material/Link";
+import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
-import IconButton from "@mui/material/IconButton";
 import IconifyIcon from "components/base/IconifyIcon";
+import Image from "components/base/Image";
+import LogoImg from "assets/images/logo.svg";
 
 interface TopbarLeftProps {
     isClosing: boolean;
@@ -19,14 +23,17 @@ const TopbarLeft = ({isClosing, mobileOpen, setMobileOpen}: TopbarLeftProps) => 
     };
 
     return (
-        <Box sx={(theme) => ({display: 'flex', alignItems: 'center', gap: theme.spacing(2)})}>
-            
+        <Stack spacing={2} alignItems="center">
             {/* sidbar toggle btn */}
-            <Toolbar sx={{display: { lg: 'none' }}}>
-                <IconButton size="medium" edge="start" color="inherit" aria-label="menu" onClick={handleDrawerToggle} sx={{ m: 0 }}>
+            <Toolbar sx={{display: { xm: 'block', lg: 'none' }}}>
+                <IconButton size="medium" edge="start" color="inherit" aria-label="menu" onClick={handleDrawerToggle}>
                     <IconifyIcon icon={'ion:menu'}/>
                 </IconButton>
             </Toolbar>
+
+            <ButtonBase component={Link} href="/" sx={{display: {xm: 'block', sm: 'none'}}}>
+                <Image src={LogoImg} alt="logo" sx={{height: 24, width: 24}}/>
+            </ButtonBase>
 
             {/* search button */}
             <IconButton size="medium" edge="start" color="inherit" sx={{display: { xs: 'flex', sm: 'none' }}}>
@@ -48,7 +55,7 @@ const TopbarLeft = ({isClosing, mobileOpen, setMobileOpen}: TopbarLeftProps) => 
                     ),
                 }}
             />
-        </Box>
+        </Stack>
     );
 }
 

@@ -17,14 +17,12 @@ const NavLink = (props: navLinkProps) => {
     const isActivePath = useLocation().pathname.split('/')[1] === path;
 
     return (
-        <Link href={`/${path}`}>
-            <ListItemButton sx={(theme) => ({boxShadow: isActivePath ? theme.customShadows[0] : null})}>
-                <ListItemIcon sx={(theme) => ({bgcolor: isActivePath ? theme.palette.primary.main : 'transparent'})}>
-                    <IconifyIcon icon={`ion:${icon}`} sx={(theme) => ({color: isActivePath ? '#fff' : theme.palette.primary.main, fontSize: '1rem'})}/>
-                </ListItemIcon>
-                <ListItemText sx={{color: isActivePath ? 'grey.700' : 'grey.400'}}>{name}</ListItemText>
-            </ListItemButton>
-        </Link>
+        <ListItemButton component={Link} href={`/${path}`} sx={(theme) => ({boxShadow: isActivePath ? theme.customShadows[0] : null})}>
+            <ListItemIcon sx={(theme) => ({bgcolor: isActivePath ? theme.palette.primary.main : 'transparent'})}>
+                <IconifyIcon icon={`ion:${icon}`} sx={(theme) => ({color: isActivePath ? '#fff' : theme.palette.primary.main, fontSize: '1rem'})}/>
+            </ListItemIcon>
+            <ListItemText sx={{color: isActivePath ? 'grey.700' : 'grey.400'}}>{name}</ListItemText>
+        </ListItemButton>
     );
 }
 

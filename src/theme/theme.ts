@@ -12,8 +12,11 @@ import DataGrid from './components/DataGrid';
 import TextField from './components/TextField';
 import Toolbar from './components/Toolbar';
 import Link from './components/Link';
+import Stack from './components/Stack';
 import CssBaseline from './components/CssBaseline';
 import type {} from '@mui/x-data-grid/themeAugmentation';
+import ButtonBase from './components/ButtonBase';
+import IconButton from './components/IconButton';
 
 export const theme = createTheme({
     typography,
@@ -30,6 +33,9 @@ export const theme = createTheme({
         MuiToolbar: Toolbar,
         MuiCssBaseline: CssBaseline,
         MuiLink: Link,
+        MuiStack: Stack,
+        MuiButtonBase: ButtonBase,
+        MuiIconButton: IconButton
     },
     customShadows,
     spacing: 8,
