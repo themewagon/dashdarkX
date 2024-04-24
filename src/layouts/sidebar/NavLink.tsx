@@ -3,7 +3,6 @@ import IconifyIcon from "components/base/IconifyIcon";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import { useTheme } from "@mui/material";
 import Link from "@mui/material/Link";
 
 interface navLinkProps {
@@ -14,13 +13,12 @@ interface navLinkProps {
 
 const NavLink = (props: navLinkProps) => {
     const { name, path, icon } = props;
-    const theme = useTheme();
     // check the path is active or not
     const isActivePath = useLocation().pathname.split('/')[1] === path;
 
     return (
         <Link href={`/${path}`}>
-            <ListItemButton sx={{boxShadow: isActivePath ? theme.customShadows[0] : null}}>
+            <ListItemButton sx={(theme) => ({boxShadow: isActivePath ? theme.customShadows[0] : null})}>
                 <ListItemIcon sx={(theme) => ({bgcolor: isActivePath ? theme.palette.primary.main : 'transparent'})}>
                     <IconifyIcon icon={`ion:${icon}`} sx={(theme) => ({color: isActivePath ? '#fff' : theme.palette.primary.main, fontSize: '1rem'})}/>
                 </ListItemIcon>
