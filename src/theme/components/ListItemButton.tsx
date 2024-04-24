@@ -7,7 +7,7 @@ const ListItemButton: Components<Omit<Theme, 'components'>>['MuiListItemButton']
     },
     styleOverrides: {
         root: ({ theme }) => ({
-            width: '100%', 
+            width: '100%',
             height: 54,
             borderRadius: theme.shape.borderRadius * 2,
             '&:hover': {

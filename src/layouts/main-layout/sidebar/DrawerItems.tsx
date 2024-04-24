@@ -76,8 +76,8 @@ const DrawerItems = () => {
             <Typography variant="body2" color="grey.700" align="center" sx={{mt: -2, fontWeight: 700}}>Need Help?</Typography>
             <Typography variant="subtitle1" color="grey.500" align="center" sx={{fontSize: '0.75rem'}}>Please check our docs</Typography>
             <Stack direction="column" spacing={2.4} alignItems="center" sx={{mt: 2.5}}>
-                <Button color="primary" size="medium">Documentation</Button>
-                <Button color="secondary" size="medium">Upgrade to pro</Button>
+                <Button variant="contained" color="primary" size="medium">Documentation</Button>
+                <Button variant="contained" color="secondary" size="medium">Upgrade to pro</Button>
             </Stack>
         </Box>
         </>

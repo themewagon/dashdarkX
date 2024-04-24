@@ -14,13 +14,13 @@ const Drawer: Components<Omit<Theme, 'components'>>['MuiDrawer'] = {
     styleOverrides: {
         root: {
             // desktop
-            '& .css-rbkeor-MuiPaper-root-MuiDrawer-paper': {
+            '& .MuiPaper-elevation0': {
                 position: 'sticky',
                 ...commonStyles
             },
 
             // mobile
-            '& .css-4kho5a-MuiPaper-root-MuiDrawer-paper': {
+            '& .MuiPaper-elevation16': {
                 position: 'fixed', left: 30,
                 ...commonStyles
             }
