@@ -35,17 +35,17 @@ const topNavLinks = [
 const bottomNavLinks = [
     {
         name: 'Profile',
-        path: 'profile',
+        path: '#!',
         icon: 'person'
     },
     {
         name: 'Sign In',
-        path: 'signin',
+        path: '#!',
         icon: 'document'
     },
     {
         name: 'Sign Up',
-        path: 'signup',
+        path: '#!',
         icon: 'rocket-sharp'
     },
 ];
