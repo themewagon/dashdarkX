@@ -70,8 +70,8 @@ const DrawerItems = () => {
 
         {/* sidebar footer */}
         <Box sx={(theme) => ({mt: theme.spacing(6), pb: theme.spacing(2.5)})}>
-            <Box component="img" src={DocImg} alt="document" sx={{height: 118, width: '100%'}}/>
-            <Typography variant="body2" color="grey.700" align="center" sx={{fontWeight: 700}}>Need Help?</Typography>
+            <Box component="img" src={DocImg} alt="document" sx={{height: 150, width: '100%'}}/>
+            <Typography variant="body2" color="grey.700" align="center" sx={(theme) => ({mt: theme.spacing(-2), fontWeight: 700})}>Need Help?</Typography>
             <Typography variant="subtitle1" color="grey.500" align="center" sx={{fontSize: '0.75rem'}}>Please check our docs</Typography>
             <Box sx={(theme) => ({mt: theme.spacing(2.5), display: 'flex', flexDirection: 'column', alignItems: 'center', gap: theme.spacing(2.5)})}>
                 <Button color="primary" size="medium">Documentation</Button>
