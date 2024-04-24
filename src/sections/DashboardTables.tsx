@@ -5,10 +5,10 @@ import SocialTrafficTable from "components/SocialTrafficTable";
 const DashboardTables = () => {
     return (
         <Grid container spacing={2}>
-            <Grid item lg={8}>
+            <Grid item xs={12} xl={8}>
                 <PageVisitsTable/>
             </Grid>
-            <Grid item lg={4}>
+            <Grid item xs={12} xl={4}>
                 <SocialTrafficTable/>
             </Grid>
         </Grid>
