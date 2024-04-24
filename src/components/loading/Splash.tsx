@@ -1,11 +1,11 @@
-import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
 import CircularProgress from '@mui/material/CircularProgress';
 
 const Splash = () => {
     return (
-        <Box sx={{ height: '100vh', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <CircularProgress />
-        </Box>
+        <Stack alignItems="center" justifyContent="center" sx={{height: '100vh', width: 1}}>
+            <CircularProgress/>
+        </Stack>
     );
 }
 
