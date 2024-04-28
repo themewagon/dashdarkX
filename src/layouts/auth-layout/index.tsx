@@ -1,11 +1,7 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 import Stack from '@mui/material/Stack';
 
-interface LayoutProps {
-    children: ReactNode
-}
-
-const AuthLayout = ({children}: LayoutProps) => {
+const AuthLayout = ({children}: PropsWithChildren) => {
     return (
         <Stack mx="auto" alignItems="center" justifyContent="center" sx={{width: 1, minHeight: '100vh'}}>
             {children}

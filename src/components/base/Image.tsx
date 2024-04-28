@@ -1,12 +1,12 @@
-import { Box, BoxProps } from '@mui/material';
+import { Box, SxProps } from '@mui/material';
+import { ImgHTMLAttributes } from 'react';
 
-interface ImageProps extends BoxProps {
-    src: string;
-    alt?: string;
+interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
+    sx?: SxProps
 }
 
-const Image = ({ src, alt, ...rest }: ImageProps) => {
-    return <Box component="img" src={src} alt={alt} {...rest}/>
+const Image = ({ sx, ...rest }: ImageProps) => {
+    return <Box component="img" sx={sx} {...rest}/>
 };
 
 export default Image;

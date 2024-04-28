@@ -25,7 +25,7 @@ const TopbarRight = () => {
 
     return (
         <>
-            <Stack spacing={2} alignItems="center">
+            <Stack spacing={1.4} alignItems="center">
                 <Tooltip title="Settings">
                     <IconButton size="small" sx={{color: 'grey.800'}}>
                         <IconifyIcon icon={'ion:settings-sharp'}/>
@@ -47,7 +47,7 @@ const TopbarRight = () => {
                             aria-expanded={open ? 'true' : undefined}
                             aria-haspopup="true"
                         >
-                            <Avatar sx={(theme) => ({ height: 30, width: 30, fontSize: '1rem', bgcolor: theme.palette.primary.main })}>M</Avatar>
+                            <Avatar sx={(theme) => ({ ml: 0.8, height: 30, width: 30, fontSize: '1rem', bgcolor: theme.palette.primary.main })}>M</Avatar>
                             <Typography variant="caption">MR. JHON</Typography>
                         </Stack>
                     </ButtonBase>

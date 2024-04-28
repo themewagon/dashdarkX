@@ -19,7 +19,7 @@ const NavLink = (props: navLinkProps) => {
     return (
         <ListItemButton component={Link} href={`/${path}`} sx={(theme) => ({width: 1, boxShadow: isActivePath ? theme.customShadows[0] : null})}>
             <ListItemIcon sx={(theme) => ({bgcolor: isActivePath ? theme.palette.primary.main : 'transparent'})}>
-                <IconifyIcon icon={`ion:${icon}`} sx={(theme) => ({color: isActivePath ? theme.palette.neutral.contrastText : theme.palette.primary.main, fontSize: '1rem'})}/>
+                <IconifyIcon icon={`ion:${icon}`} sx={(theme) => ({color: isActivePath ? theme.palette.neutral.white : theme.palette.primary.main, fontSize: '1rem'})}/>
             </ListItemIcon>
             <ListItemText sx={{color: isActivePath ? 'grey.700' : 'grey.400'}}>{name}</ListItemText>
         </ListItemButton>

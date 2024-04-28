@@ -31,12 +31,12 @@ const TopbarLeft = ({isClosing, mobileOpen, setMobileOpen}: TopbarLeftProps) => 
                 </IconButton>
             </Toolbar>
 
-            <ButtonBase component={Link} href="/" sx={{display: {xm: 'block', sm: 'none'}}}>
+            <ButtonBase component={Link} href="/" sx={{display: { xm: 'block', lg: 'none' }}}>
                 <Image src={LogoImg} alt="logo" sx={{height: 24, width: 24}}/>
             </ButtonBase>
 
             {/* search button */}
-            <IconButton size="medium" edge="start" color="inherit" sx={{display: { xs: 'flex', sm: 'none' }}}>
+            <IconButton size="medium" edge="start" color="inherit" sx={{display: { xs: 'flex', md: 'none' }}}>
                 <IconifyIcon icon={'ion:search'}/>
             </IconButton>
 
@@ -44,13 +44,11 @@ const TopbarLeft = ({isClosing, mobileOpen, setMobileOpen}: TopbarLeftProps) => 
             <TextField
                 variant="filled"
                 placeholder="Type here..."
-                sx={{display: {xs: 'none', sm: 'block'}}}
+                sx={{ml: {md: 1.8, lg: 0}, display: {xs: 'none', md: 'block'}}}
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">
-                            <IconButton size="small" sx={{color: 'grey.700'}}>
-                                <IconifyIcon icon={'ion:search'}/>
-                            </IconButton>
+                            <IconifyIcon icon={'ion:search'} sx={{color: 'grey.700'}}/>
                         </InputAdornment>
                     ),
                 }}

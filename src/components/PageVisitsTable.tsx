@@ -10,60 +10,66 @@ import Typography from '@mui/material/Typography';
 //         headerName: 'PAGE NAME',
 //         editable: true,
 //         align: 'left',
+//         flex: 1
 //     },
 //     {
 //         field: 'visitors',
 //         headerName: 'VISITORS',
 //         editable: true,
-//         align: 'left'
+//         align: 'left',
+//         flex: 1
 //     },
 //     {
 //         field: 'uniqueUsers',
 //         headerName: 'UNIQUE USERS',
 //         editable: true,
-//         align: 'left'
+//         align: 'left',
+//         flex: 1
 //     },
 //     {
 //         field: 'bounceRate',
 //         headerName: 'BOUNCE RATE',
 //         sortable: true,
-//         align: 'right'
+//         align: 'right',
+//         flex: 1
 //     },
 // ];
 
 // const rows = [
-//     { id: 1, pageName: 'Snow', visitors: 'Jon', uniqueUsers: 40, bounceRate: '50%', age: 14 },
-//     { id: 2, pageName: 'Lannister', visitors: 'Cersei', uniqueUsers: 40, bounceRate: '50%', age: 31 },
-//     { id: 3, pageName: 'Lannister', visitors: 'Jaime', uniqueUsers: 40, bounceRate: '50%', age: 31 },
-//     { id: 4, pageName: 'Stark', visitors: 'Arya', uniqueUsers: 40, bounceRate: '50%', age: 11 },
-//     { id: 5, pageName: 'Targaryen', visitors: 'Daenerys', uniqueUsers: 40, bounceRate: '50%', age: null },
-//     { id: 6, pageName: 'Melisandre', visitors: null, uniqueUsers: 40, bounceRate: '50%', age: 150 },
-//     { id: 7, pageName: 'Clifford', visitors: 'Ferrara', uniqueUsers: 40, bounceRate: '50%', age: 44 },
-//     { id: 8, pageName: 'Frances', visitors: 'Rossini', uniqueUsers: 40, bounceRate: '50%', age: 36 },
-//     { id: 9, pageName: 'Roxie', visitors: 'Harvey', uniqueUsers: 40, bounceRate: '50%', age: 65 },
+//     { id: 1, pageName: '/argon/', visitors: '4,569', uniqueUsers: 40, bounceRate: '50%'},
+//     { id: 2, pageName: '/argon/index.html', visitors: '3,985', uniqueUsers: 40, bounceRate: '50%'},
+//     { id: 3, pageName: '/argon/charts.html', visitors: '3,513', uniqueUsers: 40, bounceRate: '50%'},
+//     { id: 4, pageName: '/argon/tables.html', visitors: '2,050', uniqueUsers: 40, bounceRate: '50%'},
+//     { id: 5, pageName: '/argon/profile.html', visitors: '1,795', uniqueUsers: 40, bounceRate: '50%'},
+//     { id: 6, pageName: '/argon/about.html', visitors: '1,795', uniqueUsers: 40, bounceRate: '50%'},
+//     { id: 7, pageName: '/argon/sales.html', visitors: '1,795', uniqueUsers: 40, bounceRate: '50%'},
+//     { id: 8, pageName: '/argon/data.html', visitors: '1,795', uniqueUsers: 40, bounceRate: '50%'},
+//     { id: 9, pageName: '/argon/tools.html', visitors: '1,795', uniqueUsers: 40, bounceRate: '50%'},
 // ];
 
 const PageVisitsTable = () => {
     return (
         <Box component={Paper} sx={{ p: 0, height: 360, width: '100%' }}>
-            <Box sx={(theme) => ({p: theme.spacing(3, 2.5), display: 'flex', alignItems: 'center', justifyContent: 'space-between'})}>
+            <Box sx={(theme) => ({p: theme.spacing(3, 2.5), display: 'flex', alignItems: 'center', justifyContent: 'space-between', border: 0,  borderBottom: 1, borderStyle: 'solid', borderColor: '#E2E8F0'})}>
                 <Typography variant="h6" color="grey.700">Page visits</Typography>
                 <Button variant="contained" size="small" color="primary">SEE ALL</Button>
             </Box>
             
             {/* <DataGrid
-                rows={rows}
+                density="compact"
                 columns={columns}
-                initialState={{
-                pagination: {
-                    paginationModel: {
-                        pageSize: 5,
-                    },
-                },
-                }}
-                pageSizeOptions={[5]}
-                checkboxSelection={false}
+                rows={rows}
+                hideFooterSelectedRowCount
+                disableColumnResize
+                disableColumnMenu
+                disableColumnSelector
                 disableRowSelectionOnClick
+                autosizeOptions={{
+                    includeOutliers: true,
+                    includeHeaders: true,
+                    outliersFactor: 1.2,
+                    expand: true,
+                }}
             /> */}
         </Box>
     );

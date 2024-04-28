@@ -73,8 +73,8 @@ const DrawerItems = () => {
         {/* sidebar footer */}
         <Box sx={{mt: 6, pb: 2.5}}>
             <Image src={DocImg} alt="document" sx={{height: 150, width: 1}}/>
-            <Typography variant="body2" color="grey.700" align="center" sx={{mt: -2, fontWeight: 700}}>Need Help?</Typography>
-            <Typography variant="subtitle1" color="grey.500" align="center" sx={{fontSize: '0.75rem'}}>Please check our docs</Typography>
+            <Typography variant="body2" color="grey.700" align="center" sx={(theme) => ({mt: -2, fontWeight: theme.typography.caption.fontWeight})}>Need Help?</Typography>
+            <Typography variant="subtitle1" color="grey.500" align="center" sx={(theme) => ({fontSize: theme.typography.caption.fontSize})}>Please check our docs</Typography>
             <Stack direction="column" spacing={2.4} alignItems="center" sx={{mt: 2.5}}>
                 <Button variant="contained" color="primary" size="medium">Documentation</Button>
                 <Button variant="contained" color="secondary" size="medium">Upgrade to pro</Button>

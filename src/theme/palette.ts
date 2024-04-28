@@ -33,7 +33,7 @@ const palette: PaletteOptions = {
         main: grey[800],
         dark: grey[900],
         darker: grey[900],
-        contrastText: '#fff',
+        white: '#fff',
     },
     primary: {
         lighter: blue[50],
@@ -62,7 +62,7 @@ const palette: PaletteOptions = {
         main: orange[500],
         dark: orange[700],
         darker: orange[900],
-        contrastText: '#fff',
+        white: '#fff',
     },
     success: {
         lighter: green[50],
@@ -77,7 +77,7 @@ const palette: PaletteOptions = {
         main: cyan[500],
         dark: cyan[700],
         darker: cyan[900],
-        contrastText: '#fff',
+        white: '#fff',
     },
     grey,
     text: {
