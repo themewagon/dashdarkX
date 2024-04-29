@@ -119,7 +119,6 @@ const LineChart = () => {
         ]
     };
 
-    
     return (
         <Box component={Paper} sx={{height: 490}}>
             <Typography variant="h6" sx={{background: "linear-gradient(81.62deg, #313860 2.25%, #151928 79.87%)", WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}} gutterBottom>Sales overview</Typography>

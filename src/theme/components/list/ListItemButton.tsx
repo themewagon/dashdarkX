@@ -10,7 +10,7 @@ const ListItemButton: Components<Omit<Theme, 'components'>>['MuiListItemButton']
             padding: theme.spacing(1.5, 2),
             borderRadius: theme.shape.borderRadius * 2,
             '&:hover': {
-                backgroundColor: 'transparent'
+                backgroundColor: theme.palette.action.hover
             }
         })
     },

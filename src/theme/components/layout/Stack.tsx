@@ -5,6 +5,9 @@ const Stack: Components<Omit<Theme, 'components'>>['MuiStack'] = {
     defaultProps: {
         useFlexGap: true,
         direction: 'row'
+    },
+    styleOverrides: {
+        root: {}
     }
 }
 
