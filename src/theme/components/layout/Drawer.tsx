@@ -9,7 +9,7 @@ const Drawer: Components<Omit<Theme, 'components'>>['MuiDrawer'] = {
             top: 30,
             left: 30,
             width: 265,
-            height: 'calc(100vh - 60px)',
+            height: 'calc(100vh - 3.75rem)',
             boxSizing: 'border-box',
             borderRight: 'none',
             maxHeight: 910,
