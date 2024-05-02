@@ -18,6 +18,9 @@ import InputAdornment from './components/text-field/InputAdornment';
 import Toolbar from './components/Toolbar';
 import Link from './components/Link';
 import CssBaseline from './components/CssBaseline';
+import DataGrid from './components/DataGrid';
+import Pagination from './components/Pagination';
+import PaginationItem from './components/PaginationItem';
 import type {} from '@mui/x-data-grid/themeAugmentation';
 
 export const theme = createTheme({
@@ -40,6 +43,9 @@ export const theme = createTheme({
         MuiInputBase: InputBase,
         MuiInputAdornment: InputAdornment,
         MuiFilledInput: FilledInput,
+        MuiDataGrid: DataGrid,
+        MuiPagination: Pagination,
+        MuiPaginationItem: PaginationItem,
     },
     customShadows,
     spacing: 8,
