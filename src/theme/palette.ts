@@ -62,7 +62,6 @@ const palette: PaletteOptions = {
         main: orange[500],
         dark: orange[700],
         darker: orange[900],
-        white: '#fff',
     },
     success: {
         lighter: green[50],
@@ -77,14 +76,13 @@ const palette: PaletteOptions = {
         main: cyan[500],
         dark: cyan[700],
         darker: cyan[900],
-        white: '#fff',
     },
-    grey,
     text: {
         primary: grey[800],
         secondary: grey[600],
         disabled: grey[400],
     },
+    grey
 };
 
 export default palette;

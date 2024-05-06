@@ -3,13 +3,14 @@ import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import DataGridFooter from 'components/data-grid/DataGridFooter';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import DataGridFooter from './DataGridFooter';
+import { LinearProgress } from '@mui/material';
 
 const columns: GridColDef<(typeof rows)[number]>[] = [
   {
-    field: 'pageName',
-    headerName: 'PAGE NAME',
+    field: 'referral',
+    headerName: 'REFERRAL',
     editable: false,
     align: 'left',
     flex: 2,
@@ -25,99 +26,58 @@ const columns: GridColDef<(typeof rows)[number]>[] = [
     flex: 1,
   },
   {
-    field: 'uniqueUsers',
-    headerName: 'UNIQUE USERS',
+    field: 'progress',
+    headerName: '',
     editable: false,
     align: 'left',
-    flex: 1,
-  },
-  {
-    field: 'bounceRate',
-    headerName: 'BOUNCE RATE',
-    headerAlign: 'right',
-    align: 'right',
-    sortable: true,
-    flex: 1,
+    flex: 2,
+    renderCell: (params) => {
+      return (
+        <Stack alignItems="center" gap={1} sx={{ height: 1, width: 1 }}>
+          <Typography variant="body2" sx={{ fontWeight: 700 }}>
+            {params.value}%
+          </Typography>
+          <LinearProgress
+            variant="determinate"
+            value={params.value}
+            sx={{
+              width: 1,
+              maxWidth: '240px',
+              height: '0.2rem',
+              '& .MuiLinearProgress-bar': {
+                backgroundColor: `${params.value > 70 ? '#0BC5EA' : '#ED8936'}`,
+              },
+            }}
+          />
+        </Stack>
+      );
+    },
   },
 ];
 
 const rows = [
-  { id: 1, pageName: '/argon/', visitors: '4,569', uniqueUsers: 340, bounceRate: '46.53%' },
-  {
-    id: 2,
-    pageName: '/argon/index.html',
-    visitors: '3,985',
-    uniqueUsers: 319,
-    bounceRate: '46.53%',
-  },
-  {
-    id: 3,
-    pageName: '/argon/charts.html',
-    visitors: '3,513',
-    uniqueUsers: 294,
-    bounceRate: '36.49%',
-  },
-  {
-    id: 4,
-    pageName: '/argon/tables.html',
-    visitors: '2,050',
-    uniqueUsers: 147,
-    bounceRate: '50.87%',
-  },
-  {
-    id: 5,
-    pageName: '/argon/profile.html',
-    visitors: '1,795',
-    uniqueUsers: 190,
-    bounceRate: '46.53%',
-  },
-  {
-    id: 6,
-    pageName: '/argon/about.html',
-    visitors: '1,565',
-    uniqueUsers: 220,
-    bounceRate: '36.25%',
-  },
-  {
-    id: 7,
-    pageName: '/argon/sales.html',
-    visitors: '1,470',
-    uniqueUsers: 175,
-    bounceRate: '42.36%',
-  },
-  {
-    id: 8,
-    pageName: '/argon/data.html',
-    visitors: '1,262',
-    uniqueUsers: 152,
-    bounceRate: '24.76%',
-  },
-  {
-    id: 9,
-    pageName: '/argon/login.html',
-    visitors: '1,012',
-    uniqueUsers: 231,
-    bounceRate: '38.45%',
-  },
-  {
-    id: 10,
-    pageName: '/argon/signup.html',
-    visitors: '1,054',
-    uniqueUsers: 250,
-    bounceRate: '39.64%',
-  },
+  { id: 1, referral: 'Facebook', visitors: '1,480', progress: 60 },
+  { id: 2, referral: 'Facebook', visitors: '5,480', progress: 70 },
+  { id: 3, referral: 'Google', visitors: '4,807', progress: 80 },
+  { id: 4, referral: 'Instagram', visitors: '3,678', progress: 75 },
+  { id: 5, referral: 'Twitter', visitors: '2,645', progress: 30 },
+  { id: 6, referral: 'Instagram', visitors: '1,560', progress: 40 },
+  { id: 7, referral: 'LinkedIn', visitors: '1,480', progress: 80 },
+  { id: 8, referral: 'LinkedIn', visitors: '2,262', progress: 55 },
+  { id: 9, referral: 'Google', visitors: '3,094', progress: 80 },
+  { id: 10, referral: 'Twitter', visitors: '1,016', progress: 70 },
 ];
 
-const PageVisitsTable = () => {
+const SocialTrafficTable = () => {
   return (
     <Box component={Paper} sx={{ p: 0, height: 'auto', width: 1 }}>
       <Stack
         alignItems="center"
         justifyContent="space-between"
-        sx={(theme) => ({p: theme.spacing(3, 2.5)})}
+        sx={(theme) => ({ p: theme.spacing(3, 2.5) })}
       >
         <Typography variant="h6" color="grey.700">
-          Page visits
+          Social traffic
         </Typography>
         <Button variant="contained" size="small" color="primary">
           SEE ALL
@@ -154,4 +114,4 @@ const PageVisitsTable = () => {
   );
 };
 
-export default PageVisitsTable;
+export default SocialTrafficTable;
