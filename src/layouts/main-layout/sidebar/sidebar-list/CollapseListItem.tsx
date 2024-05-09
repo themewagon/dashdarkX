@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import IconifyIcon from 'components/base/IconifyIcon';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
 import Link from '@mui/material/Link';
-import IconifyIcon from 'components/base/IconifyIcon';
 
 interface routeProps {
   route: {
@@ -17,7 +17,7 @@ interface routeProps {
   };
 }
 
-const isPathMatched = (url1: string, url2: string, index1: number, index2: number) => {
+const checkPathMatched = (url1: string, url2: string, index1: number, index2: number): boolean => {
   const pathAra1 = url1.split('/').filter((path) => path !== '');
   const pathAra2 = url2.split('/').filter((path) => path !== '');
   index1 = index1 === -1 ? pathAra1.length - 1 : index1;
@@ -30,6 +30,7 @@ const CollapseListItem = ({ route }: routeProps) => {
   const [open, setOpen] = useState(false);
 
   const currentPath = useLocation().pathname;
+  const isActivePath = checkPathMatched(currentPath, path, 0, 0);
 
   const handleClick = () => {
     setOpen(!open);
@@ -42,7 +43,7 @@ const CollapseListItem = ({ route }: routeProps) => {
           <IconifyIcon
             icon={icon}
             sx={{
-              color: isPathMatched(currentPath, path, 0, 0) ? 'primary.main' : null,
+              color: isActivePath ? 'primary.main' : null,
             }}
           />
         </ListItemIcon>
@@ -50,7 +51,7 @@ const CollapseListItem = ({ route }: routeProps) => {
           primary={title}
           sx={{
             '& .MuiListItemText-primary': {
-              color: isPathMatched(currentPath, path, 0, 0) ? 'primary.main' : null,
+              color: isActivePath ? 'primary.main' : null,
             },
           }}
         />
@@ -68,27 +69,24 @@ const CollapseListItem = ({ route }: routeProps) => {
         <List component="div" sx={{ mt: 1 }} disablePadding>
           {children.map((route) => {
             const childPath = route.path;
+            const isActiveChildPath = checkPathMatched(currentPath, childPath, -1, 0);
             return (
               <ListItemButton
                 component={Link}
-                href={route.path}
+                href={childPath === '#' ? childPath : `${path}${childPath}`}
                 sx={{
                   pl: 1.75,
                   borderLeft: 4,
                   borderStyle: 'solid',
-                  borderColor: isPathMatched(currentPath, childPath, -1, 0)
-                    ? 'primary.main'
-                    : 'transparent',
-                  bgcolor: isPathMatched(currentPath, childPath, -1, 0)
-                    ? 'info.dark'
-                    : 'transparent',
+                  borderColor: isActiveChildPath ? 'primary.main' : 'transparent',
+                  bgcolor: isActiveChildPath ? 'info.dark' : 'transparent',
                 }}
               >
                 <ListItemText
                   primary={route.title}
                   sx={{
                     '& .MuiListItemText-primary': {
-                      color: isPathMatched(currentPath, childPath, -1, 0) ? 'text.primary' : null,
+                      color: isActiveChildPath ? 'text.primary' : null,
                     },
                   }}
                 />
