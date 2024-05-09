@@ -7,23 +7,17 @@ const scrollbar = (theme: Theme) => ({
     '*::-webkit-scrollbar': {
         visibility: 'hidden',
         WebkitAppearance: 'none',
-        width: 6,
-        height: 6,
+        width: 5,
         backgroundColor: 'transparent',
     },
     '*::-webkit-scrollbar-track': {
-        margin: 16,
+        margin: 0,
     },
     '*::-webkit-scrollbar-thumb': {
         visibility: 'hidden',
         borderRadius: 3,
-        backgroundColor: theme.palette.grey[300],
-    },
-    '&:hover, &:focus': {
-        '*::-webkit-scrollbar, *::-webkit-scrollbar-thumb': {
-            visibility: 'visible',
-        },
-    },
+        backgroundColor: theme.palette.info.main,
+    }
 });
 
 export default scrollbar;

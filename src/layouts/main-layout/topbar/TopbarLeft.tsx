@@ -3,8 +3,6 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
 import IconifyIcon from 'components/base/IconifyIcon';
 import Image from 'components/base/Image';
 import LogoImg from 'assets/images/logo.svg';
@@ -52,18 +50,7 @@ const TopbarLeft = ({ isClosing, mobileOpen, setMobileOpen }: TopbarLeftProps) =
       </IconButton>
 
       {/* search bar */}
-      <TextField
-        variant="filled"
-        placeholder="Type here..."
-        sx={{ ml: { md: 1.8, lg: 0 }, display: { xs: 'none', md: 'block' } }}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <IconifyIcon icon={'ion:search'} sx={{ color: 'grey.700' }} />
-            </InputAdornment>
-          ),
-        }}
-      />
+      
     </Stack>
   );
 };

@@ -3,11 +3,12 @@ import { Components } from "@mui/material/styles/components";
 
 const ListItemText: Components<Omit<Theme, 'components'>>['MuiListItemText'] = {
     styleOverrides: {
-        root: ({ theme }) => ({
-            color: theme.palette.neutral.light,
-        }),
+        root: {},
         primary: ({ theme }) => ({
-            ...theme.typography.caption
+            marginTop: theme.spacing(0.15),
+            color: theme.palette.text.secondary,
+            fontSize: theme.typography.subtitle1.fontSize,
+            fontWeight: theme.typography.subtitle2.fontWeight
         })
     },
 }
