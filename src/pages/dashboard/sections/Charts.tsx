@@ -4,7 +4,7 @@ import LineChart from 'components/dashboard/LineChart';
 
 const Charts = () => {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={3.75}>
       <Grid item xs={12} xl={8}>
         <LineChart />
       </Grid>

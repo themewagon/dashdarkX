@@ -26,7 +26,9 @@ const RateChip = ({ rate, isPositive }: rateChipProps) => {
       }
       label={rate}
       sx={(theme) => ({
+        width: 60,
         flexDirection: 'row-reverse',
+        justifyContent: 'space-between',
         color: isPositive ? '#14CA74' : '#FF5A65',
         bgcolor: isPositive ? '#05C16833' : '#FF5A6533',
         borderColor: isPositive ? '#05C16833' : '#FF5A6533',
