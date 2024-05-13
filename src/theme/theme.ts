@@ -23,6 +23,7 @@ import Pagination from './components/Pagination';
 import PaginationItem from './components/PaginationItem';
 import type {} from '@mui/x-data-grid/themeAugmentation';
 import Divider from './components/Divider';
+import Chip from './components/Chip';
 
 export const theme = createTheme({
     typography,
@@ -45,6 +46,7 @@ export const theme = createTheme({
         MuiInputAdornment: InputAdornment,
         MuiFilledInput: FilledInput,
         MuiDivider: Divider,
+        MuiChip: Chip,
         MuiDataGrid: DataGrid,
         MuiPagination: Pagination,
         MuiPaginationItem: PaginationItem,

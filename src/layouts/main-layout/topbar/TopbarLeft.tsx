@@ -1,8 +1,9 @@
+import Stack from '@mui/material/Stack';
+import Link from '@mui/material/Link';
 import ButtonBase from '@mui/material/ButtonBase';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
-import Link from '@mui/material/Link';
-import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
 import Image from 'components/base/Image';
 import LogoImg from 'assets/images/logo.svg';
@@ -31,26 +32,27 @@ const TopbarLeft = ({ isClosing, mobileOpen, setMobileOpen }: TopbarLeftProps) =
           aria-label="menu"
           onClick={handleDrawerToggle}
         >
-          <IconifyIcon icon={'ion:menu'} />
+          <IconifyIcon icon={'mingcute:menu-line'} />
         </IconButton>
       </Toolbar>
 
+      {/* logo */}
       <ButtonBase component={Link} href="/" sx={{ display: { xm: 'block', lg: 'none' } }}>
         <Image src={LogoImg} alt="logo" sx={{ height: 24, width: 24 }} />
       </ButtonBase>
 
-      {/* search button */}
-      <IconButton
-        size="medium"
-        edge="start"
-        color="inherit"
-        sx={{ display: { xs: 'flex', md: 'none' } }}
+      {/* title */}
+      <Typography
+        variant="h5"
+        sx={(theme) => ({
+          letterSpacing: 1,
+          fontFamily: 'Work Sans',
+          fontWeight: theme.typography.caption.fontWeight,
+          display: { xs: 'none', lg: 'block' },
+        })}
       >
-        <IconifyIcon icon={'ion:search'} />
-      </IconButton>
-
-      {/* search bar */}
-      
+        Analytics
+      </Typography>
     </Stack>
   );
 };

@@ -10,7 +10,7 @@ interface TopbarProps {
 
 const Topbar = ({ isClosing, mobileOpen, setMobileOpen }: TopbarProps) => {
   return (
-    <Stack alignItems="center" justifyContent="space-between" sx={{ mb: 3 }}>
+    <Stack alignItems="center" justifyContent="space-between" mb={3}>
       <TopbarLeft isClosing={isClosing} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
       <TopbarRight />
     </Stack>

@@ -1,15 +1,15 @@
-import { Theme } from "@mui/material";
-import { Components } from "@mui/material/styles/components";
+import { Theme } from '@mui/material';
+import { Components } from '@mui/material/styles/components';
 
 const Paper: Components<Omit<Theme, 'components'>>['MuiPaper'] = {
-    styleOverrides: {
-        root: ({ theme }) => ({
-            padding: theme.spacing(2.5),
-            backgroundColor: theme.palette.neutral.white,
-            boxShadow: theme.customShadows[0],
-            borderRadius: theme.shape.borderRadius * 5
-        })
-    },
-}
+  styleOverrides: {
+    root: ({ theme }) => ({
+      padding: theme.spacing(2.5),
+      backgroundColor: theme.palette.info.main,
+      boxShadow: theme.customShadows[0],
+      borderRadius: theme.shape.borderRadius * 3,
+    }),
+  },
+};
 
 export default Paper;

@@ -44,11 +44,11 @@ const typography: TypographyOptions = {
     },
     caption: {
         fontSize: '0.75rem',
-        fontWeight: 700
+        fontWeight: 600
     },
     button: {
-        fontSize: '0.625rem',
-        fontWeight: 700,
+        fontSize: '1rem',
+        fontWeight: 500,
     }
 }
 

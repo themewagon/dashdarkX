@@ -1,4 +1,5 @@
 import SidebarHeader from './SidebarHeader';
+import SidebarFooter from './SidebarFooter';
 import SidebarList from './sidebar-list';
 
 const DrawerItems = () => {
@@ -6,6 +7,7 @@ const DrawerItems = () => {
     <>
       <SidebarHeader />
       <SidebarList />
+      <SidebarFooter />
     </>
   );
 };

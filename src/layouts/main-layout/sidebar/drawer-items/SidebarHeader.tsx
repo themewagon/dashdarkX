@@ -6,12 +6,12 @@ import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import Image from 'components/base/Image';
-import LogoImg from 'assets/images/logo.svg';
 import IconifyIcon from 'components/base/IconifyIcon';
+import LogoImg from 'assets/images/logo.svg';
 
 const SidebarHeader = () => {
   return (
-    <Box sx={{ p: 3.5 }}>
+    <Box px={3.5} py={4}>
       <Stack alignItems="center" justifyContent="flex-start">
         <ButtonBase component={Link} href="/" sx={{ py: 1.2 }}>
           <Image src={LogoImg} alt="logo" sx={{ mr: 1, height: 24, width: 24 }} />

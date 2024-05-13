@@ -1,15 +1,16 @@
 import { useState } from 'react';
-import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
+import Avatar from '@mui/material/Avatar';
 import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import IconifyIcon from 'components/base/IconifyIcon';
 import ButtonBase from '@mui/material/ButtonBase';
 import Stack from '@mui/material/Stack';
+import IconifyIcon from 'components/base/IconifyIcon';
+import AvatarImage from 'assets/images/avater.png';
 
 const TopbarRight = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -25,15 +26,15 @@ const TopbarRight = () => {
 
   return (
     <>
-      <Stack spacing={1.4} alignItems="center">
+      <Stack spacing={1} alignItems="center">
         <Tooltip title="Settings">
-          <IconButton size="small" sx={{ color: 'grey.800' }}>
-            <IconifyIcon icon={'ion:settings-sharp'} />
+          <IconButton size="small" sx={{ color: 'text.secondary' }}>
+            <IconifyIcon icon={'solar:settings-bold'} />
           </IconButton>
         </Tooltip>
 
         <Tooltip title="Notifications">
-          <IconButton size="small" sx={{ color: 'grey.800' }}>
+          <IconButton size="small" sx={{ color: 'text.secondary' }}>
             <IconifyIcon icon={'ion:notifications'} />
           </IconButton>
         </Tooltip>
@@ -48,17 +49,15 @@ const TopbarRight = () => {
               aria-haspopup="true"
             >
               <Avatar
+                src={AvatarImage}
                 sx={(theme) => ({
                   ml: 0.8,
-                  height: 30,
-                  width: 30,
-                  fontSize: '1rem',
+                  height: 32,
+                  width: 32,
                   bgcolor: theme.palette.primary.main,
                 })}
-              >
-                M
-              </Avatar>
-              <Typography variant="caption">MR. JHON</Typography>
+              />
+              <Typography variant="subtitle2">Mr. John</Typography>
             </Stack>
           </ButtonBase>
         </Tooltip>
@@ -80,45 +79,33 @@ const TopbarRight = () => {
               ml: -0.5,
               mr: 1,
             },
-            '&::before': {
-              content: '""',
-              display: 'block',
-              position: 'absolute',
-              top: 0,
-              right: 0,
-              width: 10,
-              height: 10,
-              bgcolor: '#fff',
-              transform: 'translateY(-50%) rotate(45deg)',
-              zIndex: 0,
-            },
           },
         }}
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={handleClose} sx={{ borderRadius: 3 }}>
+        <MenuItem onClick={handleClose} sx={{ borderRadius: 1 }}>
           <Avatar /> Profile
         </MenuItem>
-        <MenuItem onClick={handleClose} sx={{ borderRadius: 3 }}>
+        <MenuItem onClick={handleClose} sx={{ borderRadius: 1 }}>
           <Avatar /> My account
         </MenuItem>
         <Divider />
-        <MenuItem onClick={handleClose} sx={{ borderRadius: 3 }}>
+        <MenuItem onClick={handleClose} sx={{ borderRadius: 1 }}>
           <ListItemIcon>
-            <IconifyIcon icon={'ion:person-add'} />
+            <IconifyIcon icon={'mingcute:user-add-fill'} />
           </ListItemIcon>
           Add another account
         </MenuItem>
-        <MenuItem onClick={handleClose} sx={{ borderRadius: 3 }}>
+        <MenuItem onClick={handleClose} sx={{ borderRadius: 1 }}>
           <ListItemIcon>
-            <IconifyIcon icon={'ion:settings'} />
+            <IconifyIcon icon={'solar:settings-bold'} />
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem onClick={handleClose} sx={{ borderRadius: 3 }}>
+        <MenuItem onClick={handleClose} sx={{ borderRadius: 1 }}>
           <ListItemIcon>
-            <IconifyIcon icon={'ion:log-out'} />
+            <IconifyIcon icon={'material-symbols:logout'} />
           </ListItemIcon>
           Logout
         </MenuItem>

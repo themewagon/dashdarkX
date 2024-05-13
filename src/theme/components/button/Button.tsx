@@ -1,36 +1,32 @@
-import { Theme } from "@mui/material";
-import { Components } from "@mui/material/styles/components";
+import { Theme } from '@mui/material';
+import { Components } from '@mui/material/styles/components';
 
 const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
-    defaultProps: {
-        disableElevation: true,
-    },
-    styleOverrides: {
-        root: ({ theme }) => ({
-            ...theme.typography.button,
-            color: theme.palette.neutral.white,
-            borderRadius: theme.shape.borderRadius * 2,
-            letterSpacing: 0.5
-        }),
-        containedPrimary: ({ theme }) => ({
-            backgroundColor: theme.palette.primary.main,
-            '&:hover': {
-                backgroundColor: theme.palette.primary.main,
-            }
-        }),
-        containedSecondary: ({ theme }) => ({
-            backgroundColor: theme.palette.neutral.light,
-            '&:hover': {
-                backgroundColor: theme.palette.neutral.light,
-            }
-        }),
-        containedSizeMedium: ({ theme }) => ({
-            padding: theme.spacing(1.25, 6.25)
-        }),
-        containedSizeSmall: ({ theme }) => ({
-            padding: theme.spacing(1.125, 2.125)
-        })
-    },
-}
+  defaultProps: {
+    disableElevation: true,
+  },
+  styleOverrides: {
+    root: ({ theme }) => ({
+      ...theme.typography.button,
+      color: theme.palette.text.primary,
+      borderRadius: theme.shape.borderRadius,
+      textTransform: 'initial',
+      letterSpacing: 0.5,
+    }),
+    containedPrimary: ({ theme }) => ({
+      background: `linear-gradient(128.49deg, ${theme.palette.gradients.primary.main} 19.86%, ${theme.palette.gradients.primary.state} 68.34%)`,
+      '&:hover': {
+        background: `linear-gradient(128.49deg, ${theme.palette.gradients.primary.main} 19.86%, ${theme.palette.gradients.primary.state} 68.34%)`,
+      },
+    }),
+    containedSizeLarge: ({ theme }) => ({
+      padding: theme.spacing(1.25, 1.75),
+      width: '100%',
+    }),
+    endIcon: ({ theme }) => ({
+      fontSize: theme.typography.caption.fontSize,
+    }),
+  },
+};
 
 export default Button;

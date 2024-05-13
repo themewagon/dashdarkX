@@ -159,7 +159,7 @@ export const bottomListRoutes = [
   {
     path: '/template-pages',
     title: 'Template pages',
-    icon: 'mingcute:plugin-2-fill',
+    icon: 'mingcute:document-2-fill',
     children: [
       {
         path: '#',
