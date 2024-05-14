@@ -22,8 +22,10 @@ import DataGrid from './components/DataGrid';
 import Pagination from './components/Pagination';
 import PaginationItem from './components/PaginationItem';
 import type {} from '@mui/x-data-grid/themeAugmentation';
+import type {} from '@mui/x-date-pickers/themeAugmentation';
 import Divider from './components/Divider';
 import Chip from './components/Chip';
+import DatePicker from './components/DatePicker';
 
 export const theme = createTheme({
     typography,
@@ -50,6 +52,7 @@ export const theme = createTheme({
         MuiDataGrid: DataGrid,
         MuiPagination: Pagination,
         MuiPaginationItem: PaginationItem,
+        MuiDatePicker: DatePicker
     },
     customShadows,
     spacing: 8,
