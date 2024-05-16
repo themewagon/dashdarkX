@@ -1,42 +1,102 @@
-// import ReactEchart from 'components/base/ReactEchart';
 import ReactECharts from 'echarts-for-react';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import getLineChartOptions from './getLineChartOptions';
+import Paper from '@mui/material/Paper';
+import IconifyIcon from 'components/base/IconifyIcon';
+import RateChip from 'components/chips/RateChip';
+import DateSelect from './DateSelect';
+import { graphic } from 'echarts';
 
 const LineChart = () => {
-  const option = getLineChartOptions();
+
+  const option = {
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'none' // Show tooltip for each axis
+      }
+    },
+    grid: {
+      top: 30,
+      bottom: 70,
+      left: 30,
+      right: 0,
+    },
+    xAxis: {
+      type: 'category',
+      data: ['Jan1', 'Jan8', 'Jan16', 'Jan24', 'Jan31', 'Feb1', 'Feb8', 'Feb16', 'Feb24'],
+      axisTick: {
+        show: false,
+      },
+      axisLine: {
+        show: false,
+      },
+      axisLabel: {
+        color: '#AEB9E1',
+        fontSize: '12px',
+        margin: 10,
+        fontFamily: 'Questrial'
+      },
+    },
+    yAxis: {
+      type: 'value',
+      axisLabel: {
+        color: '#AEB9E1',
+        fontSize: '12px',
+        fontFamily: 'Questrial'
+      },
+      splitLine: {
+        show: false,
+      },
+      interval: 100,
+      max: 300
+    },
+    series: [
+      {
+        data: [0, 130, 130, 300, 90, 220, 180, 240, 90],
+        type: 'line',
+        showSymbol: false,
+        lineStyle: {
+          color: '#00C2FF',
+          width: 1.2
+        },
+        areaStyle: {
+          // Define gradient for the area shadow
+          color: new graphic.LinearGradient(0, 0, 0, 1, [
+              {
+                  offset: 0,
+                  color: 'rgba(0, 194, 255, 0.2)',
+              },
+              {
+                  offset: 1,
+                  color: 'rgba(0, 194, 255, 0)',
+              },
+          ]),
+      },
+      }
+    ]
+  };
 
   return (
-    <Box component={Paper} sx={{ height: 490 }}>
-      <Typography
-        variant="h6"
-        sx={{
-          background: 'linear-gradient(81.62deg, #313860 2.25%, #151928 79.87%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-        }}
-        gutterBottom
-      >
-        Sales overview
-      </Typography>
-      <Typography variant="subtitle2" component="p" color="grey.700">
-        <Typography
-          variant="subtitle2"
-          component="span"
-          sx={(theme) => ({ color: theme.palette.success.light, fontWeight: 700 })}
-        >
-          (+5) more
-        </Typography>{' '}
-        in 2021
-      </Typography>
-      <ReactECharts
-        option={option}
-        // notMerge={true}
-        // lazyUpdate={true}
-        style={{ height: '100%', width: '100%' }}
-      />
+    <Box component={Paper} sx={{ height: 300 }}>
+      <Stack alignItems="center" spacing={0.6}>
+        <IconifyIcon icon="ph:clock-fill" sx={{color: 'text.secondary', fontSize: '1.1rem'}} />
+        <Typography variant="body2" color="text.secondary">Completed tasks over time</Typography>
+      </Stack>
+
+      <Stack justifyContent="space-between" mt={1.4}>
+          <Stack alignItems="center" gap={0.8}>
+              <Typography variant="h4" sx={{ fontWeight: 600, letterSpacing: 1 }}>
+                  257
+              </Typography>
+              <RateChip rate={"16.8%"} isPositive={true} />
+          </Stack>
+
+          <DateSelect/>
+      </Stack>
+
+      <ReactECharts option={option} style={{height: '220px'}} />
     </Box>
   );
 };

@@ -1,13 +1,13 @@
 import CardsGroup from './sections/CardsGroup';
-import DashboardTables from 'pages/dashboard/sections/DashboardTables';
 import MainCharts from './sections/MainCharts';
+import SecondCharts from './sections/SecondCharts';
 
 const Dashboard = () => {
   return (
     <>
       <CardsGroup />
       <MainCharts/>
-      <DashboardTables />
+      <SecondCharts/>
     </>
   );
 };

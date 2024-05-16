@@ -52,7 +52,7 @@ export const theme = createTheme({
         MuiDataGrid: DataGrid,
         MuiPagination: Pagination,
         MuiPaginationItem: PaginationItem,
-        MuiDatePicker: DatePicker
+        MuiDatePicker: DatePicker,
     },
     customShadows,
     spacing: 8,

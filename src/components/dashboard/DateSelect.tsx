@@ -4,19 +4,44 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import dayjs from 'dayjs';
 
 const DateSelect = () => {
+
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker views={['month', 'year']} defaultValue={dayjs('May-2024')} sx={{padding: 0, border: 0, boxShadow: 0, '& .MuiIconButton-edgeEnd': {color: '#fff'},  '& .MuiOutlinedInput-root': {
-                '& .MuiOutlinedInput-notchedOutline': {
-                    borderWidth: 0,
+            <DatePicker views={['month', 'year']} defaultValue={dayjs('May-2024')} format='MMM YYYY'
+            sx={{
+                padding: 0,
+                border: 0,
+                boxShadow: 0,
+                bgcolor: 'info.dark',
+                '& .MuiIconButton-edgeEnd': {
+                    color: 'text.secondary',
+
+                    '& .MuiSvgIcon-fontSizeMedium': {
+                        fontSize: '1.2rem'
+                    }
                 },
-                '&:hover .MuiOutlinedInput-notchedOutline': {
-                    borderWidth: 0,
+                '& .MuiOutlinedInput-input': {
+                    padding: 0,
+                    color: 'text.secondary',
+                    paddingLeft: '0.4rem',
+                    fontSize: '0.875rem',
+                    height: '30px',
+                    width: '68px'
                 },
-                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                    borderWidth: 0,
-                },
-            },}}/>
+                '& .MuiOutlinedInput-root': {
+                    paddingRight: '0.4rem',
+
+                    '& .MuiOutlinedInput-notchedOutline': {
+                        borderWidth: 0,
+                    },
+                    '&:hover .MuiOutlinedInput-notchedOutline': {
+                        borderWidth: 0,
+                    },
+                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                        borderWidth: 0,
+                    },
+                }
+            }}/>
         </LocalizationProvider>
     );
 }
