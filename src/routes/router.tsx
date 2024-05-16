@@ -4,13 +4,10 @@ import { Outlet, createBrowserRouter } from 'react-router-dom';
 import MainLayout from 'layouts/main-layout';
 import Splash from 'components/loading/Splash';
 import PageLoader from 'components/loading/PageLoader';
+import paths from './paths';
 
 const App = lazy(() => import('App'));
-const Dashboard = lazy(() => import('pages/dashboard'));
-const Billing = lazy(() => import('pages/Billing'));
-const Tables = lazy(() => import('pages/Tables'));
-const Rtl = lazy(() => import('pages/Rtl'));
-
+const Reports = lazy(() => import('pages/dashboard/reports'));
 const router = createBrowserRouter([
   {
     element: (
@@ -31,19 +28,11 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Dashboard />,
+            element: <Reports />,
           },
           {
-            path: '/dashboard/reports',
-            element: <Tables />,
-          },
-          {
-            path: '/billing',
-            element: <Billing />,
-          },
-          {
-            path: '/rtl',
-            element: <Rtl />,
+            path: paths.reports,
+            element: <Reports />,
           },
         ],
       },
