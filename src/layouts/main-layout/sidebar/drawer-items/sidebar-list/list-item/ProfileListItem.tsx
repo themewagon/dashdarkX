@@ -9,15 +9,15 @@ import CollapseList from './CollapseList';
 
 interface profileListProps {
   route: {
-    path: string;
-    profileName: string;
+    id: string;
+    subheader: string;
     avater?: string;
-    children: { path: string; title: string }[];
+    items: { name: string, path: string; pathName: string }[];
   };
 }
 
 const ProfileListItem = ({ route }: profileListProps) => {
-  const { profileName, path, children } = route;
+  const { subheader, items } = route;
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -39,7 +39,7 @@ const ProfileListItem = ({ route }: profileListProps) => {
             />
             <Stack direction="column">
               <Typography variant="subtitle2" color="text.primary" sx={{ letterSpacing: 1 }}>
-                {profileName}
+                {subheader}
               </Typography>
               <Typography
                 variant="caption"
@@ -61,7 +61,7 @@ const ProfileListItem = ({ route }: profileListProps) => {
         </Stack>
       </ListItemButton>
 
-      <CollapseList open={open} parentPath={path} children={children} />
+      <CollapseList open={open} children={items} />
     </>
   );
 };

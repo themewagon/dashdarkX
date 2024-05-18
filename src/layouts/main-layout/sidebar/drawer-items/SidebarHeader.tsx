@@ -13,7 +13,7 @@ const SidebarHeader = () => {
   return (
     <Box px={3.5} py={4}>
       <Stack alignItems="center" justifyContent="flex-start">
-        <ButtonBase component={Link} href="/" sx={{ py: 1.2 }}>
+        <ButtonBase component={Link} href="/" sx={{ py: 1.2 }} disableRipple>
           <Image src={LogoImg} alt="logo" sx={{ mr: 1, height: 24, width: 24 }} />
           <Typography variant="h5" color="text.primary" sx={{ letterSpacing: 1 }}>
             Dashdark X

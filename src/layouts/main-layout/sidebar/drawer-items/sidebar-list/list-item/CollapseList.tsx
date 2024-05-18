@@ -1,36 +1,31 @@
 import { useLocation } from 'react-router-dom';
-import { checkPathMatched } from './checkPathMatched';
 import List from '@mui/material/List';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemButton from '@mui/material/ListItemButton';
-import Collapse from '@mui/material/Collapse';
+import Collapse from '@mui/material/Collapse'; 
 import Link from '@mui/material/Link';
+import { SubMenuItem } from 'routes/sitemap';
 
 interface collapseListProps {
   open: boolean;
-  parentPath: string;
-  children: {
-    path: string;
-    title: string;
-  }[];
+  children: SubMenuItem[]
 }
 
 const CollapseList = (props: collapseListProps) => {
-  const { open, parentPath, children } = props;
+  const { open, children } = props;
 
-  const currentPath = useLocation().pathname;
+  const currentPath = useLocation().pathname.split('/').pop();
 
   return (
     <Collapse in={open} timeout="auto" unmountOnExit>
       <List component="div" sx={{ mt: 1 }} disablePadding>
         {children.map((route, index) => {
-          const childPath = route.path;
-          const isActivePath = checkPathMatched(currentPath, childPath, -1, 0);
+          const isActivePath = currentPath === route.pathName || route.active;
           return (
             <ListItemButton
               key={index}
               component={Link}
-              href={childPath === '#' ? childPath : `${parentPath}${childPath}`}
+              href={route.path}
               sx={{
                 pl: 1.75,
                 borderLeft: 4,
@@ -40,7 +35,7 @@ const CollapseList = (props: collapseListProps) => {
               }}
             >
               <ListItemText
-                primary={route.title}
+                primary={route.name}
                 sx={{
                   '& .MuiListItemText-primary': {
                     color: isActivePath ? 'text.primary' : null,

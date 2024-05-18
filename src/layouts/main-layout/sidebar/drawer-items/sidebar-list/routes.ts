@@ -1,3 +1,17 @@
+// import sitemap from "routes/sitemap";
+
+// export 
+
+// export const bottomRoutes = sitemap.filter((item) => {
+//   const id = item.id;
+//   if (id === 'template-pages' || id === 'settings') {
+//     return item;
+//   } 
+//   return null;
+// });
+
+// export const profileRoute = sitemap.find((item) => item.id === 'account-settings');
+
 export const topListRoutes = [
   {
     path: '/dashboard',

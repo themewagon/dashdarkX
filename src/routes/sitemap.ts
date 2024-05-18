@@ -12,6 +12,7 @@ export interface MenuItem {
   id: string;
   subheader: string;
   icon?: string;
+  active?: boolean;
   items: SubMenuItem[];
 }
 
@@ -20,6 +21,7 @@ const sitemap: MenuItem[] = [
     id: 'dashboard',
     subheader: 'Dashboard',
     icon: 'mingcute:home-1-fill',
+    active: true,
     items: [
       {
         name: 'All Pages',
@@ -30,7 +32,7 @@ const sitemap: MenuItem[] = [
         name: 'Reports',
         path: paths.reports,
         pathName: 'reports',
-        active: true,
+        active: true
       },
       {
         name: 'Products',

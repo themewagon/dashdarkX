@@ -5,6 +5,8 @@ import MainLayout from 'layouts/main-layout';
 import Splash from 'components/loading/Splash';
 import PageLoader from 'components/loading/PageLoader';
 import paths from './paths';
+import Products from 'pages/dashboard/Products';
+import Task from 'pages/dashboard/Task';
 
 const App = lazy(() => import('App'));
 const Reports = lazy(() => import('pages/dashboard/reports'));
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
           {
             path: paths.reports,
             element: <Reports />,
+          },
+          {
+            path: paths.products,
+            element: <Products />,
+          },
+          {
+            path: paths.task,
+            element: <Task />,
           },
         ],
       },
