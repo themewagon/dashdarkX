@@ -51,9 +51,9 @@ const StackedBarChart = () => {
       left: 50,
       right: 0,
     },
-    //   legend: {
-    //     data: data.series.map((serie) => serie.name)
-    //   },
+    legend: {
+      data: data.series.map((serie) => serie.name)
+    },
     xAxis: {
       type: 'category',
       data: data.categories,

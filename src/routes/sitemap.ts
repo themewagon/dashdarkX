@@ -215,17 +215,17 @@ const sitemap: MenuItem[] = [
       {
         name: 'Page 01',
         path: paths.page1,
-        pathName: 'page1',
+        pathName: 'page-1',
       },
       {
         name: 'Page 02',
         path: paths.page2,
-        pathName: 'page2',
+        pathName: 'page-2',
       },
       {
         name: 'Page 03',
         path: paths.page3,
-        pathName: 'page3',
+        pathName: 'page-3',
       },
     ],
   },
