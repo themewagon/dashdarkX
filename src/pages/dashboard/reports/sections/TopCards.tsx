@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import AnalyticsCard from 'components/dashboard/AnalyticsCard';
+import ReportsCard from 'components/dashboard/reports/ReportsCard';
 
 const cardsData = [
   {
@@ -32,13 +32,19 @@ const cardsData = [
   },
 ];
 
-const CardsGroup = () => {
+const TopCards = () => {
   return (
     <Grid container spacing={3.75}>
       {cardsData.map((item, index) => {
         return (
           <Grid item xs={12} sm={6} xl={3} key={index}>
-            <AnalyticsCard title={item.title} value={item.value} rate={item.rate} isPositive={item.isPositive} icon={item.icon} />
+            <ReportsCard
+              title={item.title}
+              value={item.value}
+              rate={item.rate}
+              isPositive={item.isPositive}
+              icon={item.icon}
+            />
           </Grid>
         );
       })}
@@ -46,4 +52,4 @@ const CardsGroup = () => {
   );
 };
 
-export default CardsGroup;
+export default TopCards;

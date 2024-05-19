@@ -1,21 +1,20 @@
 import ReactECharts from 'echarts-for-react';
+import { graphic } from 'echarts';
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import IconifyIcon from 'components/base/IconifyIcon';
 import RateChip from 'components/chips/RateChip';
-import DateSelect from './DateSelect';
-import { graphic } from 'echarts';
+import DateSelect from 'components/dates/DateSelect';
+import IconifyIcon from 'components/base/IconifyIcon';
 
 const LineChart = () => {
-
   const option = {
     tooltip: {
       trigger: 'axis',
       axisPointer: {
-        type: 'none' // Show tooltip for each axis
-      }
+        type: 'none', // Show tooltip for each axis
+      },
     },
     grid: {
       top: 30,
@@ -36,7 +35,7 @@ const LineChart = () => {
         color: '#AEB9E1',
         fontSize: '12px',
         margin: 10,
-        fontFamily: 'Questrial'
+        fontFamily: 'Questrial',
       },
     },
     yAxis: {
@@ -44,13 +43,13 @@ const LineChart = () => {
       axisLabel: {
         color: '#AEB9E1',
         fontSize: '12px',
-        fontFamily: 'Questrial'
+        fontFamily: 'Questrial',
       },
       splitLine: {
         show: false,
       },
       interval: 100,
-      max: 300
+      max: 300,
     },
     series: [
       {
@@ -59,44 +58,46 @@ const LineChart = () => {
         showSymbol: false,
         lineStyle: {
           color: '#00C2FF',
-          width: 1.2
+          width: 1.2,
         },
         areaStyle: {
           // Define gradient for the area shadow
           color: new graphic.LinearGradient(0, 0, 0, 1, [
-              {
-                  offset: 0,
-                  color: 'rgba(0, 194, 255, 0.2)',
-              },
-              {
-                  offset: 1,
-                  color: 'rgba(0, 194, 255, 0)',
-              },
+            {
+              offset: 0,
+              color: 'rgba(0, 194, 255, 0.2)',
+            },
+            {
+              offset: 1,
+              color: 'rgba(0, 194, 255, 0)',
+            },
           ]),
+        },
       },
-      }
-    ]
+    ],
   };
 
   return (
     <Box component={Paper} sx={{ height: 300 }}>
       <Stack alignItems="center" spacing={0.6}>
-        <IconifyIcon icon="ph:clock-fill" sx={{color: 'text.secondary', fontSize: '1.1rem'}} />
-        <Typography variant="body2" color="text.secondary">Completed tasks over time</Typography>
+        <IconifyIcon icon="ph:clock-fill" sx={{ color: 'text.secondary', fontSize: '1.1rem' }} />
+        <Typography variant="body2" color="text.secondary">
+          Completed tasks over time
+        </Typography>
       </Stack>
 
       <Stack justifyContent="space-between" mt={1.4}>
-          <Stack alignItems="center" gap={0.8}>
-              <Typography variant="h4" sx={{ fontWeight: 600, letterSpacing: 1 }}>
-                  257
-              </Typography>
-              <RateChip rate={"16.8%"} isPositive={true} />
-          </Stack>
+        <Stack alignItems="center" gap={0.8}>
+          <Typography variant="h4" sx={{ fontWeight: 600, letterSpacing: 1 }}>
+            257
+          </Typography>
+          <RateChip rate={'16.8%'} isPositive={true} />
+        </Stack>
 
-          <DateSelect/>
+        <DateSelect />
       </Stack>
 
-      <ReactECharts option={option} style={{height: '220px'}} />
+      <ReactECharts option={option} style={{ height: '220px' }} />
     </Box>
   );
 };

@@ -13,7 +13,7 @@ interface firstCardProps {
   isPositive: boolean;
 }
 
-const AnalyticsCard = (props: firstCardProps) => {
+const ReportsCard = (props: firstCardProps) => {
   const { icon, title, value, rate, isPositive } = props;
 
   return (
@@ -53,4 +53,4 @@ const AnalyticsCard = (props: firstCardProps) => {
   );
 };
 
-export default AnalyticsCard;
+export default ReportsCard;
