@@ -1,15 +1,25 @@
 import List from '@mui/material/List';
-// import ListItem from './list-item';
-// import ProfileListItem from './list-item/ProfileListItem';
-// import { bottomListRoutes, profileRoute } from './routes';
+import ListItem from './list-item';
+import sitemap from 'routes/sitemap';
+import ProfileListItem from './list-item/ProfileListItem';
 
 const BottomList = () => {
+  const routes = sitemap.filter((item) => {
+    const id = item.id;
+    if (id === 'template-pages' || id === 'settings') {
+      return item;
+    }
+    return null;
+  });
+
+  const profileRoute = sitemap.find((item) => item.id === 'account-settings');
+
   return (
-    <List sx={{ px: 3.5, width: 1 }} component="nav">
-      {/* {bottomListRoutes.map((route, index) => {
-        return <ListItem key={index} route={route} />;
+    <List sx={{ px: 2.5, width: 1 }} component="nav">
+      {routes.map((route, index) => {
+        return <ListItem key={index} {...route} />;
       })}
-      <ProfileListItem route={profileRoute} /> */}
+      {profileRoute && <ProfileListItem {...profileRoute} />}
     </List>
   );
 };

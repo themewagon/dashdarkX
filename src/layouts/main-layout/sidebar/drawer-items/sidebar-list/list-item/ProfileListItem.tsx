@@ -1,24 +1,19 @@
 import { useState } from 'react';
-import Stack from '@mui/material/Stack';
-import Avatar from '@mui/material/Avatar';
+import { MenuItem } from 'routes/sitemap';
+import { useLocation } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import ListItemButton from '@mui/material/ListItemButton';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
 import IconifyIcon from 'components/base/IconifyIcon';
 import AvatarImage from 'assets/images/avater.png';
 import CollapseList from './CollapseList';
 
-interface profileListProps {
-  route: {
-    id: string;
-    subheader: string;
-    avater?: string;
-    items: { name: string, path: string; pathName: string }[];
-  };
-}
-
-const ProfileListItem = ({ route }: profileListProps) => {
-  const { subheader, items } = route;
+const ProfileListItem = ({ id, subheader, items }: MenuItem) => {
   const [open, setOpen] = useState(false);
+
+  const currentPath = useLocation().pathname;
+  const isActivePath = currentPath.split('/')[2] === id;
 
   const handleClick = () => {
     setOpen(!open);
@@ -26,7 +21,10 @@ const ProfileListItem = ({ route }: profileListProps) => {
 
   return (
     <>
-      <ListItemButton onClick={handleClick} sx={{ mt: 2 }}>
+      <ListItemButton
+        onClick={handleClick}
+        sx={{ mt: 2, bgcolor: isActivePath ? 'info.dark' : null }}
+      >
         <Stack alignItems="center" justifyContent="space-between" sx={{ width: 1 }}>
           <Stack spacing={1} alignItems="center">
             <Avatar

@@ -50,9 +50,9 @@ export default {
   page3: `${parentPaths.templatePages}/page-3`,
 
   profile: `${parentPaths.accountSettings}/profile`,
-  updateProfile: `${parentPaths.templatePages}/update-profile`,
-  changePassword: `${parentPaths.templatePages}/change-password`,
-  helpCenter: `${parentPaths.templatePages}/help-center`,
+  updateProfile: `${parentPaths.accountSettings}/update-profile`,
+  changePassword: `${parentPaths.accountSettings}/change-password`,
+  helpCenter: `${parentPaths.accountSettings}/help-center`,
 
   login: `/${rootPaths.authRoot}/login`,
   signup: `/${rootPaths.authRoot}/sign-up`,

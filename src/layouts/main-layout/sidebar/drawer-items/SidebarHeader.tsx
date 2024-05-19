@@ -1,17 +1,17 @@
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
-import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import Image from 'components/base/Image';
 import IconifyIcon from 'components/base/IconifyIcon';
 import LogoImg from 'assets/images/logo.svg';
+import Image from 'components/base/Image';
 
 const SidebarHeader = () => {
   return (
-    <Box px={3.5} py={4}>
+    <Box sx={(theme) => ({p: theme.spacing(4, 3.5, 3)})}>
       <Stack alignItems="center" justifyContent="flex-start">
         <ButtonBase component={Link} href="/" sx={{ py: 1.2 }} disableRipple>
           <Image src={LogoImg} alt="logo" sx={{ mr: 1, height: 24, width: 24 }} />

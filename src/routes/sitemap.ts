@@ -12,6 +12,7 @@ export interface MenuItem {
   id: string;
   subheader: string;
   icon?: string;
+  avatar?: string;
   active?: boolean;
   items: SubMenuItem[];
 }

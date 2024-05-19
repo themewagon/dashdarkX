@@ -1,14 +1,14 @@
 import { useLocation } from 'react-router-dom';
+import { SubMenuItem } from 'routes/sitemap';
 import List from '@mui/material/List';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemButton from '@mui/material/ListItemButton';
-import Collapse from '@mui/material/Collapse'; 
+import Collapse from '@mui/material/Collapse';
 import Link from '@mui/material/Link';
-import { SubMenuItem } from 'routes/sitemap';
 
 interface collapseListProps {
   open: boolean;
-  children: SubMenuItem[]
+  children: SubMenuItem[];
 }
 
 const CollapseList = (props: collapseListProps) => {
@@ -17,10 +17,11 @@ const CollapseList = (props: collapseListProps) => {
   const currentPath = useLocation().pathname.split('/').pop();
 
   return (
-    <Collapse in={open} timeout="auto" unmountOnExit>
-      <List component="div" sx={{ mt: 1 }} disablePadding>
+    <Collapse in={open} timeout="auto" unmountOnExit sx={{ mt: 1, px: 1 }}>
+      <List component="div" disablePadding>
         {children.map((route, index) => {
-          const isActivePath = currentPath === route.pathName || route.active;
+          const isActivePath =
+            currentPath === route.pathName || (route.active && currentPath === '');
           return (
             <ListItemButton
               key={index}
