@@ -17,8 +17,8 @@ const CollapseList = (props: collapseListProps) => {
   const currentPath = useLocation().pathname.split('/').pop();
 
   return (
-    <Collapse in={open} timeout="auto" unmountOnExit sx={{ mt: 1, px: 1 }}>
-      <List component="div" disablePadding>
+    <Collapse in={open} timeout="auto" sx={{ px: 1 }} unmountOnExit>
+      <List component="div" sx={{ mt: 1 }} disablePadding>
         {children.map((route, index) => {
           const isActivePath =
             currentPath === route.pathName || (route.active && currentPath === '');
