@@ -19,7 +19,7 @@ const CircularChart = () => {
   };
 
   return (
-    <Box component={Paper} sx={{ height: 500 }} onClick={() => setActiveBarIndex(null)}>
+    <Box component={Paper} onClick={() => setActiveBarIndex(null)} sx={{ height: 500 }}>
       <Stack alignItems="center" justifyContent="space-between" mb={-2}>
         <Typography
           variant="h6"

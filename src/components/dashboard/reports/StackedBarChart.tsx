@@ -1,50 +1,20 @@
-import ReactECharts from 'echarts-for-react';
+import { useRef } from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import RateChip from 'components/chips/RateChip';
+import ButtonBase from '@mui/material/ButtonBase';
 import DateSelect from 'components/dates/DateSelect';
-import { getChartsOptions } from './getChartsOptions';
-import { ButtonBase } from '@mui/material';
-import { useRef } from 'react';
-
-export const data = {
-  categories: [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ],
-  series: [
-    {
-      name: 'Current clients',
-      data: [14000, 30000, 38000, 36000, 16000, 24000, 10000, 44000, 12000, 6000, 12000, 24000],
-    },
-    {
-      name: 'Subscribers',
-      data: [12000, 20000, 26000, 12000, 10000, 32000, 6000, 8000, 12000, 18000, 16000, 6000],
-    },
-    {
-      name: 'New customers',
-      data: [12000, 26000, 24000, 24000, 8000, 14000, 0, 38000, 14000, 30000, 16000, 28000],
-    },
-  ],
-};
+import RateChip from 'components/chips/RateChip';
+import ReactECharts from 'echarts-for-react';
+import { getStackedBarChartOption } from './functions/getStackedBarChartOption';
+import { data } from './functions/getStackedBarChartOption';
 
 const StackedBarChart = () => {
-  const option = getChartsOptions({chartType: 'stacked-bar-chart'});
+  const option = getStackedBarChartOption();
   const chartRef = useRef<ReactECharts>(null);
 
-  function toggleSeries(seriesName: string) {
+  const handleLegendClick = (seriesName: string) => {
     const echartsInstance = chartRef.current?.getEchartsInstance();
     if (!echartsInstance) return;
 
@@ -53,18 +23,19 @@ const StackedBarChart = () => {
     if (Array.isArray(option.series)) {
       const series = option.series.map((s) => {
         if (s.name === seriesName && s.type === 'bar') {
-          const isCurrentlyVisible = (s.data as number[]).some(value => value !== 0);
+          const isBarVisible = (s.data as number[]).some((value) => value !== 0);
           return {
             ...s,
-            data: isCurrentlyVisible ? (s.data as number[]).map(() => 0) : data.series.find(serie => serie.name === seriesName)?.data || [],
+            data: isBarVisible
+              ? (s.data as number[]).map(() => 0)
+              : data.series.find((s) => s.name === seriesName)?.data || [],
           };
         }
         return s;
       });
-
       echartsInstance.setOption({ series });
     }
-  }
+  };
 
   return (
     <Box component={Paper} sx={{ height: 500 }}>
@@ -81,7 +52,7 @@ const StackedBarChart = () => {
         </Stack>
 
         <Stack spacing={2}>
-          <ButtonBase onClick={() => toggleSeries('Current clients')} disableRipple>
+          <ButtonBase onClick={() => handleLegendClick('Current clients')} disableRipple>
             <Stack spacing={0.5} alignItems="center">
               <Box sx={{ height: 8, width: 8, bgcolor: 'primary.main', borderRadius: 1 }}></Box>
               <Typography variant="body2" color="text.secondary" sx={{ fontFamily: 'Work Sans' }}>
@@ -90,16 +61,18 @@ const StackedBarChart = () => {
             </Stack>
           </ButtonBase>
 
-          <ButtonBase onClick={() => toggleSeries('Subscribers')} disableRipple>
+          <ButtonBase onClick={() => handleLegendClick('Subscribers')} disableRipple>
             <Stack spacing={0.5} alignItems="center">
-              <Box sx={{ height: 8, width: 8, bgcolor: 'info.light', borderRadius: 1 }}></Box>
+              <Box
+                sx={{ height: 8, width: 8, bgcolor: 'secondary.lighter', borderRadius: 1 }}
+              ></Box>
               <Typography variant="body2" color="text.secondary" sx={{ fontFamily: 'Work Sans' }}>
                 Subscribers
               </Typography>
             </Stack>
           </ButtonBase>
 
-          <ButtonBase onClick={() => toggleSeries('New customers')} disableRipple>
+          <ButtonBase onClick={() => handleLegendClick('New customers')} disableRipple>
             <Stack spacing={0.5} alignItems="center">
               <Box sx={{ height: 8, width: 8, bgcolor: 'secondary.light', borderRadius: 1 }}></Box>
               <Typography variant="body2" color="text.secondary" sx={{ fontFamily: 'Work Sans' }}>

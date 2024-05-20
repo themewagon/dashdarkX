@@ -1,7 +1,6 @@
 import { useTheme } from '@mui/material';
 
 interface chartOptionProps {
-  data?: object[];
   activeBarIndex?: number | null;
 }
 
