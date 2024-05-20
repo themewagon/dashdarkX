@@ -16,7 +16,7 @@ const FilledInput: Components<Omit<Theme, 'components'>>['MuiFilledInput'] = {
             letterSpacing: '0.5px',
 
             "&::placeholder": {
-                color: theme.palette.neutral.light,
+                color: theme.palette.text.secondary,
                 opacity: 1,
             }
         })

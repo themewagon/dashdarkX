@@ -5,9 +5,9 @@ const InputAdornment: Components<Omit<Theme, 'components'>>['MuiInputAdornment']
     styleOverrides: {
         root: ({ theme }) => ({
             margin: '0 !important',
-            padding: theme.spacing(0, 0.5),
-            color: theme.palette.neutral.dark,
-            fontSize: theme.typography.h5.fontSize,
+            padding: theme.spacing(0, 0.25),
+            color: theme.palette.text.secondary,
+            fontSize: theme.typography.h6.fontSize,
         })
     },
 }

@@ -1,19 +1,19 @@
-import ReactECharts from 'echarts-for-react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
-import { getChartsOptions } from './getChartsOptions';
-import { ButtonBase } from '@mui/material';
-import { useState } from 'react';
+import ButtonBase from '@mui/material/ButtonBase';
+import ReactECharts from 'echarts-for-react';
+import { getCircularChartOption } from './functions/getCricularChartOption';
 
 const CircularChart = () => {
   const [activeBarIndex, setActiveBarIndex] = useState<number | null>(null);
-  const option = getChartsOptions({ chartType: 'circular', activeBarIndex });
+  const option = getCircularChartOption({ activeBarIndex });
 
-  const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>, index: number) => {
+  const handleLegendClick = (e: React.MouseEvent<HTMLButtonElement>, index: number) => {
     e.stopPropagation();
     setActiveBarIndex(index);
   };
@@ -48,7 +48,7 @@ const CircularChart = () => {
 
       <Stack mt={-1} spacing={3} direction="column">
         <Stack alignItems="center" justifyContent="space-between">
-          <ButtonBase onClick={(e) => handleButtonClick(e, 2)} disableRipple>
+          <ButtonBase onClick={(e) => handleLegendClick(e, 2)} disableRipple>
             <Stack spacing={1} alignItems="center">
               <Box sx={{ height: 8, width: 8, bgcolor: 'primary.main', borderRadius: 1 }}></Box>
               <Typography variant="body1" color="text.secondary" sx={{ fontFamily: 'Work Sans' }}>
@@ -61,9 +61,11 @@ const CircularChart = () => {
           </Typography>
         </Stack>
         <Stack alignItems="center" justifyContent="space-between">
-          <ButtonBase onClick={(e) => handleButtonClick(e, 1)} disableRipple>
+          <ButtonBase onClick={(e) => handleLegendClick(e, 1)} disableRipple>
             <Stack spacing={1} alignItems="center">
-              <Box sx={{ height: 8, width: 8, bgcolor: 'info.light', borderRadius: 1 }}></Box>
+              <Box
+                sx={{ height: 8, width: 8, bgcolor: 'secondary.lighter', borderRadius: 1 }}
+              ></Box>
               <Typography variant="body1" color="text.secondary" sx={{ fontFamily: 'Work Sans' }}>
                 Social
               </Typography>
@@ -74,7 +76,7 @@ const CircularChart = () => {
           </Typography>
         </Stack>
         <Stack alignItems="center" justifyContent="space-between">
-          <ButtonBase onClick={(e) => handleButtonClick(e, 0)} disableRipple>
+          <ButtonBase onClick={(e) => handleLegendClick(e, 0)} disableRipple>
             <Stack spacing={1} alignItems="center">
               <Box sx={{ height: 8, width: 8, bgcolor: 'secondary.light', borderRadius: 1 }}></Box>
               <Typography variant="body1" color="text.secondary" sx={{ fontFamily: 'Work Sans' }}>

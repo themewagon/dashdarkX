@@ -6,7 +6,7 @@ const TextField: Components<Omit<Theme, 'components'>>['MuiTextField'] = {
         root: ({ theme }) => ({
             border: 1,
             borderStyle: 'solid',
-            borderColor: theme.palette.info.lighter,
+            borderColor: theme.palette.neutral.darker,
             borderRadius: theme.shape.borderRadius,
             background: theme.palette.info.main,
             boxShadow: theme.customShadows[1],

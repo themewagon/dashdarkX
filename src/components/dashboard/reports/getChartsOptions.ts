@@ -1,3 +1,5 @@
+import { data } from "./StackedBarChart";
+
 interface chartsOptionsProps {
   chartType: string;
   activeBarIndex?: number | null;
@@ -91,5 +93,87 @@ export const getChartsOptions = ({ chartType, activeBarIndex }: chartsOptionsPro
     };
 
     return cricularChartOption;
+  } 
+  
+  
+  if (chartType === 'stacked-bar-chart') {
+    const stackedBarChartOptions = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow',
+        },
+      },
+      grid: {
+        top: 40,
+        bottom: 70,
+        left: 50,
+        right: 0,
+      },
+      xAxis: {
+        type: 'category',
+        data: data.categories,
+        axisTick: {
+          show: false,
+        },
+        axisLine: {
+          show: false,
+        },
+        axisLabel: {
+          color: '#AEB9E1',
+          fontSize: '12px',
+          margin: 24,
+          fontFamily: 'Questrial',
+        },
+      },
+      yAxis: {
+        type: 'value',
+        axisLabel: {
+          color: '#AEB9E1',
+          fontSize: '12px',
+          fontFamily: 'Questrial',
+          formatter: (value: number) => {
+            if (value === 0) {
+              return '0K';
+            } else if (value === 20000) {
+              return '20K';
+            } else if (value === 40000) {
+              return '40K';
+            } else if (value === 60000) {
+              return '60K';
+            } else if (value === 80000) {
+              return '80K';
+            } else if (value === 100000) {
+              return '100K';
+            } else {
+              return value;
+            }
+          },
+        },
+        splitLine: {
+          show: false,
+        },
+        interval: 20000,
+        max: 100000,
+      },
+      series: data.series.map((serie, index) => ({
+        name: serie.name,
+        type: 'bar',
+        stack: 'total',
+        barWidth: 8,
+        label: {
+          show: false,
+        },
+        emphasis: {
+          focus: 'series',
+        },
+        itemStyle: {
+          color: ['#CB3CFF', '#0E43FB', '#00C2FF'][index],
+        },
+        data: serie.data,
+      })),
+    };
+
+    return stackedBarChartOptions;
   }
 };
