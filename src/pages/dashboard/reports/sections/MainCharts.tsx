@@ -4,7 +4,7 @@ import StackedBarChart from 'components/dashboard/reports/StackedBarChart';
 
 const MainCharts = () => {
   return (
-    <Grid container spacing={3.75}>
+    <Grid container spacing={{xs: 2.5, sm: 3, lg: 3.75}}>
       <Grid item xs={12} xl={4}>
         <CircularChart />
       </Grid>
