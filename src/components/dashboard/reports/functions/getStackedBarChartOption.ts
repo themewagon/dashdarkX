@@ -102,5 +102,6 @@ export const getStackedBarChartOption = () => {
       data: item.data,
     })),
   };
+
   return option;
 };

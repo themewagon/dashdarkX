@@ -5,7 +5,7 @@ const Divider: Components<Omit<Theme, 'components'>>['MuiDivider'] = {
     styleOverrides: {
         root: ({ theme }) => ({
             margin: theme.spacing(2, 0),
-            backgroundColor: theme.palette.info.lighter
+            backgroundColor: theme.palette.neutral.darker
         })
     }
 }

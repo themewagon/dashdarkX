@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid';
 import ProductsCard from 'components/dashboard/reports/ProductsCard';
 import LineChart from 'components/dashboard/reports/LineChart';
 
-const SecondCharts = () => {
+const CardAndChart = () => {
   return (
     <Grid container spacing={3.75}>
       <Grid item xs={12} xl={4}>
@@ -15,4 +15,4 @@ const SecondCharts = () => {
   );
 };
 
-export default SecondCharts;
+export default CardAndChart;

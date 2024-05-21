@@ -92,5 +92,6 @@ export const getCircularChartOption = ({ activeBarIndex }: chartOptionProps) => 
       },
     ],
   };
+
   return option;
 };

@@ -20,10 +20,16 @@ const ProductsCard = () => {
       </Typography>
 
       <Stack justifyContent="space-between">
-        <Typography variant="caption" sx={{ fontWeight: 400 }}>
+        <Typography
+          variant="caption"
+          sx={(theme) => ({ fontWeight: theme.typography.body1.fontWeight })}
+        >
           Products
         </Typography>
-        <Typography variant="caption" sx={{ fontWeight: 400 }}>
+        <Typography
+          variant="caption"
+          sx={(theme) => ({ fontWeight: theme.typography.body1.fontWeight })}
+        >
           Price
         </Typography>
       </Stack>
@@ -35,16 +41,31 @@ const ProductsCard = () => {
           </Box>
 
           <Stack direction="column">
-            <Typography variant="body2" sx={{ fontWeight: 600, fontFamily: 'Work Sans' }}>
+            <Typography
+              variant="body2"
+              sx={(theme) => ({
+                fontWeight: theme.typography.caption.fontWeight,
+                fontFamily: 'Work Sans',
+              })}
+            >
               iPhone 14 Pro Max
             </Typography>
-            <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 500 }}>
+            <Typography
+              variant="caption"
+              sx={(theme) => ({
+                color: 'text.secondary',
+                fontWeight: theme.typography.subtitle2.fontWeight,
+              })}
+            >
               524 in stock
             </Typography>
           </Stack>
         </Stack>
 
-        <Typography variant="caption" sx={{ fontWeight: 500 }}>
+        <Typography
+          variant="caption"
+          sx={(theme) => ({ fontWeight: theme.typography.subtitle2.fontWeight })}
+        >
           $ 1,099.00
         </Typography>
       </Stack>
@@ -56,16 +77,31 @@ const ProductsCard = () => {
           </Box>
 
           <Stack direction="column">
-            <Typography variant="body2" sx={{ fontWeight: 600, fontFamily: 'Work Sans' }}>
+            <Typography
+              variant="body2"
+              sx={(theme) => ({
+                fontWeight: theme.typography.caption.fontWeight,
+                fontFamily: 'Work Sans',
+              })}
+            >
               Apple Watch S8
             </Typography>
-            <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 500 }}>
+            <Typography
+              variant="caption"
+              sx={(theme) => ({
+                color: 'text.secondary',
+                fontWeight: theme.typography.subtitle2.fontWeight,
+              })}
+            >
               320 in stock
             </Typography>
           </Stack>
         </Stack>
 
-        <Typography variant="caption" sx={{ fontWeight: 500 }}>
+        <Typography
+          variant="caption"
+          sx={(theme) => ({ fontWeight: theme.typography.subtitle2.fontWeight })}
+        >
           $ 799.00
         </Typography>
       </Stack>

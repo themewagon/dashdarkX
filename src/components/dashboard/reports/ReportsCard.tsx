@@ -44,7 +44,10 @@ const ReportsCard = (props: firstCardProps) => {
       </Stack>
 
       <Stack alignItems="center" gap={0.8}>
-        <Typography variant="h4" sx={{ fontWeight: 600, letterSpacing: 1 }}>
+        <Typography
+          variant="h4"
+          sx={(theme) => ({ fontWeight: theme.typography.caption.fontWeight, letterSpacing: 1 })}
+        >
           {value}
         </Typography>
         <RateChip rate={rate} isPositive={isPositive} />
