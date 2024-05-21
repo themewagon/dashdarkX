@@ -49,10 +49,10 @@ export const getStackedBarChartOption = () => {
         show: false,
       },
       axisLabel: {
-        margin: 24,
         color: theme.palette.text.secondary,
         fontSize: theme.typography.caption.fontSize,
         fontFamily: 'Questrial',
+        margin: 24,
       },
     },
     yAxis: {

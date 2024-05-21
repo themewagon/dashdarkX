@@ -29,15 +29,15 @@ export const getLineChartOption = () => {
       axisLabel: {
         color: theme.palette.text.secondary,
         fontSize: '12px',
-        margin: 10,
         fontFamily: 'Questrial',
+        margin: 10,
       },
     },
     yAxis: {
       type: 'value',
       axisLabel: {
         color: theme.palette.text.secondary,
-        fontSize: '12px',
+        fontSize: theme.typography.caption.fontSize,
         fontFamily: 'Questrial',
       },
       splitLine: {
@@ -56,7 +56,6 @@ export const getLineChartOption = () => {
           width: 1.2,
         },
         areaStyle: {
-          // Define gradient for the area shadow
           color: new graphic.LinearGradient(0, 0, 0, 1, [
             {
               offset: 0,
