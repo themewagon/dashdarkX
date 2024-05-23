@@ -26,6 +26,8 @@ import type {} from '@mui/x-date-pickers/themeAugmentation';
 import Divider from './components/Divider';
 import Chip from './components/Chip';
 import DatePicker from './components/DatePicker';
+import MonthCalendar from './components/MonthCalendar';
+import YearCalendar from './components/YearCalendar';
 
 export const theme = createTheme({
     typography,
@@ -53,6 +55,8 @@ export const theme = createTheme({
         MuiPagination: Pagination,
         MuiPaginationItem: PaginationItem,
         MuiDatePicker: DatePicker,
+        MuiMonthCalendar: MonthCalendar,
+        MuiYearCalendar: YearCalendar
     },
     customShadows,
     spacing: 8,

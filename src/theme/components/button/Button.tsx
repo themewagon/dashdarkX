@@ -24,6 +24,7 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
       width: '100%',
     }),
     containedSizeSmall: ({ theme }) => ({
+      fontSize: theme.typography.body2.fontSize,
       padding: theme.spacing(0.5, 1.5),
     }),
     endIcon: ({ theme }) => ({
