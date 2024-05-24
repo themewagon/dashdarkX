@@ -35,6 +35,13 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
         columnHeaderTitle: ({ theme }) => ({
             letterSpacing: 1,
             fontWeight: theme.typography.subtitle2.fontWeight,
+        }),
+        footerContainer: ({theme}) => ({
+            paddingTop: theme.spacing(3),
+            border: 0,
+            borderTop: 1,
+            borderStyle: 'solid',
+            borderColor: `${theme.palette.info.darker} !important`,
         })
     },
 }

@@ -3,6 +3,7 @@ import DateSelect from 'components/dates/DateSelect';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import IconifyIcon from 'components/base/IconifyIcon';
 import StatusChip from 'components/chips/StatusChip';
+import DataGridFooter from 'components/data-grid/DataGridFooter';
 
 const DataGridTable = () => {
   const columns: GridColDef<(typeof rows)[number]>[] = [
@@ -141,17 +142,20 @@ const DataGridTable = () => {
         </Stack>
       </Stack>
 
-      <Box mt={1.5} sx={{ height: 560, width: 1 }}>
+      <Box mt={1.5} sx={{ height: 595, width: 1 }}>
         <DataGrid
           rows={rows}
           columns={columns}
-          rowHeight={75}
+          rowHeight={80}
           initialState={{
             pagination: {
               paginationModel: {
                 pageSize: 6,
               },
             },
+          }}
+          slots={{
+            pagination: DataGridFooter
           }}
           pageSizeOptions={[6]}
           checkboxSelection
