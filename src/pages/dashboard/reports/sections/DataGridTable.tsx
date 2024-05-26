@@ -1,11 +1,27 @@
 import { Box, Paper, Stack, Typography, Button } from '@mui/material';
 import DateSelect from 'components/dates/DateSelect';
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { DataGrid, GridColDef,  GridActionsCellItem } from '@mui/x-data-grid';
 import IconifyIcon from 'components/base/IconifyIcon';
 import StatusChip from 'components/chips/StatusChip';
 import DataGridFooter from 'components/data-grid/DataGridFooter';
 
 const DataGridTable = () => {
+  // const handleSaveClick = () => {
+  //   return 0;
+  // }
+
+  // const handleCancelClick = () => {
+  //   return 0
+  // }
+
+  // const handleEditClick = () => {
+  //   return 0
+  // }
+
+  // const handleDeleteClick = () => {
+  //   return 0
+  // }
+
   const columns: GridColDef<(typeof rows)[number]>[] = [
     { field: 'id', headerName: 'Order', flex: 1 },
     {
@@ -104,7 +120,47 @@ const DataGridTable = () => {
         headerName: '',
         sortable: false,
         flex: 1,
-      },
+
+        getActions: () => {
+          // const isInEditMode = rowModesModel[id]?.mode === GridRowModes.Edit;
+          const isInEditMode = false;
+          if (isInEditMode) {
+            return [
+              <GridActionsCellItem
+                icon={<IconifyIcon icon="fluent:edit-32-filled" />}
+                label="Save"
+                sx={{
+                  color: 'primary.main',
+                }}
+                // onClick={handleSaveClick()}
+              />,
+              <GridActionsCellItem
+                icon={<IconifyIcon icon="fluent:edit-32-filled" />}
+                label="Cancel"
+                className="textPrimary"
+                // onClick={handleCancelClick()}
+                color="inherit"
+              />,
+            ];
+          }
+  
+          return [
+            <GridActionsCellItem
+              icon={<IconifyIcon icon="fluent:edit-32-filled" />}
+              label="Edit"
+              className="textPrimary"
+              // onClick={handleEditClick()}
+              color="inherit"
+            />,
+            <GridActionsCellItem
+              icon={<IconifyIcon icon="fluent:edit-32-filled" />}
+              label="Delete"
+              // onClick={handleDeleteClick()}
+              color="inherit"
+            />,
+          ];
+        },
+    }
   ];
 
   const rows = [
@@ -155,7 +211,7 @@ const DataGridTable = () => {
             },
           }}
           slots={{
-            pagination: DataGridFooter
+            pagination: DataGridFooter,
           }}
           pageSizeOptions={[6]}
           checkboxSelection
