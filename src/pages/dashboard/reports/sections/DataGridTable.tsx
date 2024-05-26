@@ -6,21 +6,6 @@ import StatusChip from 'components/chips/StatusChip';
 import DataGridFooter from 'components/data-grid/DataGridFooter';
 
 const DataGridTable = () => {
-  // const handleSaveClick = () => {
-  //   return 0;
-  // }
-
-  // const handleCancelClick = () => {
-  //   return 0
-  // }
-
-  // const handleEditClick = () => {
-  //   return 0
-  // }
-
-  // const handleDeleteClick = () => {
-  //   return 0
-  // }
 
   const columns: GridColDef<(typeof rows)[number]>[] = [
     { field: 'id', headerName: 'Order', flex: 1 },
@@ -203,13 +188,13 @@ const DataGridTable = () => {
           rows={rows}
           columns={columns}
           rowHeight={80}
-          initialState={{
-            pagination: {
-              paginationModel: {
-                pageSize: 6,
-              },
-            },
-          }}
+          // initialState={{
+          //   pagination: {
+          //     paginationModel: {
+          //       pageSize: 6,
+          //     },
+          //   },
+          // }}
           slots={{
             pagination: DataGridFooter,
           }}

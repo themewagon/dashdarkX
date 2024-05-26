@@ -15,13 +15,23 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
             },
             '&:focus-within': {
                 outline: 'none !important',
-            } 
+            },
+            '& .MuiDataGrid-actionsCell': {
+               gap: 0
+            }
         }),
+        actionsCell: {},
         row: ({theme}) => ({
             padding: theme.spacing(0, 2),
             '&:nth-of-type(odd)': {
                 backgroundColor: theme.palette.info.dark,
             },
+            '&.MuiDataGrid-row--editing': {
+                background: theme.palette.secondary.darker,
+                '& .MuiDataGrid-cell': {
+                    background: theme.palette.secondary.darker
+                }
+            }
         }),
         columnHeaders: ({ theme }) => ({
             padding: theme.spacing(0, 2),
@@ -42,7 +52,8 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
             borderTop: 1,
             borderStyle: 'solid',
             borderColor: `${theme.palette.info.darker} !important`,
-        })
+        }),
+        
     },
 }
 
