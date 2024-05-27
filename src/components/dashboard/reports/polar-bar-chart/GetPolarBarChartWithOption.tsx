@@ -8,11 +8,11 @@ import ReactEchart from 'components/base/ReactEchart';
 
 echarts.use([PolarComponent, TooltipComponent, GraphicComponent, BarChart, CanvasRenderer]);
 
-interface circularChartProps {
+interface polarBarChartProps {
   activeBarIndex?: number | null;
 }
 
-const GetCircularChartWithOption = ({ activeBarIndex }: circularChartProps) => {
+const GetPolarBarChartWithOption = ({ activeBarIndex }: polarBarChartProps) => {
   const theme = useTheme();
 
   const activeColors = [
@@ -104,4 +104,4 @@ const GetCircularChartWithOption = ({ activeBarIndex }: circularChartProps) => {
   return <ReactEchart echarts={echarts} option={option} />;
 };
 
-export default GetCircularChartWithOption;
+export default GetPolarBarChartWithOption;

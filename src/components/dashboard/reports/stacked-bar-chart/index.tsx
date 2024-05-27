@@ -14,10 +14,12 @@ const StackedBarChart = () => {
 
   return (
     <Box component={Paper} sx={{ height: { xs: 540, md: 500 } }}>
+      {/* header */}
       <Typography variant="subtitle1" color="text.secondary">
         Revenue by customer type
       </Typography>
 
+      {/* subheader */}
       <Stack justifyContent="space-between" mt={1}>
         <Stack alignItems="center" gap={0.8}>
           <Typography
@@ -37,10 +39,12 @@ const StackedBarChart = () => {
         </Stack>
       </Stack>
 
+      {/* legends for smaller screen */}
       <Box sx={{ display: { xs: 'block', md: 'none' } }}>
         <StackedBarChartLegends chartRef={chartRef} sm={true} />
       </Box>
 
+      {/* stacked bar chart */}
       <Box sx={{ height: 400 }}>
         <GetBarChartWithOption chartRef={chartRef} />
       </Box>

@@ -6,10 +6,10 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
-import CircularChartLegends from './CircularChartLegends';
-import GetCircularChartWithOption from './GetCircularChartWithOption';
+import PolarBarChartLegends from './PolarBarChartLegends';
+import GetPolarBarChartWithOption from './GetPolarBarChartWithOption';
 
-const CircularChart = () => {
+const PolarBarChart = () => {
   const [activeBarIndex, setActiveBarIndex] = useState<number | null>(null);
 
   return (
@@ -39,13 +39,13 @@ const CircularChart = () => {
         </Button>
       </Stack>
 
-      {/* circular chart */}
-      <GetCircularChartWithOption activeBarIndex={activeBarIndex} />
+      {/* polar bar chart */}
+      <GetPolarBarChartWithOption activeBarIndex={activeBarIndex} />
 
       {/* legends */}
-      <CircularChartLegends activeBarIndex={activeBarIndex} setActiveBarIndex={setActiveBarIndex} />
+      <PolarBarChartLegends activeBarIndex={activeBarIndex} setActiveBarIndex={setActiveBarIndex} />
     </Box>
   );
 };
 
-export default CircularChart;
+export default PolarBarChart;

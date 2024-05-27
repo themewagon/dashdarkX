@@ -9,7 +9,7 @@ interface LegendsProps {
   setActiveBarIndex: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
-const CircularChartLegends = ({ activeBarIndex, setActiveBarIndex }: LegendsProps) => {
+const PolarBarChartLegends = ({ activeBarIndex, setActiveBarIndex }: LegendsProps) => {
   const handleLegendClick = (e: React.MouseEvent<HTMLButtonElement>, index: number) => {
     e.stopPropagation();
     setActiveBarIndex(index);
@@ -102,4 +102,4 @@ const CircularChartLegends = ({ activeBarIndex, setActiveBarIndex }: LegendsProp
   );
 };
 
-export default CircularChartLegends;
+export default PolarBarChartLegends;
