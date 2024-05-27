@@ -1,26 +1,26 @@
 import { useState } from 'react';
+import { fontFamily } from 'theme/typography';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import ReactECharts from 'echarts-for-react';
 import IconifyIcon from 'components/base/IconifyIcon';
-import { getCircularChartOption } from './functions/getCricularChartOption';
-import CircularChartLegends from './legends/CircularChartLegends';
+import CircularChartLegends from './CircularChartLegends';
+import GetCircularChartWithOption from './GetCircularChartWithOption';
 
 const CircularChart = () => {
   const [activeBarIndex, setActiveBarIndex] = useState<number | null>(null);
-  const option = getCircularChartOption({ activeBarIndex });
 
   return (
     <Box component={Paper} onClick={() => setActiveBarIndex(null)} sx={{ height: 500 }}>
+      {/* header */}
       <Stack alignItems="center" justifyContent="space-between" mb={-2}>
         <Typography
           variant="h6"
           sx={(theme) => ({
             fontWeight: theme.typography.subtitle1.fontWeight,
-            fontFamily: 'Work Sans',
+            fontFamily: fontFamily.workSans,
           })}
         >
           Website Visitors
@@ -39,9 +39,11 @@ const CircularChart = () => {
         </Button>
       </Stack>
 
-      <ReactECharts option={option} notMerge={true} lazyUpdate={true} />
+      {/* circular chart */}
+      <GetCircularChartWithOption activeBarIndex={activeBarIndex} />
 
-      <CircularChartLegends activeBarIndex={activeBarIndex} setActiveBarIndex={setActiveBarIndex}/>
+      {/* legends */}
+      <CircularChartLegends activeBarIndex={activeBarIndex} setActiveBarIndex={setActiveBarIndex} />
     </Box>
   );
 };

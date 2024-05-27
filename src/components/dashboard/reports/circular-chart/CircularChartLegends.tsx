@@ -1,3 +1,4 @@
+import { fontFamily } from 'theme/typography';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -30,12 +31,16 @@ const CircularChartLegends = ({ activeBarIndex, setActiveBarIndex }: LegendsProp
                 borderRadius: 1,
               }}
             ></Box>
-            <Typography variant="body1" color="text.secondary" sx={{ fontFamily: 'Work Sans' }}>
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              sx={{ fontFamily: fontFamily.workSans }}
+            >
               Organic
             </Typography>
           </Stack>
         </ButtonBase>
-        <Typography variant="body1" color="text.primary" sx={{ fontFamily: 'Work Sans' }}>
+        <Typography variant="body1" color="text.primary" sx={{ fontFamily: fontFamily.workSans }}>
           80%
         </Typography>
       </Stack>
@@ -53,12 +58,16 @@ const CircularChartLegends = ({ activeBarIndex, setActiveBarIndex }: LegendsProp
                 borderRadius: 1,
               }}
             ></Box>
-            <Typography variant="body1" color="text.secondary" sx={{ fontFamily: 'Work Sans' }}>
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              sx={{ fontFamily: fontFamily.workSans }}
+            >
               Social
             </Typography>
           </Stack>
         </ButtonBase>
-        <Typography variant="body1" color="text.primary" sx={{ fontFamily: 'Work Sans' }}>
+        <Typography variant="body1" color="text.primary" sx={{ fontFamily: fontFamily.workSans }}>
           60%
         </Typography>
       </Stack>
@@ -76,12 +85,16 @@ const CircularChartLegends = ({ activeBarIndex, setActiveBarIndex }: LegendsProp
                 borderRadius: 1,
               }}
             ></Box>
-            <Typography variant="body1" color="text.secondary" sx={{ fontFamily: 'Work Sans' }}>
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              sx={{ fontFamily: fontFamily.workSans }}
+            >
               Direct
             </Typography>
           </Stack>
         </ButtonBase>
-        <Typography variant="body1" color="text.primary" sx={{ fontFamily: 'Work Sans' }}>
+        <Typography variant="body1" color="text.primary" sx={{ fontFamily: fontFamily.workSans }}>
           50%
         </Typography>
       </Stack>

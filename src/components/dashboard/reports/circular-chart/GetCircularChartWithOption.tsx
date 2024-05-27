@@ -1,16 +1,26 @@
 import { useTheme } from '@mui/material';
+import { fontFamily } from 'theme/typography';
+import * as echarts from 'echarts/core';
+import { BarChart } from 'echarts/charts';
+import { CanvasRenderer } from 'echarts/renderers';
+import { PolarComponent, TooltipComponent, GraphicComponent } from 'echarts/components';
+import ReactEchart from 'components/base/ReactEchart';
 
-interface chartOptionProps {
+echarts.use([PolarComponent, TooltipComponent, GraphicComponent, BarChart, CanvasRenderer]);
+
+interface circularChartProps {
   activeBarIndex?: number | null;
 }
 
-export const getCircularChartOption = ({ activeBarIndex }: chartOptionProps) => {
+const GetCircularChartWithOption = ({ activeBarIndex }: circularChartProps) => {
   const theme = useTheme();
+
   const activeColors = [
     theme.palette.secondary.main,
     theme.palette.secondary.lighter,
     theme.palette.primary.main,
   ];
+
   const disabledColors = [
     theme.palette.secondary.dark,
     theme.palette.secondary.darker,
@@ -69,12 +79,10 @@ export const getCircularChartOption = ({ activeBarIndex }: chartOptionProps) => 
         },
       ],
       coordinateSystem: 'polar',
+      barCategoryGap: '35%',
       label: {
         show: false,
-        position: 'middle',
-        formatter: '{b}: {c}',
       },
-      barCategoryGap: '35%',
     },
     graphic: [
       {
@@ -86,12 +94,14 @@ export const getCircularChartOption = ({ activeBarIndex }: chartOptionProps) => 
           fill: theme.palette.text.primary,
           fontSize: theme.typography.h3.fontSize,
           fontWeight: theme.typography.subtitle2.fontWeight,
-          fontFamily: 'Work Sans',
+          fontFamily: fontFamily.workSans,
           letterSpacing: 1,
         },
       },
     ],
   };
 
-  return option;
+  return <ReactEchart echarts={echarts} option={option} />;
 };
+
+export default GetCircularChartWithOption;
