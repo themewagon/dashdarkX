@@ -1,4 +1,7 @@
 import { useTheme } from '@mui/material';
+import * as echarts from 'echarts/core';
+import ReactEchart from 'components/base/ReactEchart';
+import EChartsReactCore from 'echarts-for-react/lib/core';
 
 export const data = {
   categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -18,8 +21,13 @@ export const data = {
   ],
 };
 
-export const getStackedBarChartOption = () => {
+interface BarChartProps {
+  chartRef: React.RefObject<EChartsReactCore>;
+}
+
+const GetBarChartWithOption = ({ chartRef }: BarChartProps) => {
   const theme = useTheme();
+
   const colors = [
     theme.palette.primary.main,
     theme.palette.secondary.lighter,
@@ -103,5 +111,14 @@ export const getStackedBarChartOption = () => {
     })),
   };
 
-  return option;
+  return (
+    <ReactEchart
+      ref={chartRef}
+      echarts={echarts}
+      option={option}
+      sx={{ height: '100% !important' }}
+    />
+  );
 };
+
+export default GetBarChartWithOption;

@@ -53,7 +53,9 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
             borderStyle: 'solid',
             borderColor: `${theme.palette.info.darker} !important`,
         }),
-        
+        selectedRowCount: {
+            display: 'none'
+        }
     },
 }
 

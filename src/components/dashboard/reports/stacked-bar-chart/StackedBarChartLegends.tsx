@@ -3,12 +3,12 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
-import ReactECharts from 'echarts-for-react';
-import { data } from '../functions/getStackedBarChartOption';
+import EChartsReactCore from 'echarts-for-react/lib/core';
+import { data } from './GetBarChartWithOption';
 
 interface LegendsProps {
-  chartRef: React.RefObject<ReactECharts>;
-  sm?: boolean;
+  chartRef: React.RefObject<EChartsReactCore>;
+  sm?: boolean; // check smaller screen or not
 }
 
 const StackedBarChartLegends = ({ chartRef, sm }: LegendsProps) => {

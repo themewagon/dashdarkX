@@ -3,18 +3,17 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import DateSelect from 'components/dates/DateSelect';
 import RateChip from 'components/chips/RateChip';
-import ReactECharts from 'echarts-for-react';
-import { getStackedBarChartOption } from './functions/getStackedBarChartOption';
-import StackedBarChartLegends from './legends/StackedBarChartLegends';
+import DateSelect from 'components/dates/DateSelect';
+import EChartsReactCore from 'echarts-for-react/lib/core';
+import StackedBarChartLegends from './StackedBarChartLegends';
+import GetBarChartWithOption from './GetBarChartWithOption';
 
 const StackedBarChart = () => {
-  const option = getStackedBarChartOption();
-  const chartRef = useRef<ReactECharts>(null);
+  const chartRef = useRef<EChartsReactCore>(null);
 
   return (
-    <Box component={Paper} sx={{ height: {xs: 540, md: 500} }}>
+    <Box component={Paper} sx={{ height: { xs: 540, md: 500 } }}>
       <Typography variant="subtitle1" color="text.secondary">
         Revenue by customer type
       </Typography>
@@ -31,18 +30,20 @@ const StackedBarChart = () => {
         </Stack>
 
         <Stack alignItems="center" spacing={2}>
-          <Box sx={{display: {xs: 'none', md: 'block'}}}>
-            <StackedBarChartLegends chartRef={chartRef} sm={false}/>
+          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+            <StackedBarChartLegends chartRef={chartRef} sm={false} />
           </Box>
           <DateSelect />
         </Stack>
       </Stack>
 
-      <Box sx={{display: {xs: 'block', md: 'none'}}}>
-        <StackedBarChartLegends chartRef={chartRef} sm={true}/>
+      <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+        <StackedBarChartLegends chartRef={chartRef} sm={true} />
       </Box>
 
-      <ReactECharts ref={chartRef} option={option} style={{ height: '400px' }} />
+      <Box sx={{ height: 400 }}>
+        <GetBarChartWithOption chartRef={chartRef} />
+      </Box>
     </Box>
   );
 };

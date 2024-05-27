@@ -6,7 +6,6 @@ interface statusChipProps {
 }
 
 const StatusChip = ({ status }: statusChipProps) => {
-    console.log(status)
   return (
     <Chip
       variant="outlined"

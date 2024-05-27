@@ -1,9 +1,15 @@
 import { useState } from 'react';
 import Box from '@mui/material/Box';
-import IconifyIcon from 'components/base/IconifyIcon';
-import { Paper, Stack, Typography, Button } from '@mui/material';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import StatusChip from 'components/chips/StatusChip';
 import DateSelect from 'components/dates/DateSelect';
+import IconifyIcon from 'components/base/IconifyIcon';
+import DataGridFooter from 'components/data-grid/DataGridFooter';
+import { format } from 'date-fns';
+
 import {
   GridRowsProp,
   GridRowModesModel,
@@ -16,13 +22,12 @@ import {
   GridRowModel,
   GridRowEditStopReasons,
 } from '@mui/x-data-grid';
-import DataGridFooter from 'components/data-grid/DataGridFooter';
 
 const initialRows: GridRowsProp = [
   {
     id: '#1532',
     client: { name: 'John Carter', email: 'hello@johncarter.com' },
-    date: 'Jan 30, 2024',
+    date: new Date('Jan 30, 2024'),
     status: 'Delivered',
     country: 'United States',
     total: '$ 1,099.24',
@@ -30,7 +35,7 @@ const initialRows: GridRowsProp = [
   {
     id: '#1531',
     client: { name: 'Sophie Moore', email: 'contact@sophiemoore.com' },
-    date: 'Jan 27, 2024',
+    date: new Date('Jan 27, 2024'),
     status: 'Canceled',
     country: 'United Kingdom',
     total: '$ 5,870.32',
@@ -38,7 +43,7 @@ const initialRows: GridRowsProp = [
   {
     id: '#1530',
     client: { name: 'Matt Cannon', email: 'info@mattcannon.com' },
-    date: 'Jan 24, 2024',
+    date: new Date('Jan 24, 2024'),
     status: 'Delivered',
     country: 'Australia',
     total: '$ 13,899.48',
@@ -46,7 +51,7 @@ const initialRows: GridRowsProp = [
   {
     id: '#1529',
     client: { name: 'Graham Hills', email: 'hi@grahamhills.com' },
-    date: 'Jan 21, 2024',
+    date: new Date('Jan 21, 2024'),
     status: 'Pending',
     country: 'India',
     total: '$ 1,569.12',
@@ -54,7 +59,7 @@ const initialRows: GridRowsProp = [
   {
     id: '#1528',
     client: { name: 'Sandy Houston', email: 'contact@sandyhouston.com' },
-    date: 'Jan 18, 2024',
+    date: new Date('Jan 18, 2024'),
     status: 'Delivered',
     country: 'Canada',
     total: '$ 899.16',
@@ -62,7 +67,7 @@ const initialRows: GridRowsProp = [
   {
     id: '#1527',
     client: { name: 'Andy Smith', email: 'hello@andysmith.com' },
-    date: 'Jan 15, 2024',
+    date: new Date('Jan 15, 2024'),
     status: 'Pending',
     country: 'United States',
     total: '$ 2,449.64',
@@ -70,7 +75,7 @@ const initialRows: GridRowsProp = [
   {
     id: '#1526',
     client: { name: 'Emma Grace', email: 'wow@emmagrace.com' },
-    date: 'Jan 12, 2024',
+    date: new Date('Jan 12, 2024'),
     status: 'Delivered',
     country: 'Australia',
     total: '$ 6729.82',
@@ -78,7 +83,7 @@ const initialRows: GridRowsProp = [
   {
     id: '#1525',
     client: { name: 'Ava Rose', email: 'me@avarose.com' },
-    date: 'Jan 09, 2024',
+    date: new Date('Jan 09, 2024'),
     status: 'Canceled',
     country: 'Canada',
     total: '$ 784.94',
@@ -86,7 +91,7 @@ const initialRows: GridRowsProp = [
   {
     id: '#1524',
     client: { name: 'Olivia Jane', email: 'info@oliviajane.com' },
-    date: 'Jan 06, 2024',
+    date: new Date('Jan 06, 2024'),
     status: 'Pending',
     country: 'Singapur',
     total: '$ 1247.86',
@@ -94,7 +99,7 @@ const initialRows: GridRowsProp = [
   {
     id: '#1523',
     client: { name: 'Mason Alexander', email: 'myinfo@alexander.com' },
-    date: 'Jan 03, 2024',
+    date: new Date('Jan 03, 2024'),
     status: 'Delivered',
     country: 'United States',
     total: '$ 304.89',
@@ -102,7 +107,7 @@ const initialRows: GridRowsProp = [
   {
     id: '#1522',
     client: { name: 'Samuel David', email: 'me@samueldavid.com' },
-    date: 'Jan 01, 2024',
+    date: new Date('Jan 01, 2024'),
     status: 'Pending',
     country: 'Japan',
     total: '$ 2209.76',
@@ -110,7 +115,7 @@ const initialRows: GridRowsProp = [
   {
     id: '#1521',
     client: { name: 'Henry Joseph', email: 'contact@henryjoseph.com' },
-    date: 'Dec 28, 2023',
+    date: new Date('Dec 28, 2023'),
     status: 'Delivered',
     country: 'North Korea',
     total: '$ 5245.68',
@@ -166,7 +171,6 @@ export default function EditableDataGrid() {
     {
       field: 'client',
       headerName: 'Client',
-      editable: true,
       flex: 2,
       resizable: false,
       renderHeader: () => (
@@ -194,6 +198,7 @@ export default function EditableDataGrid() {
     },
     {
       field: 'date',
+      type: 'date',
       headerName: 'Date',
       editable: true,
       flex: 1,
@@ -210,6 +215,7 @@ export default function EditableDataGrid() {
           </Typography>
         </Stack>
       ),
+      renderCell: (params) => format(new Date(params.value), 'MMM dd, yyyy'),
     },
     {
       field: 'status',
@@ -243,6 +249,7 @@ export default function EditableDataGrid() {
       sortable: false,
       flex: 1,
       resizable: false,
+      editable: true,
       renderHeader: () => (
         <Stack alignItems="center" gap={0.8}>
           <IconifyIcon
@@ -264,6 +271,7 @@ export default function EditableDataGrid() {
       sortable: false,
       flex: 1,
       resizable: false,
+      editable: true,
     },
     {
       field: 'actions',
@@ -278,33 +286,56 @@ export default function EditableDataGrid() {
         if (isInEditMode) {
           return [
             <GridActionsCellItem
-              icon={<IconifyIcon color="primary.main" icon="mdi:content-save" sx={{fontSize: '1.2rem'}} />}
+              icon={
+                <IconifyIcon
+                  color="primary.main"
+                  icon="mdi:content-save"
+                  sx={{ fontSize: '1.2rem', pointerEvents: 'none' }}
+                />
+              }
               label="Save"
               onClick={handleSaveClick(id)}
+              size="medium"
             />,
             <GridActionsCellItem
-              icon={<IconifyIcon color="text.disabled" icon="iconamoon:sign-times-duotone" sx={{fontSize: '1.2rem'}} />}
+              icon={
+                <IconifyIcon
+                  color="text.secondary"
+                  icon="iconamoon:sign-times-duotone"
+                  sx={{ fontSize: '1.3rem', pointerEvents: 'none' }}
+                />
+              }
               label="Cancel"
-              className="textPrimary"
               onClick={handleCancelClick(id)}
-              color="inherit"
+              size="medium"
             />,
           ];
         }
 
         return [
           <GridActionsCellItem
-            icon={<IconifyIcon icon="fluent:edit-32-filled" color="text.secondary" sx={{fontSize: '1.1rem'}} />}
+            icon={
+              <IconifyIcon
+                icon="fluent:edit-32-filled"
+                color="text.secondary"
+                sx={{ fontSize: '1.1rem', pointerEvents: 'none' }}
+              />
+            }
             label="Edit"
-            className="textPrimary"
             onClick={handleEditClick(id)}
-            color="inherit"
+            size="medium"
           />,
           <GridActionsCellItem
-            icon={<IconifyIcon icon="mingcute:delete-3-fill" color="text.secondary" sx={{fontSize: '1.1rem'}} />}
-            label="Delete"
             onClick={handleDeleteClick(id)}
-            color="inherit"
+            label="Delete"
+            icon={
+              <IconifyIcon
+                icon="mingcute:delete-3-fill"
+                color="text.secondary"
+                sx={{ fontSize: '1.2rem', pointerEvents: 'none' }}
+              />
+            }
+            size="medium"
           />,
         ];
       },
@@ -331,7 +362,7 @@ export default function EditableDataGrid() {
         </Stack>
       </Stack>
 
-      <Box mt={1.5} sx={{ height: 595, width: 1 }}>
+      <Box mt={1.5} sx={{ height: 594, width: 1 }}>
         <DataGrid
           rows={rows}
           columns={columns}

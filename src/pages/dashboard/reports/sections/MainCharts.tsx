@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid';
 import CircularChart from 'components/dashboard/reports/CircularChart';
-import StackedBarChart from 'components/dashboard/reports/StackedBarChart';
+import StackedBarChart from 'components/dashboard/reports/stacked-bar-chart';
 
 const MainCharts = () => {
   return (
