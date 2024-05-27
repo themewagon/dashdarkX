@@ -1,4 +1,3 @@
-import ReactECharts from 'echarts-for-react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
@@ -6,13 +5,12 @@ import Typography from '@mui/material/Typography';
 import RateChip from 'components/chips/RateChip';
 import DateSelect from 'components/dates/DateSelect';
 import IconifyIcon from 'components/base/IconifyIcon';
-import { getLineChartOption } from './functions/getLineChartOption';
+import GetLineChartWithOption from './GetLineChartWithOption';
 
 const LineChart = () => {
-  const option = getLineChartOption();
-
   return (
     <Box component={Paper} sx={{ height: 300 }}>
+      {/* header */}
       <Stack alignItems="center" spacing={0.6}>
         <IconifyIcon
           icon="ph:clock-fill"
@@ -37,7 +35,10 @@ const LineChart = () => {
         <DateSelect />
       </Stack>
 
-      <ReactECharts option={option} style={{ height: '220px' }} />
+      {/* line chart */}
+      <Box sx={{ height: 220 }}>
+        <GetLineChartWithOption />
+      </Box>
     </Box>
   );
 };

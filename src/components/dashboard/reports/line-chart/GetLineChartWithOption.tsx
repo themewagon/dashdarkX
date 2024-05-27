@@ -1,8 +1,12 @@
 import { useTheme } from '@mui/material';
+import { fontFamily } from 'theme/typography';
 import { graphic } from 'echarts';
+import * as echarts from 'echarts/core';
+import ReactEchart from 'components/base/ReactEchart';
 
-export const getLineChartOption = () => {
+const GetLineChartWithOption = () => {
   const theme = useTheme();
+  const colors = [theme.palette.secondary.main, theme.palette.text.secondary];
 
   const option = {
     tooltip: {
@@ -27,18 +31,18 @@ export const getLineChartOption = () => {
         show: false,
       },
       axisLabel: {
-        color: theme.palette.text.secondary,
-        fontSize: '12px',
-        fontFamily: 'Questrial',
+        color: colors[1],
+        fontSize: theme.typography.caption.fontSize,
+        fontFamily: fontFamily.questrial,
         margin: 10,
       },
     },
     yAxis: {
       type: 'value',
       axisLabel: {
-        color: theme.palette.text.secondary,
+        color: colors[1],
         fontSize: theme.typography.caption.fontSize,
-        fontFamily: 'Questrial',
+        fontFamily: fontFamily.questrial,
       },
       splitLine: {
         show: false,
@@ -52,7 +56,7 @@ export const getLineChartOption = () => {
         type: 'line',
         showSymbol: false,
         lineStyle: {
-          color: theme.palette.secondary.main,
+          color: colors[0],
           width: 1.2,
         },
         areaStyle: {
@@ -71,5 +75,7 @@ export const getLineChartOption = () => {
     ],
   };
 
-  return option;
+  return <ReactEchart echarts={echarts} option={option} sx={{ height: '100% !important' }} />;
 };
+
+export default GetLineChartWithOption;
