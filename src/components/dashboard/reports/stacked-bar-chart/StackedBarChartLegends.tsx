@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { data } from './GetBarChartWithOption';
+import { fontFamily } from 'theme/typography';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import { data } from './GetBarChartWithOption';
 
 interface LegendsProps {
   chartRef: React.RefObject<EChartsReactCore>;
@@ -67,7 +68,11 @@ const StackedBarChartLegends = ({ chartRef, sm }: LegendsProps) => {
               borderRadius: 1,
             }}
           ></Box>
-          <Typography variant="body2" color="text.secondary" sx={{ fontFamily: 'Work Sans' }}>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{ fontFamily: fontFamily.workSans }}
+          >
             Current clients
           </Typography>
         </Stack>
@@ -83,7 +88,11 @@ const StackedBarChartLegends = ({ chartRef, sm }: LegendsProps) => {
               borderRadius: 1,
             }}
           ></Box>
-          <Typography variant="body2" color="text.secondary" sx={{ fontFamily: 'Work Sans' }}>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{ fontFamily: fontFamily.workSans }}
+          >
             Subscribers
           </Typography>
         </Stack>
@@ -99,7 +108,11 @@ const StackedBarChartLegends = ({ chartRef, sm }: LegendsProps) => {
               borderRadius: 1,
             }}
           ></Box>
-          <Typography variant="body2" color="text.secondary" sx={{ fontFamily: 'Work Sans' }}>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{ fontFamily: fontFamily.workSans }}
+          >
             New customers
           </Typography>
         </Stack>

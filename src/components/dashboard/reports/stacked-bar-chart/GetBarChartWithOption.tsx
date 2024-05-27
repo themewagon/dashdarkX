@@ -1,7 +1,25 @@
 import { useTheme } from '@mui/material';
+import { fontFamily } from 'theme/typography';
 import * as echarts from 'echarts/core';
+import { BarChart } from 'echarts/charts';
+import { CanvasRenderer } from 'echarts/renderers';
+import {
+  TooltipComponent,
+  GridComponent,
+  DatasetComponent,
+  TransformComponent,
+} from 'echarts/components';
 import ReactEchart from 'components/base/ReactEchart';
 import EChartsReactCore from 'echarts-for-react/lib/core';
+
+echarts.use([
+  TooltipComponent,
+  GridComponent,
+  DatasetComponent,
+  TransformComponent,
+  BarChart,
+  CanvasRenderer,
+]);
 
 export const data = {
   categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -59,7 +77,7 @@ const GetBarChartWithOption = ({ chartRef }: BarChartProps) => {
       axisLabel: {
         color: theme.palette.text.secondary,
         fontSize: theme.typography.caption.fontSize,
-        fontFamily: 'Questrial',
+        fontFamily: fontFamily.questrial,
         margin: 24,
       },
     },
@@ -68,7 +86,7 @@ const GetBarChartWithOption = ({ chartRef }: BarChartProps) => {
       axisLabel: {
         color: theme.palette.text.secondary,
         fontSize: theme.typography.caption.fontSize,
-        fontFamily: 'Questrial',
+        fontFamily: fontFamily.questrial,
         formatter: (value: number) => {
           if (value === 0) {
             return '0K';
