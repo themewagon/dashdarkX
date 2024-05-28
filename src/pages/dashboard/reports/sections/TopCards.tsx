@@ -6,28 +6,28 @@ const cardsData = [
     title: 'Save Products',
     value: '50.8K',
     rate: '28.4%',
-    isPositive: true,
+    isUp: true,
     icon: 'carbon:favorite-filled',
   },
   {
     title: 'Stock Products',
     value: '23.6K',
     rate: '12.6%',
-    isPositive: false,
+    isUp: false,
     icon: 'solar:bag-bold',
   },
   {
     title: 'Sale Products',
     value: '756',
     rate: '3.1%',
-    isPositive: true,
+    isUp: true,
     icon: 'ph:bag-simple-fill',
   },
   {
     title: 'Average Revenue',
     value: '2.3K',
     rate: '11.3%',
-    isPositive: true,
+    isUp: true,
     icon: 'mingcute:currency-dollar-2-line',
   },
 ];
@@ -42,7 +42,7 @@ const TopCards = () => {
               title={item.title}
               value={item.value}
               rate={item.rate}
-              isPositive={item.isPositive}
+              isUp={item.isUp}
               icon={item.icon}
             />
           </Grid>

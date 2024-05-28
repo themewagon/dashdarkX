@@ -29,7 +29,7 @@ const LineChart = () => {
           >
             257
           </Typography>
-          <RateChip rate={'16.8%'} isPositive={true} />
+          <RateChip rate={'16.8%'} isUp={true} />
         </Stack>
 
         <DateSelect />

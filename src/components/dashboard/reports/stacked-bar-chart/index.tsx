@@ -28,7 +28,7 @@ const StackedBarChart = () => {
           >
             $240.8K
           </Typography>
-          <RateChip rate={'14.8%'} isPositive={true} />
+          <RateChip rate={'14.8%'} isUp={true} />
         </Stack>
 
         <Stack alignItems="center" spacing={2}>

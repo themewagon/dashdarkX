@@ -11,17 +11,30 @@ export const grey = {
   900: '#171923',
 };
 
-export const cyan = {
-  50: '#E6F9FF',
-  100: '#B3ECFF',
-  200: '#80DFFF',
-  300: '#4DD2FF',
-  400: '#21C3FC', // A
-  500: '#00C2FF', // B
-  600: '#1A9FB3',
-  700: '#177999',
-  800: '#135E80',
-  900: '#004466', // C
+export const red = {
+  50: '#FFE5E7',
+  100: '#FFBCC0',
+  200: '#FF9298',
+  300: '#FF6971',
+  400: '#FF404A',
+  500: '#FF5A65', // A
+  600: '#E04650',
+  700: '#C0333B',
+  800: '#A02026',
+  900: '#801014',
+};
+
+export const green = {
+  50: '#E3F9ED',
+  100: '#B8F0D3',
+  200: '#8CE6B9',
+  300: '#61DD9F',
+  400: '#35D486',
+  500: '#14CA74', // A
+  600: '#12B368',
+  700: '#0F9C5B',
+  800: '#0D844E',
+  900: '#0A6D41',
 };
 
 export const blue = {
@@ -37,17 +50,17 @@ export const blue = {
   900: '#081028', // E
 };
 
-export const indigo = {
-  50: '#C4A4FF',
-  100: '#B487FF',
-  200: '#9E68FF',
-  300: '#A972FF',
-  400: '#9160FF',
-  500: '#8951FF', // A
-  600: '#8257FF',
-  700: '#7A4FFF',
-  800: '#7147FF',
-  900: '#673FFF',
+export const cyan = {
+  50: '#E6F9FF',
+  100: '#B3ECFF',
+  200: '#80DFFF',
+  300: '#4DD2FF',
+  400: '#21C3FC', // A
+  500: '#00C2FF', // B
+  600: '#1A9FB3',
+  700: '#177999',
+  800: '#135E80',
+  900: '#004466', // C
 };
 
 export const violate = {
@@ -76,6 +89,19 @@ export const purple = {
   900: '#3B004D',
 };
 
+export const indigo = {
+  50: '#C4A4FF',
+  100: '#B487FF',
+  200: '#9E68FF',
+  300: '#A972FF',
+  400: '#9160FF',
+  500: '#8951FF', // A
+  600: '#8257FF',
+  700: '#7A4FFF',
+  800: '#7147FF',
+  900: '#673FFF',
+};
+
 export const yellow = {
   50: '#FFF7E6',
   100: '#FFECCC',
@@ -91,4 +117,16 @@ export const yellow = {
 
 export const white = {
   500: '#FFFFFF',
+};
+
+export const transparentRed = {
+  500: '#FF5A6533',
+};
+
+export const transparentGreen = {
+  500: '#05C16833',
+};
+
+export const transparentYellow = {
+  500: '#FFB01633',
 };

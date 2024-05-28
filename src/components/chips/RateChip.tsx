@@ -1,39 +1,51 @@
+import { useTheme } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import IconifyIcon from 'components/base/IconifyIcon';
 
 interface rateChipProps {
   rate: string;
-  isPositive: boolean;
+  isUp: boolean;
 }
 
-const RateChip = ({ rate, isPositive }: rateChipProps) => {
+const RateChip = ({ rate, isUp }: rateChipProps) => {
+  const theme = useTheme();
+
+  const colors = {
+    red: theme.palette.error.main,
+    green: theme.palette.success.main,
+    yellow: theme.palette.warning.main,
+    transRed: theme.palette.transparent.error.main,
+    transGreen: theme.palette.transparent.success.main,
+    transYellow: theme.palette.transparent.warning.main,
+  };
+
   return (
     <Chip
       variant="outlined"
       size="small"
       icon={
-        isPositive ? (
+        isUp ? (
           <IconifyIcon
             icon="mingcute:arrow-right-up-line"
-            sx={{ m: '0 !important', color: '#14CA74 !important', width: 14 }}
+            sx={{ color: `${colors.green} !important` }}
           />
         ) : (
           <IconifyIcon
             icon="mingcute:arrow-right-down-line"
-            sx={{ m: '0 !important', color: '#FF5A65 !important', width: 14 }}
+            sx={{ color: `${colors.red} !important` }}
           />
         )
       }
       label={rate}
-      sx={(theme) => ({
-        width: 60,
+      sx={{
+        px: 0.5,
+        width: 70,
         flexDirection: 'row-reverse',
         justifyContent: 'space-between',
-        color: isPositive ? '#14CA74' : '#FF5A65',
-        bgcolor: isPositive ? '#05C16833' : '#FF5A6533',
-        borderColor: isPositive ? '#05C16833' : '#FF5A6533',
-        '& .MuiChip-labelSmall': { p: theme.spacing(0.2, 0.5, 0, 0.25) },
-      })}
+        color: isUp ? colors.green : colors.red,
+        bgcolor: isUp ? colors.transGreen : colors.transRed,
+        borderColor: isUp ? colors.transGreen : colors.transRed,
+      }}
     />
   );
 };

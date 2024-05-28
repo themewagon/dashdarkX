@@ -1,11 +1,23 @@
+import { useTheme } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import IconifyIcon from 'components/base/IconifyIcon';
 
 interface statusChipProps {
-  status: 'Delivered' | 'Canceled' | 'Pending';
+  status: 'delivered' | 'canceled' | 'pending';
 }
 
 const StatusChip = ({ status }: statusChipProps) => {
+  const theme = useTheme();
+
+  const colors = {
+    red: theme.palette.error.main,
+    green: theme.palette.success.main,
+    yellow: theme.palette.warning.main,
+    transRed: theme.palette.transparent.error.main,
+    transGreen: theme.palette.transparent.success.main,
+    transYellow: theme.palette.transparent.warning.main,
+  };
+
   return (
     <Chip
       variant="outlined"
@@ -14,33 +26,36 @@ const StatusChip = ({ status }: statusChipProps) => {
         <IconifyIcon
           icon="radix-icons:dot-filled"
           sx={{
-            m: '0 !important',
-            width: 14,
             color:
-              status === 'Delivered'
-                ? '#14CA74 !important'
-                : status === 'Pending'
-                  ? '#FDB52A !important'
-                  : '#FF5A65 !important',
+              status === 'delivered'
+                ? `${colors.green} !important`
+                : status === 'pending'
+                  ? `${colors.yellow} !important`
+                  : `${colors.red} !important`,
           }}
         />
       }
       label={status}
-      sx={() => ({
+      sx={{
+        pr: 0.55,
         width: 90,
         justifyContent: 'center',
-        color: status === 'Delivered' ? '#14CA74' : status === 'Pending' ? '#FDB52A' : '#FF5A65',
-        fontSize: '0.875rem',
-        fontWeight: 500,
+        color:
+          status === 'delivered' ? colors.green : status === 'pending' ? colors.yellow : colors.red,
         letterSpacing: 0.5,
-        bgcolor: status === 'Delivered' ? '#05C16833' : status === 'Pending' ? '#FFB01633'
-:'#FF5A6533',
-        borderColor: status === 'Delivered' ? '#05C16833' : status === 'Pending' ? '#FFB01633' : '#FF5A6533',
-        '& .MuiChip-labelSmall': {
-          pl: 0,
-          pt: 0.2,
-        },
-      })}
+        bgcolor:
+          status === 'delivered'
+            ? colors.transGreen
+            : status === 'pending'
+              ? colors.transYellow
+              : colors.transRed,
+        borderColor:
+          status === 'delivered'
+            ? colors.transGreen
+            : status === 'pending'
+              ? colors.transYellow
+              : colors.transRed,
+      }}
     />
   );
 };

@@ -1,11 +1,26 @@
 import { PaletteColorOptions, PaletteOptions } from '@mui/material/styles';
-import { grey, cyan, blue, purple, yellow, white, violate } from './colors';
+import {
+  grey,
+  red,
+  green,
+  blue,
+  cyan,
+  purple,
+  violate,
+  yellow,
+  white,
+  transparentRed,
+  transparentGreen,
+  transparentYellow,
+} from './colors';
 
 declare module '@mui/material/styles' {
   interface PaletteOptions {
     neutral?: PaletteColorOptions;
     transparent?: {
       success: PaletteColorOptions;
+      warning: PaletteColorOptions;
+      error: PaletteColorOptions;
     };
     gradients?: {
       primary: PaletteColorOptions;
@@ -18,13 +33,13 @@ declare module '@mui/material/styles' {
   }
   interface Palette {
     neutral: PaletteColor;
+    gradients: {
+      primary: PaletteColor;
+    };
     transparent: {
       success: PaletteColor;
       warning: PaletteColor;
       error: PaletteColor;
-    };
-    gradients: {
-      primary: PaletteColor;
     };
   }
   interface PaletteColor {
@@ -58,8 +73,14 @@ const palette: PaletteOptions = {
     dark: blue[800],
     darker: blue[900],
   },
+  success: {
+    main: green[500],
+  },
   warning: {
     main: yellow[500],
+  },
+  error: {
+    main: red[500],
   },
   text: {
     primary: white[500],
@@ -74,9 +95,15 @@ const palette: PaletteOptions = {
   },
   transparent: {
     success: {
-      main: '#222',
-    }
-  }
+      main: transparentGreen[500],
+    },
+    warning: {
+      main: transparentYellow[500],
+    },
+    error: {
+      main: transparentRed[500],
+    },
+  },
 };
 
 export default palette;

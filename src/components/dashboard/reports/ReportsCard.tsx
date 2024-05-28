@@ -10,11 +10,11 @@ interface firstCardProps {
   title: string;
   value: string;
   rate: string;
-  isPositive: boolean;
+  isUp: boolean;
 }
 
 const ReportsCard = (props: firstCardProps) => {
-  const { icon, title, value, rate, isPositive } = props;
+  const { icon, title, value, rate, isUp } = props;
 
   return (
     <Stack
@@ -50,7 +50,7 @@ const ReportsCard = (props: firstCardProps) => {
         >
           {value}
         </Typography>
-        <RateChip rate={rate} isPositive={isPositive} />
+        <RateChip rate={rate} isUp={isUp} />
       </Stack>
     </Stack>
   );
