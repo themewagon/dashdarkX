@@ -1,3 +1,4 @@
+import { fontFamily } from 'theme/typography';
 import { Paper } from '@mui/material';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -13,7 +14,7 @@ const ProductsCard = () => {
         variant="h6"
         sx={(theme) => ({
           fontWeight: theme.typography.subtitle1.fontWeight,
-          fontFamily: 'Work Sans',
+          fontFamily: fontFamily.workSans,
         })}
       >
         Products
@@ -45,7 +46,7 @@ const ProductsCard = () => {
               variant="body2"
               sx={(theme) => ({
                 fontWeight: theme.typography.caption.fontWeight,
-                fontFamily: 'Work Sans',
+                fontFamily: fontFamily.workSans,
               })}
             >
               iPhone 14 Pro Max
@@ -81,7 +82,7 @@ const ProductsCard = () => {
               variant="body2"
               sx={(theme) => ({
                 fontWeight: theme.typography.caption.fontWeight,
-                fontFamily: 'Work Sans',
+                fontFamily: fontFamily.workSans,
               })}
             >
               Apple Watch S8

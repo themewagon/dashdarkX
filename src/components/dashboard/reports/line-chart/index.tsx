@@ -21,7 +21,7 @@ const LineChart = () => {
         </Typography>
       </Stack>
 
-      <Stack justifyContent="space-between" mt={1.4}>
+      <Stack alignItems="center" justifyContent="space-between" mt={1.5}>
         <Stack alignItems="center" gap={0.875}>
           <Typography
             variant="h3"

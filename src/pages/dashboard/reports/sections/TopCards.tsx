@@ -34,7 +34,7 @@ const cardsData = [
 
 const TopCards = () => {
   return (
-    <Grid container spacing={{xs: 2.5, sm: 3, lg: 3.75}}>
+    <Grid container spacing={{ xs: 2.5, sm: 3, lg: 3.75 }}>
       {cardsData.map((item, index) => {
         return (
           <Grid item xs={12} sm={6} xl={3} key={index}>
