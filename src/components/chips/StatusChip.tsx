@@ -37,8 +37,8 @@ const StatusChip = ({ status }: statusChipProps) => {
       }
       label={status}
       sx={{
-        pr: 0.55,
-        width: 90,
+        pr: 0.65,
+        width: 80,
         justifyContent: 'center',
         color:
           status === 'delivered' ? colors.green : status === 'pending' ? colors.yellow : colors.red,
