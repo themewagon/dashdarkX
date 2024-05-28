@@ -21,7 +21,7 @@ const ReportsCard = (props: firstCardProps) => {
     <Stack
       direction="column"
       component={Paper}
-      gap={1.55}
+      gap={1.5}
       sx={{ p: 2.25, pl: 2.5, height: 116, width: 1 }}
     >
       <Stack justifyContent="space-between">
@@ -48,7 +48,7 @@ const ReportsCard = (props: firstCardProps) => {
         </IconButton>
       </Stack>
 
-      <Stack alignItems="center" gap={0.85} sx={{ bgcolor: 'transparent' }}>
+      <Stack alignItems="center" gap={0.875} sx={{ bgcolor: 'transparent' }}>
         <Typography
           variant="h3"
           sx={(theme) => ({

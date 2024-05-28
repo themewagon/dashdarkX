@@ -22,9 +22,9 @@ const LineChart = () => {
       </Stack>
 
       <Stack justifyContent="space-between" mt={1.4}>
-        <Stack alignItems="center" gap={0.8}>
+        <Stack alignItems="center" gap={0.875}>
           <Typography
-            variant="h4"
+            variant="h3"
             sx={(theme) => ({ fontWeight: theme.typography.caption.fontWeight, letterSpacing: 1 })}
           >
             257
