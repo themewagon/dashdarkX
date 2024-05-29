@@ -12,7 +12,7 @@ const TopList = () => {
   });
 
   return (
-    <List sx={{ px: 2.5, width: 1 }} component="nav">
+    <List component="nav">
       {routes.map((route, index) => {
         return <ListItem key={index} {...route} />;
       })}

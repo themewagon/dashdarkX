@@ -15,7 +15,11 @@ const SidebarHeader = () => {
       <Stack alignItems="center" justifyContent="flex-start">
         <ButtonBase component={Link} href="/" sx={{ py: 1.25 }} disableRipple>
           <Image src={LogoImg} alt="logo" sx={{ mr: 1, height: 24, width: 24 }} />
-          <Typography variant="h5" color="text.primary" sx={{ letterSpacing: 1 }}>
+          <Typography
+            variant="h5"
+            color="text.primary"
+            sx={(theme) => ({ fontWeight: theme.typography.caption.fontWeight, letterSpacing: 1 })}
+          >
             Dashdark X
           </Typography>
         </ButtonBase>

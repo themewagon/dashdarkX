@@ -28,6 +28,8 @@ import Chip from './components/Chip';
 import DatePicker from './components/DatePicker';
 import MonthCalendar from './components/MonthCalendar';
 import YearCalendar from './components/YearCalendar';
+import List from './components/list/List';
+import Collapse from './components/list/Collapse';
 
 export const theme = createTheme({
     typography,
@@ -35,9 +37,11 @@ export const theme = createTheme({
     components: {
         MuiButton: Button,
         MuiPaper: Paper,
+        MuiList: List,
         MuiListItemButton: ListItemButton,
         MuiListItemIcon: ListItemIcon,
         MuiListItemText: ListItemText,
+        MuiCollapse: Collapse,
         MuiDrawer: Drawer,
         MuiTextField: TextField,
         MuiToolbar: Toolbar,
