@@ -8,7 +8,7 @@ const DateSelect = () => {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DatePicker
         views={['month', 'year']}
-        defaultValue={dayjs('May-2024')}
+        defaultValue={dayjs('Jan-2024')}
         format="MMM YYYY"
         sx={(theme) => ({
           p: 0,
@@ -18,16 +18,16 @@ const DateSelect = () => {
           '& .MuiIconButton-edgeEnd': {
             color: 'text.secondary',
             '& .MuiSvgIcon-fontSizeMedium': {
-              fontSize: theme.typography.h6.fontSize,
+              fontSize: theme.typography.subtitle1.fontSize,
             },
           },
           '& .MuiOutlinedInput-input': {
             p: 0,
             pl: theme.spacing(1),
             color: 'text.secondary',
-            fontSize: theme.typography.subtitle2.fontSize,
+            fontSize: theme.typography.caption.fontSize,
             height: 30,
-            width: 68,
+            width: 64,
           },
           '& .MuiOutlinedInput-root': {
             pr: theme.spacing(0.8),

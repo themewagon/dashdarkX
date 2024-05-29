@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid';
-import PolarBarChart from 'components/dashboard/reports/polar-bar-chart';
-import StackedBarChart from 'components/dashboard/reports/stacked-bar-chart';
+import PolarBarChart from 'pages/dashboard/reports/components/polar-bar-chart';
+import StackedBarChart from 'pages/dashboard/reports/components/stacked-bar-chart';
 
 const MainCharts = () => {
   return (

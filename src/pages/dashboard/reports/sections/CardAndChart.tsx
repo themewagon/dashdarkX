@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid';
-import ProductsCard from 'components/dashboard/reports/products-card';
-import LineChart from 'components/dashboard/reports/line-chart';
+import ProductsCard from 'pages/dashboard/reports/components/products-card';
+import LineChart from 'pages/dashboard/reports/components/line-chart';
 
 const CardAndChart = () => {
   return (

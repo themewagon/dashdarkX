@@ -5,8 +5,8 @@ import paths, { parentPaths } from './paths';
 import MainLayout from 'layouts/main-layout';
 import Splash from 'components/loading/Splash';
 import PageLoader from 'components/loading/PageLoader';
-import Products from 'pages/dashboard/Products';
-import Task from 'pages/dashboard/Task';
+import Products from 'pages/dashboard/products';
+import Task from 'pages/dashboard/task';
 import ComingSoon from 'pages/ComingSoon';
 
 const App = lazy(() => import('App'));
