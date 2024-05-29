@@ -46,7 +46,6 @@ const ProductsCard = () => {
               variant="body2"
               sx={(theme) => ({
                 fontWeight: theme.typography.caption.fontWeight,
-                fontFamily: fontFamily.workSans,
               })}
             >
               iPhone 14 Pro Max
@@ -65,7 +64,10 @@ const ProductsCard = () => {
 
         <Typography
           variant="caption"
-          sx={(theme) => ({ fontWeight: theme.typography.subtitle2.fontWeight })}
+          sx={(theme) => ({
+            fontFamily: fontFamily.workSans,
+            fontWeight: theme.typography.subtitle1.fontWeight,
+          })}
         >
           $ 1,099.00
         </Typography>
@@ -82,7 +84,6 @@ const ProductsCard = () => {
               variant="body2"
               sx={(theme) => ({
                 fontWeight: theme.typography.caption.fontWeight,
-                fontFamily: fontFamily.workSans,
               })}
             >
               Apple Watch S8
@@ -101,7 +102,10 @@ const ProductsCard = () => {
 
         <Typography
           variant="caption"
-          sx={(theme) => ({ fontWeight: theme.typography.subtitle2.fontWeight })}
+          sx={(theme) => ({
+            fontFamily: fontFamily.workSans,
+            fontWeight: theme.typography.subtitle1.fontWeight,
+          })}
         >
           $ 799.00
         </Typography>
