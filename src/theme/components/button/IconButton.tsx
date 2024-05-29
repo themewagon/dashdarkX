@@ -6,6 +6,15 @@ const IconButton: Components<Omit<Theme, 'components'>>['MuiIconButton'] = {
     root: {
       marginLeft: 0,
     },
+    sizeLarge: ({ theme }) => ({
+      fontSize: theme.typography.h5.fontSize,
+    }),
+    sizeMedium: ({ theme }) => ({
+      fontSize: theme.typography.h6.fontSize,
+    }),
+    sizeSmall: ({ theme }) => ({
+      fontSize: theme.typography.button.fontSize,
+    }),
   },
 };
 

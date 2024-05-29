@@ -4,9 +4,10 @@ import IconifyIcon from 'components/base/IconifyIcon';
 
 const SidebarFooter = () => {
   return (
-    <Box sx={(theme) => ({ p: theme.spacing(6, 3.5, 30), width: 1 })}>
+    <Box sx={(theme) => ({ p: theme.spacing(8, 3.5, 30), width: 1 })}>
       <Button
         variant="contained"
+        color="primary"
         size="large"
         endIcon={<IconifyIcon icon="mingcute:arrow-right-line" />}
       >

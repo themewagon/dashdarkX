@@ -7,8 +7,8 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
   },
   styleOverrides: {
     root: ({ theme }) => ({
-      ...theme.typography.button,
       color: theme.palette.text.primary,
+      fontWeight: theme.typography.button.fontWeight,
       borderRadius: theme.shape.borderRadius,
       textTransform: 'initial',
       letterSpacing: 0.5,
@@ -19,15 +19,21 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
         background: `linear-gradient(128.49deg, ${theme.palette.gradients.primary.main} 19.86%, ${theme.palette.gradients.primary.state} 68.34%)`,
       },
     }),
+    containedSecondary: ({ theme }) => ({
+      background: theme.palette.info.dark,
+      '&:hover': { background: theme.palette.info.dark },
+    }),
     containedSizeLarge: ({ theme }) => ({
-      padding: theme.spacing(1.25, 1.75),
       width: '100%',
+      padding: theme.spacing(1.25, 1.75),
+      fontSize: theme.typography.button.fontSize,
+    }),
+    containedSizeMedium: ({ theme }) => ({
+      padding: theme.spacing(0.75, 1.15),
+      fontSize: theme.typography.subtitle2.fontSize,
     }),
     containedSizeSmall: ({ theme }) => ({
-      fontSize: theme.typography.body2.fontSize,
-      padding: theme.spacing(0.5, 1.5),
-    }),
-    endIcon: ({ theme }) => ({
+      padding: theme.spacing(0.875, 1.15),
       fontSize: theme.typography.caption.fontSize,
     }),
   },

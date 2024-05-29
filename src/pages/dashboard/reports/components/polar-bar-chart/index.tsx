@@ -27,13 +27,10 @@ const PolarBarChart = () => {
         </Typography>
         <Button
           variant="contained"
-          size="small"
+          color="secondary"
+          size="medium"
           endIcon={<IconifyIcon icon="mingcute:arrow-down-line" />}
-          sx={(theme) => ({
-            zIndex: 1000,
-            background: theme.palette.info.dark,
-            '&:hover': { background: theme.palette.info.dark },
-          })}
+          sx={{ zIndex: 1000 }}
         >
           Export
         </Button>
