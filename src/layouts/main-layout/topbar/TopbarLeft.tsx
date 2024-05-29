@@ -1,3 +1,4 @@
+import { fontFamily } from 'theme/typography';
 import Stack from '@mui/material/Stack';
 import Link from '@mui/material/Link';
 import ButtonBase from '@mui/material/ButtonBase';
@@ -46,7 +47,7 @@ const TopbarLeft = ({ isClosing, mobileOpen, setMobileOpen }: TopbarLeftProps) =
         variant="h5"
         sx={(theme) => ({
           letterSpacing: 1,
-          fontFamily: 'Work Sans',
+          fontFamily: fontFamily.workSans,
           fontWeight: theme.typography.caption.fontWeight,
           display: { xs: 'none', lg: 'block' },
         })}
