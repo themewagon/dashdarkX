@@ -33,7 +33,7 @@ const GetLineChartWithOption = () => {
       axisLabel: {
         color: colors[1],
         fontSize: theme.typography.caption.fontSize,
-        fontFamily: fontFamily.questrial,
+        fontFamily: fontFamily.monaSans,
         margin: 10,
       },
     },
@@ -42,7 +42,7 @@ const GetLineChartWithOption = () => {
       axisLabel: {
         color: colors[1],
         fontSize: theme.typography.caption.fontSize,
-        fontFamily: fontFamily.questrial,
+        fontFamily: fontFamily.monaSans,
       },
       splitLine: {
         show: false,

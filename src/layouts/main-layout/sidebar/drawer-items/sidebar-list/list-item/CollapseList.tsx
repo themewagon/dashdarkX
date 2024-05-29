@@ -31,8 +31,8 @@ const CollapseList = (props: collapseListProps) => {
                 pl: 1.75,
                 borderLeft: 4,
                 borderStyle: 'solid',
-                borderColor: isActivePath ? 'primary.main' : 'transparent',
-                bgcolor: isActivePath ? 'info.dark' : 'transparent',
+                borderColor: isActivePath ? 'primary.main' : 'transparent !important',
+                bgcolor: isActivePath ? 'info.dark' : 'info.darker',
               }}
             >
               <ListItemText

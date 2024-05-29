@@ -1,12 +1,12 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
 
 export const fontFamily = {
-  questrial: ['Questrial', 'sans-serif'].join(','),
+  monaSans: ['Mona Sans', 'sans-serif'].join(','),
   workSans: ['Work Sans', 'sans-serif'].join(','),
 };
 
 const typography: TypographyOptions = {
-  fontFamily: fontFamily.questrial,
+  fontFamily: fontFamily.monaSans,
   h1: {
     fontSize: '3rem',
     fontWeight: 700,
@@ -16,7 +16,7 @@ const typography: TypographyOptions = {
     fontWeight: 700,
   },
   h3: {
-    fontSize: '1.875rem',
+    fontSize: '1.75rem',
     fontWeight: 700,
   },
   h4: {

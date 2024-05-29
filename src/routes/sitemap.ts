@@ -33,7 +33,7 @@ const sitemap: MenuItem[] = [
         name: 'Reports',
         path: paths.reports,
         pathName: 'reports',
-        active: true
+        active: true,
       },
       {
         name: 'Products',

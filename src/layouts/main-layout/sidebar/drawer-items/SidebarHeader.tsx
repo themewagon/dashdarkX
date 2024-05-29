@@ -6,14 +6,14 @@ import ButtonBase from '@mui/material/ButtonBase';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconifyIcon from 'components/base/IconifyIcon';
-import LogoImg from 'assets/images/logo.svg';
 import Image from 'components/base/Image';
+import LogoImg from 'assets/images/logo.svg';
 
 const SidebarHeader = () => {
   return (
-    <Box sx={(theme) => ({p: theme.spacing(4, 3.5, 3)})}>
+    <Box sx={(theme) => ({ p: theme.spacing(4, 3.5, 3) })}>
       <Stack alignItems="center" justifyContent="flex-start">
-        <ButtonBase component={Link} href="/" sx={{ py: 1.2 }} disableRipple>
+        <ButtonBase component={Link} href="/" sx={{ py: 1.25 }} disableRipple>
           <Image src={LogoImg} alt="logo" sx={{ mr: 1, height: 24, width: 24 }} />
           <Typography variant="h5" color="text.primary" sx={{ letterSpacing: 1 }}>
             Dashdark X

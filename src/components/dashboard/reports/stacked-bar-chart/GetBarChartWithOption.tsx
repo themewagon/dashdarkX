@@ -77,7 +77,7 @@ const GetBarChartWithOption = ({ chartRef }: BarChartProps) => {
       axisLabel: {
         color: theme.palette.text.secondary,
         fontSize: theme.typography.caption.fontSize,
-        fontFamily: fontFamily.questrial,
+        fontFamily: fontFamily.monaSans,
         margin: 24,
       },
     },
@@ -86,7 +86,7 @@ const GetBarChartWithOption = ({ chartRef }: BarChartProps) => {
       axisLabel: {
         color: theme.palette.text.secondary,
         fontSize: theme.typography.caption.fontSize,
-        fontFamily: fontFamily.questrial,
+        fontFamily: fontFamily.monaSans,
         formatter: (value: number) => {
           if (value === 0) {
             return '0K';
