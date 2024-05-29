@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import IconifyIcon from 'components/base/IconifyIcon';
 import RateChip from 'components/chips/RateChip';
 
-interface firstCardProps {
+interface topCardProps {
   icon: string;
   title: string;
   value: string;
@@ -14,7 +14,7 @@ interface firstCardProps {
   isUp: boolean;
 }
 
-const ReportsCard = (props: firstCardProps) => {
+const TopCard = (props: topCardProps) => {
   const { icon, title, value, rate, isUp } = props;
 
   return (
@@ -32,13 +32,14 @@ const ReportsCard = (props: firstCardProps) => {
             sx={(theme) => ({ fontSize: theme.typography.h5.fontSize })}
           />
           <Typography
-            variant="subtitle1"
+            variant="subtitle2"
             color="text.secondary"
             sx={{ fontFamily: fontFamily.workSans }}
           >
             {title}
           </Typography>
         </Stack>
+
         <IconButton
           aria-label="menu"
           size="small"
@@ -48,7 +49,7 @@ const ReportsCard = (props: firstCardProps) => {
         </IconButton>
       </Stack>
 
-      <Stack alignItems="center" gap={0.875} sx={{ bgcolor: 'transparent' }}>
+      <Stack alignItems="center" gap={0.875}>
         <Typography
           variant="h3"
           sx={(theme) => ({
@@ -64,4 +65,4 @@ const ReportsCard = (props: firstCardProps) => {
   );
 };
 
-export default ReportsCard;
+export default TopCard;

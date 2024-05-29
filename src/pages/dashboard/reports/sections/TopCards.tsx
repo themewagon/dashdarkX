@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import ReportsCard from 'components/dashboard/reports/ReportsCard';
+import TopCard from 'components/dashboard/reports/TopCard';
 
 const cardsData = [
   {
@@ -38,7 +38,7 @@ const TopCards = () => {
       {cardsData.map((item, index) => {
         return (
           <Grid item xs={12} sm={6} xl={3} key={index}>
-            <ReportsCard
+            <TopCard
               title={item.title}
               value={item.value}
               rate={item.rate}

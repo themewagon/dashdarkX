@@ -12,12 +12,10 @@ const Chip: Components<Omit<Theme, 'components'>>['MuiChip'] = {
     sizeSmall: ({ theme }) => ({
       height: 20,
       fontSize: theme.typography.caption.fontSize,
-      fontWeight: theme.typography.subtitle2.fontWeight,
     }),
     sizeMedium: ({ theme }) => ({
       height: 28,
       fontSize: theme.typography.body1.fontSize,
-      fontWeight: theme.typography.subtitle2.fontWeight,
     }),
     iconSmall: {
       width: 12,
@@ -27,11 +25,10 @@ const Chip: Components<Omit<Theme, 'components'>>['MuiChip'] = {
       width: 16,
       margin: '0 !important',
     },
-    labelSmall: ({ theme }) => ({
+    labelSmall: {
       padding: 0,
-      marginTop: theme.spacing(0.15),
       textTransform: 'capitalize',
-    }),
+    },
     labelMedium: {
       padding: 0,
       textTransform: 'capitalize',
