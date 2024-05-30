@@ -1,5 +1,5 @@
 import Grid from '@mui/material/Grid';
-import StackedBarChart from 'pages/dashboard/reports/components/stacked-bar-chart';
+import RevenueByCustomer from './revenue-by-customer';
 import WebsiteVisitors from './website-visitors';
 
 const MainCharts = () => {
@@ -9,7 +9,7 @@ const MainCharts = () => {
         <WebsiteVisitors />
       </Grid>
       <Grid item xs={12} xl={8}>
-        <StackedBarChart />
+        <RevenueByCustomer />
       </Grid>
     </Grid>
   );

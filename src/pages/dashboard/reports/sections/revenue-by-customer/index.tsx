@@ -6,10 +6,28 @@ import Typography from '@mui/material/Typography';
 import RateChip from 'components/chips/RateChip';
 import DateSelect from 'components/dates/DateSelect';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import StackedBarChartLegends from './StackedBarChartLegends';
-import GetBarChartWithOption from './GetBarChartWithOption';
+import RevenueChartLegends from './RevenueChartLegends';
+import RevenueChart from './RevenueChart';
 
-const StackedBarChart = () => {
+export const revenueData = {
+  categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  series: [
+    {
+      name: 'Current clients',
+      data: [14000, 30000, 38000, 36000, 16000, 24000, 10000, 44000, 12000, 6000, 12000, 24000],
+    },
+    {
+      name: 'Subscribers',
+      data: [12000, 20000, 26000, 12000, 10000, 32000, 6000, 8000, 12000, 18000, 16000, 6000],
+    },
+    {
+      name: 'New customers',
+      data: [12000, 26000, 24000, 24000, 8000, 14000, 0, 38000, 14000, 30000, 16000, 28000],
+    },
+  ],
+};
+
+const RevenueByCustomer = () => {
   const chartRef = useRef<EChartsReactCore>(null);
 
   return (
@@ -33,7 +51,7 @@ const StackedBarChart = () => {
 
         <Stack alignItems="center" spacing={2}>
           <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-            <StackedBarChartLegends chartRef={chartRef} sm={false} />
+            <RevenueChartLegends chartRef={chartRef} sm={false} />
           </Box>
           <DateSelect />
         </Stack>
@@ -41,15 +59,15 @@ const StackedBarChart = () => {
 
       {/* legends for smaller screen */}
       <Box sx={{ display: { xs: 'block', md: 'none' } }}>
-        <StackedBarChartLegends chartRef={chartRef} sm={true} />
+        <RevenueChartLegends chartRef={chartRef} sm={true} />
       </Box>
 
       {/* stacked bar chart */}
       <Box sx={{ height: 400 }}>
-        <GetBarChartWithOption chartRef={chartRef} />
+        <RevenueChart chartRef={chartRef} data={revenueData} />
       </Box>
     </Box>
   );
 };
 
-export default StackedBarChart;
+export default RevenueByCustomer;
