@@ -30,13 +30,13 @@ const ProfileListItem = ({ id, subheader, items }: MenuItem) => {
             <Avatar
               src={AvatarImage}
               sx={(theme) => ({
-                height: 32,
-                width: 32,
+                height: 36,
+                width: 36,
                 bgcolor: theme.palette.primary.main,
               })}
             />
             <Stack direction="column">
-              <Typography variant="subtitle2" color="text.primary" sx={{ letterSpacing: 1 }}>
+              <Typography variant="subtitle2" color="text.primary" sx={{ letterSpacing: 0.5 }}>
                 {subheader}
               </Typography>
               <Typography
