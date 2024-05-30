@@ -64,7 +64,7 @@ const RevenueByCustomer = () => {
 
       {/* stacked bar chart */}
       <Box sx={{ height: 400 }}>
-        <RevenueChart chartRef={chartRef} data={revenueData} />
+        <RevenueChart chartRef={chartRef} data={revenueData} sx={{ minHeight: 1 }} />
       </Box>
     </Box>
   );

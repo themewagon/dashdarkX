@@ -1,4 +1,4 @@
-import { useTheme } from '@mui/material';
+import { SxProps, useTheme } from '@mui/material';
 import { fontFamily } from 'theme/typography';
 import * as echarts from 'echarts/core';
 import { BarChart } from 'echarts/charts';
@@ -29,10 +29,11 @@ interface BarChartProps {
       data: number[];
     }[];
   };
+  sx?: SxProps;
   chartRef: React.RefObject<EChartsReactCore>;
 }
 
-const RevenueChart = ({ chartRef, data }: BarChartProps) => {
+const RevenueChart = ({ chartRef, data, ...rest }: BarChartProps) => {
   const theme = useTheme();
 
   const colors = [
@@ -118,14 +119,7 @@ const RevenueChart = ({ chartRef, data }: BarChartProps) => {
     })),
   };
 
-  return (
-    <ReactEchart
-      ref={chartRef}
-      echarts={echarts}
-      option={option}
-      sx={{ height: '100% !important' }}
-    />
-  );
+  return <ReactEchart ref={chartRef} echarts={echarts} option={option} {...rest} />;
 };
 
 export default RevenueChart;
