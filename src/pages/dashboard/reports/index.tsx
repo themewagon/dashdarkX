@@ -3,7 +3,7 @@ import MainCharts from './sections/MainCharts';
 import CardAndChart from './sections/CardAndChart';
 import EditableDataGrid from './sections/EditableDataGrid';
 
-const Dashboard = () => {
+const Reports = () => {
   return (
     <>
       <TopCards />
@@ -14,4 +14,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Reports;

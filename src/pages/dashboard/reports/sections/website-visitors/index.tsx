@@ -6,14 +6,14 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
-import PolarBarChartLegends from './PolarBarChartLegends';
-import GetPolarBarChartWithOption from './GetPolarBarChartWithOption';
+import VisitorsChartLegends from './visitors-chart-legends';
+import VisitorsChart from './VisitorsChart';
 
-const PolarBarChart = () => {
-  const [activeBarIndex, setActiveBarIndex] = useState<number | null>(null);
+const WebsiteVisitors = () => {
+  const [activeBar, setActiveBar] = useState<string | null>(null);
 
   return (
-    <Box component={Paper} onClick={() => setActiveBarIndex(null)} sx={{ height: 500 }}>
+    <Box component={Paper} onClick={() => setActiveBar(null)} sx={{ height: 500 }}>
       {/* header */}
       <Stack alignItems="center" justifyContent="space-between" mb={-2}>
         <Typography
@@ -37,12 +37,12 @@ const PolarBarChart = () => {
       </Stack>
 
       {/* polar bar chart */}
-      <GetPolarBarChartWithOption activeBarIndex={activeBarIndex} />
+      <VisitorsChart activeBar={activeBar} />
 
       {/* legends */}
-      <PolarBarChartLegends activeBarIndex={activeBarIndex} setActiveBarIndex={setActiveBarIndex} />
+      <VisitorsChartLegends activeBar={activeBar} setActiveBar={setActiveBar} />
     </Box>
   );
 };
 
-export default PolarBarChart;
+export default WebsiteVisitors;

@@ -9,10 +9,10 @@ import ReactEchart from 'components/base/ReactEchart';
 echarts.use([PolarComponent, TooltipComponent, GraphicComponent, BarChart, CanvasRenderer]);
 
 interface polarBarChartProps {
-  activeBarIndex?: number | null;
+  activeBar?: string | null;
 }
 
-const GetPolarBarChartWithOption = ({ activeBarIndex }: polarBarChartProps) => {
+const VisitorsChart = ({ activeBar }: polarBarChartProps) => {
   const theme = useTheme();
 
   const activeColors = [
@@ -60,21 +60,21 @@ const GetPolarBarChartWithOption = ({ activeBarIndex }: polarBarChartProps) => {
           value: 50,
           itemStyle: {
             color:
-              activeBarIndex === 0 || activeBarIndex === null ? activeColors[0] : disabledColors[0],
+              activeBar === 'Direct' || activeBar === null ? activeColors[0] : disabledColors[0],
           },
         },
         {
           value: 60,
           itemStyle: {
             color:
-              activeBarIndex === 1 || activeBarIndex === null ? activeColors[1] : disabledColors[1],
+              activeBar === 'Social' || activeBar === null ? activeColors[1] : disabledColors[1],
           },
         },
         {
           value: 80,
           itemStyle: {
             color:
-              activeBarIndex === 2 || activeBarIndex === null ? activeColors[2] : disabledColors[2],
+              activeBar === 'Organic' || activeBar === null ? activeColors[2] : disabledColors[2],
           },
         },
       ],
@@ -104,4 +104,4 @@ const GetPolarBarChartWithOption = ({ activeBarIndex }: polarBarChartProps) => {
   return <ReactEchart echarts={echarts} option={option} />;
 };
 
-export default GetPolarBarChartWithOption;
+export default VisitorsChart;
