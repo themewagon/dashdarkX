@@ -25,9 +25,8 @@ import type {} from '@mui/x-data-grid/themeAugmentation';
 import type {} from '@mui/x-date-pickers/themeAugmentation';
 import Divider from './components/Divider';
 import Chip from './components/Chip';
-import DatePicker from './components/DatePicker';
-import MonthCalendar from './components/MonthCalendar';
-import YearCalendar from './components/YearCalendar';
+import MonthCalendar from './components/date-picker/MonthCalendar';
+import YearCalendar from './components/date-picker/YearCalendar';
 import List from './components/list/List';
 import Collapse from './components/list/Collapse';
 
@@ -58,7 +57,6 @@ export const theme = createTheme({
         MuiDataGrid: DataGrid,
         MuiPagination: Pagination,
         MuiPaginationItem: PaginationItem,
-        MuiDatePicker: DatePicker,
         MuiMonthCalendar: MonthCalendar,
         MuiYearCalendar: YearCalendar
     },

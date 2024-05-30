@@ -31,7 +31,7 @@ const DateSelect = () => {
             width: 64,
           },
           '& .MuiOutlinedInput-root': {
-            pr: theme.spacing(0.8),
+            pr: theme.spacing(0.75),
 
             '& .MuiOutlinedInput-notchedOutline': {
               borderWidth: 0,
