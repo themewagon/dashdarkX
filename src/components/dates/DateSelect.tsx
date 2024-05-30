@@ -26,6 +26,7 @@ const DateSelect = () => {
             pl: theme.spacing(1),
             color: 'text.secondary',
             fontSize: theme.typography.caption.fontSize,
+            fontWeight: theme.typography.subtitle2.fontWeight,
             height: 30,
             width: 64,
           },
