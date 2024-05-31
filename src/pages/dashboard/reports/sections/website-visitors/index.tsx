@@ -6,7 +6,7 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
-import VisitorsChartLegends from './visitors-chart-legends';
+import VisitorsChartLegends from './VisitorsChartLegends';
 import VisitorsChart from './VisitorsChart';
 
 const WebsiteVisitors = () => {
