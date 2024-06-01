@@ -41,7 +41,7 @@ const WebsiteVisitors = () => {
       <VisitorsChart chartRef={chartRef} />
 
       {/* legends */}
-      <VisitorsChartLegends chartRef={chartRef} />
+      <VisitorsChartLegends chartRef={chartRef}/>
     </Box>
   );
 };

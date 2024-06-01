@@ -15,7 +15,7 @@ interface LegendProps {
     social: boolean;
     direct: boolean;
   };
-  handleToggleLegend: (e: React.MouseEvent<HTMLButtonElement>, type: string) => void;
+  handleToggleLegend: (e: React.MouseEvent<HTMLButtonElement>, type: string | null) => void;
 }
 
 const VisitorsChartLegend = ({ data, toggleColor, handleToggleLegend }: LegendProps) => {

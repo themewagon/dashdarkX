@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import Stack from '@mui/material/Stack';
+import { useState, useEffect } from 'react';
 import { useTheme } from '@mui/material';
+import Stack from '@mui/material/Stack';
 import VisitorsChartLegend from './VisitorsChartLegend';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 
@@ -47,7 +47,19 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
     direct: theme.palette.secondary.dark,
   };
 
-  const handleToggleLegend = (e: React.MouseEvent<HTMLButtonElement>, type: string) => {
+  useEffect(() => {
+    const handleBodyClick = (e: MouseEvent) => {
+      handleToggleLegend(e as unknown as React.MouseEvent, null);
+    };
+
+    document.body.addEventListener('click', handleBodyClick);
+
+    return () => {
+      document.body.removeEventListener('click', handleBodyClick);
+    };
+  }, []);
+
+  const handleToggleLegend = (e: React.MouseEvent, type: string | null) => {
     e.stopPropagation();
     const echartsInstance = chartRef.current?.getEchartsInstance();
     if (!echartsInstance) return;
@@ -60,13 +72,15 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
       setToggleColor({ organic: false, social: true, direct: false });
     } else if (type === 'Direct') {
       setToggleColor({ organic: false, social: false, direct: true });
+    } else {
+      setToggleColor({ organic: true, social: true, direct: true });
     }
 
     if (Array.isArray(option.series)) {
-      option.series.forEach((s) => {
+      const series = option.series.map((s) => {
         if (Array.isArray(s.data)) {
           s.data.forEach((item) => {
-            if (item.itemStyle && item.itemStyle.color) {
+            if (item.itemStyle && item.itemStyle.color && type !== null) {
               if (type === item.type) {
                 if (type === 'Organic') {
                   item.itemStyle.color = activeColors.organic;
@@ -84,12 +98,21 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
                   item.itemStyle.color = disabledColors.direct;
                 }
               }
+            } else {
+              if (item.type === 'Organic') {
+                item.itemStyle.color = activeColors.organic;
+              } else if (item.type === 'Social') {
+                item.itemStyle.color = activeColors.social;
+              } else if (item.type === 'Direct') {
+                item.itemStyle.color = activeColors.direct;
+              }
             }
           });
         }
+        return s;
       });
 
-      echartsInstance.setOption(option);
+      echartsInstance.setOption({ series });
     }
   };
 
