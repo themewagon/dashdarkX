@@ -5,13 +5,16 @@ import Typography from '@mui/material/Typography';
 import Image from 'components/base/Image';
 
 interface productInfoProps {
-  imageUrl: string;
-  name: string;
-  inStock: number | string;
-  price: number | string;
+  data: {
+    imageUrl: string;
+    name: string;
+    inStock: number | string;
+    price: number | string;
+  };
 }
 
-const ProductInfo = ({ imageUrl, name, inStock, price }: productInfoProps) => {
+const Product = ({ data }: productInfoProps) => {
+  const { imageUrl, name, inStock, price } = data;
   return (
     <Stack alignItems="center" justifyContent="space-between">
       <Stack spacing={2} alignItems="center">
@@ -53,4 +56,4 @@ const ProductInfo = ({ imageUrl, name, inStock, price }: productInfoProps) => {
   );
 };
 
-export default ProductInfo;
+export default Product;

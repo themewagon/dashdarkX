@@ -2,11 +2,28 @@ import { fontFamily } from 'theme/typography';
 import { Paper } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import ProductInfo from './ProductInfo';
+import Product from './Product';
 import iPhone from 'assets/images/iPhone.png';
 import AWS8 from 'assets/images/AWS8.png';
 
-const ProductsCard = () => {
+const productsData = [
+  {
+    id: 1,
+    name: 'iPhone 14 Pro Max',
+    imageUrl: iPhone,
+    inStock: 524,
+    price: '1,099.00',
+  },
+  {
+    id: 2,
+    name: 'Apple Watch S8',
+    imageUrl: AWS8,
+    inStock: 320,
+    price: '799.00',
+  },
+];
+
+const Products = () => {
   return (
     <Stack direction="column" gap={3.75} component={Paper} sx={{ height: 300 }}>
       <Typography
@@ -34,10 +51,11 @@ const ProductsCard = () => {
         </Typography>
       </Stack>
 
-      <ProductInfo imageUrl={iPhone} name="iPhone 14 Pro Max" inStock={524} price="1,099.00" />
-      <ProductInfo imageUrl={AWS8} name="Apple Watch S8" inStock={320} price="799.00" />
+      {productsData.map((item) => {
+        return <Product key={item.id} data={item} />;
+      })}
     </Stack>
   );
 };
 
-export default ProductsCard;
+export default Products;
