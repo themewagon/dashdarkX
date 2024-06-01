@@ -50,6 +50,7 @@ const RevenueByCustomer = () => {
         </Stack>
 
         <Stack alignItems="center" spacing={2}>
+          {/* legends for bigger screen */}
           <Box sx={{ display: { xs: 'none', md: 'block' } }}>
             <RevenueChartLegends chartRef={chartRef} sm={false} />
           </Box>

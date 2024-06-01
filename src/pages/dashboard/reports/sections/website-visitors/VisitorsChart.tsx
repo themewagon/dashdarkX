@@ -1,30 +1,26 @@
-import { useTheme } from '@mui/material';
+import { SxProps, useTheme } from '@mui/material';
 import { fontFamily } from 'theme/typography';
 import * as echarts from 'echarts/core';
 import { BarChart } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
 import { PolarComponent, TooltipComponent, GraphicComponent } from 'echarts/components';
 import ReactEchart from 'components/base/ReactEchart';
+import EChartsReactCore from 'echarts-for-react/lib/core';
 
 echarts.use([PolarComponent, TooltipComponent, GraphicComponent, BarChart, CanvasRenderer]);
 
 interface polarBarChartProps {
-  activeBar?: string | null;
+  chartRef: React.RefObject<EChartsReactCore>;
+  sx?: SxProps;
 }
 
-const VisitorsChart = ({ activeBar }: polarBarChartProps) => {
+const VisitorsChart = ({ chartRef, ...rest }: polarBarChartProps) => {
   const theme = useTheme();
 
-  const activeColors = [
+  const colors = [
     theme.palette.secondary.main,
     theme.palette.secondary.lighter,
     theme.palette.primary.main,
-  ];
-
-  const disabledColors = [
-    theme.palette.secondary.dark,
-    theme.palette.secondary.darker,
-    theme.palette.primary.dark,
   ];
 
   const option = {
@@ -53,37 +49,39 @@ const VisitorsChart = ({ activeBar }: polarBarChartProps) => {
       data: ['Direct', 'Social', 'Organic'],
     },
     tooltip: {},
-    series: {
-      type: 'bar',
-      data: [
-        {
-          value: 50,
-          itemStyle: {
-            color:
-              activeBar === 'Direct' || activeBar === null ? activeColors[0] : disabledColors[0],
+    series: [
+      {
+        type: 'bar',
+        data: [
+          {
+            type: 'Direct',
+            value: 50,
+            itemStyle: {
+              color: colors[0],
+            },
           },
-        },
-        {
-          value: 60,
-          itemStyle: {
-            color:
-              activeBar === 'Social' || activeBar === null ? activeColors[1] : disabledColors[1],
+          {
+            type: 'Social',
+            value: 60,
+            itemStyle: {
+              color: colors[1],
+            },
           },
-        },
-        {
-          value: 80,
-          itemStyle: {
-            color:
-              activeBar === 'Organic' || activeBar === null ? activeColors[2] : disabledColors[2],
+          {
+            type: 'Organic',
+            value: 80,
+            itemStyle: {
+              color: colors[2],
+            },
           },
+        ],
+        coordinateSystem: 'polar',
+        barCategoryGap: '35%',
+        label: {
+          show: false,
         },
-      ],
-      coordinateSystem: 'polar',
-      barCategoryGap: '35%',
-      label: {
-        show: false,
       },
-    },
+    ],
     graphic: [
       {
         type: 'text',
@@ -101,7 +99,7 @@ const VisitorsChart = ({ activeBar }: polarBarChartProps) => {
     ],
   };
 
-  return <ReactEchart echarts={echarts} option={option} />;
+  return <ReactEchart ref={chartRef} echarts={echarts} option={option} {...rest} />;
 };
 
 export default VisitorsChart;

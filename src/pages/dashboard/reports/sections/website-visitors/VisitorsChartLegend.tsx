@@ -10,29 +10,23 @@ interface LegendProps {
     type: string;
     rate: string;
   };
-  activeBar: string | null;
+  toggleColor: {
+    organic: boolean;
+    social: boolean;
+    direct: boolean;
+  };
   handleToggleLegend: (e: React.MouseEvent<HTMLButtonElement>, type: string) => void;
 }
 
-const VisitorsChartLegend = ({ data, activeBar, handleToggleLegend }: LegendProps) => {
+const VisitorsChartLegend = ({ data, toggleColor, handleToggleLegend }: LegendProps) => {
   let color = '';
 
-  if (activeBar === data.type) {
-    if (activeBar === 'Organic') {
-      color = 'primary.main';
-    } else if (activeBar === 'Social') {
-      color = 'secondary.lighter';
-    } else if (activeBar === 'Direct') {
-      color = 'secondary.light';
-    }
-  } else if (activeBar === null) {
-    if (data.type === 'Organic') {
-      color = 'primary.main';
-    } else if (data.type === 'Social') {
-      color = 'secondary.lighter';
-    } else if (data.type === 'Direct') {
-      color = 'secondary.light';
-    }
+  if (toggleColor.organic && data.type === 'Organic') {
+    color = 'primary.main';
+  } else if (toggleColor.social && data.type === 'Social') {
+    color = 'secondary.lighter';
+  } else if (toggleColor.direct && data.type === 'Direct') {
+    color = 'secondary.light';
   } else {
     color = 'text.secondary';
   }
@@ -59,7 +53,7 @@ const VisitorsChartLegend = ({ data, activeBar, handleToggleLegend }: LegendProp
         </Stack>
       </ButtonBase>
       <Typography variant="body1" color="text.primary" sx={{ fontFamily: fontFamily.workSans }}>
-        80%
+        {data.rate}
       </Typography>
     </Stack>
   );

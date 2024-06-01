@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { revenueData } from './index';
 import Stack from '@mui/material/Stack';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import RevenueChartLegend from './components/RevenueChartLegend';
+import RevenueChartLegend from './RevenueChartLegend';
 
 interface LegendsProps {
   chartRef: React.RefObject<EChartsReactCore>;

@@ -20,11 +20,11 @@ interface LegendProps {
 const RevenueChartLegend = ({ data, toggleColor, handleLegendToggle }: LegendProps) => {
   let color = '';
 
-  if (data.type === 'Current clients' && toggleColor.currentClients) {
+  if (toggleColor.currentClients && data.type === 'Current clients') {
     color = 'primary.main';
-  } else if (data.type === 'Subscribers' && toggleColor.subscribers) {
+  } else if (toggleColor.subscribers && data.type === 'Subscribers') {
     color = 'secondary.lighter';
-  } else if (data.type === 'New customers' && toggleColor.newCustomers) {
+  } else if (toggleColor.newCustomers && data.type === 'New customers') {
     color = 'secondary.light';
   } else {
     color = 'text.secondary';
