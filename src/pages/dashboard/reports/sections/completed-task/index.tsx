@@ -37,7 +37,7 @@ const CompletedTask = () => {
 
       {/* line chart */}
       <Box sx={{ height: 220 }}>
-        <CompletedTaskChart />
+        <CompletedTaskChart sx={{height: '100% !important'}}/>
       </Box>
     </Box>
   );

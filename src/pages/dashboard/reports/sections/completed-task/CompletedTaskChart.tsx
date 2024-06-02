@@ -1,10 +1,14 @@
-import { useTheme } from '@mui/material';
+import { SxProps, useTheme } from '@mui/material';
 import { fontFamily } from 'theme/typography';
 import { graphic } from 'echarts';
 import * as echarts from 'echarts/core';
 import ReactEchart from 'components/base/ReactEchart';
 
-const CompletedTaskChart = () => {
+interface CompletedTaskChartProps {
+  sx?: SxProps;
+}
+
+const CompletedTaskChart = ({ ...rest }: CompletedTaskChartProps) => {
   const theme = useTheme();
   const colors = [theme.palette.secondary.main, theme.palette.text.secondary];
 
@@ -75,7 +79,7 @@ const CompletedTaskChart = () => {
     ],
   };
 
-  return <ReactEchart echarts={echarts} option={option} sx={{ height: '100% !important' }} />;
+  return <ReactEchart echarts={echarts} option={option} {...rest} />;
 };
 
 export default CompletedTaskChart;
