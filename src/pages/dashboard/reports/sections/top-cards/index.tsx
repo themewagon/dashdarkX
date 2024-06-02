@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import TopCard from 'pages/dashboard/reports/components/TopCard';
+import TopCard from './TopCard';
 
 const cardsData = [
   {

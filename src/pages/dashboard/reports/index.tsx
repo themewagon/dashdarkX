@@ -1,4 +1,4 @@
-import TopCards from './sections/TopCards';
+import TopCards from './sections/top-cards';
 import MainCharts from './sections/MainCharts';
 import CardAndChart from './sections/CardAndChart';
 import OrdersStatus from './sections/orders-status';
