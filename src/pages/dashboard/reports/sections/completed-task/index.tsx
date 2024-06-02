@@ -5,9 +5,9 @@ import Typography from '@mui/material/Typography';
 import RateChip from 'components/chips/RateChip';
 import DateSelect from 'components/dates/DateSelect';
 import IconifyIcon from 'components/base/IconifyIcon';
-import GetLineChartWithOption from './GetLineChartWithOption';
+import CompletedTaskChart from './CompletedTaskChart';
 
-const LineChart = () => {
+const CompletedTask = () => {
   return (
     <Box component={Paper} sx={{ height: 300 }}>
       {/* header */}
@@ -37,10 +37,10 @@ const LineChart = () => {
 
       {/* line chart */}
       <Box sx={{ height: 220 }}>
-        <GetLineChartWithOption />
+        <CompletedTaskChart />
       </Box>
     </Box>
   );
 };
 
-export default LineChart;
+export default CompletedTask;

@@ -29,6 +29,7 @@ import MonthCalendar from './components/date-picker/MonthCalendar';
 import YearCalendar from './components/date-picker/YearCalendar';
 import List from './components/list/List';
 import Collapse from './components/list/Collapse';
+import Checkbox from './components/inputs/Checkbox';
 
 export const theme = createTheme({
     typography,
@@ -52,6 +53,7 @@ export const theme = createTheme({
         MuiInputBase: InputBase,
         MuiInputAdornment: InputAdornment,
         MuiFilledInput: FilledInput,
+        MuiCheckbox: Checkbox,
         MuiDivider: Divider,
         MuiChip: Chip,
         MuiDataGrid: DataGrid,

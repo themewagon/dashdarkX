@@ -1,7 +1,7 @@
 import TopCards from './sections/TopCards';
 import MainCharts from './sections/MainCharts';
 import CardAndChart from './sections/CardAndChart';
-import EditableDataGrid from './sections/EditableDataGrid';
+import OrdersStatus from './sections/orders-status';
 
 const Reports = () => {
   return (
@@ -9,7 +9,7 @@ const Reports = () => {
       <TopCards />
       <MainCharts />
       <CardAndChart />
-      <EditableDataGrid/>
+      <OrdersStatus/>
     </>
   );
 };

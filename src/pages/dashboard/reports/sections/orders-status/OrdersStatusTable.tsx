@@ -1,14 +1,10 @@
 import { useState } from 'react';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
+import { format } from 'date-fns';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import StatusChip from 'components/chips/StatusChip';
-import DateSelect from 'components/dates/DateSelect';
 import IconifyIcon from 'components/base/IconifyIcon';
 import DataGridFooter from 'components/data-grid/DataGridFooter';
-import { format } from 'date-fns';
 
 import {
   GridRowsProp,
@@ -122,7 +118,7 @@ const initialRows: GridRowsProp = [
   },
 ];
 
-export default function EditableDataGrid() {
+const OrdersStatusTable = () => {
   const [rows, setRows] = useState(initialRows);
   const [rowModesModel, setRowModesModel] = useState<GridRowModesModel>({});
 
@@ -167,20 +163,25 @@ export default function EditableDataGrid() {
   };
 
   const columns: GridColDef[] = [
-    { field: 'id', headerName: 'Order', flex: 1 },
+    {
+      field: 'id',
+      headerName: 'Order',
+      flex: 1,
+      resizable: false,
+    },
     {
       field: 'client',
       headerName: 'Client',
       flex: 2,
       resizable: false,
       renderHeader: () => (
-        <Stack alignItems="center" gap={0.8}>
+        <Stack alignItems="center" gap={0.75}>
           <IconifyIcon
             icon="mingcute:user-2-fill"
             color="neutral.main"
             sx={(theme) => ({ fontSize: theme.typography.body2.fontSize })}
           />
-          <Typography variant="subtitle2" mt={0.5} sx={{ letterSpacing: 1 }}>
+          <Typography variant="caption" mt={0.25} sx={{ letterSpacing: 0.5 }}>
             Client
           </Typography>
         </Stack>
@@ -188,13 +189,23 @@ export default function EditableDataGrid() {
       renderCell: (params) => {
         return (
           <Stack direction="column" alignSelf="center" justifyContent="center" sx={{ height: 1 }}>
-            <Typography variant="subtitle1">{params.value.name}</Typography>
-            <Typography variant="subtitle2" color="text.secondary">
+            <Typography
+              variant="subtitle1"
+              sx={(theme) => ({ fontSize: theme.typography.caption.fontSize })}
+            >
+              {params.value.name}
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              sx={(theme) => ({ fontSize: theme.typography.caption.fontSize })}
+              color="text.secondary"
+            >
               {params.value.email}
             </Typography>
           </Stack>
         );
       },
+      sortComparator: (v1, v2) => v1.name.localeCompare(v2.name),
     },
     {
       field: 'date',
@@ -204,13 +215,13 @@ export default function EditableDataGrid() {
       flex: 1,
       resizable: false,
       renderHeader: () => (
-        <Stack alignItems="center" gap={0.8}>
+        <Stack alignItems="center" gap={0.75}>
           <IconifyIcon
             icon="mdi:calendar"
             color="neutral.main"
-            sx={(theme) => ({ fontSize: theme.typography.h6.fontSize })}
+            sx={(theme) => ({ fontSize: theme.typography.body1.fontSize })}
           />
-          <Typography variant="subtitle2" mt={0.2} sx={{ letterSpacing: 1 }}>
+          <Typography mt={0.175} variant="caption" sx={{ letterSpacing: 0.5 }}>
             Date
           </Typography>
         </Stack>
@@ -224,13 +235,13 @@ export default function EditableDataGrid() {
       flex: 1,
       resizable: false,
       renderHeader: () => (
-        <Stack alignItems="center" gap={0.8}>
+        <Stack alignItems="center" gap={0.875}>
           <IconifyIcon
             icon="carbon:checkbox-checked-filled"
             color="neutral.main"
-            sx={(theme) => ({ fontSize: theme.typography.h6.fontSize })}
+            sx={(theme) => ({ fontSize: theme.typography.body1.fontSize })}
           />
-          <Typography variant="subtitle2" mt={0.32} sx={{ letterSpacing: 1 }}>
+          <Typography mt={0.175} variant="caption" sx={{ letterSpacing: 0.5 }}>
             Status
           </Typography>
         </Stack>
@@ -251,13 +262,13 @@ export default function EditableDataGrid() {
       resizable: false,
       editable: true,
       renderHeader: () => (
-        <Stack alignItems="center" gap={0.8}>
+        <Stack alignItems="center" gap={0.75}>
           <IconifyIcon
             icon="healthicons:geo-location"
             color="neutral.main"
             sx={(theme) => ({ fontSize: theme.typography.h5.fontSize })}
           />
-          <Typography variant="subtitle2" mt={0.5} sx={{ letterSpacing: 1 }}>
+          <Typography mt={0.175} variant="caption" sx={{ letterSpacing: 0.5 }}>
             Country
           </Typography>
         </Stack>
@@ -290,24 +301,30 @@ export default function EditableDataGrid() {
                 <IconifyIcon
                   color="primary.main"
                   icon="mdi:content-save"
-                  sx={{ fontSize: '1.2rem', pointerEvents: 'none' }}
+                  sx={(theme) => ({
+                    fontSize: theme.typography.body1.fontSize,
+                    pointerEvents: 'none',
+                  })}
                 />
               }
               label="Save"
               onClick={handleSaveClick(id)}
-              size="medium"
+              size="small"
             />,
             <GridActionsCellItem
               icon={
                 <IconifyIcon
                   color="text.secondary"
                   icon="iconamoon:sign-times-duotone"
-                  sx={{ fontSize: '1.3rem', pointerEvents: 'none' }}
+                  sx={(theme) => ({
+                    fontSize: theme.typography.h6.fontSize,
+                    pointerEvents: 'none',
+                  })}
                 />
               }
               label="Cancel"
               onClick={handleCancelClick(id)}
-              size="medium"
+              size="small"
             />,
           ];
         }
@@ -318,12 +335,15 @@ export default function EditableDataGrid() {
               <IconifyIcon
                 icon="fluent:edit-32-filled"
                 color="text.secondary"
-                sx={{ fontSize: '1.1rem', pointerEvents: 'none' }}
+                sx={(theme) => ({
+                  fontSize: theme.typography.body1.fontSize,
+                  pointerEvents: 'none',
+                })}
               />
             }
             label="Edit"
             onClick={handleEditClick(id)}
-            size="medium"
+            size="small"
           />,
           <GridActionsCellItem
             onClick={handleDeleteClick(id)}
@@ -332,10 +352,13 @@ export default function EditableDataGrid() {
               <IconifyIcon
                 icon="mingcute:delete-3-fill"
                 color="text.secondary"
-                sx={{ fontSize: '1.2rem', pointerEvents: 'none' }}
+                sx={(theme) => ({
+                  fontSize: theme.typography.body1.fontSize,
+                  pointerEvents: 'none',
+                })}
               />
             }
-            size="medium"
+            size="small"
           />,
         ];
       },
@@ -343,53 +366,33 @@ export default function EditableDataGrid() {
   ];
 
   return (
-    <Box component={Paper} px={0}>
-      <Stack px={3.5} alignItems="center" justifyContent="space-between">
-        <Typography
-          variant="h6"
-          sx={(theme) => ({
-            fontWeight: theme.typography.subtitle1.fontWeight,
-            fontFamily: 'Work Sans',
-          })}
-        >
-          Orders Status
-        </Typography>
-        <Stack spacing={1.5} alignItems="center">
-          <DateSelect />
-          <Button variant="contained" size="small">
-            Create order
-          </Button>
-        </Stack>
-      </Stack>
-
-      <Box mt={1.5} sx={{ height: 594, width: 1 }}>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          rowHeight={80}
-          editMode="row"
-          initialState={{
-            pagination: {
-              paginationModel: {
-                pageSize: 6,
-              },
-            },
-          }}
-          pageSizeOptions={[6]}
-          checkboxSelection
-          disableRowSelectionOnClick
-          rowModesModel={rowModesModel}
-          onRowModesModelChange={handleRowModesModelChange}
-          onRowEditStop={handleRowEditStop}
-          processRowUpdate={processRowUpdate}
-          slots={{
-            pagination: DataGridFooter,
-          }}
-          slotProps={{
-            toolbar: { setRows, setRowModesModel },
-          }}
-        />
-      </Box>
-    </Box>
+    <DataGrid
+      rows={rows}
+      columns={columns}
+      rowHeight={80}
+      editMode="row"
+      initialState={{
+        pagination: {
+          paginationModel: {
+            pageSize: 6,
+          },
+        },
+      }}
+      checkboxSelection
+      pageSizeOptions={[6]}
+      disableRowSelectionOnClick
+      rowModesModel={rowModesModel}
+      onRowModesModelChange={handleRowModesModelChange}
+      onRowEditStop={handleRowEditStop}
+      processRowUpdate={processRowUpdate}
+      slots={{
+        pagination: DataGridFooter,
+      }}
+      slotProps={{
+        toolbar: { setRows, setRowModesModel },
+      }}
+    />
   );
-}
+};
+
+export default OrdersStatusTable;

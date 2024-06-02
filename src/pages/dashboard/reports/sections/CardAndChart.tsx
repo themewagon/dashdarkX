@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid';
 import Products from './products';
-import LineChart from 'pages/dashboard/reports/components/line-chart';
+import CompletedTask from './completed-task';
 
 const CardAndChart = () => {
   return (
@@ -9,7 +9,7 @@ const CardAndChart = () => {
         <Products />
       </Grid>
       <Grid item xs={12} xl={8}>
-        <LineChart />
+        <CompletedTask />
       </Grid>
     </Grid>
   );

@@ -7,8 +7,11 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
       border: 'none',
       '--DataGrid-rowBorderColor': 'transparent',
     },
+    virtualScroller: {
+      overflowX: 'hidden',
+    },
     cell: ({ theme }) => ({
-      fontSize: theme.typography.subtitle2.fontSize,
+      fontSize: theme.typography.caption.fontSize,
       color: theme.palette.text.primary,
       '&:hover': {
         cursor: 'pointer',
@@ -20,7 +23,6 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
         gap: 0,
       },
     }),
-    actionsCell: {},
     row: ({ theme }) => ({
       padding: theme.spacing(0, 2),
       '&:nth-of-type(odd)': {
@@ -43,8 +45,9 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
       },
     }),
     columnHeaderTitle: ({ theme }) => ({
-      letterSpacing: 1,
-      fontWeight: theme.typography.subtitle2.fontWeight,
+      letterSpacing: 0.5,
+      fontSize: theme.typography.caption.fontSize,
+      fontWeight: theme.typography.caption.fontWeight,
     }),
     footerContainer: ({ theme }) => ({
       paddingTop: theme.spacing(3),
@@ -56,6 +59,14 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
     selectedRowCount: {
       display: 'none',
     },
+    sortIcon: ({ theme }) => ({
+      color: theme.palette.text.secondary,
+    }),
+    menuIcon: ({ theme }) => ({
+      '& .MuiDataGrid-menuIconButton': {
+        color: theme.palette.text.secondary,
+      },
+    }),
   },
 };
 

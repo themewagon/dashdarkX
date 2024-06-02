@@ -4,7 +4,7 @@ import { graphic } from 'echarts';
 import * as echarts from 'echarts/core';
 import ReactEchart from 'components/base/ReactEchart';
 
-const GetLineChartWithOption = () => {
+const CompletedTaskChart = () => {
   const theme = useTheme();
   const colors = [theme.palette.secondary.main, theme.palette.text.secondary];
 
@@ -78,4 +78,4 @@ const GetLineChartWithOption = () => {
   return <ReactEchart echarts={echarts} option={option} sx={{ height: '100% !important' }} />;
 };
 
-export default GetLineChartWithOption;
+export default CompletedTaskChart;
