@@ -80,7 +80,7 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
       const series = option.series.map((s) => {
         if (Array.isArray(s.data)) {
           s.data.forEach((item) => {
-            if (item.itemStyle && item.itemStyle.color && type !== null) {
+            if (type !== null && item.itemStyle && item.itemStyle.color) {
               if (type === item.type) {
                 if (type === 'Organic') {
                   item.itemStyle.color = activeColors.organic;

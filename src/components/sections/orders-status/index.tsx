@@ -1,3 +1,4 @@
+import { fontFamily } from 'theme/typography';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
@@ -14,7 +15,7 @@ const OrdersStatus = () => {
           variant="h6"
           sx={(theme) => ({
             fontWeight: theme.typography.subtitle1.fontWeight,
-            fontFamily: 'Work Sans',
+            fontFamily: fontFamily.workSans,
           })}
         >
           Orders Status
@@ -28,7 +29,7 @@ const OrdersStatus = () => {
       </Stack>
 
       <Box mt={1.5} sx={{ height: 594, width: 1 }}>
-        <OrdersStatusTable/>
+        <OrdersStatusTable />
       </Box>
     </Box>
   );
