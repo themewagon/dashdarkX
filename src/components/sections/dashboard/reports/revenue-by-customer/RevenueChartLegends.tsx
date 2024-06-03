@@ -72,6 +72,7 @@ const RevenueChartLegends = ({ chartRef, sm }: LegendsProps) => {
     >
       {legendsData.map((item) => (
         <RevenueChartLegend
+          key={item.id}
           data={item}
           toggleColor={toggleColor}
           handleLegendToggle={handleLegendToggle}

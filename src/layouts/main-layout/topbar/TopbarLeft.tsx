@@ -7,7 +7,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
 import Image from 'components/base/Image';
-import LogoImg from 'assets/images/logo.svg';
+import LogoImg from 'assets/images/Logo.png';
 
 interface TopbarLeftProps {
   isClosing: boolean;
@@ -38,7 +38,12 @@ const TopbarLeft = ({ isClosing, mobileOpen, setMobileOpen }: TopbarLeftProps) =
       </Toolbar>
 
       {/* logo */}
-      <ButtonBase component={Link} href="/" sx={{ display: { xm: 'block', lg: 'none' } }}>
+      <ButtonBase
+        component={Link}
+        href="/"
+        disableRipple
+        sx={{ display: { xm: 'block', lg: 'none' } }}
+      >
         <Image src={LogoImg} alt="logo" sx={{ height: 24, width: 24 }} />
       </ButtonBase>
 

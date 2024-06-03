@@ -7,7 +7,7 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconifyIcon from 'components/base/IconifyIcon';
 import Image from 'components/base/Image';
-import LogoImg from 'assets/images/logo.svg';
+import LogoImg from 'assets/images/Logo.png';
 
 const SidebarHeader = () => {
   return (
