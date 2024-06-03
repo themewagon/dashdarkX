@@ -7,7 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 import IconifyIcon from 'components/base/IconifyIcon';
 import CollapseList from './CollapseList';
 
-const ListItem = ({ id, subheader, icon, items, active }: MenuItem) => {
+const CollapseListItem = ({ id, subheader, icon, items, active }: MenuItem) => {
   const [open, setOpen] = useState(false);
 
   const currentPath = useLocation().pathname;
@@ -53,4 +53,4 @@ const ListItem = ({ id, subheader, icon, items, active }: MenuItem) => {
   );
 };
 
-export default ListItem;
+export default CollapseListItem;

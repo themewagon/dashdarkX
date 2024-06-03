@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { MenuItem } from 'routes/sitemap';
 import { useLocation } from 'react-router-dom';
+import Stack from '@mui/material/Stack';
+import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import ListItemButton from '@mui/material/ListItemButton';
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
 import IconifyIcon from 'components/base/IconifyIcon';
 import AvatarImage from 'assets/images/avater.png';
-import CollapseList from './CollapseList';
+import ProfileCollapseList from './ProfileCollapseList';
 
 const ProfileListItem = ({ id, subheader, items }: MenuItem) => {
   const [open, setOpen] = useState(false);
@@ -21,10 +21,7 @@ const ProfileListItem = ({ id, subheader, items }: MenuItem) => {
 
   return (
     <>
-      <ListItemButton
-        onClick={handleClick}
-        sx={{ mt: 2, bgcolor: isActivePath ? 'info.dark' : null }}
-      >
+      <ListItemButton onClick={handleClick} sx={{ bgcolor: isActivePath ? 'info.dark' : null }}>
         <Stack alignItems="center" justifyContent="space-between" sx={{ width: 1 }}>
           <Stack spacing={1} alignItems="center">
             <Avatar
@@ -59,7 +56,7 @@ const ProfileListItem = ({ id, subheader, items }: MenuItem) => {
         </Stack>
       </ListItemButton>
 
-      <CollapseList open={open} children={items} />
+      <ProfileCollapseList open={open} children={items} />
     </>
   );
 };

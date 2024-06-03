@@ -27,7 +27,6 @@ import Divider from './components/data-display/Divider';
 import Chip from './components/data-display/Chip';
 import MonthCalendar from './components/date-picker/MonthCalendar';
 import YearCalendar from './components/date-picker/YearCalendar';
-import List from './components/list/List';
 import Collapse from './components/list/Collapse';
 import Checkbox from './components/inputs/Checkbox';
 
@@ -37,11 +36,10 @@ export const theme = createTheme({
     components: {
         MuiButton: Button,
         MuiPaper: Paper,
-        MuiList: List,
+        MuiCollapse: Collapse,
         MuiListItemButton: ListItemButton,
         MuiListItemIcon: ListItemIcon,
         MuiListItemText: ListItemText,
-        MuiCollapse: Collapse,
         MuiDrawer: Drawer,
         MuiTextField: TextField,
         MuiToolbar: Toolbar,
