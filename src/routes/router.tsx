@@ -5,12 +5,10 @@ import paths, { parentPaths } from './paths';
 import MainLayout from 'layouts/main-layout';
 import Splash from 'components/loading/Splash';
 import PageLoader from 'components/loading/PageLoader';
-import Products from 'pages/dashboard/products';
-import Task from 'pages/dashboard/task';
-import ComingSoon from 'pages/ComingSoon';
 
 const App = lazy(() => import('App'));
 const Reports = lazy(() => import('pages/dashboard/reports'));
+
 const router = createBrowserRouter([
   {
     element: (
@@ -35,15 +33,15 @@ const router = createBrowserRouter([
           },
           {
             path: paths.reports,
-            element: <Reports />,
+            element: null,
           },
           {
             path: paths.products,
-            element: <Products />,
+            element: null,
           },
           {
             path: paths.task,
-            element: <Task />,
+            element: null,
           },
         ],
       },
@@ -59,31 +57,31 @@ const router = createBrowserRouter([
         children: [
           {
             path: paths.contacts,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.companies,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.projects,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.tasks,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.board,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.table,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.crypto,
-            element: <ComingSoon />,
+            element: null,
           },
         ],
       },
@@ -99,15 +97,15 @@ const router = createBrowserRouter([
         children: [
           {
             path: paths.active,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.cards,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.details,
-            element: <ComingSoon />,
+            element: null,
           },
         ],
       },
@@ -123,15 +121,15 @@ const router = createBrowserRouter([
         children: [
           {
             path: paths.accounts,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.billing,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.subscriptions,
-            element: <ComingSoon />,
+            element: null,
           },
         ],
       },
@@ -147,15 +145,15 @@ const router = createBrowserRouter([
         children: [
           {
             path: paths.group,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.errors,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.history,
-            element: <ComingSoon />,
+            element: null,
           },
         ],
       },
@@ -171,15 +169,15 @@ const router = createBrowserRouter([
         children: [
           {
             path: paths.settingV1,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.settingV2,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.settingV3,
-            element: <ComingSoon />,
+            element: null,
           },
         ],
       },
@@ -195,15 +193,15 @@ const router = createBrowserRouter([
         children: [
           {
             path: paths.page1,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.page2,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.page3,
-            element: <ComingSoon />,
+            element: null,
           },
         ],
       },
@@ -219,19 +217,19 @@ const router = createBrowserRouter([
         children: [
           {
             path: paths.profile,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.updateProfile,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.changePassword,
-            element: <ComingSoon />,
+            element: null,
           },
           {
             path: paths.helpCenter,
-            element: <ComingSoon />,
+            element: null,
           },
         ],
       },
