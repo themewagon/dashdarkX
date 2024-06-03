@@ -1,13 +1,26 @@
 import Divider from '@mui/material/Divider';
-import BottomList from './BottomList';
-import TopList from './TopList';
+import List from '@mui/material/List';
+import ListItem from './list-item';
+import ProfileListItem from './list-item/ProfileListItem';
+import { topListData, bottomListData, profileListData } from './listsData';
 
 const SidebarList = () => {
   return (
     <>
-      <TopList />
+      <List component="nav">
+        {topListData.map((route, index) => {
+          return <ListItem key={index} {...route} />;
+        })}
+      </List>
+
       <Divider />
-      <BottomList />
+
+      <List component="nav">
+        {bottomListData.map((route, index) => {
+          return <ListItem key={index} {...route} />;
+        })}
+        {profileListData && <ProfileListItem {...profileListData} />}
+      </List>
     </>
   );
 };
