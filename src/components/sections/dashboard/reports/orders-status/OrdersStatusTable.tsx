@@ -166,6 +166,7 @@ const OrdersStatusTable = () => {
     {
       field: 'id',
       headerName: 'Order',
+      minWidth: 80,
       flex: 1,
       resizable: false,
     },
@@ -173,6 +174,7 @@ const OrdersStatusTable = () => {
       field: 'client',
       headerName: 'Client',
       flex: 2,
+      minWidth: 180,
       resizable: false,
       renderHeader: () => (
         <Stack alignItems="center" gap={0.75}>
@@ -212,6 +214,7 @@ const OrdersStatusTable = () => {
       type: 'date',
       headerName: 'Date',
       editable: true,
+      minWidth: 100,
       flex: 1,
       resizable: false,
       renderHeader: () => (
@@ -232,6 +235,7 @@ const OrdersStatusTable = () => {
       field: 'status',
       headerName: 'Status',
       sortable: false,
+      minWidth: 120,
       flex: 1,
       resizable: false,
       renderHeader: () => (
@@ -259,6 +263,7 @@ const OrdersStatusTable = () => {
       headerName: 'Country',
       sortable: false,
       flex: 1,
+      minWidth: 120,
       resizable: false,
       editable: true,
       renderHeader: () => (
@@ -280,6 +285,7 @@ const OrdersStatusTable = () => {
       headerAlign: 'right',
       align: 'right',
       sortable: false,
+      minWidth: 120,
       flex: 1,
       resizable: false,
       editable: true,
@@ -288,6 +294,7 @@ const OrdersStatusTable = () => {
       field: 'actions',
       type: 'actions',
       headerName: '',
+      minWidth: 120,
       flex: 1,
       cellClassName: 'actions',
       resizable: false,
@@ -380,6 +387,7 @@ const OrdersStatusTable = () => {
       }}
       checkboxSelection
       pageSizeOptions={[6]}
+      disableVirtualization
       disableRowSelectionOnClick
       rowModesModel={rowModesModel}
       onRowModesModelChange={handleRowModesModelChange}

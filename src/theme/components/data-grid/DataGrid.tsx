@@ -5,10 +5,11 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
   styleOverrides: {
     root: {
       border: 'none',
+      width: '100%',
       '--DataGrid-rowBorderColor': 'transparent',
     },
     virtualScroller: {
-      overflowX: 'hidden',
+      overflowY: 'hidden',
     },
     cell: ({ theme }) => ({
       fontSize: theme.typography.caption.fontSize,
@@ -37,9 +38,14 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
     }),
     columnHeaders: ({ theme }) => ({
       padding: theme.spacing(0, 2),
+
+      '& .MuiDataGrid-scrollbarFiller': {
+        background: theme.palette.info.main,
+      },
     }),
     columnHeader: ({ theme }) => ({
       background: theme.palette.info.main,
+
       '&:focus-within': {
         outline: 'none !important',
       },
