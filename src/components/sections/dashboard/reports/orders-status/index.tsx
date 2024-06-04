@@ -9,7 +9,7 @@ import OrdersStatusTable from './OrdersStatusTable';
 
 const OrdersStatus = () => {
   return (
-    <Box component={Paper} px={0}>
+    <Paper sx={{ px: 0 }}>
       <Stack px={3.5} alignItems="center" justifyContent="space-between">
         <Typography
           variant="h6"
@@ -31,7 +31,7 @@ const OrdersStatus = () => {
       <Box mt={1.5} sx={{ height: 594, width: 1 }}>
         <OrdersStatusTable />
       </Box>
-    </Box>
+    </Paper>
   );
 };
 

@@ -31,7 +31,7 @@ const RevenueByCustomer = () => {
   const chartRef = useRef<EChartsReactCore>(null);
 
   return (
-    <Box component={Paper} sx={{ height: { xs: 540, md: 500 } }}>
+    <Paper sx={{ height: { xs: 540, md: 500 } }}>
       {/* header */}
       <Typography variant="subtitle1" color="text.secondary">
         Revenue by customer type
@@ -67,7 +67,7 @@ const RevenueByCustomer = () => {
       <Box sx={{ height: 400 }}>
         <RevenueChart chartRef={chartRef} data={revenueData} sx={{ minHeight: 1 }} />
       </Box>
-    </Box>
+    </Paper>
   );
 };
 

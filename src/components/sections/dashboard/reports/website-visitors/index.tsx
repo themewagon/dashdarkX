@@ -1,8 +1,7 @@
 import { useRef } from 'react';
 import { fontFamily } from 'theme/typography';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
@@ -14,7 +13,7 @@ const WebsiteVisitors = () => {
   const chartRef = useRef<EChartsReactCore>(null);
 
   return (
-    <Box component={Paper} sx={{ height: 500 }}>
+    <Paper sx={{ height: 500 }}>
       {/* header */}
       <Stack alignItems="center" justifyContent="space-between" mb={-2}>
         <Typography
@@ -41,8 +40,8 @@ const WebsiteVisitors = () => {
       <VisitorsChart chartRef={chartRef} />
 
       {/* legends */}
-      <VisitorsChartLegends chartRef={chartRef}/>
-    </Box>
+      <VisitorsChartLegends chartRef={chartRef} />
+    </Paper>
   );
 };
 

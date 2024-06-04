@@ -9,7 +9,7 @@ import CompletedTaskChart from './CompletedTaskChart';
 
 const CompletedTask = () => {
   return (
-    <Box component={Paper} sx={{ height: 300 }}>
+    <Paper sx={{ height: 300 }}>
       {/* header */}
       <Stack alignItems="center" spacing={0.6}>
         <IconifyIcon
@@ -39,7 +39,7 @@ const CompletedTask = () => {
       <Box sx={{ height: 220 }}>
         <CompletedTaskChart sx={{ height: '100% !important' }} />
       </Box>
-    </Box>
+    </Paper>
   );
 };
 
