@@ -11,14 +11,14 @@ const CheckBoxIndeterminateIcon = (props: SvgIconProps) => {
         height="11"
         rx="1.7"
         stroke=""
-        stroke-width="0.6"
+        strokeWidth="0.6"
       />
-      <g clip-path="url(#clip0_4939_57759)">
+      <g clipPath="url(#clip0_4939_57759)">
         <path
           d="M4.66895 6.0957H8.86895"
           stroke="white"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>

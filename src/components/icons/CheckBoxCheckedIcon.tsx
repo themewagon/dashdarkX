@@ -13,7 +13,7 @@ const CheckBoxCheckedIcon = (props: SvgIconProps) => {
         stroke=""
         strokeWidth="0.6"
       />
-      <g clip-path="url(#clip0_738_4022)">
+      <g clipPath="url(#clip0_738_4022)">
         <path
           d="M4.77051 6.709L6.08253 8.02103L9.36259 4.74097"
           stroke="white"
