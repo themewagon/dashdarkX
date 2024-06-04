@@ -13,6 +13,23 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
       textTransform: 'initial',
       letterSpacing: 0.5,
     }),
+    contained: ({ theme }) => ({
+      '&.Mui-disabled': {
+        color: theme.palette.text.secondary,
+        background: theme.palette.text.disabled,
+      },
+    }),
+    outlined: ({ theme }) => ({
+      '&.Mui-disabled': {
+        color: theme.palette.text.disabled,
+        borderColor: theme.palette.text.disabled,
+      },
+    }),
+    text: ({ theme }) => ({
+      '&.Mui-disabled': {
+        color: theme.palette.text.disabled,
+      },
+    }),
     containedPrimary: ({ theme }) => ({
       background: `linear-gradient(128.49deg, ${theme.palette.gradients.primary.main} 19.86%, ${theme.palette.gradients.primary.state} 68.34%)`,
       '&:hover': {
@@ -23,16 +40,15 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
       background: theme.palette.info.dark,
       '&:hover': { background: theme.palette.info.dark },
     }),
-    containedSizeLarge: ({ theme }) => ({
-      width: '100%',
-      padding: theme.spacing(1.25, 1.75),
+    sizeLarge: ({ theme }) => ({
+      padding: theme.spacing(1.25, 2.25),
       fontSize: theme.typography.button.fontSize,
     }),
-    containedSizeMedium: ({ theme }) => ({
-      padding: theme.spacing(0.75, 1.15),
+    sizeMedium: ({ theme }) => ({
+      padding: theme.spacing(0.875, 1.5),
       fontSize: theme.typography.subtitle2.fontSize,
     }),
-    containedSizeSmall: ({ theme }) => ({
+    sizeSmall: ({ theme }) => ({
       padding: theme.spacing(0.875, 1.15),
       fontSize: theme.typography.caption.fontSize,
     }),

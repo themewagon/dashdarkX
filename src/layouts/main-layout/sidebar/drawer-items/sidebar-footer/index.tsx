@@ -10,6 +10,7 @@ const SidebarFooter = () => {
         color="primary"
         size="large"
         endIcon={<IconifyIcon icon="mingcute:arrow-right-line" />}
+        sx={{ width: 1 }}
       >
         Get template
       </Button>
