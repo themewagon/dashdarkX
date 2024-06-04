@@ -13,7 +13,7 @@ const FilledInput: Components<Omit<Theme, 'components'>>['MuiFilledInput'] = {
             marginTop: theme.spacing(0.4),
             paddingLeft: theme.spacing(0.6),
             fontSize: theme.typography.subtitle2.fontSize,
-            letterSpacing: '0.5px',
+            letterSpacing: 0.5,
 
             "&::placeholder": {
                 color: theme.palette.text.secondary,

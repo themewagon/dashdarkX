@@ -3,26 +3,43 @@ import { Components } from '@mui/material/styles/components';
 
 const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
   styleOverrides: {
-    root: {
+    root: ({ theme }) => ({
       border: 'none',
-      width: '100%',
       '--DataGrid-rowBorderColor': 'transparent',
-    },
+      '&:hover, &:focus': {
+        '*::-webkit-scrollbar, *::-webkit-scrollbar-thumb': {
+          visibility: 'visible',
+        },
+        '*::-webkit-scrollbar-thumb': {
+          background: theme.palette.info.darker,
+        },
+      },
+      '& .MuiDataGrid-scrollbar--vertical': {
+        visibility: 'hidden',
+      },
+      '& .MuiDataGrid-filler': {
+        height: '0 !important',
+      },
+      '& .MuiDataGrid-scrollbarFiller': {
+        minWidth: 0
+      }
+    }),
     virtualScroller: {
       overflowY: 'hidden',
     },
-    cell: ({ theme }) => ({
-      fontSize: theme.typography.caption.fontSize,
-      color: theme.palette.text.primary,
-      '&:hover': {
-        cursor: 'pointer',
-      },
+    columnHeaders: ({ theme }) => ({
+      padding: theme.spacing(0, 2),
+    }),
+    columnHeader: ({ theme }) => ({
+      background: theme.palette.info.main,
       '&:focus-within': {
         outline: 'none !important',
       },
-      '& .MuiDataGrid-actionsCell': {
-        gap: 0,
-      },
+    }),
+    columnHeaderTitle: ({ theme }) => ({
+      letterSpacing: 0.5,
+      fontSize: theme.typography.caption.fontSize,
+      fontWeight: theme.typography.caption.fontWeight,
     }),
     row: ({ theme }) => ({
       padding: theme.spacing(0, 2),
@@ -36,24 +53,18 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
         },
       },
     }),
-    columnHeaders: ({ theme }) => ({
-      padding: theme.spacing(0, 2),
-
-      '& .MuiDataGrid-scrollbarFiller': {
-        background: theme.palette.info.main,
+    cell: ({ theme }) => ({
+      color: theme.palette.text.primary,
+      fontSize: theme.typography.caption.fontSize,
+      '&:hover': {
+        cursor: 'pointer',
       },
-    }),
-    columnHeader: ({ theme }) => ({
-      background: theme.palette.info.main,
-
       '&:focus-within': {
         outline: 'none !important',
       },
-    }),
-    columnHeaderTitle: ({ theme }) => ({
-      letterSpacing: 0.5,
-      fontSize: theme.typography.caption.fontSize,
-      fontWeight: theme.typography.caption.fontWeight,
+      '& .MuiDataGrid-actionsCell': {
+        gap: 0,
+      },
     }),
     footerContainer: ({ theme }) => ({
       paddingTop: theme.spacing(3),
