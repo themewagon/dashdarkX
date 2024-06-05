@@ -1,4 +1,4 @@
-import paths from './paths';
+// import paths from './paths';
 
 export interface SubMenuItem {
   name: string;
@@ -31,18 +31,18 @@ const sitemap: MenuItem[] = [
       },
       {
         name: 'Reports',
-        path: paths.reports,
+        path: '#',
         pathName: 'reports',
         active: true,
       },
       {
         name: 'Products',
-        path: paths.products,
+        path: '#',
         pathName: 'products',
       },
       {
         name: 'Task',
-        path: paths.task,
+        path: '#',
         pathName: 'task',
       },
     ],
@@ -59,37 +59,37 @@ const sitemap: MenuItem[] = [
       },
       {
         name: 'Contacts',
-        path: paths.contacts,
+        path: '#',
         pathName: 'contacts',
       },
       {
         name: 'Companies',
-        path: paths.companies,
+        path: '#',
         pathName: 'companies',
       },
       {
         name: 'Projects',
-        path: paths.projects,
+        path: '#',
         pathName: 'projects',
       },
       {
         name: 'Tasks',
-        path: paths.tasks,
+        path: '#',
         pathName: 'tasks',
       },
       {
         name: 'Board',
-        path: paths.board,
+        path: '#',
         pathName: 'board',
       },
       {
         name: 'Table',
-        path: paths.table,
+        path: '#',
         pathName: 'table',
       },
       {
         name: 'Crypto',
-        path: paths.crypto,
+        path: '#',
         pathName: 'crypto',
       },
     ],
@@ -106,17 +106,17 @@ const sitemap: MenuItem[] = [
       },
       {
         name: 'Active',
-        path: paths.active,
+        path: '#',
         pathName: 'active',
       },
       {
         name: 'Cards',
-        path: paths.cards,
+        path: '#',
         pathName: 'cards',
       },
       {
         name: 'Details',
-        path: paths.details,
+        path: '#',
         pathName: 'details',
       },
     ],
@@ -133,17 +133,17 @@ const sitemap: MenuItem[] = [
       },
       {
         name: 'Accounts',
-        path: paths.accounts,
+        path: '#',
         pathName: 'accounts',
       },
       {
         name: 'Billing',
-        path: paths.billing,
+        path: '#',
         pathName: 'billing',
       },
       {
         name: 'Subscriptions',
-        path: paths.subscriptions,
+        path: '#',
         pathName: 'subscriptions',
       },
     ],
@@ -160,17 +160,17 @@ const sitemap: MenuItem[] = [
       },
       {
         name: 'Group',
-        path: paths.group,
+        path: '#',
         pathName: 'group',
       },
       {
         name: 'Errors',
-        path: paths.errors,
+        path: '#',
         pathName: 'errors',
       },
       {
         name: 'History',
-        path: paths.history,
+        path: '#',
         pathName: 'history',
       },
     ],
@@ -187,17 +187,17 @@ const sitemap: MenuItem[] = [
       },
       {
         name: 'Setting V1',
-        path: paths.settingV1,
+        path: '#',
         pathName: 'setting-v1',
       },
       {
         name: 'Setting V2',
-        path: paths.settingV2,
+        path: '#',
         pathName: 'setting-v2',
       },
       {
         name: 'Setting V3',
-        path: paths.settingV3,
+        path: '#',
         pathName: 'setting-v3',
       },
     ],
@@ -214,17 +214,17 @@ const sitemap: MenuItem[] = [
       },
       {
         name: 'Page 01',
-        path: paths.page1,
+        path: '#',
         pathName: 'page-1',
       },
       {
         name: 'Page 02',
-        path: paths.page2,
+        path: '#',
         pathName: 'page-2',
       },
       {
         name: 'Page 03',
-        path: paths.page3,
+        path: '#',
         pathName: 'page-3',
       },
     ],
@@ -240,22 +240,22 @@ const sitemap: MenuItem[] = [
       },
       {
         name: 'My Profile',
-        path: paths.profile,
+        path: '#',
         pathName: 'profile',
       },
       {
         name: 'Update Profile',
-        path: paths.updateProfile,
+        path: '#',
         pathName: 'update-profile',
       },
       {
         name: 'Change Password',
-        path: paths.changePassword,
+        path: '#',
         pathName: 'change-password',
       },
       {
         name: 'Help Center',
-        path: paths.helpCenter,
+        path: '#',
         pathName: 'help-center',
       },
     ],
