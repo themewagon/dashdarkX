@@ -45,7 +45,7 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
       fontSize: theme.typography.button.fontSize,
     }),
     sizeMedium: ({ theme }) => ({
-      padding: theme.spacing(0.875, 1.5),
+      padding: theme.spacing(1, 1.5),
       fontSize: theme.typography.subtitle2.fontSize,
     }),
     sizeSmall: ({ theme }) => ({

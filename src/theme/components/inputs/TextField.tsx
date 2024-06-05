@@ -1,18 +1,12 @@
-import { Theme } from "@mui/material";
-import { Components } from "@mui/material/styles/components";
+import { Theme } from '@mui/material';
+import { Components } from '@mui/material/styles/components';
 
 const TextField: Components<Omit<Theme, 'components'>>['MuiTextField'] = {
-    styleOverrides: {
-        root: ({ theme }) => ({
-            border: 1,
-            borderStyle: 'solid',
-            borderColor: theme.palette.neutral.darker,
-            borderRadius: theme.shape.borderRadius,
-            background: theme.palette.info.main,
-            boxShadow: theme.customShadows[1],
-            padding: theme.spacing(1, 1.25),
-        }),
-    },
-}
+  styleOverrides: {
+    root: ({ theme }) => ({
+      boxShadow: theme.customShadows[1],
+    }),
+  },
+};
 
 export default TextField;

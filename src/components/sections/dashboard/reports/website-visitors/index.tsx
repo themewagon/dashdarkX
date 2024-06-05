@@ -30,7 +30,7 @@ const WebsiteVisitors = () => {
           color="secondary"
           size="medium"
           endIcon={<IconifyIcon icon="mingcute:arrow-down-line" />}
-          sx={{ zIndex: 1000 }}
+          sx={{ py: 0.875, zIndex: 1000 }}
         >
           Export
         </Button>
