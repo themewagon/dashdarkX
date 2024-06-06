@@ -7,7 +7,6 @@ import IconifyIcon from 'components/base/IconifyIcon';
 import DataGridFooter from 'components/data-grid/DataGridFooter';
 
 import {
-  GridRowsProp,
   GridRowModesModel,
   GridRowModes,
   DataGrid,
@@ -18,108 +17,10 @@ import {
   GridRowModel,
   GridRowEditStopReasons,
 } from '@mui/x-data-grid';
-
-const initialRows: GridRowsProp = [
-  {
-    id: '#1532',
-    client: { name: 'John Carter', email: 'hello@johncarter.com' },
-    date: new Date('Jan 30, 2024'),
-    status: 'delivered',
-    country: 'United States',
-    total: '$ 1,099.24',
-  },
-  {
-    id: '#1531',
-    client: { name: 'Sophie Moore', email: 'contact@sophiemoore.com' },
-    date: new Date('Jan 27, 2024'),
-    status: 'canceled',
-    country: 'United Kingdom',
-    total: '$ 5,870.32',
-  },
-  {
-    id: '#1530',
-    client: { name: 'Matt Cannon', email: 'info@mattcannon.com' },
-    date: new Date('Jan 24, 2024'),
-    status: 'delivered',
-    country: 'Australia',
-    total: '$ 13,899.48',
-  },
-  {
-    id: '#1529',
-    client: { name: 'Graham Hills', email: 'hi@grahamhills.com' },
-    date: new Date('Jan 21, 2024'),
-    status: 'pending',
-    country: 'India',
-    total: '$ 1,569.12',
-  },
-  {
-    id: '#1528',
-    client: { name: 'Sandy Houston', email: 'contact@sandyhouston.com' },
-    date: new Date('Jan 18, 2024'),
-    status: 'delivered',
-    country: 'Canada',
-    total: '$ 899.16',
-  },
-  {
-    id: '#1527',
-    client: { name: 'Andy Smith', email: 'hello@andysmith.com' },
-    date: new Date('Jan 15, 2024'),
-    status: 'pending',
-    country: 'United States',
-    total: '$ 2,449.64',
-  },
-  {
-    id: '#1526',
-    client: { name: 'Emma Grace', email: 'wow@emmagrace.com' },
-    date: new Date('Jan 12, 2024'),
-    status: 'delivered',
-    country: 'Australia',
-    total: '$ 6729.82',
-  },
-  {
-    id: '#1525',
-    client: { name: 'Ava Rose', email: 'me@avarose.com' },
-    date: new Date('Jan 09, 2024'),
-    status: 'canceled',
-    country: 'Canada',
-    total: '$ 784.94',
-  },
-  {
-    id: '#1524',
-    client: { name: 'Olivia Jane', email: 'info@oliviajane.com' },
-    date: new Date('Jan 06, 2024'),
-    status: 'pending',
-    country: 'Singapur',
-    total: '$ 1247.86',
-  },
-  {
-    id: '#1523',
-    client: { name: 'Mason Alexander', email: 'myinfo@alexander.com' },
-    date: new Date('Jan 03, 2024'),
-    status: 'delivered',
-    country: 'United States',
-    total: '$ 304.89',
-  },
-  {
-    id: '#1522',
-    client: { name: 'Samuel David', email: 'me@samueldavid.com' },
-    date: new Date('Jan 01, 2024'),
-    status: 'pending',
-    country: 'Japan',
-    total: '$ 2209.76',
-  },
-  {
-    id: '#1521',
-    client: { name: 'Henry Joseph', email: 'contact@henryjoseph.com' },
-    date: new Date('Dec 28, 2023'),
-    status: 'delivered',
-    country: 'North Korea',
-    total: '$ 5245.68',
-  },
-];
+import { ordersStatusData } from 'data/ordersStatusData';
 
 const OrdersStatusTable = () => {
-  const [rows, setRows] = useState(initialRows);
+  const [rows, setRows] = useState(ordersStatusData);
   const [rowModesModel, setRowModesModel] = useState<GridRowModesModel>({});
 
   const handleRowEditStop: GridEventListener<'rowEditStop'> = (params, event) => {

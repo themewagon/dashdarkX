@@ -9,12 +9,12 @@ import EChartsReactCore from 'echarts-for-react/lib/core';
 
 echarts.use([PolarComponent, TooltipComponent, GraphicComponent, BarChart, CanvasRenderer]);
 
-interface polarBarChartProps {
+interface PolarBarChartProps {
   chartRef: React.RefObject<EChartsReactCore>;
   sx?: SxProps;
 }
 
-const VisitorsChart = ({ chartRef, ...rest }: polarBarChartProps) => {
+const VisitorsChart = ({ chartRef, ...rest }: PolarBarChartProps) => {
   const theme = useTheme();
 
   const colors = [

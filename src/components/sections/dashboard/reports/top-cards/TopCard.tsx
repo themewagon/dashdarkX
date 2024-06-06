@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import IconifyIcon from 'components/base/IconifyIcon';
 import RateChip from 'components/chips/RateChip';
 
-interface topCardProps {
+interface TopCardProps {
   icon: string;
   title: string;
   value: string;
@@ -15,7 +15,7 @@ interface topCardProps {
   isUp: boolean;
 }
 
-const TopCard = (props: topCardProps) => {
+const TopCard = (props: TopCardProps) => {
   const { icon, title, value, rate, isUp } = props;
 
   return (

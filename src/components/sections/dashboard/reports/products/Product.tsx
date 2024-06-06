@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Image from 'components/base/Image';
 
-interface productInfoProps {
+interface ProductInfoProps {
   data: {
     imageUrl: string;
     name: string;
@@ -13,7 +13,7 @@ interface productInfoProps {
   };
 }
 
-const Product = ({ data }: productInfoProps) => {
+const Product = ({ data }: ProductInfoProps) => {
   const { imageUrl, name, inStock, price } = data;
   return (
     <Stack alignItems="center" justifyContent="space-between">

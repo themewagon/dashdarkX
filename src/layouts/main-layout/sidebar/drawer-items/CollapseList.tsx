@@ -6,12 +6,12 @@ import ListItemButton from '@mui/material/ListItemButton';
 import Collapse from '@mui/material/Collapse';
 import Link from '@mui/material/Link';
 
-interface collapseListProps {
+interface CollapseListProps {
   open: boolean;
   children: SubMenuItem[];
 }
 
-const CollapseList = (props: collapseListProps) => {
+const CollapseList = (props: CollapseListProps) => {
   const { open, children } = props;
 
   const currentPath = useLocation().pathname.split('/').pop();

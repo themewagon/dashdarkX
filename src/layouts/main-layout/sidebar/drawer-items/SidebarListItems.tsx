@@ -1,8 +1,8 @@
 import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
-import CollapseListItem from './collapse-list-item';
-import ProfileListItem from './profile-list-item';
-import { topListData, bottomListData, profileListData } from './listsData';
+import CollapseListItem from './CollapseListItem';
+import ProfileListItem from './ProfileListItem';
+import { topListData, bottomListData, profileListData } from 'data/sidebarListData';
 
 const SidebarListItems = () => {
   return (

@@ -2,22 +2,13 @@ import { useTheme } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import IconifyIcon from 'components/base/IconifyIcon';
 
-interface rateChipProps {
+interface RateChipProps {
   rate: string;
   isUp: boolean;
 }
 
-const RateChip = ({ rate, isUp }: rateChipProps) => {
+const RateChip = ({ rate, isUp }: RateChipProps) => {
   const theme = useTheme();
-
-  const colors = {
-    red: theme.palette.error.main,
-    green: theme.palette.success.main,
-    yellow: theme.palette.warning.main,
-    transRed: theme.palette.transparent.error.main,
-    transGreen: theme.palette.transparent.success.main,
-    transYellow: theme.palette.transparent.warning.main,
-  };
 
   return (
     <Chip
@@ -27,12 +18,12 @@ const RateChip = ({ rate, isUp }: rateChipProps) => {
         isUp ? (
           <IconifyIcon
             icon="mingcute:arrow-right-up-line"
-            sx={{ color: `${colors.green} !important` }}
+            sx={{ color: `${theme.palette.success.main} !important` }}
           />
         ) : (
           <IconifyIcon
             icon="mingcute:arrow-right-down-line"
-            sx={{ color: `${colors.red} !important` }}
+            sx={{ color: `${theme.palette.error.main} !important` }}
           />
         )
       }
@@ -42,9 +33,13 @@ const RateChip = ({ rate, isUp }: rateChipProps) => {
         width: 62,
         flexDirection: 'row-reverse',
         justifyContent: 'space-between',
-        color: isUp ? colors.green : colors.red,
-        bgcolor: isUp ? colors.transGreen : colors.transRed,
-        borderColor: isUp ? colors.transGreen : colors.transRed,
+        color: isUp ? theme.palette.success.main : theme.palette.error.main,
+        bgcolor: isUp
+          ? theme.palette.transparent.success.main
+          : theme.palette.transparent.error.main,
+        borderColor: isUp
+          ? theme.palette.transparent.success.main
+          : theme.palette.transparent.error.main,
       }}
     />
   );

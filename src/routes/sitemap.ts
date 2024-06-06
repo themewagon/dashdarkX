@@ -26,23 +26,23 @@ const sitemap: MenuItem[] = [
     items: [
       {
         name: 'All Pages',
-        path: '#',
-        pathName: '#',
+        path: '#!',
+        pathName: '#!',
       },
       {
         name: 'Reports',
-        path: '#',
+        path: '#!',
         pathName: 'reports',
         active: true,
       },
       {
         name: 'Products',
-        path: '#',
+        path: '#!',
         pathName: 'products',
       },
       {
         name: 'Task',
-        path: '#',
+        path: '#!',
         pathName: 'task',
       },
     ],
@@ -54,42 +54,42 @@ const sitemap: MenuItem[] = [
     items: [
       {
         name: 'All Pages',
-        path: '#',
-        pathName: '#',
+        path: '#!',
+        pathName: '#!',
       },
       {
         name: 'Contacts',
-        path: '#',
+        path: '#!',
         pathName: 'contacts',
       },
       {
         name: 'Companies',
-        path: '#',
+        path: '#!',
         pathName: 'companies',
       },
       {
         name: 'Projects',
-        path: '#',
+        path: '#!',
         pathName: 'projects',
       },
       {
         name: 'Tasks',
-        path: '#',
+        path: '#!',
         pathName: 'tasks',
       },
       {
         name: 'Board',
-        path: '#',
+        path: '#!',
         pathName: 'board',
       },
       {
         name: 'Table',
-        path: '#',
+        path: '#!',
         pathName: 'table',
       },
       {
         name: 'Crypto',
-        path: '#',
+        path: '#!',
         pathName: 'crypto',
       },
     ],
@@ -101,22 +101,22 @@ const sitemap: MenuItem[] = [
     items: [
       {
         name: 'All Pages',
-        path: '#',
-        pathName: '#',
+        path: '#!',
+        pathName: '#!',
       },
       {
         name: 'Active',
-        path: '#',
+        path: '#!',
         pathName: 'active',
       },
       {
         name: 'Cards',
-        path: '#',
+        path: '#!',
         pathName: 'cards',
       },
       {
         name: 'Details',
-        path: '#',
+        path: '#!',
         pathName: 'details',
       },
     ],
@@ -128,22 +128,22 @@ const sitemap: MenuItem[] = [
     items: [
       {
         name: 'All Pages',
-        path: '#',
-        pathName: '#',
+        path: '#!',
+        pathName: '#!',
       },
       {
         name: 'Accounts',
-        path: '#',
+        path: '#!',
         pathName: 'accounts',
       },
       {
         name: 'Billing',
-        path: '#',
+        path: '#!',
         pathName: 'billing',
       },
       {
         name: 'Subscriptions',
-        path: '#',
+        path: '#!',
         pathName: 'subscriptions',
       },
     ],
@@ -155,22 +155,22 @@ const sitemap: MenuItem[] = [
     items: [
       {
         name: 'All Pages',
-        path: '#',
-        pathName: '#',
+        path: '#!',
+        pathName: '#!',
       },
       {
         name: 'Group',
-        path: '#',
+        path: '#!',
         pathName: 'group',
       },
       {
         name: 'Errors',
-        path: '#',
+        path: '#!',
         pathName: 'errors',
       },
       {
         name: 'History',
-        path: '#',
+        path: '#!',
         pathName: 'history',
       },
     ],
@@ -182,22 +182,22 @@ const sitemap: MenuItem[] = [
     items: [
       {
         name: 'All Pages',
-        path: '#',
-        pathName: '#',
+        path: '#!',
+        pathName: '#!',
       },
       {
         name: 'Setting V1',
-        path: '#',
+        path: '#!',
         pathName: 'setting-v1',
       },
       {
         name: 'Setting V2',
-        path: '#',
+        path: '#!',
         pathName: 'setting-v2',
       },
       {
         name: 'Setting V3',
-        path: '#',
+        path: '#!',
         pathName: 'setting-v3',
       },
     ],
@@ -209,22 +209,22 @@ const sitemap: MenuItem[] = [
     items: [
       {
         name: 'All Pages',
-        path: '#',
-        pathName: '#',
+        path: '#!',
+        pathName: '#!',
       },
       {
         name: 'Page 01',
-        path: '#',
+        path: '#!',
         pathName: 'page-1',
       },
       {
         name: 'Page 02',
-        path: '#',
+        path: '#!',
         pathName: 'page-2',
       },
       {
         name: 'Page 03',
-        path: '#',
+        path: '#!',
         pathName: 'page-3',
       },
     ],
@@ -235,27 +235,27 @@ const sitemap: MenuItem[] = [
     items: [
       {
         name: 'All Pages',
-        path: '#',
-        pathName: '#',
+        path: '#!',
+        pathName: '#!',
       },
       {
         name: 'My Profile',
-        path: '#',
+        path: '#!',
         pathName: 'profile',
       },
       {
         name: 'Update Profile',
-        path: '#',
+        path: '#!',
         pathName: 'update-profile',
       },
       {
         name: 'Change Password',
-        path: '#',
+        path: '#!',
         pathName: 'change-password',
       },
       {
         name: 'Help Center',
-        path: '#',
+        path: '#!',
         pathName: 'help-center',
       },
     ],
