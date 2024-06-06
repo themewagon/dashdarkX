@@ -4,15 +4,7 @@ const CheckBoxIndeterminateIcon = (props: SvgIconProps) => {
   return (
     <SvgIcon {...props} viewBox="0 0 13 12" fill="none">
       <rect x="1.26875" y="0.679883" width="11" height="11" rx="1.7" fill="" />
-      <rect
-        x="1.26875"
-        y="0.679883"
-        width="11"
-        height="11"
-        rx="1.7"
-        stroke=""
-        strokeWidth="0.6"
-      />
+      <rect x="1.26875" y="0.679883" width="11" height="11" rx="1.7" stroke="" strokeWidth="0.6" />
       <g clipPath="url(#clip0_4939_57759)">
         <path
           d="M4.66895 6.0957H8.86895"

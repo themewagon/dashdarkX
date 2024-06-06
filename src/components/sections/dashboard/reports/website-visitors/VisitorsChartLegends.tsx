@@ -27,25 +27,13 @@ export const legendsData = [
 ];
 
 const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
+  const theme = useTheme();
+
   const [toggleColor, setToggleColor] = useState({
     organic: true,
     social: true,
     direct: true,
   });
-
-  const theme = useTheme();
-
-  const activeColors = {
-    organic: theme.palette.primary.main,
-    social: theme.palette.secondary.lighter,
-    direct: theme.palette.secondary.main,
-  };
-
-  const disabledColors = {
-    organic: theme.palette.primary.dark,
-    social: theme.palette.secondary.darker,
-    direct: theme.palette.secondary.dark,
-  };
 
   useEffect(() => {
     const handleBodyClick = (e: MouseEvent) => {
@@ -83,28 +71,28 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
             if (type !== null && item.itemStyle && item.itemStyle.color) {
               if (type === item.type) {
                 if (type === 'Organic') {
-                  item.itemStyle.color = activeColors.organic;
+                  item.itemStyle.color = theme.palette.primary.main;
                 } else if (type === 'Social') {
-                  item.itemStyle.color = activeColors.social;
+                  item.itemStyle.color = theme.palette.secondary.lighter;
                 } else if (type === 'Direct') {
-                  item.itemStyle.color = activeColors.direct;
+                  item.itemStyle.color = theme.palette.secondary.main;
                 }
               } else {
                 if (item.type === 'Organic') {
-                  item.itemStyle.color = disabledColors.organic;
+                  item.itemStyle.color = theme.palette.primary.dark;
                 } else if (item.type === 'Social') {
-                  item.itemStyle.color = disabledColors.social;
+                  item.itemStyle.color = theme.palette.secondary.darker;
                 } else if (item.type === 'Direct') {
-                  item.itemStyle.color = disabledColors.direct;
+                  item.itemStyle.color = theme.palette.secondary.dark;
                 }
               }
             } else {
               if (item.type === 'Organic') {
-                item.itemStyle.color = activeColors.organic;
+                item.itemStyle.color = theme.palette.primary.main;
               } else if (item.type === 'Social') {
-                item.itemStyle.color = activeColors.social;
+                item.itemStyle.color = theme.palette.secondary.lighter;
               } else if (item.type === 'Direct') {
-                item.itemStyle.color = activeColors.direct;
+                item.itemStyle.color = theme.palette.secondary.main;
               }
             }
           });

@@ -40,10 +40,7 @@ const RevenueByCustomer = () => {
       {/* subheader */}
       <Stack justifyContent="space-between" mt={1}>
         <Stack alignItems="center" gap={0.875}>
-          <Typography
-            variant="h3"
-            sx={(theme) => ({ fontWeight: theme.typography.caption.fontWeight, letterSpacing: 1 })}
-          >
+          <Typography variant="h3" sx={{ fontWeight: 600, letterSpacing: 1 }}>
             $240.8K
           </Typography>
           <RateChip rate={'14.8%'} isUp={true} />

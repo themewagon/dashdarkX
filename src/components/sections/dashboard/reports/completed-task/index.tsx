@@ -14,19 +14,16 @@ const CompletedTask = () => {
       <Stack alignItems="center" spacing={0.6}>
         <IconifyIcon
           icon="ph:clock-fill"
-          sx={(theme) => ({ color: 'text.secondary', fontSize: theme.typography.h6.fontSize })}
+          sx={{ color: 'text.secondary', fontSize: 'h6.fontSize' }}
         />
         <Typography variant="body2" color="text.secondary">
           Completed tasks over time
         </Typography>
       </Stack>
 
-      <Stack alignItems="center" justifyContent="space-between" mt={1.5}>
+      <Stack mt={1.5} alignItems="center" justifyContent="space-between">
         <Stack alignItems="center" gap={0.875}>
-          <Typography
-            variant="h3"
-            sx={(theme) => ({ fontWeight: theme.typography.caption.fontWeight, letterSpacing: 1 })}
-          >
+          <Typography variant="h3" sx={{ fontWeight: 600, letterSpacing: 1 }}>
             257
           </Typography>
           <RateChip rate={'16.8%'} isUp={true} />

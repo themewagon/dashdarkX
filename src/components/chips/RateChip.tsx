@@ -1,4 +1,3 @@
-import { useTheme } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import IconifyIcon from 'components/base/IconifyIcon';
 
@@ -8,24 +7,19 @@ interface RateChipProps {
 }
 
 const RateChip = ({ rate, isUp }: RateChipProps) => {
-  const theme = useTheme();
-
   return (
     <Chip
       variant="outlined"
       size="small"
       icon={
-        isUp ? (
-          <IconifyIcon
-            icon="mingcute:arrow-right-up-line"
-            sx={{ color: `${theme.palette.success.main} !important` }}
-          />
-        ) : (
-          <IconifyIcon
-            icon="mingcute:arrow-right-down-line"
-            sx={{ color: `${theme.palette.error.main} !important` }}
-          />
-        )
+        <IconifyIcon
+          icon={isUp ? 'mingcute:arrow-right-up-line' : 'mingcute:arrow-right-down-line'}
+          sx={(theme) => ({
+            color: isUp
+              ? `${theme.palette.success.main} !important`
+              : `${theme.palette.error.main} !important`,
+          })}
+        />
       }
       label={rate}
       sx={{
@@ -33,13 +27,9 @@ const RateChip = ({ rate, isUp }: RateChipProps) => {
         width: 62,
         flexDirection: 'row-reverse',
         justifyContent: 'space-between',
-        color: isUp ? theme.palette.success.main : theme.palette.error.main,
-        bgcolor: isUp
-          ? theme.palette.transparent.success.main
-          : theme.palette.transparent.error.main,
-        borderColor: isUp
-          ? theme.palette.transparent.success.main
-          : theme.palette.transparent.error.main,
+        color: isUp ? 'success.main' : 'error.main',
+        bgcolor: isUp ? 'transparent.success.main' : 'transparent.error.main',
+        borderColor: isUp ? 'transparent.success.main' : 'transparent.error.main',
       }}
     />
   );

@@ -1,4 +1,3 @@
-import { useTheme } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import IconifyIcon from 'components/base/IconifyIcon';
 
@@ -7,8 +6,6 @@ interface StatusChipProps {
 }
 
 const StatusChip = ({ status }: StatusChipProps) => {
-  const theme = useTheme();
-
   return (
     <Chip
       variant="outlined"
@@ -16,14 +13,14 @@ const StatusChip = ({ status }: StatusChipProps) => {
       icon={
         <IconifyIcon
           icon="radix-icons:dot-filled"
-          sx={{
+          sx={(theme) => ({
             color:
               status === 'delivered'
                 ? `${theme.palette.success.main} !important`
                 : status === 'pending'
                   ? `${theme.palette.warning.main} !important`
                   : `${theme.palette.error.main} !important`,
-          }}
+          })}
         />
       }
       label={status}
@@ -33,23 +30,23 @@ const StatusChip = ({ status }: StatusChipProps) => {
         justifyContent: 'center',
         color:
           status === 'delivered'
-            ? theme.palette.success.main
+            ? 'success.main'
             : status === 'pending'
-              ? theme.palette.warning.main
-              : theme.palette.error.main,
+              ? 'warning.main'
+              : 'error.main',
         letterSpacing: 0.5,
         bgcolor:
           status === 'delivered'
-            ? theme.palette.transparent.success.main
+            ? 'transparent.success.main'
             : status === 'pending'
-              ? theme.palette.transparent.warning.main
-              : theme.palette.transparent.error.main,
+              ? 'transparent.warning.main'
+              : 'transparent.error.main',
         borderColor:
           status === 'delivered'
-            ? theme.palette.transparent.success.main
+            ? 'transparent.success.main'
             : status === 'pending'
-              ? theme.palette.transparent.warning.main
-              : theme.palette.transparent.error.main,
+              ? 'transparent.warning.main'
+              : 'transparent.error.main',
       }}
     />
   );

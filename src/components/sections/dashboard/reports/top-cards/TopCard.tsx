@@ -21,18 +21,16 @@ const TopCard = (props: TopCardProps) => {
   return (
     <Grid item xs={12} sm={6} xl={3}>
       <Stack
+        p={2.25}
+        pl={2.5}
         direction="column"
         component={Paper}
         gap={1.5}
-        sx={{ p: 2.25, pl: 2.5, height: 116, width: 1 }}
+        sx={{ height: 116, width: 1 }}
       >
         <Stack justifyContent="space-between">
           <Stack alignItems="center" gap={1}>
-            <IconifyIcon
-              icon={icon}
-              color="primary.main"
-              sx={(theme) => ({ fontSize: theme.typography.h5.fontSize })}
-            />
+            <IconifyIcon icon={icon} color="primary.main" fontSize="h5.fontSize" />
             <Typography
               variant="subtitle2"
               color="text.secondary"
@@ -45,20 +43,14 @@ const TopCard = (props: TopCardProps) => {
           <IconButton
             aria-label="menu"
             size="small"
-            sx={(theme) => ({ color: 'neutral.light', fontSize: theme.typography.h5.fontSize })}
+            sx={{ color: 'neutral.light', fontSize: 'h5.fontSize' }}
           >
             <IconifyIcon icon="solar:menu-dots-bold" />
           </IconButton>
         </Stack>
 
         <Stack alignItems="center" gap={0.875}>
-          <Typography
-            variant="h3"
-            sx={(theme) => ({
-              fontWeight: theme.typography.caption.fontWeight,
-              letterSpacing: 1,
-            })}
-          >
+          <Typography variant="h3" sx={{ fontWeight: 600, letterSpacing: 1 }}>
             {value}
           </Typography>
           <RateChip rate={rate} isUp={isUp} />

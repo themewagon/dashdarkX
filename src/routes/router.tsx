@@ -12,50 +12,55 @@ const Reports = lazy(() => import('pages/dashboard/reports'));
 const Login = lazy(() => import('pages/authentication/Login'));
 const Signup = lazy(() => import('pages/authentication/Signup'));
 
-const router = createBrowserRouter([
-  {
-    element: (
-      <Suspense fallback={<Splash />}>
-        <App />
-      </Suspense>
-    ),
-    children: [
-      {
-        path: '/',
-        element: (
-          <MainLayout>
-            <Suspense fallback={<PageLoader />}>
+const router = createBrowserRouter(
+  [
+    {
+      element: (
+        <Suspense fallback={<Splash />}>
+          <App />
+        </Suspense>
+      ),
+      children: [
+        {
+          path: '/',
+          element: (
+            <MainLayout>
+              <Suspense fallback={<PageLoader />}>
+                <Outlet />
+              </Suspense>
+            </MainLayout>
+          ),
+          children: [
+            {
+              index: true,
+              element: <Reports />,
+            },
+          ],
+        },
+        {
+          path: rootPaths.authRoot,
+          element: (
+            <AuthLayout>
               <Outlet />
-            </Suspense>
-          </MainLayout>
-        ),
-        children: [
-          {
-            index: true,
-            element: <Reports />,
-          },
-        ],
-      },
-      {
-        path: rootPaths.authRoot,
-        element: (
-          <AuthLayout>
-            <Outlet />
-          </AuthLayout>
-        ),
-        children: [
-          {
-            path: paths.login,
-            element: <Login />,
-          },
-          {
-            path: paths.signup,
-            element: <Signup />,
-          },
-        ],
-      },
-    ],
+            </AuthLayout>
+          ),
+          children: [
+            {
+              path: paths.login,
+              element: <Login />,
+            },
+            {
+              path: paths.signup,
+              element: <Signup />,
+            },
+          ],
+        },
+      ],
+    },
+  ],
+  {
+    basename: '/dashdarkX',
   },
-]);
+);
 
 export default router;

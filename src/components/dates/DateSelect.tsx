@@ -11,24 +11,11 @@ const DateSelect = () => {
         defaultValue={dayjs('Jan-2024')}
         format="MMM YYYY"
         sx={(theme) => ({
-          p: 0,
-          border: 0,
           boxShadow: 0,
-          bgcolor: 'info.dark',
-          '& .MuiIconButton-edgeEnd': {
-            color: 'text.secondary',
-            '& .MuiSvgIcon-fontSizeMedium': {
-              fontSize: theme.typography.subtitle1.fontSize,
-            },
-          },
-          '& .MuiOutlinedInput-input': {
+          '& .MuiInputBase-root': {
             p: 0,
-            pl: theme.spacing(1),
-            color: 'text.secondary',
-            fontSize: theme.typography.caption.fontSize,
-            fontWeight: theme.typography.subtitle2.fontWeight,
-            height: 30,
-            width: 64,
+            border: 'none',
+            background: `${theme.palette.info.dark} !important`,
           },
           '& .MuiOutlinedInput-root': {
             pr: theme.spacing(0.75),
@@ -41,6 +28,21 @@ const DateSelect = () => {
             },
             '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
               borderWidth: 0,
+            },
+          },
+          '& .MuiOutlinedInput-input': {
+            p: 0,
+            pl: theme.spacing(1),
+            color: 'text.secondary',
+            fontSize: theme.typography.caption.fontSize,
+            fontWeight: 500,
+            height: 30,
+            width: 64,
+          },
+          '& .MuiIconButton-edgeEnd': {
+            color: 'text.secondary',
+            '& .MuiSvgIcon-fontSizeMedium': {
+              fontSize: theme.typography.subtitle1.fontSize,
             },
           },
         })}

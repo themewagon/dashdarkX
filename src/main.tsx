@@ -10,8 +10,8 @@ import './index.css';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <CssBaseline/>
-      <RouterProvider router={router}/>
+      <CssBaseline />
+      <RouterProvider router={router} />
     </ThemeProvider>
   </React.StrictMode>,
 );
