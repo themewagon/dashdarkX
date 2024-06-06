@@ -5,15 +5,17 @@ const Divider: Components<Omit<Theme, 'components'>>['MuiDivider'] = {
   styleOverrides: {
     root: ({ theme }) => ({
       margin: theme.spacing(2, 0),
-      backgroundColor: 'transparent',
+      backgroundColor: theme.palette.neutral.darker,
 
-      '&::before': {
-        backgroundColor: theme.palette.neutral.darker,
+      '&.MuiDivider-withChildren': {
+        backgroundColor: 'transparent',
+        '&::before': {
+          backgroundColor: theme.palette.neutral.darker,
+        },
+        '&::after': {
+          backgroundColor: theme.palette.neutral.darker,
+        },
       },
-
-      '&::after': {
-        backgroundColor: theme.palette.neutral.darker,
-      }
     }),
   },
 };

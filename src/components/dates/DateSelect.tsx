@@ -31,13 +31,11 @@ const DateSelect = () => {
             },
           },
           '& .MuiOutlinedInput-input': {
-            p: 0,
-            pl: theme.spacing(1),
+            p: theme.spacing(1),
             color: 'text.secondary',
             fontSize: theme.typography.caption.fontSize,
             fontWeight: 500,
-            height: 30,
-            width: 64,
+            width: 60,
           },
           '& .MuiIconButton-edgeEnd': {
             color: 'text.secondary',

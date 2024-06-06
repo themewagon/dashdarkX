@@ -30,6 +30,7 @@ import YearCalendar from './components/date-picker/YearCalendar';
 import Collapse from './components/list/Collapse';
 import Checkbox from './components/inputs/Checkbox';
 import FormControlLabel from './components/inputs/FormControlLabel';
+import OutlinedInput from './components/inputs/OutlinedInput';
 
 export const theme = createTheme({
     typography,
@@ -53,6 +54,7 @@ export const theme = createTheme({
         MuiInputBase: InputBase,
         MuiInputAdornment: InputAdornment,
         MuiFilledInput: FilledInput,
+        MuiOutlinedInput: OutlinedInput,
         MuiCheckbox: Checkbox,
         MuiDivider: Divider,
         MuiChip: Chip,
