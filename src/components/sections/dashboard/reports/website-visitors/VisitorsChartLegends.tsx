@@ -28,7 +28,6 @@ export const legendsData = [
 
 const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
   const theme = useTheme();
-
   const [toggleColor, setToggleColor] = useState({
     organic: true,
     social: true,
@@ -39,13 +38,31 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
     const handleBodyClick = (e: MouseEvent) => {
       handleToggleLegend(e as unknown as React.MouseEvent, null);
     };
-
     document.body.addEventListener('click', handleBodyClick);
-
     return () => {
       document.body.removeEventListener('click', handleBodyClick);
     };
   }, []);
+
+  const getActiveColor = (type: string) => {
+    if (type === 'Organic') {
+      return theme.palette.primary.main;
+    } else if (type === 'Social') {
+      return theme.palette.secondary.lighter;
+    } else if (type === 'Direct') {
+      return theme.palette.secondary.main;
+    }
+  };
+
+  const getDisableColor = (type: string) => {
+    if (type === 'Organic') {
+      return theme.palette.primary.dark;
+    } else if (type === 'Social') {
+      return theme.palette.secondary.darker;
+    } else if (type === 'Direct') {
+      return theme.palette.secondary.dark;
+    }
+  };
 
   const handleToggleLegend = (e: React.MouseEvent, type: string | null) => {
     e.stopPropagation();
@@ -70,30 +87,12 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
           s.data.forEach((item) => {
             if (type !== null && item.itemStyle && item.itemStyle.color) {
               if (type === item.type) {
-                if (type === 'Organic') {
-                  item.itemStyle.color = theme.palette.primary.main;
-                } else if (type === 'Social') {
-                  item.itemStyle.color = theme.palette.secondary.lighter;
-                } else if (type === 'Direct') {
-                  item.itemStyle.color = theme.palette.secondary.main;
-                }
+                item.itemStyle.color = getActiveColor(item.type);
               } else {
-                if (item.type === 'Organic') {
-                  item.itemStyle.color = theme.palette.primary.dark;
-                } else if (item.type === 'Social') {
-                  item.itemStyle.color = theme.palette.secondary.darker;
-                } else if (item.type === 'Direct') {
-                  item.itemStyle.color = theme.palette.secondary.dark;
-                }
+                item.itemStyle.color = getDisableColor(item.type);
               }
             } else {
-              if (item.type === 'Organic') {
-                item.itemStyle.color = theme.palette.primary.main;
-              } else if (item.type === 'Social') {
-                item.itemStyle.color = theme.palette.secondary.lighter;
-              } else if (item.type === 'Direct') {
-                item.itemStyle.color = theme.palette.secondary.main;
-              }
+              item.itemStyle.color = getActiveColor(item.type);
             }
           });
         }
