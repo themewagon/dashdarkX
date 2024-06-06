@@ -38,16 +38,6 @@ const Login = () => {
       <Divider sx={{ my: 3, color: 'text.secondary' }}>or Login with</Divider>
       <Stack component="form" direction="column" gap={2}>
         <TextField
-          id="name"
-          name="name"
-          variant="filled"
-          placeholder="Your Name"
-          autoComplete="name"
-          fullWidth
-          autoFocus
-          required
-        />
-        <TextField
           id="email"
           name="email"
           variant="filled"
