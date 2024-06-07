@@ -1,30 +1,45 @@
-import {
-  Link,
-  Stack,
-  Typography,
-  TextField,
-  Button,
-  FormControlLabel,
-  Checkbox,
-  Divider,
-} from '@mui/material';
-import paths from 'routes/paths';
+import { useState, ChangeEvent, FormEvent } from 'react';
+import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
+import Divider from '@mui/material/Divider';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
 import IconifyIcon from 'components/base/IconifyIcon';
+import paths from 'routes/paths';
+
+interface User {
+  [key: string]: string;
+}
 
 const Signup = () => {
+  const [user, setUser] = useState<User>({ name: '', email: '', password: '' });
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(user);
+  };
+
   return (
     <>
-      <Typography align="center" variant="h3" sx={{ fontWeight: 600 }}>
+      <Typography align="center" variant="h3" fontWeight={600}>
         SignUp
       </Typography>
-      <Stack mt={4} spacing={2} sx={{ width: 1 }}>
+      <Stack direction={{ xs: 'column', sm: 'row' }} mt={4} spacing={2} sx={{ width: 1 }}>
         <Button
           variant="contained"
           color="primary"
           fullWidth
           startIcon={<IconifyIcon icon="uim:google" />}
         >
-          Login with Google
+          Signup with Google
         </Button>
         <Button
           variant="contained"
@@ -32,14 +47,17 @@ const Signup = () => {
           fullWidth
           startIcon={<IconifyIcon icon="uim:apple" />}
         >
-          Login with Apple
+          Signup with Apple
         </Button>
       </Stack>
-      <Divider sx={{ my: 3, color: 'text.secondary' }}>or Login with</Divider>
-      <Stack component="form" direction="column" gap={2}>
+      <Divider sx={{ my: 3, color: 'text.secondary' }}>or Signup with</Divider>
+      <Stack onSubmit={handleSubmit} component="form" direction="column" gap={2}>
         <TextField
           id="name"
           name="name"
+          type="text"
+          value={user.name}
+          onChange={handleInputChange}
           variant="filled"
           placeholder="Your Name"
           autoComplete="name"
@@ -50,6 +68,9 @@ const Signup = () => {
         <TextField
           id="email"
           name="email"
+          type="email"
+          value={user.email}
+          onChange={handleInputChange}
           variant="filled"
           placeholder="Your Email"
           autoComplete="email"
@@ -60,19 +81,30 @@ const Signup = () => {
         <TextField
           id="password"
           name="password"
+          type={showPassword ? 'text' : 'password'}
+          value={user.password}
+          onChange={handleInputChange}
           variant="filled"
           placeholder="Your Password"
           autoComplete="password"
           fullWidth
           autoFocus
           required
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end" sx={{ opacity: user.password ? 1 : 0 }}>
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={() => setShowPassword(!showPassword)}
+                  edge="end"
+                >
+                  <IconifyIcon icon={showPassword ? 'ion:eye' : 'ion:eye-off'} />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
         />
-        <FormControlLabel
-          control={<Checkbox color="primary" />}
-          label="Remember me"
-          sx={{ mt: -1.5 }}
-        />
-        <Button type="submit" fullWidth variant="contained" size="medium">
+        <Button type="submit" variant="contained" size="medium" fullWidth sx={{ mt: 1.5 }}>
           Submit
         </Button>
         <Typography
@@ -80,12 +112,10 @@ const Signup = () => {
           color="text.secondary"
           variant="body2"
           align="center"
-          sx={{ fontWeight: 500, letterSpacing: 0.5 }}
+          fontWeight={500}
+          letterSpacing={0.5}
         >
-          Don't have an account?{' '}
-          <Link href={paths.login} variant="body2" sx={{ mt: 2 }}>
-            {'Login'}
-          </Link>
+          Already have an account? <Link href={paths.login}>{'Login'}</Link>
         </Typography>
       </Stack>
     </>

@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import Stack from '@mui/material/Stack';
-import { Paper } from '@mui/material';
+import Paper from '@mui/material/Paper';
 
 const AuthLayout = ({ children }: PropsWithChildren) => {
   return (
@@ -8,7 +8,7 @@ const AuthLayout = ({ children }: PropsWithChildren) => {
       component="main"
       alignItems="center"
       justifyContent="center"
-      sx={{ py: 7, width: 1, minHeight: '100vh' }}
+      sx={{ px: 1, py: 7, width: 1, minHeight: '100vh' }}
     >
       <Paper sx={{ width: 1, maxWidth: 460 }}>{children}</Paper>
     </Stack>
