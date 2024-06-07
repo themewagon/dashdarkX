@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import { format } from 'date-fns';
+import { SelectChangeEvent } from '@mui/material';
 import Stack from '@mui/material/Stack';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import StatusChip from 'components/chips/StatusChip';
 import IconifyIcon from 'components/base/IconifyIcon';
 import DataGridFooter from 'components/data-grid/DataGridFooter';
-
 import {
   GridRowModesModel,
   GridRowModes,
   DataGrid,
   GridColDef,
   GridActionsCellItem,
+  GridRenderEditCellParams,
   GridEventListener,
   GridRowId,
   GridRowModel,
@@ -79,12 +82,8 @@ const OrdersStatusTable = () => {
       resizable: false,
       renderHeader: () => (
         <Stack alignItems="center" gap={0.75}>
-          <IconifyIcon
-            icon="mingcute:user-2-fill"
-            color="neutral.main"
-            sx={(theme) => ({ fontSize: theme.typography.body2.fontSize })}
-          />
-          <Typography variant="caption" mt={0.25} sx={{ letterSpacing: 0.5 }}>
+          <IconifyIcon icon="mingcute:user-2-fill" color="neutral.main" fontSize="body2.fontSize" />
+          <Typography variant="caption" mt={0.25} letterSpacing={0.5}>
             Client
           </Typography>
         </Stack>
@@ -92,17 +91,10 @@ const OrdersStatusTable = () => {
       renderCell: (params) => {
         return (
           <Stack direction="column" alignSelf="center" justifyContent="center" sx={{ height: 1 }}>
-            <Typography
-              variant="subtitle1"
-              sx={(theme) => ({ fontSize: theme.typography.caption.fontSize })}
-            >
+            <Typography variant="subtitle1" fontSize="caption.fontSize">
               {params.value.name}
             </Typography>
-            <Typography
-              variant="subtitle2"
-              sx={(theme) => ({ fontSize: theme.typography.caption.fontSize })}
-              color="text.secondary"
-            >
+            <Typography variant="subtitle2" color="text.secondary" fontSize="caption.fontSize">
               {params.value.email}
             </Typography>
           </Stack>
@@ -120,12 +112,8 @@ const OrdersStatusTable = () => {
       resizable: false,
       renderHeader: () => (
         <Stack alignItems="center" gap={0.75}>
-          <IconifyIcon
-            icon="mdi:calendar"
-            color="neutral.main"
-            sx={(theme) => ({ fontSize: theme.typography.body1.fontSize })}
-          />
-          <Typography mt={0.175} variant="caption" sx={{ letterSpacing: 0.5 }}>
+          <IconifyIcon icon="mdi:calendar" color="neutral.main" fontSize="body1.fontSize" />
+          <Typography mt={0.175} variant="caption" letterSpacing={0.5}>
             Date
           </Typography>
         </Stack>
@@ -144,9 +132,9 @@ const OrdersStatusTable = () => {
           <IconifyIcon
             icon="carbon:checkbox-checked-filled"
             color="neutral.main"
-            sx={(theme) => ({ fontSize: theme.typography.body1.fontSize })}
+            fontSize="body1.fontSize"
           />
-          <Typography mt={0.175} variant="caption" sx={{ letterSpacing: 0.5 }}>
+          <Typography mt={0.175} variant="caption" letterSpacing={0.5}>
             Status
           </Typography>
         </Stack>
@@ -158,6 +146,23 @@ const OrdersStatusTable = () => {
           </Stack>
         );
       },
+      renderEditCell: (params: GridRenderEditCellParams) => {
+        const handleChange = (event: SelectChangeEvent<string>) => {
+          params.api.setEditCellValue({
+            id: params.id,
+            field: params.field,
+            value: event.target.value,
+          });
+        };
+        return (
+          <Select value={params.value} onChange={handleChange} fullWidth>
+            <MenuItem value="delivered">Delivered</MenuItem>
+            <MenuItem value="pending">Pending</MenuItem>
+            <MenuItem value="canceled">Canceled</MenuItem>
+          </Select>
+        );
+      },
+      editable: true,
     },
     {
       field: 'country',
@@ -172,9 +177,9 @@ const OrdersStatusTable = () => {
           <IconifyIcon
             icon="healthicons:geo-location"
             color="neutral.main"
-            sx={(theme) => ({ fontSize: theme.typography.h5.fontSize })}
+            fontSize="h5.fontSize"
           />
-          <Typography mt={0.175} variant="caption" sx={{ letterSpacing: 0.5 }}>
+          <Typography mt={0.175} variant="caption" letterSpacing={0.5}>
             Country
           </Typography>
         </Stack>
@@ -209,10 +214,7 @@ const OrdersStatusTable = () => {
                 <IconifyIcon
                   color="primary.main"
                   icon="mdi:content-save"
-                  sx={(theme) => ({
-                    fontSize: theme.typography.body1.fontSize,
-                    pointerEvents: 'none',
-                  })}
+                  sx={{ fontSize: 'body1.fontSize', pointerEvents: 'none' }}
                 />
               }
               label="Save"
@@ -224,10 +226,7 @@ const OrdersStatusTable = () => {
                 <IconifyIcon
                   color="text.secondary"
                   icon="iconamoon:sign-times-duotone"
-                  sx={(theme) => ({
-                    fontSize: theme.typography.h6.fontSize,
-                    pointerEvents: 'none',
-                  })}
+                  sx={{ fontSize: 'body1.fontSize', pointerEvents: 'none' }}
                 />
               }
               label="Cancel"
@@ -243,10 +242,7 @@ const OrdersStatusTable = () => {
               <IconifyIcon
                 icon="fluent:edit-32-filled"
                 color="text.secondary"
-                sx={(theme) => ({
-                  fontSize: theme.typography.body1.fontSize,
-                  pointerEvents: 'none',
-                })}
+                sx={{ fontSize: 'body1.fontSize', pointerEvents: 'none' }}
               />
             }
             label="Edit"
@@ -260,10 +256,7 @@ const OrdersStatusTable = () => {
               <IconifyIcon
                 icon="mingcute:delete-3-fill"
                 color="text.secondary"
-                sx={(theme) => ({
-                  fontSize: theme.typography.body1.fontSize,
-                  pointerEvents: 'none',
-                })}
+                sx={{ fontSize: 'body1.fontSize', pointerEvents: 'none' }}
               />
             }
             size="small"
