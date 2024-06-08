@@ -1,4 +1,6 @@
-import { Typography, Stack, Pagination } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import Pagination from '@mui/material/Pagination';
 import {
   gridPageSelector,
   gridPageCountSelector,
@@ -15,7 +17,7 @@ const DataGridFooter = () => {
   const rowsCount = apiRef.current.getRowsCount();
 
   return (
-    <Stack alignItems="center" justifyContent="space-between" sx={{ width: 1, pl: 3, pr: 1.6 }}>
+    <Stack alignItems="center" justifyContent="space-between" pl={3} pr={1.6} width={1}>
       <Typography
         variant="body2"
         color="text.primary"

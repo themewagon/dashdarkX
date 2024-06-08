@@ -40,7 +40,7 @@ const RevenueByCustomer = () => {
       {/* subheader */}
       <Stack justifyContent="space-between" mt={1}>
         <Stack alignItems="center" gap={0.875}>
-          <Typography variant="h3" sx={{ fontWeight: 600, letterSpacing: 1 }}>
+          <Typography variant="h3" fontWeight={600} letterSpacing={1}>
             $240.8K
           </Typography>
           <RateChip rate={'14.8%'} isUp={true} />
@@ -48,7 +48,7 @@ const RevenueByCustomer = () => {
 
         <Stack alignItems="center" spacing={2}>
           {/* legends for bigger screen */}
-          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+          <Box display={{ xs: 'none', md: 'block' }}>
             <RevenueChartLegends chartRef={chartRef} sm={false} />
           </Box>
           <DateSelect />
@@ -56,12 +56,12 @@ const RevenueByCustomer = () => {
       </Stack>
 
       {/* legends for smaller screen */}
-      <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+      <Box display={{ xs: 'block', md: 'none' }}>
         <RevenueChartLegends chartRef={chartRef} sm={true} />
       </Box>
 
       {/* stacked bar chart */}
-      <Box sx={{ height: 400 }}>
+      <Box height={400}>
         <RevenueChart chartRef={chartRef} data={revenueData} sx={{ minHeight: 1 }} />
       </Box>
     </Paper>

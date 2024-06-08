@@ -26,16 +26,13 @@ const TopCard = (props: TopCardProps) => {
         direction="column"
         component={Paper}
         gap={1.5}
-        sx={{ height: 116, width: 1 }}
+        height={116}
+        width={1}
       >
         <Stack justifyContent="space-between">
           <Stack alignItems="center" gap={1}>
             <IconifyIcon icon={icon} color="primary.main" fontSize="h5.fontSize" />
-            <Typography
-              variant="subtitle2"
-              color="text.secondary"
-              sx={{ fontFamily: fontFamily.workSans }}
-            >
+            <Typography variant="subtitle2" color="text.secondary" fontFamily={fontFamily.workSans}>
               {title}
             </Typography>
           </Stack>
@@ -50,7 +47,7 @@ const TopCard = (props: TopCardProps) => {
         </Stack>
 
         <Stack alignItems="center" gap={0.875}>
-          <Typography variant="h3" sx={{ fontWeight: 600, letterSpacing: 1 }}>
+          <Typography variant="h3" fontWeight={600} letterSpacing={1}>
             {value}
           </Typography>
           <RateChip rate={rate} isUp={isUp} />

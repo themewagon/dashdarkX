@@ -12,10 +12,7 @@ const CompletedTask = () => {
     <Paper sx={{ height: 300 }}>
       {/* header */}
       <Stack alignItems="center" spacing={0.6}>
-        <IconifyIcon
-          icon="ph:clock-fill"
-          sx={{ color: 'text.secondary', fontSize: 'h6.fontSize' }}
-        />
+        <IconifyIcon icon="ph:clock-fill" color="text.secondary" fontSize="h6.fontSize" />
         <Typography variant="body2" color="text.secondary">
           Completed tasks over time
         </Typography>
@@ -23,7 +20,7 @@ const CompletedTask = () => {
 
       <Stack mt={1.5} alignItems="center" justifyContent="space-between">
         <Stack alignItems="center" gap={0.875}>
-          <Typography variant="h3" sx={{ fontWeight: 600, letterSpacing: 1 }}>
+          <Typography variant="h3" fontWeight={600} letterSpacing={1}>
             257
           </Typography>
           <RateChip rate={'16.8%'} isUp={true} />
@@ -33,7 +30,7 @@ const CompletedTask = () => {
       </Stack>
 
       {/* line chart */}
-      <Box sx={{ height: 220 }}>
+      <Box height={220}>
         <CompletedTaskChart sx={{ height: '100% !important' }} />
       </Box>
     </Paper>

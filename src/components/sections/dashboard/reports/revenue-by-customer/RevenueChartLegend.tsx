@@ -33,15 +33,8 @@ const RevenueChartLegend = ({ data, toggleColor, handleLegendToggle }: LegendPro
   return (
     <ButtonBase onClick={() => handleLegendToggle(data.type)} disableRipple>
       <Stack spacing={0.5} alignItems="center">
-        <Box
-          sx={{
-            height: 8,
-            width: 8,
-            bgcolor: color,
-            borderRadius: 1,
-          }}
-        ></Box>
-        <Typography variant="body2" color="text.secondary" sx={{ fontFamily: fontFamily.workSans }}>
+        <Box height={8} width={8} bgcolor={color} borderRadius={1} />
+        <Typography variant="body2" color="text.secondary" fontFamily={fontFamily.workSans}>
           {data.type}
         </Typography>
       </Stack>

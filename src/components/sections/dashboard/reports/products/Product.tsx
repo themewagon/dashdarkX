@@ -19,21 +19,21 @@ const Product = ({ data }: ProductInfoProps) => {
   return (
     <Stack alignItems="center" justifyContent="space-between">
       <Stack spacing={2} alignItems="center">
-        <Box sx={{ height: 46, width: 46, bgcolor: 'info.dark', borderRadius: 1.25 }}>
-          <Image src={imageUrl} sx={{ height: 1, width: 1, objectFit: 'contain' }} />
+        <Box height={46} width={46} bgcolor="info.dark" borderRadius={1.25}>
+          <Image src={imageUrl} height={1} width={1} sx={{ objectFit: 'contain' }} />
         </Box>
 
         <Stack direction="column">
-          <Typography variant="body2" sx={{ fontWeight: 600 }}>
+          <Typography variant="body2" fontWeight={600}>
             {name}
           </Typography>
-          <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 500 }}>
+          <Typography variant="caption" color="text.secondary" fontWeight={500}>
             {inStock} in stock
           </Typography>
         </Stack>
       </Stack>
 
-      <Typography variant="caption" sx={{ fontWeight: 400, fontFamily: fontFamily.workSans }}>
+      <Typography variant="caption" fontWeight={400} fontFamily={fontFamily.workSans}>
         $ {price}
       </Typography>
     </Stack>

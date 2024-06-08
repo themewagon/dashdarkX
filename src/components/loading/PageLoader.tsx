@@ -3,7 +3,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 
 const PageLoader = () => {
   return (
-    <Box sx={{ width: 1 }}>
+    <Box width={1}>
       <LinearProgress />
     </Box>
   );

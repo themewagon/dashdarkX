@@ -18,7 +18,7 @@ const DateSelect = () => {
             background: `${theme.palette.info.dark} !important`,
           },
           '& .MuiOutlinedInput-root': {
-            pr: theme.spacing(0.75),
+            pr: 0.75,
 
             '& .MuiOutlinedInput-notchedOutline': {
               borderWidth: 0,
@@ -31,16 +31,16 @@ const DateSelect = () => {
             },
           },
           '& .MuiOutlinedInput-input': {
-            p: theme.spacing(1),
+            p: 1,
             color: 'text.secondary',
-            fontSize: theme.typography.caption.fontSize,
+            fontSize: 'caption.fontSize',
             fontWeight: 500,
             width: 60,
           },
           '& .MuiIconButton-edgeEnd': {
             color: 'text.secondary',
             '& .MuiSvgIcon-fontSizeMedium': {
-              fontSize: theme.typography.subtitle1.fontSize,
+              fontSize: 'subtitle1.fontSize',
             },
           },
         })}

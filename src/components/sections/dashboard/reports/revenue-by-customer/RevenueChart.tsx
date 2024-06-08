@@ -1,9 +1,9 @@
-import { SxProps, useTheme } from '@mui/material';
-import { fontFamily } from 'theme/typography';
 import { useMemo } from 'react';
 import * as echarts from 'echarts/core';
 import { BarChart } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
+import { SxProps, useTheme } from '@mui/material';
+import { fontFamily } from 'theme/typography';
 import {
   TooltipComponent,
   GridComponent,
@@ -36,12 +36,6 @@ interface BarChartProps {
 
 const RevenueChart = ({ chartRef, data, ...rest }: BarChartProps) => {
   const theme = useTheme();
-
-  const colors = [
-    theme.palette.primary.main,
-    theme.palette.secondary.lighter,
-    theme.palette.secondary.main,
-  ];
 
   const option = useMemo(
     () => ({
@@ -115,7 +109,12 @@ const RevenueChart = ({ chartRef, data, ...rest }: BarChartProps) => {
           focus: 'series',
         },
         itemStyle: {
-          color: colors[index],
+          color:
+            index === 0
+              ? theme.palette.primary.main
+              : index === 1
+                ? theme.palette.secondary.lighter
+                : theme.palette.secondary.main,
         },
         data: item.data,
       })),

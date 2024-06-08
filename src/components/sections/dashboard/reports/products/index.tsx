@@ -1,5 +1,5 @@
 import { fontFamily } from 'theme/typography';
-import { Paper } from '@mui/material';
+import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import iPhone from 'assets/images/iPhone.png';
@@ -25,16 +25,16 @@ const productsData = [
 
 const Products = () => {
   return (
-    <Stack direction="column" gap={3.75} component={Paper} sx={{ height: 300 }}>
-      <Typography variant="h6" sx={{ fontWeight: 400, fontFamily: fontFamily.workSans }}>
+    <Stack direction="column" gap={3.75} component={Paper} height={300}>
+      <Typography variant="h6" fontWeight={400} fontFamily={fontFamily.workSans}>
         Products
       </Typography>
 
       <Stack justifyContent="space-between">
-        <Typography variant="caption" sx={{ fontWeight: 400 }}>
+        <Typography variant="caption" fontWeight={400}>
           Products
         </Typography>
-        <Typography variant="caption" sx={{ fontWeight: 400 }}>
+        <Typography variant="caption" fontWeight={400}>
           Price
         </Typography>
       </Stack>

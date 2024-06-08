@@ -68,7 +68,7 @@ const RevenueChartLegends = ({ chartRef, sm }: LegendsProps) => {
       justifyContent={sm ? 'center' : 'flex-start'}
       spacing={2}
       pt={sm ? 3 : 0}
-      sx={{ width: sm ? 1 : 'auto' }}
+      width={sm ? 1 : 'auto'}
     >
       {legendsData.map((item) => (
         <RevenueChartLegend
