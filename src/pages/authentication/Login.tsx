@@ -34,7 +34,7 @@ const Login = () => {
       <Typography align="center" variant="h3" fontWeight={600}>
         LogIn
       </Typography>
-      <Stack direction={{ xs: 'column', sm: 'row' }} mt={4} spacing={2} sx={{ width: 1 }}>
+      <Stack direction={{ xs: 'column', sm: 'row' }} mt={4} spacing={2} width={1}>
         <Button
           variant="contained"
           color="primary"
@@ -107,7 +107,6 @@ const Login = () => {
           color="text.secondary"
           variant="body2"
           align="center"
-          fontWeight={500}
           letterSpacing={0.5}
         >
           Don't have an account? <Link href={paths.signup}>{'Signup'}</Link>

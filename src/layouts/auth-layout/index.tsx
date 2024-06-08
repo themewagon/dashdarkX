@@ -8,9 +8,12 @@ const AuthLayout = ({ children }: PropsWithChildren) => {
       component="main"
       alignItems="center"
       justifyContent="center"
-      sx={{ px: 1, py: 7, width: 1, minHeight: '100vh' }}
+      px={1}
+      py={7}
+      width={1}
+      minHeight={'100vh'}
     >
-      <Paper sx={{ width: 1, maxWidth: 460 }}>{children}</Paper>
+      <Paper sx={{ py: 4, width: 1, maxWidth: 460 }}>{children}</Paper>
     </Stack>
   );
 };
