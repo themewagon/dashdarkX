@@ -8,6 +8,7 @@ const Divider: Components<Omit<Theme, 'components'>>['MuiDivider'] = {
       backgroundColor: theme.palette.neutral.darker,
 
       '&.MuiDivider-withChildren': {
+        color: theme.palette.text.secondary,
         backgroundColor: 'transparent',
         '&::before': {
           backgroundColor: theme.palette.neutral.darker,

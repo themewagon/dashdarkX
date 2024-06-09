@@ -21,8 +21,8 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
         height: '0 !important',
       },
       '& .MuiDataGrid-scrollbarFiller': {
-        minWidth: 0
-      }
+        minWidth: 0,
+      },
     }),
     virtualScroller: {
       overflowY: 'hidden',
@@ -37,9 +37,9 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
       },
     }),
     columnHeaderTitle: ({ theme }) => ({
-      letterSpacing: 0.5,
       fontSize: theme.typography.caption.fontSize,
-      fontWeight: theme.typography.caption.fontWeight,
+      letterSpacing: 0.5,
+      fontWeight: 600,
     }),
     row: ({ theme }) => ({
       padding: theme.spacing(0, 2),

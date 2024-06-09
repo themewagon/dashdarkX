@@ -8,7 +8,7 @@ import Splash from 'components/loading/Splash';
 import PageLoader from 'components/loading/PageLoader';
 
 const App = lazy(() => import('App'));
-const Reports = lazy(() => import('pages/dashboard/reports'));
+const Dashboard = lazy(() => import('pages/dashboard'));
 const Login = lazy(() => import('pages/authentication/Login'));
 const Signup = lazy(() => import('pages/authentication/Signup'));
 
@@ -33,7 +33,7 @@ const router = createBrowserRouter(
           children: [
             {
               index: true,
-              element: <Reports />,
+              element: <Dashboard />,
             },
           ],
         },

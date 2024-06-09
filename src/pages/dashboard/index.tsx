@@ -1,12 +1,12 @@
 import Grid from '@mui/material/Grid';
-import TopCards from 'components/sections/dashboard/reports/top-cards';
-import WebsiteVisitors from 'components/sections/dashboard/reports/website-visitors';
-import RevenueByCustomer from 'components/sections/dashboard/reports/revenue-by-customer';
-import Products from 'components/sections/dashboard/reports/products';
-import CompletedTask from 'components/sections/dashboard/reports/completed-task';
-import OrdersStatus from 'components/sections/dashboard/reports/orders-status';
+import TopCards from 'components/sections/dashboard/top-cards';
+import WebsiteVisitors from 'components/sections/dashboard/website-visitors';
+import RevenueByCustomer from 'components/sections/dashboard/revenue-by-customer';
+import Products from 'components/sections/dashboard/products';
+import CompletedTask from 'components/sections/dashboard/completed-task';
+import OrdersStatus from 'components/sections/dashboard/orders-status';
 
-const Reports = () => {
+const Dashboard = () => {
   return (
     <Grid container spacing={{ xs: 2.5, sm: 3, lg: 3.75 }}>
       <Grid item xs={12}>
@@ -36,4 +36,4 @@ const Reports = () => {
   );
 };
 
-export default Reports;
+export default Dashboard;

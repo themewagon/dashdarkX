@@ -52,7 +52,7 @@ const Login = () => {
           Login with Apple
         </Button>
       </Stack>
-      <Divider sx={{ my: 3, color: 'text.secondary' }}>or Login with</Divider>
+      <Divider sx={{ my: 3 }}>or Login with</Divider>
       <Stack onSubmit={handleSubmit} component="form" direction="column" gap={2}>
         <TextField
           id="email"

@@ -50,7 +50,7 @@ const Signup = () => {
           Signup with Apple
         </Button>
       </Stack>
-      <Divider sx={{ my: 3, color: 'text.secondary' }}>or Signup with</Divider>
+      <Divider sx={{ my: 3 }}>or Signup with</Divider>
       <Stack onSubmit={handleSubmit} component="form" direction="column" gap={2}>
         <TextField
           id="name"

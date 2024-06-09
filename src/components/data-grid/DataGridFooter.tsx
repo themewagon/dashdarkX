@@ -21,7 +21,6 @@ const DataGridFooter = () => {
       <Typography
         variant="body2"
         color="text.primary"
-        fontSize="body2.fontSize"
       >{`${page * pageSize + 1}-${page * pageSize + pageSize} of ${rowsCount}`}</Typography>
       <Pagination
         color="primary"

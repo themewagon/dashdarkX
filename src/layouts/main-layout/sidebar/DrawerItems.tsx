@@ -21,7 +21,7 @@ const DrawerItems = () => {
     <>
       <Stack
         pt={5}
-        pb={3}
+        pb={4}
         px={3.5}
         position={'sticky'}
         top={0}

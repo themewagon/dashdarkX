@@ -8,10 +8,10 @@ const Button: Components<Omit<Theme, 'components'>>['MuiButton'] = {
   styleOverrides: {
     root: ({ theme }) => ({
       color: theme.palette.text.primary,
-      fontWeight: theme.typography.button.fontWeight,
       borderRadius: theme.shape.borderRadius,
       textTransform: 'initial',
       letterSpacing: 0.5,
+      fontWeight: 500,
     }),
     contained: ({ theme }) => ({
       '&.Mui-disabled': {

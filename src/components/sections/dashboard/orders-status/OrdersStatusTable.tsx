@@ -194,7 +194,6 @@ const OrdersStatusTable = () => {
       minWidth: 120,
       flex: 1,
       resizable: false,
-      editable: true,
     },
     {
       field: 'actions',

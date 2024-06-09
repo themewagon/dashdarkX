@@ -2,6 +2,7 @@ import { useState, PropsWithChildren } from 'react';
 import Stack from '@mui/material/Stack';
 import Sidebar from 'layouts/main-layout/sidebar';
 import Topbar from 'layouts/main-layout/topbar';
+import Footer from './Footer';
 
 const MainLayout = ({ children }: PropsWithChildren) => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -20,6 +21,7 @@ const MainLayout = ({ children }: PropsWithChildren) => {
       >
         <Topbar isClosing={isClosing} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
         {children}
+        <Footer/>
       </Stack>
     </Stack>
   );
