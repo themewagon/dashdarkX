@@ -44,18 +44,16 @@ const TopbarLeft = ({ isClosing, mobileOpen, setMobileOpen }: TopbarLeftProps) =
         disableRipple
         sx={{ display: { xm: 'block', lg: 'none' } }}
       >
-        <Image src={LogoImg} alt="logo" sx={{ height: 24, width: 24 }} />
+        <Image src={LogoImg} alt="logo" height={24} width={24} />
       </ButtonBase>
 
       {/* title */}
       <Typography
         variant="h5"
-        sx={(theme) => ({
-          letterSpacing: 1,
-          fontFamily: fontFamily.workSans,
-          fontWeight: theme.typography.caption.fontWeight,
-          display: { xs: 'none', lg: 'block' },
-        })}
+        fontWeight={600}
+        letterSpacing={1}
+        fontFamily={fontFamily.workSans}
+        display={{ xs: 'none', lg: 'block' }}
       >
         Analytics
       </Typography>
