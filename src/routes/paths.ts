@@ -5,7 +5,7 @@ export const rootPaths = {
   errorRoot: 'error',
 };
 
-export const parentPaths = {
+export default {
   dashboard: `/${rootPaths.pagesRoot}/dashboard`,
   features: `/${rootPaths.pagesRoot}/features`,
   users: `/${rootPaths.pagesRoot}/users`,
@@ -14,45 +14,6 @@ export const parentPaths = {
   settings: `/${rootPaths.pagesRoot}/settings`,
   templatePages: `/${rootPaths.pagesRoot}/template-pages`,
   accountSettings: `/${rootPaths.pagesRoot}/account-settings`,
-};
-
-export default {
-  reports: `${parentPaths.dashboard}/reports`,
-  products: `${parentPaths.dashboard}/products`,
-  task: `${parentPaths.dashboard}/task`,
-
-  contacts: `${parentPaths.features}/contacts`,
-  companies: `${parentPaths.features}/companies`,
-  projects: `${parentPaths.features}/projects`,
-  tasks: `${parentPaths.features}/tasks`,
-  board: `${parentPaths.features}/board`,
-  table: `${parentPaths.features}/table`,
-  crypto: `${parentPaths.features}/crypto`,
-
-  active: `${parentPaths.users}/active`,
-  cards: `${parentPaths.users}/cards`,
-  details: `${parentPaths.users}/details`,
-
-  accounts: `${parentPaths.pricing}/accounts`,
-  billing: `${parentPaths.pricing}/billing`,
-  subscriptions: `${parentPaths.pricing}/subscriptions`,
-
-  group: `${parentPaths.integrations}/group`,
-  errors: `${parentPaths.integrations}/errors`,
-  history: `${parentPaths.integrations}/history`,
-
-  settingV1: `${parentPaths.settings}/setting-v1`,
-  settingV2: `${parentPaths.settings}/setting-v2`,
-  settingV3: `${parentPaths.settings}/setting-v3`,
-
-  page1: `${parentPaths.templatePages}/page-1`,
-  page2: `${parentPaths.templatePages}/page-2`,
-  page3: `${parentPaths.templatePages}/page-3`,
-
-  profile: `${parentPaths.accountSettings}/profile`,
-  updateProfile: `${parentPaths.accountSettings}/update-profile`,
-  changePassword: `${parentPaths.accountSettings}/change-password`,
-  helpCenter: `${parentPaths.accountSettings}/help-center`,
 
   login: `/${rootPaths.authRoot}/login`,
   signup: `/${rootPaths.authRoot}/sign-up`,

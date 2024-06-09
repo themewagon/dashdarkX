@@ -1,9 +1,9 @@
-// import paths from './paths';
+import paths from './paths';
 
 export interface SubMenuItem {
   name: string;
   pathName: string;
-  path?: string;
+  path: string;
   active?: boolean;
   items?: SubMenuItem[];
 }
@@ -11,254 +11,78 @@ export interface SubMenuItem {
 export interface MenuItem {
   id: string;
   subheader: string;
+  path?: string;
   icon?: string;
   avatar?: string;
   active?: boolean;
-  items: SubMenuItem[];
+  items?: SubMenuItem[];
 }
 
 const sitemap: MenuItem[] = [
   {
     id: 'dashboard',
     subheader: 'Dashboard',
+    path: '/',
     icon: 'mingcute:home-1-fill',
     active: true,
-    items: [
-      {
-        name: 'All Pages',
-        path: '#!',
-        pathName: '#!',
-      },
-      {
-        name: 'Reports',
-        path: '#!',
-        pathName: 'reports',
-        active: true,
-      },
-      {
-        name: 'Products',
-        path: '#!',
-        pathName: 'products',
-      },
-      {
-        name: 'Task',
-        path: '#!',
-        pathName: 'task',
-      },
-    ],
   },
   {
     id: 'features',
     subheader: 'Features',
+    path: '#!',
     icon: 'mingcute:star-fill',
-    items: [
-      {
-        name: 'All Pages',
-        path: '#!',
-        pathName: '#!',
-      },
-      {
-        name: 'Contacts',
-        path: '#!',
-        pathName: 'contacts',
-      },
-      {
-        name: 'Companies',
-        path: '#!',
-        pathName: 'companies',
-      },
-      {
-        name: 'Projects',
-        path: '#!',
-        pathName: 'projects',
-      },
-      {
-        name: 'Tasks',
-        path: '#!',
-        pathName: 'tasks',
-      },
-      {
-        name: 'Board',
-        path: '#!',
-        pathName: 'board',
-      },
-      {
-        name: 'Table',
-        path: '#!',
-        pathName: 'table',
-      },
-      {
-        name: 'Crypto',
-        path: '#!',
-        pathName: 'crypto',
-      },
-    ],
   },
   {
     id: 'users',
     subheader: 'Users',
+    path: '#!',
     icon: 'mingcute:user-2-fill',
-    items: [
-      {
-        name: 'All Pages',
-        path: '#!',
-        pathName: '#!',
-      },
-      {
-        name: 'Active',
-        path: '#!',
-        pathName: 'active',
-      },
-      {
-        name: 'Cards',
-        path: '#!',
-        pathName: 'cards',
-      },
-      {
-        name: 'Details',
-        path: '#!',
-        pathName: 'details',
-      },
-    ],
   },
   {
     id: 'pricing',
     subheader: 'Pricing',
+    path: '#!',
     icon: 'mingcute:currency-dollar-2-line',
-    items: [
-      {
-        name: 'All Pages',
-        path: '#!',
-        pathName: '#!',
-      },
-      {
-        name: 'Accounts',
-        path: '#!',
-        pathName: 'accounts',
-      },
-      {
-        name: 'Billing',
-        path: '#!',
-        pathName: 'billing',
-      },
-      {
-        name: 'Subscriptions',
-        path: '#!',
-        pathName: 'subscriptions',
-      },
-    ],
   },
   {
     id: 'integrations',
     subheader: 'Integrations',
+    path: '#!',
     icon: 'mingcute:plugin-2-fill',
+  },
+  {
+    id: 'authentication',
+    subheader: 'Authentication',
+    icon: 'mingcute:safe-lock-fill',
     items: [
       {
-        name: 'All Pages',
-        path: '#!',
-        pathName: '#!',
+        name: 'Login',
+        pathName: 'login',
+        path: paths.login,
       },
       {
-        name: 'Group',
-        path: '#!',
-        pathName: 'group',
-      },
-      {
-        name: 'Errors',
-        path: '#!',
-        pathName: 'errors',
-      },
-      {
-        name: 'History',
-        path: '#!',
-        pathName: 'history',
+        name: 'Signup',
+        pathName: 'signup',
+        path: paths.signup,
       },
     ],
   },
   {
     id: 'settings',
     subheader: 'Settings',
+    path: '#!',
     icon: 'solar:settings-bold',
-    items: [
-      {
-        name: 'All Pages',
-        path: '#!',
-        pathName: '#!',
-      },
-      {
-        name: 'Setting V1',
-        path: '#!',
-        pathName: 'setting-v1',
-      },
-      {
-        name: 'Setting V2',
-        path: '#!',
-        pathName: 'setting-v2',
-      },
-      {
-        name: 'Setting V3',
-        path: '#!',
-        pathName: 'setting-v3',
-      },
-    ],
   },
   {
     id: 'template-pages',
     subheader: 'Template pages',
+    path: '#!',
     icon: 'mingcute:document-2-fill',
-    items: [
-      {
-        name: 'All Pages',
-        path: '#!',
-        pathName: '#!',
-      },
-      {
-        name: 'Page 01',
-        path: '#!',
-        pathName: 'page-1',
-      },
-      {
-        name: 'Page 02',
-        path: '#!',
-        pathName: 'page-2',
-      },
-      {
-        name: 'Page 03',
-        path: '#!',
-        pathName: 'page-3',
-      },
-    ],
   },
   {
     id: 'account-settings',
     subheader: 'John Carter',
-    items: [
-      {
-        name: 'All Pages',
-        path: '#!',
-        pathName: '#!',
-      },
-      {
-        name: 'My Profile',
-        path: '#!',
-        pathName: 'profile',
-      },
-      {
-        name: 'Update Profile',
-        path: '#!',
-        pathName: 'update-profile',
-      },
-      {
-        name: 'Change Password',
-        path: '#!',
-        pathName: 'change-password',
-      },
-      {
-        name: 'Help Center',
-        path: '#!',
-        pathName: 'help-center',
-      },
-    ],
+    path: '#!',
   },
 ];
 

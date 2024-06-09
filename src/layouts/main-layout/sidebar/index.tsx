@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import DrawerItems from './drawer-items';
+import DrawerItems from './DrawerItems';
 
 interface SidebarProps {
   mobileOpen: boolean;

@@ -8,7 +8,7 @@ const ListItemText: Components<Omit<Theme, 'components'>>['MuiListItemText'] = {
       marginTop: theme.spacing(0.15),
       color: theme.palette.text.secondary,
       fontSize: theme.typography.subtitle1.fontSize,
-      fontWeight: theme.typography.subtitle1.fontWeight,
+      fontWeight: 400,
     }),
   },
 };
