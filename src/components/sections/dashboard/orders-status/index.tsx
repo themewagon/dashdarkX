@@ -4,7 +4,10 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
 import DateSelect from 'components/dates/DateSelect';
+import IconifyIcon from 'components/base/IconifyIcon';
 import OrdersStatusTable from './OrdersStatusTable';
 
 const OrdersStatus = () => {
@@ -15,6 +18,19 @@ const OrdersStatus = () => {
           Orders Status
         </Typography>
         <Stack spacing={1.5} alignItems="center">
+          <TextField
+            variant="filled"
+            size="small"
+            placeholder="Search for..."
+            sx={{ width: 220 }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <IconifyIcon icon={'mingcute:search-line'} />
+                </InputAdornment>
+              ),
+            }}
+          />
           <DateSelect />
           <Button variant="contained" size="small">
             Create order

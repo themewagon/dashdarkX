@@ -7,6 +7,9 @@ const FilledInput: Components<Omit<Theme, 'components'>>['MuiFilledInput'] = {
     input: {
       padding: 0,
     },
+    sizeSmall: ({ theme }) => ({
+      paddingLeft: theme.spacing(1.25),
+    }),
   },
 };
 

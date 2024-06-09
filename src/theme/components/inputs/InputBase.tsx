@@ -13,7 +13,7 @@ const InputBase: Components<Omit<Theme, 'components'>>['MuiInputBase'] = {
       padding: theme.spacing(1.25),
       letterSpacing: 0.5,
 
-      '&::placeholder': {
+      '& input::placeholder': {
         color: theme.palette.text.secondary,
         opacity: 1,
       },
