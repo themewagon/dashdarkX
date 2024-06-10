@@ -71,7 +71,8 @@ const sitemap: MenuItem[] = [
     id: 'settings',
     subheader: 'Settings',
     path: '#!',
-    icon: 'solar:settings-bold',
+    icon: 'material-symbols:settings-rounded',
+    active: true,
   },
   {
     id: 'template-pages',

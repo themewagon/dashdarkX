@@ -31,6 +31,8 @@ import Collapse from './components/list/Collapse';
 import Checkbox from './components/inputs/Checkbox';
 import FormControlLabel from './components/inputs/FormControlLabel';
 import OutlinedInput from './components/inputs/OutlinedInput';
+import MenuItem from './components/list/MenuItem';
+import List from './components/list/List';
 
 export const theme = createTheme({
   typography,
@@ -39,9 +41,11 @@ export const theme = createTheme({
     MuiButton: Button,
     MuiPaper: Paper,
     MuiCollapse: Collapse,
+    MuiList: List,
     MuiListItemButton: ListItemButton,
     MuiListItemIcon: ListItemIcon,
     MuiListItemText: ListItemText,
+    MuiMenuItem: MenuItem,
     MuiDrawer: Drawer,
     MuiFormControlLabel: FormControlLabel,
     MuiTextField: TextField,

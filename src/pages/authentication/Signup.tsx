@@ -86,7 +86,7 @@ const Signup = () => {
           onChange={handleInputChange}
           variant="filled"
           placeholder="Your Password"
-          autoComplete="password"
+          autoComplete="current-password"
           fullWidth
           autoFocus
           required

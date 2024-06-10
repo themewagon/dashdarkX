@@ -75,7 +75,7 @@ const Login = () => {
           onChange={handleInputChange}
           variant="filled"
           placeholder="Your Password"
-          autoComplete="password"
+          autoComplete="current-password"
           fullWidth
           autoFocus
           required
@@ -94,7 +94,10 @@ const Login = () => {
           }}
         />
         <Stack mt={-1.5} alignItems="center" justifyContent="space-between">
-          <FormControlLabel control={<Checkbox color="primary" />} label="Remember me" />
+          <FormControlLabel
+            control={<Checkbox id="checkbox" name="checkbox" color="primary" />}
+            label="Remember me"
+          />
           <Link href="#!" fontSize="body2.fontSize" letterSpacing={0.5}>
             Forgot password?
           </Link>

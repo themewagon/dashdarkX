@@ -8,7 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import StatusChip from 'components/chips/StatusChip';
 import IconifyIcon from 'components/base/IconifyIcon';
-import DataGridFooter from 'components/data-grid/DataGridFooter';
+import DataGridFooter from 'components/common/DataGridFooter';
 import {
   GridRowModesModel,
   GridRowModes,

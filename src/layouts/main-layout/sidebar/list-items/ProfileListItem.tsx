@@ -6,9 +6,9 @@ import Typography from '@mui/material/Typography';
 import ListItemButton from '@mui/material/ListItemButton';
 import AvatarImage from 'assets/images/avater.png';
 
-const ProfileListItem = ({ subheader, path, active }: MenuItem) => {
+const ProfileListItem = ({ subheader, path }: MenuItem) => {
   return (
-    <ListItemButton component={Link} href={path} sx={{ opacity: active ? 1 : 0.3 }}>
+    <ListItemButton component={Link} href={path}>
       <Stack spacing={1} alignItems="center">
         <Avatar src={AvatarImage} sx={{ height: 36, width: 36, bgcolor: 'primary.main' }} />
         <Stack direction="column">

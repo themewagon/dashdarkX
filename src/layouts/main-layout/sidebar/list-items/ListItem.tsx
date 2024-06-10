@@ -25,7 +25,7 @@ const ListItem = ({ subheader, icon, path, active }: MenuItem) => {
           <IconifyIcon
             icon={icon}
             sx={{
-              color: active ? 'primary.main' : null,
+              color: active && path === '/' ? 'primary.main' : null,
             }}
           />
         )}
@@ -34,7 +34,7 @@ const ListItem = ({ subheader, icon, path, active }: MenuItem) => {
         primary={subheader}
         sx={{
           '& .MuiListItemText-primary': {
-            color: active ? 'primary.main' : null,
+            color: active && path === '/' ? 'primary.main' : null,
           },
         }}
       />
