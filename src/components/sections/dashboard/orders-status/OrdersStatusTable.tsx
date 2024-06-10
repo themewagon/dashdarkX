@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
+import { ordersStatusData } from 'data/ordersStatusData';
 import { SelectChangeEvent } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Select from '@mui/material/Select';
@@ -12,6 +13,7 @@ import {
   GridRowModesModel,
   GridRowModes,
   DataGrid,
+  GridApi,
   GridColDef,
   GridActionsCellItem,
   GridRenderEditCellParams,
@@ -19,12 +21,21 @@ import {
   GridRowId,
   GridRowModel,
   GridRowEditStopReasons,
+  useGridApiRef,
 } from '@mui/x-data-grid';
-import { ordersStatusData } from 'data/ordersStatusData';
 
-const OrdersStatusTable = () => {
+interface OrdersStatusTableProps {
+  searchText: string;
+}
+
+const OrdersStatusTable = ({ searchText }: OrdersStatusTableProps) => {
+  const apiRef = useGridApiRef<GridApi>();
   const [rows, setRows] = useState(ordersStatusData);
   const [rowModesModel, setRowModesModel] = useState<GridRowModesModel>({});
+
+  useEffect(() => {
+    apiRef.current.setQuickFilterValues(searchText.split(/\b\W+\b/).filter((word) => word !== ''));
+  }, [searchText]);
 
   const handleRowEditStop: GridEventListener<'rowEditStop'> = (params, event) => {
     if (params.reason === GridRowEditStopReasons.rowFocusOut) {
@@ -88,14 +99,17 @@ const OrdersStatusTable = () => {
           </Typography>
         </Stack>
       ),
+      valueGetter: (params: { name: string; email: string }) => {
+        return `${params.name} ${params.email}`;
+      },
       renderCell: (params) => {
         return (
           <Stack direction="column" alignSelf="center" justifyContent="center" sx={{ height: 1 }}>
             <Typography variant="subtitle1" fontSize="caption.fontSize">
-              {params.value.name}
+              {params.row.client.name}
             </Typography>
             <Typography variant="subtitle2" color="text.secondary" fontSize="caption.fontSize">
-              {params.value.email}
+              {params.row.client.email}
             </Typography>
           </Stack>
         );
@@ -249,8 +263,6 @@ const OrdersStatusTable = () => {
             size="small"
           />,
           <GridActionsCellItem
-            onClick={handleDeleteClick(id)}
-            label="Delete"
             icon={
               <IconifyIcon
                 icon="mingcute:delete-3-fill"
@@ -258,6 +270,8 @@ const OrdersStatusTable = () => {
                 sx={{ fontSize: 'body1.fontSize', pointerEvents: 'none' }}
               />
             }
+            label="Delete"
+            onClick={handleDeleteClick(id)}
             size="small"
           />,
         ];
@@ -267,6 +281,7 @@ const OrdersStatusTable = () => {
 
   return (
     <DataGrid
+      apiRef={apiRef}
       rows={rows}
       columns={columns}
       rowHeight={80}
