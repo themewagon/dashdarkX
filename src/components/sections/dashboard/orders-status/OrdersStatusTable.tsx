@@ -114,7 +114,7 @@ const OrdersStatusTable = ({ searchText }: OrdersStatusTableProps) => {
           </Stack>
         );
       },
-      sortComparator: (v1, v2) => v1.name.localeCompare(v2.name),
+      sortComparator: (v1, v2) => v1.localeCompare(v2),
     },
     {
       field: 'date',
@@ -295,6 +295,7 @@ const OrdersStatusTable = ({ searchText }: OrdersStatusTableProps) => {
       }}
       checkboxSelection
       pageSizeOptions={[6]}
+      disableColumnMenu
       disableVirtualization
       disableRowSelectionOnClick
       rowModesModel={rowModesModel}

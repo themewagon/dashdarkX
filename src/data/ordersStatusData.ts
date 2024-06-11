@@ -1,4 +1,5 @@
 import { GridRowsProp } from '@mui/x-data-grid';
+import { formatNumber } from 'functions/formatNumber';
 
 export const ordersStatusData: GridRowsProp = [
   {
@@ -7,7 +8,7 @@ export const ordersStatusData: GridRowsProp = [
     date: new Date('Jan 30, 2024'),
     status: 'delivered',
     country: 'United States',
-    total: '$ 1,099.24',
+    total: formatNumber(1099.24),
   },
   {
     id: '#1531',
@@ -15,7 +16,7 @@ export const ordersStatusData: GridRowsProp = [
     date: new Date('Jan 27, 2024'),
     status: 'canceled',
     country: 'United Kingdom',
-    total: '$ 5,870.32',
+    total: formatNumber(5870.32),
   },
   {
     id: '#1530',
@@ -23,7 +24,7 @@ export const ordersStatusData: GridRowsProp = [
     date: new Date('Jan 24, 2024'),
     status: 'delivered',
     country: 'Australia',
-    total: '$ 13,899.48',
+    total: formatNumber(13899.48),
   },
   {
     id: '#1529',
@@ -31,7 +32,7 @@ export const ordersStatusData: GridRowsProp = [
     date: new Date('Jan 21, 2024'),
     status: 'pending',
     country: 'India',
-    total: '$ 1,569.12',
+    total: formatNumber(1569.12),
   },
   {
     id: '#1528',
@@ -39,7 +40,7 @@ export const ordersStatusData: GridRowsProp = [
     date: new Date('Jan 18, 2024'),
     status: 'delivered',
     country: 'Canada',
-    total: '$ 899.16',
+    total: formatNumber(899.16),
   },
   {
     id: '#1527',
@@ -47,7 +48,7 @@ export const ordersStatusData: GridRowsProp = [
     date: new Date('Jan 15, 2024'),
     status: 'pending',
     country: 'United States',
-    total: '$ 2,449.64',
+    total: formatNumber(2449.64),
   },
   {
     id: '#1526',
@@ -55,7 +56,7 @@ export const ordersStatusData: GridRowsProp = [
     date: new Date('Jan 12, 2024'),
     status: 'delivered',
     country: 'Australia',
-    total: '$ 6729.82',
+    total: formatNumber(6729.82),
   },
   {
     id: '#1525',
@@ -63,7 +64,7 @@ export const ordersStatusData: GridRowsProp = [
     date: new Date('Jan 09, 2024'),
     status: 'canceled',
     country: 'Canada',
-    total: '$ 784.94',
+    total: formatNumber(784.94),
   },
   {
     id: '#1524',
@@ -71,7 +72,7 @@ export const ordersStatusData: GridRowsProp = [
     date: new Date('Jan 06, 2024'),
     status: 'pending',
     country: 'Singapur',
-    total: '$ 1247.86',
+    total: formatNumber(1247.86),
   },
   {
     id: '#1523',
@@ -79,7 +80,7 @@ export const ordersStatusData: GridRowsProp = [
     date: new Date('Jan 03, 2024'),
     status: 'delivered',
     country: 'United States',
-    total: '$ 304.89',
+    total: formatNumber(304.89),
   },
   {
     id: '#1522',
@@ -87,7 +88,7 @@ export const ordersStatusData: GridRowsProp = [
     date: new Date('Jan 01, 2024'),
     status: 'pending',
     country: 'Japan',
-    total: '$ 2209.76',
+    total: formatNumber(2209.76),
   },
   {
     id: '#1521',
@@ -95,6 +96,6 @@ export const ordersStatusData: GridRowsProp = [
     date: new Date('Dec 28, 2023'),
     status: 'delivered',
     country: 'North Korea',
-    total: '$ 5245.68',
+    total: formatNumber(5245.68),
   },
 ];

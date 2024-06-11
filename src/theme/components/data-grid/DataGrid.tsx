@@ -73,16 +73,20 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
       borderStyle: 'solid',
       borderColor: `${theme.palette.info.darker} !important`,
     }),
+    columnSeparator: {
+      display: 'none',
+    },
     selectedRowCount: {
       display: 'none',
     },
     sortIcon: ({ theme }) => ({
       color: theme.palette.text.secondary,
     }),
-    menuIcon: ({ theme }) => ({
-      '& .MuiDataGrid-menuIconButton': {
-        color: theme.palette.text.secondary,
-      },
+    menuIconButton: ({ theme }) => ({
+      color: theme.palette.text.secondary,
+    }),
+    overlay: ({ theme }) => ({
+      backgroundColor: theme.palette.info.dark,
     }),
   },
 };
