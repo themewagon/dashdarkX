@@ -9,6 +9,16 @@ import ButtonBase from './components/button/ButtonBase';
 import IconButton from './components/button/IconButton';
 import Toolbar from './components/button/Toolbar';
 import Stack from './components/layout/Stack';
+import Paper from './components/surface/Paper';
+import Checkbox from './components/input/Checkbox';
+import InputBase from './components/input/InputBase';
+import FilledInput from './components/input/FilledInput';
+import InputAdornment from './components/input/InputAdornment';
+import FormControlLabel from './components/input/FormControlLabel';
+import OutlinedInput from './components/input/OutlinedInput';
+import TextField from './components/input/TextField';
+import Drawer from './components/navigation/Drawer';
+import Link from './components/navigation/Link';
 import List from './components/list/List';
 import ListItemButton from './components/list/ListItemButton';
 import ListItemIcon from './components/list/ListItemIcon';
@@ -21,11 +31,23 @@ export const theme = createTheme({
   palette,
   components: {
     MuiStack: Stack,
+    MuiPaper: Paper,
 
     MuiButton: Button,
     MuiButtonBase: ButtonBase,
     MuiIconButton: IconButton,
     MuiToolbar: Toolbar,
+
+    MuiCheckbox: Checkbox,
+    MuiFilledInput: FilledInput,
+    MuiFormControlLabel: FormControlLabel,
+    MuiInputAdornment: InputAdornment,
+    MuiInputBase: InputBase,
+    MuiOutlinedInput: OutlinedInput,
+    MuiTextField: TextField,
+
+    MuiDrawer: Drawer,
+    MuiLink: Link,
 
     MuiList: List,
     MuiListItemButton: ListItemButton,
