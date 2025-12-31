@@ -1,4 +1,5 @@
 import { createTheme } from '@mui/material/styles';
+import type {} from "@mui/x-data-grid/themeAugmentation";
 import CssBaseline from './components/utils/CssBaseline';
 import palette from './palette';
 import typography from './typography';
@@ -25,6 +26,8 @@ import ListItemIcon from './components/list/ListItemIcon';
 import ListItemText from './components/list/ListItemText';
 import MenuItem from './components/list/MenuItem';
 import Collapse from './components/list/Collapse';
+import DataGrid from './components/data-grid/DataGrid';
+import PaginationItem from './components/pagination/PaginationItem';
 
 export const theme = createTheme({
   typography,
@@ -55,6 +58,10 @@ export const theme = createTheme({
     MuiListItemText: ListItemText,
     MuiMenuItem: MenuItem,
     MuiCollapse: Collapse,
+
+    MuiDataGrid: DataGrid,
+
+    MuiPaginationItem: PaginationItem,
 
     MuiCssBaseline: CssBaseline,
   },
