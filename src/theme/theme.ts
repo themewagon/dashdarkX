@@ -1,5 +1,6 @@
 import { createTheme } from '@mui/material/styles';
-import type {} from "@mui/x-data-grid/themeAugmentation";
+import type {} from '@mui/x-data-grid/themeAugmentation';
+import type {} from '@mui/x-date-pickers/themeAugmentation';
 import CssBaseline from './components/utils/CssBaseline';
 import palette from './palette';
 import typography from './typography';
@@ -19,6 +20,8 @@ import FormControlLabel from './components/input/FormControlLabel';
 import OutlinedInput from './components/input/OutlinedInput';
 import TextField from './components/input/TextField';
 import Drawer from './components/navigation/Drawer';
+import Divider from './components/data-display/Divider';
+import Chip from './components/data-display/Chip';
 import Link from './components/navigation/Link';
 import List from './components/list/List';
 import ListItemButton from './components/list/ListItemButton';
@@ -27,6 +30,8 @@ import ListItemText from './components/list/ListItemText';
 import MenuItem from './components/list/MenuItem';
 import Collapse from './components/list/Collapse';
 import DataGrid from './components/data-grid/DataGrid';
+import MonthCalendar from './components/date-picker/MonthCalendar';
+import YearCalendar from './components/date-picker/YearCalendar';
 import PaginationItem from './components/pagination/PaginationItem';
 
 export const theme = createTheme({
@@ -50,6 +55,8 @@ export const theme = createTheme({
     MuiTextField: TextField,
 
     MuiDrawer: Drawer,
+    MuiDivider: Divider,
+    MuiChip: Chip,
     MuiLink: Link,
 
     MuiList: List,
@@ -60,9 +67,9 @@ export const theme = createTheme({
     MuiCollapse: Collapse,
 
     MuiDataGrid: DataGrid,
-
+    MuiMonthCalendar: MonthCalendar,
+    MuiYearCalendar: YearCalendar,
     MuiPaginationItem: PaginationItem,
-
     MuiCssBaseline: CssBaseline,
   },
   customShadows,
