@@ -1,4 +1,6 @@
 import type { Theme, Components } from '@mui/material/styles';
+import simplebar from 'theme/styles/simplebar';
+import scrollbar from 'theme/styles/scrollbar';
 
 const CssBaseline: Components<Omit<Theme, 'components'>>['MuiCssBaseline'] = {
   defaultProps: {},
@@ -13,7 +15,9 @@ const CssBaseline: Components<Omit<Theme, 'components'>>['MuiCssBaseline'] = {
     body: {
       fontVariantLigatures: 'none',
       backgroundColor: theme.palette.info.darker,
+      ...scrollbar(theme),
     },
+    ...simplebar(theme),
   }),
 };
 
