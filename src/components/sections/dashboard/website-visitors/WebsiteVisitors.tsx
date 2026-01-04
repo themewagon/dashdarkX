@@ -8,6 +8,7 @@ import IconifyIcon from 'components/base/IconifyIcon';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import VisitorsChartLegends from './VisitorsChartLegends';
 import VisitorsChart from './VisitorsChart';
+import { websiteVisitorsData } from 'data/visitorsData';
 
 const WebsiteVisitors = () => {
   const chartRef = useRef<EChartsReactCore | null>(null);
@@ -29,7 +30,7 @@ const WebsiteVisitors = () => {
         </Button>
       </Stack>
 
-      <VisitorsChart chartRef={chartRef} />
+      <VisitorsChart chartRef={chartRef} data={websiteVisitorsData} />
       <VisitorsChartLegends chartRef={chartRef} />
     </Paper>
   );

@@ -119,7 +119,7 @@ const RevenueChart = ({ chartRef, data, ...rest }: BarChartProps) => {
         data: item.data,
       })),
     }),
-    [theme],
+    [theme, data],
   );
 
   return <ReactEchart ref={chartRef} echarts={echarts} option={option} {...rest} />;

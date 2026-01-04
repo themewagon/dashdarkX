@@ -3,28 +3,11 @@ import { useTheme } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import VisitorsChartLegend from './VisitorsChartLegend';
 import EChartsReactCore from 'echarts-for-react/lib/core';
+import { visitorsChartLegendsData } from 'data/legendsData';
 
 interface LegendsProps {
   chartRef: React.RefObject<EChartsReactCore | null>;
 }
-
-export const legendsData = [
-  {
-    id: 1,
-    type: 'Organic',
-    rate: '80%',
-  },
-  {
-    id: 2,
-    type: 'Social',
-    rate: '60%',
-  },
-  {
-    id: 3,
-    type: 'Direct',
-    rate: '50%',
-  },
-];
 
 const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
   const theme = useTheme();
@@ -33,16 +16,6 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
     social: true,
     direct: true,
   });
-
-  useEffect(() => {
-    const handleBodyClick = (e: MouseEvent) => {
-      handleToggleLegend(e as unknown as React.MouseEvent, null);
-    };
-    document.body.addEventListener('click', handleBodyClick);
-    return () => {
-      document.body.removeEventListener('click', handleBodyClick);
-    };
-  }, []);
 
   const getActiveColor = (type: string) => {
     if (type === 'Organic') {
@@ -103,9 +76,19 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
     }
   };
 
+  useEffect(() => {
+    const handleBodyClick = (e: MouseEvent) => {
+      handleToggleLegend(e as unknown as React.MouseEvent, null);
+    };
+    document.body.addEventListener('click', handleBodyClick);
+    return () => {
+      document.body.removeEventListener('click', handleBodyClick);
+    };
+  });
+
   return (
     <Stack mt={-1} spacing={3} direction="column">
-      {legendsData.map((item) => (
+      {visitorsChartLegendsData.map((item) => (
         <VisitorsChartLegend
           key={item.id}
           data={item}

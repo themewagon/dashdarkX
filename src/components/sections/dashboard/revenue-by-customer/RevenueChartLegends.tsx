@@ -1,30 +1,16 @@
 import { useState } from 'react';
-import { revenueData } from './RevenueByCustomer';
 import Stack from '@mui/material/Stack';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import RevenueChartLegend from './RevenueChartLegend';
+import { revenueByCustomerData } from 'data/revenueData';
+import { revenueChartLegendsData } from 'data/legendsData';
 
 interface LegendsProps {
   chartRef: React.RefObject<EChartsReactCore | null>;
-  sm?: boolean; // check smaller screen or not
+  isSm?: boolean; // check smaller screen or not
 }
 
-const legendsData = [
-  {
-    id: 1,
-    type: 'Current clients',
-  },
-  {
-    id: 2,
-    type: 'Subscribers',
-  },
-  {
-    id: 3,
-    type: 'New customers',
-  },
-];
-
-const RevenueChartLegends = ({ chartRef, sm }: LegendsProps) => {
+const RevenueChartLegends = ({ chartRef, isSm }: LegendsProps) => {
   const [toggleColor, setToggleColor] = useState({
     currentClients: true,
     subscribers: true,
@@ -53,7 +39,7 @@ const RevenueChartLegends = ({ chartRef, sm }: LegendsProps) => {
             ...s,
             data: isBarVisible
               ? (s.data as number[]).map(() => 0)
-              : revenueData.series.find((s) => s.name === seriesName)?.data || [],
+              : revenueByCustomerData.series.find((s) => s.name === seriesName)?.data || [],
           };
         }
         return s;
@@ -65,12 +51,12 @@ const RevenueChartLegends = ({ chartRef, sm }: LegendsProps) => {
   return (
     <Stack
       alignItems="center"
-      justifyContent={sm ? 'center' : 'flex-start'}
+      justifyContent={isSm ? 'center' : 'flex-start'}
       spacing={2}
-      pt={sm ? 3 : 0}
-      width={sm ? 1 : 'auto'}
+      pt={isSm ? 3 : 0}
+      width={isSm ? 1 : 'auto'}
     >
-      {legendsData.map((item) => (
+      {revenueChartLegendsData.map((item) => (
         <RevenueChartLegend
           key={item.id}
           data={item}

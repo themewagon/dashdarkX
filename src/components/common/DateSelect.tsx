@@ -12,30 +12,31 @@ const DateSelect = () => {
         format="MMM YYYY"
         sx={(theme) => ({
           boxShadow: 0,
-          '& .MuiInputBase-root': {
-            p: 0,
-            border: 'none',
+          '& .MuiPickersInputBase-root': {
+            px: 1,
             background: `${theme.palette.info.dark} !important`,
-          },
-          '& .MuiOutlinedInput-root': {
-            pr: 0.75,
 
-            '& .MuiOutlinedInput-notchedOutline': {
+            '& .MuiPickersInputBase-sectionsContainer': {
+              py: 1,
+              width: 'auto',
+              minWidth: 80,
+            },
+          },
+          '& .MuiPickersOutlinedInput-root': {
+            '& .MuiPickersOutlinedInput-notchedOutline': {
               borderWidth: 0,
             },
-            '&:hover .MuiOutlinedInput-notchedOutline': {
+            '&:hover .MuiPickersOutlinedInput-notchedOutline': {
               borderWidth: 0,
             },
-            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            '&.Mui-focused .MuiPickersOutlinedInput-notchedOutline': {
               borderWidth: 0,
             },
           },
-          '& .MuiOutlinedInput-input': {
-            p: 1,
+          '& .MuiPickersSectionList-sectionContent': {
             color: 'text.secondary',
-            fontSize: 'caption.fontSize',
+            fontSize: 'body2.fontSize',
             fontWeight: 500,
-            width: 60,
           },
           '& .MuiIconButton-edgeEnd': {
             color: 'text.secondary',

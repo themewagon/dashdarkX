@@ -1,4 +1,4 @@
-import { SxProps, useTheme } from '@mui/material';
+import { type SxProps, type Theme, useTheme } from '@mui/material';
 import { fontFamily } from 'theme/typography';
 import { useMemo } from 'react';
 import * as echarts from 'echarts/core';
@@ -11,11 +11,25 @@ import EChartsReactCore from 'echarts-for-react/lib/core';
 echarts.use([PolarComponent, TooltipComponent, GraphicComponent, BarChart, CanvasRenderer]);
 
 interface PolarBarChartProps {
+  data: { type: string; count: number }[];
   chartRef: React.RefObject<EChartsReactCore | null>;
   sx?: SxProps;
 }
 
-const VisitorsChart = ({ chartRef, ...rest }: PolarBarChartProps) => {
+const getItemColor = (theme: Theme, type: string) => {
+  switch (type) {
+    case 'Direct':
+      return theme.palette.secondary.main;
+    case 'Social':
+      return theme.palette.secondary.lighter;
+    case 'Organic':
+      return theme.palette.primary.main;
+    default:
+      return theme.palette.grey[500];
+  }
+};
+
+const VisitorsChart = ({ chartRef, data, ...rest }: PolarBarChartProps) => {
   const theme = useTheme();
 
   const option = useMemo(
@@ -42,35 +56,17 @@ const VisitorsChart = ({ chartRef, ...rest }: PolarBarChartProps) => {
       radiusAxis: {
         show: false,
         type: 'category',
-        data: ['Direct', 'Social', 'Organic'],
+        data: data.map((item) => item.type),
       },
       tooltip: {},
       series: [
         {
           type: 'bar',
-          data: [
-            {
-              type: 'Direct',
-              value: 50,
-              itemStyle: {
-                color: theme.palette.secondary.main,
-              },
-            },
-            {
-              type: 'Social',
-              value: 60,
-              itemStyle: {
-                color: theme.palette.secondary.lighter,
-              },
-            },
-            {
-              type: 'Organic',
-              value: 80,
-              itemStyle: {
-                color: theme.palette.primary.main,
-              },
-            },
-          ],
+          data: data.map((item) => ({
+            type: item.type,
+            value: item.count,
+            itemStyle: { color: getItemColor(theme, item.type) },
+          })),
           coordinateSystem: 'polar',
           barCategoryGap: '35%',
           label: {
@@ -94,7 +90,7 @@ const VisitorsChart = ({ chartRef, ...rest }: PolarBarChartProps) => {
         },
       ],
     }),
-    [theme],
+    [theme, data],
   );
 
   return <ReactEchart ref={chartRef} echarts={echarts} option={option} {...rest} />;
