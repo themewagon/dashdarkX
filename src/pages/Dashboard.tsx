@@ -1,5 +1,6 @@
 import Grid from '@mui/material/Grid';
 import KPIs from 'components/sections/dashboard/kpi/KPIs';
+import RevenueByCustomer from 'components/sections/dashboard/revenue-by-customer/RevenueByCustomer';
 import WebsiteVisitors from 'components/sections/dashboard/website-visitors/WebsiteVisitors';
 
 const Dashboard = () => {
@@ -11,6 +12,10 @@ const Dashboard = () => {
 
       <Grid size={{ xs: 12, xl: 4 }}>
         <WebsiteVisitors />
+      </Grid>
+
+      <Grid size={{ xs: 12, xl: 8 }}>
+        <RevenueByCustomer />
       </Grid>
     </Grid>
   );
