@@ -4,6 +4,7 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
   styleOverrides: {
     root: ({ theme }) => ({
       border: 'none',
+      background: 'transparent',
       '--DataGrid-rowBorderColor': 'transparent',
       '&:hover, &:focus': {
         '*::-webkit-scrollbar, *::-webkit-scrollbar-thumb': {
@@ -26,10 +27,15 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
     virtualScroller: {
       overflowY: 'hidden',
     },
-    columnHeaders: ({ theme }) => ({
-      padding: theme.spacing(0, 2),
-      '--DataGrid-containerBackground': 'transparent',
-    }),
+    columnHeaderCheckbox: {
+      width: '70px !important',
+    },
+    cellCheckbox: {
+      width: '70px',
+    },
+    columnHeaders: {
+      background: 'transparent !important',
+    },
     columnHeader: ({ theme }) => ({
       background: theme.palette.info.main,
       '&:focus-within': {
@@ -42,9 +48,20 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
       fontWeight: 600,
     }),
     row: ({ theme }) => ({
-      padding: theme.spacing(0, 2),
+      '&:hover': {
+        background: 'transparent',
+      },
+      '&.Mui-selected': {
+        background: 'transparent',
+        '&:hover': {
+          background: 'transparent',
+        },
+      },
       '&:nth-of-type(odd)': {
-        backgroundColor: theme.palette.info.dark,
+        background: theme.palette.info.dark,
+        '&:hover': {
+          background: theme.palette.info.dark,
+        },
       },
       '&.MuiDataGrid-row--editing': {
         background: theme.palette.secondary.darker,
@@ -79,6 +96,9 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
     selectedRowCount: {
       display: 'none',
     },
+    sortButton: {
+      background: 'transparent !important',
+    },
     sortIcon: ({ theme }) => ({
       color: theme.palette.text.secondary,
     }),
@@ -86,7 +106,7 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
       color: theme.palette.text.secondary,
     }),
     overlay: ({ theme }) => ({
-      backgroundColor: theme.palette.info.dark,
+      background: theme.palette.info.dark,
     }),
   },
 };
