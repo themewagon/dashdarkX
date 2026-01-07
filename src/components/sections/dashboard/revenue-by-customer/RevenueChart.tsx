@@ -3,6 +3,7 @@ import * as echarts from 'echarts/core';
 import { BarChart } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
 import { SxProps, useTheme } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 import { fontFamily } from 'theme/typography';
 import {
   TooltipComponent,
@@ -24,7 +25,7 @@ echarts.use([
 
 interface BarChartProps {
   data: {
-    categories: string[];
+    months: string[];
     series: {
       name: string;
       data: number[];
@@ -36,6 +37,8 @@ interface BarChartProps {
 
 const RevenueChart = ({ chartRef, data, ...rest }: BarChartProps) => {
   const theme = useTheme();
+
+  const downMd = useMediaQuery(theme.breakpoints.down('md'));
 
   const option = useMemo(
     () => ({
@@ -53,7 +56,7 @@ const RevenueChart = ({ chartRef, data, ...rest }: BarChartProps) => {
       },
       xAxis: {
         type: 'category',
-        data: data.categories,
+        data: data.months,
         axisTick: {
           show: false,
         },
@@ -61,6 +64,8 @@ const RevenueChart = ({ chartRef, data, ...rest }: BarChartProps) => {
           show: false,
         },
         axisLabel: {
+          interval: 0,
+          rotate: downMd ? 45 : 0,
           color: theme.palette.text.secondary,
           fontSize: theme.typography.caption.fontSize,
           fontFamily: fontFamily.monaSans,
@@ -119,7 +124,7 @@ const RevenueChart = ({ chartRef, data, ...rest }: BarChartProps) => {
         data: item.data,
       })),
     }),
-    [theme, data],
+    [theme, data, downMd],
   );
 
   return <ReactEchart ref={chartRef} echarts={echarts} option={option} {...rest} />;

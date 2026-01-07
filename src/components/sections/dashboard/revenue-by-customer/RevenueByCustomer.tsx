@@ -44,7 +44,7 @@ const RevenueByCustomer = () => {
       <RevenueChart
         chartRef={chartRef}
         data={revenueByCustomerData}
-        sx={{ height: '400px !important' }}
+        sx={{ height: { xs: '380px !important', sm: '400px !important' } }}
       />
     </Paper>
   );
