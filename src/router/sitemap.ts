@@ -56,9 +56,9 @@ const sitemap: MenuItem[] = [
     icon: 'mingcute:safe-lock-fill',
     items: [
       {
-        name: 'Login',
-        pathName: 'login',
-        path: paths.login,
+        name: 'Signin',
+        pathName: 'signin',
+        path: paths.signin,
       },
       {
         name: 'Signup',
