@@ -12,6 +12,7 @@ const DateSelect = () => {
         format="MMM YYYY"
         sx={(theme) => ({
           boxShadow: 0,
+          flexShrink: 0,
           '& .MuiPickersInputBase-root': {
             px: 1,
             background: `${theme.palette.info.dark} !important`,

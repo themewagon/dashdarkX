@@ -19,8 +19,8 @@ const RevenueByCustomer = () => {
         Revenue by customer type
       </Typography>
 
-      <Stack justifyContent="space-between" mt={1}>
-        <Stack alignItems="center" gap={0.875}>
+      <Stack alignItems={{ xs: 'flex-start', sm: 'center' }} justifyContent="space-between" mt={1}>
+        <Stack flexWrap="wrap" alignItems="center" gap={0.875}>
           <Typography variant="h3" fontWeight={600} letterSpacing={1}>
             $240.8K
           </Typography>
@@ -28,7 +28,6 @@ const RevenueByCustomer = () => {
         </Stack>
 
         <Stack alignItems="center" spacing={2}>
-          {/* legends for bigger screen */}
           <Box display={{ xs: 'none', md: 'block' }}>
             <RevenueChartLegends chartRef={chartRef} isSm={false} />
           </Box>
@@ -36,7 +35,6 @@ const RevenueByCustomer = () => {
         </Stack>
       </Stack>
 
-      {/* legends for smaller screen */}
       <Box display={{ xs: 'block', md: 'none' }}>
         <RevenueChartLegends chartRef={chartRef} isSm={true} />
       </Box>

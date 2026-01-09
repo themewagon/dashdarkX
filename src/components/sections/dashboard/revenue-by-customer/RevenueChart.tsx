@@ -51,7 +51,7 @@ const RevenueChart = ({ chartRef, data, ...rest }: BarChartProps) => {
       grid: {
         top: 40,
         bottom: 70,
-        left: 50,
+        left: 0,
         right: 0,
       },
       xAxis: {

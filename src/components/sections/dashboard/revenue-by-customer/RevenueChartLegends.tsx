@@ -7,7 +7,7 @@ import { revenueChartLegendsData } from 'data/legendsData';
 
 interface LegendsProps {
   chartRef: React.RefObject<EChartsReactCore | null>;
-  isSm?: boolean; // check smaller screen or not
+  isSm?: boolean;
 }
 
 const RevenueChartLegends = ({ chartRef, isSm }: LegendsProps) => {
@@ -52,7 +52,7 @@ const RevenueChartLegends = ({ chartRef, isSm }: LegendsProps) => {
     <Stack
       alignItems="center"
       justifyContent={isSm ? 'center' : 'flex-start'}
-      spacing={2}
+      spacing={{ xs: 1, sm: 2 }}
       pt={isSm ? 3 : 0}
       width={isSm ? 1 : 'auto'}
     >
