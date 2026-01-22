@@ -10,7 +10,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import IconifyIcon from 'components/base/IconifyIcon';
-import paths from 'router/paths';
+import paths from 'routes/paths';
 
 interface User {
   [key: string]: string;

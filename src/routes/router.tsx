@@ -7,6 +7,7 @@ import paths, { rootPaths } from './paths';
 import AuthLayout from 'layouts/auth-layout/AuthLayout';
 import Signin from 'pages/authentication/Signin';
 import Signup from 'pages/authentication/Signup';
+import Error404 from 'pages/Error404';
 
 const App = lazy(() => import('App'));
 const Dashboard = lazy(() => import('pages/Dashboard'));
@@ -53,6 +54,10 @@ const router = createBrowserRouter(
               element: <Signup />,
             },
           ],
+        },
+        {
+          path: '*',
+          element: <Error404 />,
         },
       ],
     },

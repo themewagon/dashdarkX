@@ -79,13 +79,15 @@ const LanguageSelect = () => {
         open={open}
         onClose={handleFlagMenuClose}
         onClick={handleFlagMenuClose}
-        PaperProps={{
-          elevation: 0,
-          sx: {
-            mt: 1.5,
-            p: '0 !important',
-            width: 240,
-            overflow: 'hidden',
+        slotProps={{
+          paper: {
+            elevation: 0,
+            sx: {
+              mt: 1.5,
+              p: '0 !important',
+              width: 240,
+              overflow: 'hidden',
+            },
           },
         }}
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}

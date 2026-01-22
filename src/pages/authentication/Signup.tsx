@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconifyIcon from 'components/base/IconifyIcon';
-import paths from 'router/paths';
+import paths from 'routes/paths';
 
 interface User {
   [key: string]: string;

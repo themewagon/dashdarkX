@@ -43,12 +43,14 @@ const DrawerItems = () => {
           variant="filled"
           placeholder="Search for..."
           sx={{ width: 1 }}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <IconifyIcon icon={'mingcute:search-line'} />
-              </InputAdornment>
-            ),
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">
+                  <IconifyIcon icon={'mingcute:search-line'} />
+                </InputAdornment>
+              ),
+            },
           }}
         />
       </Box>

@@ -30,13 +30,15 @@ const OrdersStatus = () => {
             placeholder="Search for..."
             value={searchText}
             onChange={handleInputChange}
-            sx={{ width: 220, display: {xs: 'none', sm: 'flex'} }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <IconifyIcon icon='mingcute:search-line' />
-                </InputAdornment>
-              ),
+            sx={{ width: 220, display: { xs: 'none', sm: 'flex' } }}
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <IconifyIcon icon="mingcute:search-line" />
+                  </InputAdornment>
+                ),
+              },
             }}
           />
           <Button variant="contained" size="small">
@@ -52,13 +54,15 @@ const OrdersStatus = () => {
           placeholder="Search for..."
           value={searchText}
           onChange={handleInputChange}
-          sx={{ width: 1, display: {xs: 'flex', sm: 'none'} }}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <IconifyIcon icon={'mingcute:search-line'} />
-              </InputAdornment>
-            ),
+          sx={{ width: 1, display: { xs: 'flex', sm: 'none' } }}
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">
+                  <IconifyIcon icon={'mingcute:search-line'} />
+                </InputAdornment>
+              ),
+            },
           }}
         />
       </Stack>

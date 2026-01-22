@@ -1,4 +1,4 @@
-import { MenuItem } from 'router/sitemap';
+import { MenuItem } from 'routes/sitemap';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';

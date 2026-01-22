@@ -41,10 +41,13 @@ const DateSelect = () => {
           },
           '& .MuiIconButton-edgeEnd': {
             color: 'text.secondary',
-            '& .MuiSvgIcon-fontSizeMedium': {
+            margin: 0,
+
+            '& > svg': {
               fontSize: 'subtitle1.fontSize',
             },
           },
+          
         })}
       />
     </LocalizationProvider>

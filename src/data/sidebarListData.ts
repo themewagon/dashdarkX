@@ -1,4 +1,4 @@
-import sitemap from 'router/sitemap';
+import sitemap from 'routes/sitemap';
 
 export const topListData = sitemap.filter((item) => {
   const id = item.id;

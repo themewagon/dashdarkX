@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MenuItem } from 'router/sitemap';
+import { MenuItem } from 'routes/sitemap';
 import Link from '@mui/material/Link';
 import List from '@mui/material/List';
 import Collapse from '@mui/material/Collapse';

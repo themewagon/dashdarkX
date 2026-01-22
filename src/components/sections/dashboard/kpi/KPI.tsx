@@ -6,14 +6,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import IconifyIcon from 'components/base/IconifyIcon';
 import RateChip from 'components/common/RateChip';
-
-interface KPIProps {
-  icon: string;
-  title: string;
-  value: string;
-  rate: string;
-  isUp: boolean;
-}
+import { KPIProps } from 'data/kpiData';
 
 const KPI = (props: KPIProps) => {
   const { icon, title, value, rate, isUp } = props;
