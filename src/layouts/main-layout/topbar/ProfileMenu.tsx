@@ -1,15 +1,16 @@
 import { useState } from 'react';
-import Menu from '@mui/material/Menu';
+import Avatar, { avatarClasses } from '@mui/material/Avatar';
+import ButtonBase from '@mui/material/ButtonBase';
+import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
-import Avatar from '@mui/material/Avatar';
+import Menu from '@mui/material/Menu';
 import Divider from '@mui/material/Divider';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import ButtonBase from '@mui/material/ButtonBase';
-import Typography from '@mui/material/Typography';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import IconifyIcon from 'components/base/IconifyIcon';
 import AvatarImage from 'assets/images/avatar.png';
+import { listClasses } from '@mui/material';
 
 interface MenuItems {
   id: number;
@@ -95,9 +96,9 @@ const ProfileMenu = () => {
         onClick={handleProfileMenuClose}
         sx={{
           mt: 1.5,
-          '& .MuiList-root': {
+          [`& .${listClasses.root}`]: {
             width: 240,
-            '& .MuiAvatar-root': {
+            [`& .${avatarClasses.root}`]: {
               width: 36,
               height: 36,
               mr: 1.25,

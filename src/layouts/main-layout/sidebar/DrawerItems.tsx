@@ -47,7 +47,7 @@ const DrawerItems = () => {
             input: {
               startAdornment: (
                 <InputAdornment position="start">
-                  <IconifyIcon icon={'mingcute:search-line'} />
+                  <IconifyIcon icon="mingcute:search-line" />
                 </InputAdornment>
               ),
             },
