@@ -1,5 +1,5 @@
-import { listClasses } from '@mui/material';
 import type { Theme, Components } from '@mui/material/styles';
+import { listClasses } from '@mui/material';
 
 const Collapse: Components<Omit<Theme, 'components'>>['MuiCollapse'] = {
   styleOverrides: {

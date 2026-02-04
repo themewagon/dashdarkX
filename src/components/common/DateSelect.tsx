@@ -47,7 +47,6 @@ const DateSelect = () => {
               fontSize: 'subtitle1.fontSize',
             },
           },
-          
         })}
       />
     </LocalizationProvider>

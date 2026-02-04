@@ -1,5 +1,5 @@
-import { boxClasses, iconButtonClasses } from '@mui/material';
 import type { Theme, Components } from '@mui/material/styles';
+import { boxClasses, iconButtonClasses } from '@mui/material';
 
 const InputAdornment: Components<Omit<Theme, 'components'>>['MuiInputAdornment'] = {
   styleOverrides: {
@@ -10,6 +10,7 @@ const InputAdornment: Components<Omit<Theme, 'components'>>['MuiInputAdornment']
       padding: 0,
 
       [`& .${iconButtonClasses.root}`]: {
+        margin: 0,
         padding: 0,
       },
     }),
