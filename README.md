@@ -18,7 +18,7 @@
 ## Quick start
 
 - [Download from Github](https://github.com/themewagon/dashdarkX/archive/refs/heads/main.zip) or clone the repo : `git clone https://github.com/themewagon/dashdarkX.git`
-- Recommended `Node.js v18.x`.
+- Recommended `Node.js v22.x`
 - **Install:** `npm install`
 - **Start:** `npm run dev`
 - **Build:** `npm run build`

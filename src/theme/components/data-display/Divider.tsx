@@ -1,5 +1,5 @@
-import { dividerClasses } from '@mui/material';
 import type { Theme, Components } from '@mui/material/styles';
+import { dividerClasses } from '@mui/material';
 
 const Divider: Components<Omit<Theme, 'components'>>['MuiDivider'] = {
   styleOverrides: {

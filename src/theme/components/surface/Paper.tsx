@@ -1,4 +1,5 @@
 import type { Theme, Components } from '@mui/material/styles';
+import { menuClasses } from '@mui/material';
 
 const Paper: Components<Omit<Theme, 'components'>>['MuiPaper'] = {
   styleOverrides: {
@@ -8,7 +9,7 @@ const Paper: Components<Omit<Theme, 'components'>>['MuiPaper'] = {
       boxShadow: theme.customShadows[0],
       borderRadius: Number(theme.shape.borderRadius) * 3,
 
-      '&.MuiMenu-paper': {
+      [`&.${menuClasses.paper}`]: {
         padding: theme.spacing(0),
       },
     }),

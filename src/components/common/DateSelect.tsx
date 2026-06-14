@@ -1,6 +1,12 @@
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import {
+  pickersInputBaseClasses,
+  pickersOutlinedInputClasses,
+} from '@mui/x-date-pickers/PickersTextField';
+import { pickersSectionListClasses } from '@mui/x-date-pickers/PickersSectionList';
+import { iconButtonClasses } from '@mui/material';
 import dayjs from 'dayjs';
 
 const DateSelect = () => {
@@ -13,7 +19,7 @@ const DateSelect = () => {
         sx={(theme) => ({
           boxShadow: 0,
           flexShrink: 0,
-          '& .MuiPickersInputBase-root': {
+          [`& .${pickersInputBaseClasses.root}`]: {
             px: 1,
             background: `${theme.palette.info.dark} !important`,
 
@@ -23,23 +29,23 @@ const DateSelect = () => {
               minWidth: 80,
             },
           },
-          '& .MuiPickersOutlinedInput-root': {
-            '& .MuiPickersOutlinedInput-notchedOutline': {
+          [`& .${pickersOutlinedInputClasses.root}`]: {
+            [`& .${pickersOutlinedInputClasses.notchedOutline}`]: {
               borderWidth: 0,
             },
-            '&:hover .MuiPickersOutlinedInput-notchedOutline': {
+            [`&:hover .${pickersOutlinedInputClasses.notchedOutline}`]: {
               borderWidth: 0,
             },
-            '&.Mui-focused .MuiPickersOutlinedInput-notchedOutline': {
+            [`&.Mui-focused .${pickersOutlinedInputClasses.notchedOutline}`]: {
               borderWidth: 0,
             },
           },
-          '& .MuiPickersSectionList-sectionContent': {
+          [`& .${pickersSectionListClasses.sectionContent}`]: {
             color: 'text.secondary',
             fontSize: 'body2.fontSize',
             fontWeight: 500,
           },
-          '& .MuiIconButton-edgeEnd': {
+          [`& .${iconButtonClasses.edgeEnd}`]: {
             color: 'text.secondary',
             margin: 0,
 
@@ -47,7 +53,6 @@ const DateSelect = () => {
               fontSize: 'subtitle1.fontSize',
             },
           },
-          
         })}
       />
     </LocalizationProvider>

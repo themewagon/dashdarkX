@@ -11,10 +11,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'react/react-in-jsx-scope': 'off',
     'react/no-unescaped-entities': 'off',
@@ -28,4 +25,4 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
   },
-}
+};

@@ -1,9 +1,10 @@
 import type { Theme, Components } from '@mui/material/styles';
+import { yearCalendarClasses } from '@mui/x-date-pickers/YearCalendar';
 
 const YearCalendar: Components<Omit<Theme, 'components'>>['MuiYearCalendar'] = {
   styleOverrides: {
     root: ({ theme }) => ({
-      '& .MuiYearCalendar-button.Mui-selected': {
+      [`& .${yearCalendarClasses.button}.Mui-selected`]: {
         background: `${theme.palette.primary.main} !important`,
       },
     }),
